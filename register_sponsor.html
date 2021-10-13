@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/register_sponsor.css">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-    <title>GodBox - Login</title>
+    <title>GodBox - Register Sponsor</title>
 </head>
 
 <body>
@@ -39,8 +39,8 @@
 
             <section class="links-r">
                 <div class="login-link">
-                    <a href="./register_page.html">
-                        <h4>Register</h4>
+                    <a href="">
+                        <img src="./icons/casco.png" alt="" class="imgcasco">
                     </a>
                 </div>
             </section>
@@ -50,27 +50,28 @@
 
     <main class="container">
         <section class="container-form">
-            <div class="title-icon">
-                <img src="./icons/user.png" alt="">
-            </div>
             <div class="title-form">
-                <h5>Login</h5>
+                <h5>Register Sponsor</h5>
             </div>
             <form action="" class="form-register">
                 <div class="conta">
                     <section class="l-q">
-                        <label for="Username" class="label-username">
-                            Username
-                            <input type="text" placeholder="Put your username" size="45" maxlength="45" class="username_input">
+                        <label for="rif" class="label-rif">
+                            Rif
+                            <input type="number" placeholder="Add the Sponsor's Rif" size="45" maxlength="45" class="username_input">
                         </label>
-                        <label for="password" class="label-password">
-                            Password
-                            <input type="password" placeholder="Put your password" size="45" maxlength="45" class="password_input">
+                        <label for="name" class="label-name">
+                            Name
+                            <input type="text" placeholder="Add the Sponsor's name" size="45" maxlength="45" class="password_input">
+                        </label>
+                        <label for="email" class="label-email">
+                            Email
+                            <input type="email" placeholder="Add the Sponsor's email" size="45" maxlength="45" class="password_input">
                         </label>
                     </section>
                 </div>
 
-                <input type="submit" class="btn" name="Login" value="Login"></input>
+                <input type="submit" class="btn" name="register" value="Register"></input>
             </form>
         </section>
 
