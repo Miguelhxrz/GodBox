@@ -44,7 +44,7 @@ body {
   .menu__item {
     list-style: none;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
 .menu .menu__item a{
     text-decoration: none;
