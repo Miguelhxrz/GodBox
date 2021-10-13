@@ -1,0 +1,244 @@
+/* |---- Font ----| */
+
+@font-face {
+    font-family: 'heorot';
+    src: url(../font/heorot.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px
+}
+
+html {
+    font-size: 62.5%
+}
+
+:root {
+    /* |---- colors ----| */
+    --blue-bg: rgb(12, 16, 89, 1);
+    --header-bg: rgba(86, 101, 132, 0.67);
+    /* |---- Fonts ----| */
+    --font: 'heorot';
+}
+
+input[type='submit'],
+input[type='reset'] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-bg);
+    font-family: var(--font);
+}
+
+
+/* |---- Header ----| */
+
+.header {
+    width: 100%;
+    height: 130px;
+    background-color: var(--header-bg);
+    font-size: 2.5rem;
+}
+
+.container-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
+}
+
+.logoo {
+    width: 118px;
+    height: 99px;
+}
+
+.center-title {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxes-link {
+    margin-right: 20px;
+}
+
+.about-link {
+    margin-left: 20px;
+}
+
+.links-r {
+    display: flex;
+    align-items: center;
+}
+
+.login-link {
+    margin-right: 35px;
+}
+
+a {
+    color: #fff;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+
+.title-form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+
+
+/* |---- Body ----| */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    width: 100%;
+    height: 594px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url('../img/footer.png');
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    height: 461px;
+    background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
+    border-radius: 32px;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.conta {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.l-q {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    margin: 10px;
+}
+
+.l-q label {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 40px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    font-family: 'heorot';
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    margin-top: 10px;
+}
+
+.line {
+    width: 3px;
+    height: 250px;
+    margin: 0px auto;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.r-q {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    margin-top: 10px;
+}
+
+.r-q label {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 40px;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.btn {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 134px;
+    height: 32px;
+    margin-bottom: 20px;
+}
+
+input[type=submit] {
+    background: radial-gradient(93.28% 1635.74% at 6.72% 50%, rgba(14, 16, 55, 0.75) 0%, #0C1059 45.83%, rgba(14, 16, 55, 0.75) 100%);
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 20px;
+}
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #fff;
+}
