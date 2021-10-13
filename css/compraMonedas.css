@@ -41,15 +41,15 @@ body {
   
   }
   
-  .menu__item {
+.menu__item {
     list-style: none;
     display: flex;
     align-items: flex-end;
-  }
+}
 .menu .menu__item a{
     text-decoration: none;
     color: #ffffff;
-  }
+}
 .menu .menu__item a:hover{
     text-decoration: none;
     color: aquamarine;
@@ -131,6 +131,10 @@ body {
 }
 .grid-item-2 h5{
     color: #ffffff;
+}
+.box__button-buy a {
+    color: #ffffff;
+    list-style: none;
 }
 .grid-item-2 .box__button-buy{
     display: flex;
@@ -364,6 +368,7 @@ body {
 .cuadro_items-2 h3 {
     margin-left: 5px;
     font-size: 25px;
+    margin-top: 0;
 }
 
 

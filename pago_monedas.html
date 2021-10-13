@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-    <link href="css/compraMonedas.css" rel="stylesheet">
+    <link href="css/pago_monedas.css" rel="stylesheet">
     <title>GodBox</title>
 </head>
 <body>
-    
+    <div class="cuadro">
     <header class="header">
         <div class="logo__container">
           <img src="./img/Logo-rezised.png" alt="Company logo">
@@ -34,93 +34,48 @@
         </section>
         </nav>
       </header>
-    <main class="container">
-    <div class="grid-container">
-        <div class="grid-item-1">
-            <h1>Buy coins</h1>
-        </div>
-        <div class="grid-item-2">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-3">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-4">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-5">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-6">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-7">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-8">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-9">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-10">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-        <div class="grid-item-11">
-            <div class="cuadro_items-1"><img src="./img/monedas.png" alt=""> </div>
-            <div class="cuadro_items-2">
-                <h3>Coins: 100</h3>
-                <h3>Price: 25$</h3>
-            </div>
-            <div class="box__button-buy"><a href="#">BUY</a></div>
-        </div>
-    </div>
-    </main>
 
+    <main class="container">
+        <section class="container-form">
+            <div class="title-form">
+                <h2>Ingresa los datos de la tarjeta de credito para completar el pago</h2>
+            </div>
+            <form action="" class="form-register">
+                <div class="conta">
+                    <section class="l-q">
+                        <label for="id" class="label-id">
+                            Identification Document
+                            <input type="text" placeholder="Add your ID" size="45" maxlength="45" class="id_input">
+                        </label>
+                        <label for="Tipo de tarjeta" class="label-category">
+                            Tipo de tarjeta de credito
+                            <select name="Tipo de tarjeta" id="">
+                                <option selected="true" disabled="disabled">Select</option>
+                                <option value="2">Visa</option>
+                                <option value="3">Mastercad</option>
+                            </select>
+                        </label>
+                    </section>
+                    <div class="line"></div>
+                    <section class="r-q">
+                        <label for="Numero de tarjeta" class="label-email">
+                            Numero de tarjeta de credito
+                            <input type="text"size="45" maxlength="45" class="email_input">
+                        </label>
+                        <label for="fecha" class="label-birth">
+                            Fecha de vencimiento
+                            <input type="date" class="date">
+                        </label>
+                        <label for="codigo" class="codigo">
+                            Codigo CVV
+                            <input type="text"size="3" maxlength="3" class="email_input">
+                        </label>
+                    </section>
+                </div>
+
+                <input type="submit" class="btn" name="confirmar" value="Confirmar"></input>
+            </form>
+        </section>
+    </div>
 </body>
 </html>
