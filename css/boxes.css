@@ -1,6 +1,7 @@
+/* font */
 @font-face {
-  font-family: 'Heorot';
-  src: "../font/heorot.ttf";
+  font-family: 'BubblegumSans';
+  src: url('../font/BubblegumSans-Regular.ttf');
 }
 
 *{
@@ -9,19 +10,19 @@
   padding: 0px;
   list-style: none;
   text-decoration: none;
+  font-family: 'BubblegumSans';
 }
-
 
 html{
   font-size: 62.5%
 }
+
 
 body {
   background-image: url('../img/background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;  
-  font-family: 'Heorot', Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -41,10 +42,8 @@ body {
   height: 130px;
   padding: 25px;
   background-color: rgba(86, 101, 132, 0.67);
-  font-family: 'Heorot'; 
   font-size: 2.5rem;
   color: #fff;
-  -webkit-text-stroke: 1px #000000;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   
 }
@@ -76,12 +75,19 @@ body {
   cursor: pointer;
 }
 
+.basic__menu .menu li:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+  width: 100px;
+  text-align: center;
+}
+
 
 .user__menu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 33.3%;
+  width: 28%;
 
 }
 
@@ -122,7 +128,6 @@ label {
   color: #fff;
   font-size: 3.6rem;
   margin-right: 20px;
-  -webkit-text-stroke: 1px #000000;
 }
 select {
   width: 142px;
@@ -141,7 +146,7 @@ select {
 
 .box__card {
   width: 357px;
-  height: 429px;
+  height: 468px;
   background-color: rgb(96, 95, 144, 0.6);
   border-radius: 15px;
   filter: drop-shadow(0px 12px 4px rgba(0, 0, 0, 0.25));;
@@ -236,7 +241,6 @@ select {
   top: 2489px;
   left: 403px;
   color: #fff;
-  font-family: sans-serif;
   font-size: 2.2rem;
 }
 
