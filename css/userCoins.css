@@ -1,7 +1,7 @@
 /* Fuente Titulos */
 @font-face {
-    font-family: 'heorot';
-    src: url(./font/heorot.ttf);
+    font-family: 'BubblegumSans';
+    src: url('../font/BubblegumSans-Regular.ttf');
 }
 
 /* Fuente Textos */
@@ -15,8 +15,7 @@
     --color4: #d9b752;
     --color5: #bf9341;
     --navbar: rgba(86, 101, 132, 0.67);
-    --fuenteTitulos: 'heorot';
-    --fuenteTexto: 'Rajdhani', sans-serif;
+    --fuenteTitulos: 'BubblegumSans';
 }
 
 body {
@@ -59,6 +58,7 @@ body {
     align-items: center;
     margin-right: auto;
     margin-left: 60px;
+    width: 229px;
 }
 
 .header .container-header .center-title .boxes-link {
@@ -66,6 +66,7 @@ body {
 }
 
 .header .container-header .center-title .about-link {
+    text-align: center;
     margin-left: 20px;
 }
 
@@ -85,8 +86,6 @@ body {
 
 a {
     color: #fff;
-    -webkit-text-stroke: 0.5px black;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
 
@@ -114,8 +113,6 @@ a:hover {
     margin-left: 35px;
     margin-top: auto;
     color: white;
-    -webkit-text-stroke: 0.2px black;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 /* botones */
@@ -124,8 +121,8 @@ a:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  
+}
+
 .selecction .container .box {
     background: transparent;
     margin: 0;
@@ -137,7 +134,7 @@ a:hover {
     padding-bottom: 3rem;
     margin-top: 7rem;
 }
-  
+
 .button {
     font-family: var(--fuenteTitulos);
     color: white;
@@ -149,7 +146,7 @@ a:hover {
     text-decoration: none;
     border: .5px solid #fff;
 }
-  
+
 .button:hover{
     color: white;
 }
@@ -271,5 +268,13 @@ footer {
     height: 550px;
     margin-bottom: auto;
     background-repeat: no-repeat;
+    font-family: 'BubblegumSans';
+}
+
+footer h4 {
+    position: absolute;
+    left: 34%;
+    top: 1771px;
+    color: #fff;
 }
 /* Fin Footer */

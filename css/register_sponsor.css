@@ -1,8 +1,8 @@
 /* |---- Font ----| */
 
 @font-face {
-    font-family: 'heorot';
-    src: url(../font/heorot.ttf);
+    font-family: 'BubblegumSans';
+    src: url('../font/BubblegumSans-Regular.ttf');
 }
 
 * {
@@ -20,7 +20,7 @@ html {
     --blue-bg: rgb(12, 16, 89, 1);
     --header-bg: rgba(86, 101, 132, 0.67);
     /* |---- Fonts ----| */
-    --font: 'heorot';
+    --font: 'BubblegumSans';
 }
 
 input[type='submit'],
@@ -76,6 +76,7 @@ body {
     align-content: center;
     justify-content: space-around;
     align-items: center;
+    width: 229px;
 }
 
 .boxes-link {
@@ -84,6 +85,7 @@ body {
 
 .about-link {
     margin-left: 20px;
+    text-align: center;
 }
 
 .links-r {
@@ -102,8 +104,6 @@ body {
 
 a {
     color: #fff;
-    -webkit-text-stroke: 0.5px black;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
 
@@ -193,7 +193,7 @@ input[type=number] {
     border: none;
     border-bottom: 2px solid #fff;
     outline: none;
-    font-family: 'heorot';
+    font-family: 'BubblegumSans';
     font-size: 1.5rem;
     color: white;
     background-color: transparent;
@@ -205,7 +205,7 @@ select {
     border: none;
     border-bottom: 2px solid #fff;
     outline: none;
-    font-family: 'heorot';
+    font-family: 'BubblegumSans';
     font-size: 1.5rem;
     color: white;
     background-color: transparent;

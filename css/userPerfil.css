@@ -1,11 +1,8 @@
 /* Fuente Titulos */
 @font-face {
-    font-family: 'heorot';
-    src: url(./font/heorot.ttf);
+    font-family: 'BubblegumSans';
+    src: url('../font/BubblegumSans-Regular.ttf');
 }
-
-/* Fuente Textos */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap');
 
 /* Colores GodBox */
 :root {
@@ -15,8 +12,7 @@
     --color4: #d9b752;
     --color5: #bf9341;
     --navbar: rgba(86, 101, 132, 0.67);
-    --fuenteTitulos: 'heorot';
-    --fuenteTexto: 'Rajdhani', sans-serif;
+    --fuenteTitulos: 'BubblegumSans';
 }
 
 body {

@@ -1,11 +1,8 @@
 /* Fuente Titulos */
 @font-face {
-    font-family: 'heorot';
-    src: url(./font/heorot.ttf);
+    font-family: 'BubblegumSans';
+    src: url('../font/BubblegumSans-Regular.ttf');
 }
-
-/* Fuente Textos */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap');
 
 /* Colores GodBox */
 :root {
@@ -15,8 +12,7 @@
     --color4: #d9b752;
     --color5: #bf9341;
     --navbar: rgba(86, 101, 132, 0.67);
-    --fuenteTitulos: 'heorot';
-    --fuenteTexto: 'Rajdhani', sans-serif;
+    --fuenteTitulos: 'BubblegumSans';
 }
 
 body {
@@ -58,6 +54,7 @@ body {
     align-items: center;
     margin-right: auto;
     margin-left: 60px;
+    width: 229px;
 }
 
 .header .container-header .center-title .boxes-link {
@@ -66,6 +63,7 @@ body {
 
 .header .container-header .center-title .about-link {
     margin-left: 20px;
+    text-align: center;
 }
 
 .header .container-header .options {
@@ -84,15 +82,9 @@ body {
 
 a {
     color: #fff;
-    -webkit-text-stroke: 0.5px black;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
 
-a:hover {
-    color: var(--color4);
-
-}
 /* fin header */
 
 /* Menú lateral */
@@ -105,9 +97,6 @@ a:hover {
     margin-left: 10px;
 }
 
-.header .btn-menu label:hover {
-    color: var(--color4);
-}
 
 #btn-menu {
     display: none;
@@ -155,13 +144,10 @@ a:hover {
     border-left: 5px solid transparent;
     transition: all 400ms ease;
     font-size: 1.5rem;
-    font-family: var(--fuenteTexto);
+    font-family: var(--fuenteTitulos);
 }
 
-.container-menu .menu nav a:hover {
-    border-left: 5px solid var(--color4);
-    color: var(--color4);
-}
+
 
 .container-menu .menu label {
     position: absolute;
@@ -176,9 +162,6 @@ a:hover {
     background-color: var(--color3);
 }
 
-.container-menu .menu label:hover {
-    color: var(--color4);
-}
 /* Fin menu lateral*/
 
 /* body */
@@ -199,8 +182,6 @@ a:hover {
     margin-left: 35px;
     margin-top: auto;
     color: white;
-    -webkit-text-stroke: 0.2px black;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .selecction .container {
@@ -225,9 +206,6 @@ a:hover {
     margin-bottom: 20px;
 }
   
-.button:hover {
-    color: var(--color5);
-}
 
 /* form */
 .principalContainer{
@@ -268,7 +246,7 @@ a:hover {
     font-size: 2rem;
     color: #fff;
     margin-top: 40px;
-    font-family: var(--fuenteTexto);
+    font-family: var(--fuenteTitulos);
     margin-left: auto;
 }
 
@@ -287,6 +265,10 @@ input[type=email] {
     width: 600px;
 }
 
+::placeholder {
+    color: rgb(175, 175, 175);
+}
+
 .l-q label .title {
     margin-bottom: 2px; 
     width: 350px;
@@ -294,11 +276,13 @@ input[type=email] {
 }
 
 .l-q h4 {
+    display: flex;
+    width: 639px;
+    justify-content: center;
     color: white;
     font-family: var(--fuenteTitulos);
     font-size: 3rem;
-    margin-left: 400px;
-    margin-bottom: -60px;
+    margin-bottom: -20px;
 }
 /* fin form */
 
@@ -318,10 +302,7 @@ input[type=email] {
     margin-top: 10px;
 }
 
-.cta:hover {
-    background: var(--color5);
-    color: #000;
-}
+
 /* fin body */
 
 /* Footer */
