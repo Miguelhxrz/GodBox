@@ -88,12 +88,76 @@ a {
     color: #fff;
     text-decoration: none;
 }
-
-a:hover {
-    color: var(--color4);
-
-}
 /* fin header */
+
+/* Menú lateral */
+.btn-menu label {
+    border-left: 3rem transparent;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#btn-menu {
+    display: none;
+}
+
+.container-menu {
+    position: absolute;
+    width: 20%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-menu:checked ~ .container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.container-menu .menu {
+    width: 100%;
+    max-width: 300px;
+    background: var(--color2);
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(100%);
+}
+
+#btn-menu:checked ~ .container-menu .menu {
+    transform: translateX(0%);
+}
+
+.container-menu .menu nav {
+    transform: translateY(15%);
+}
+
+.container-menu .menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+    font-size: 1.5rem;
+    font-family: var(--fuenteTitulos);
+}
+
+.container-menu .menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+}
+/* Fin menu lateral*/
 
 /* body */
 .perfil {
@@ -147,11 +211,7 @@ a:hover {
     border: .5px solid #fff;
 }
 
-.button:hover{
-    color: white;
-}
-
-.btn {
+.button {
     justify-content: space-around;
     position: relative;
     display: inline-block;
@@ -164,13 +224,19 @@ a:hover {
     transition: 0.2s;
 }
 
-.btn:hover {
+.btn2 {
     background: var(--color2);
     box-shadow: 0 0 10px var(--color3), 0 0 40px var(--color3), 0 0 80px var(--color3);
     transition-delay: 1s;
 }
 
-.btn span {
+.button:hover {
+    background: var(--color2);
+    box-shadow: 0 0 10px var(--color3), 0 0 40px var(--color3), 0 0 80px var(--color3);
+    transition-delay: 1s;
+}
+
+.btn1 span {
     position: absolute;
     display: block;
 }
@@ -183,7 +249,7 @@ a:hover {
     background: linear-gradient(90deg, transparent, var(--color3));
 }
 
-.btn:hover #span1 {
+.btn1:hover #span1 {
     left: 100%;
     transition: 1s;
 }
@@ -196,7 +262,7 @@ a:hover {
     background: linear-gradient(270deg, transparent, var(--color3));
 }
 
-.btn:hover #span3 {
+.btn1:hover #span3 {
     right: 100%;
     transition: 1s;
     transition-delay: 0.5s;
@@ -210,7 +276,7 @@ a:hover {
     background: linear-gradient(180deg, transparent, var(--color3));
 }
 
-.btn:hover #span2 {
+.btn1:hover #span2 {
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -224,7 +290,7 @@ a:hover {
     background: linear-gradient(360deg, transparent, var(--color3));
 }
 
-.btn:hover #span4 {
+.btn1:hover #span4 {
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/userObjects.css">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-    <title>User - Mis Objetos</title>
+    <title>GodBox - Mis Objetos</title>
 </head>
 <body>
     <header class="header">
@@ -36,10 +36,10 @@
 
             <section class="options">
                 <div class="link">
-                    <a class="enlace" href="#">
-                        <img src="./icons/coin.png" alt="" class="item">
-                        <img src="./icons/engrane.png" alt="" class="item">
-                    </a>
+                        <div class="btn-menu">
+                            <label for="btn-menu"><img src="./icons/user.png" alt="Opciones de Usuario" class="item"></label>
+                            <a href="user.html"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
+                        </div>
                 </div>
             </section>
         </div>
@@ -55,14 +55,14 @@
     <section class="selecction">
         <div class="container">
             <div class="box">
-                <a href="#" class="button btn">
+                <a href="#" class="button btn1">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
                     <span id="span4"></span>
                     Mis Productos
                 </a>
-                <a href="#" class="button btn">
+                <a href="userCoins.html" class="button btn2">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -121,6 +121,16 @@
     <footer>
 
     </footer>
+    
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="menu">
+            <nav>
+                <a href="userPerfil.html" class="profil">Perfil</a>
+                <a href="userConfig.html" class="config">Configuración</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
     </div>
 </body>
 </html>
