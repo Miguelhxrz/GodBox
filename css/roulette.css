@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Heorot';
-  src: "../font/heorot.ttf";
+  font-family: 'BubblegumSans';
+  src: url('../font/BubblegumSans-Regular.ttf');
 }
 
 *{
@@ -10,7 +10,17 @@
   list-style: none;
   text-decoration: none;
 }
-
+button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 
 html{
   font-size: 62.5%
@@ -18,7 +28,7 @@ html{
 
 body {
   background-color: #111059;
-  font-family: 'Heorot', Arial, Helvetica, sans-serif;
+  font-family: 'BubblegumSans', Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -38,12 +48,9 @@ body {
   height: 130px;
   padding: 25px;
   background-color: rgba(86, 101, 132, 0.67);
-  font-family: 'Heorot'; 
+  font-family: 'BubblegumSans'; 
   font-size: 2.5rem;
   color: #fff;
-  -webkit-text-stroke: 1px #000000;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  
 }
 
 .logo__container {
@@ -59,7 +66,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 67.3%;
+  width: 229px;
 }
 
 .basic__menu .menu {
@@ -71,6 +78,10 @@ body {
 .basic__menu .menu li {
   margin: 12px;
   cursor: pointer;
+}
+
+.basic__menu .menu li:nth-child(3) {
+  text-align: center;
 }
 
 
@@ -126,6 +137,7 @@ body {
   height: 432px;
   background-color: rgba(106, 110, 127, 0.6);
   border-radius: 15px;
+  margin-right: 15px;
 }
 
 .roulette__ {
@@ -135,6 +147,7 @@ body {
   height: 397px;
   background-color: #515A78;
   border-radius: 15px;
+  padding: 0px 10px;
 }
 
 .roulette__decoration {
@@ -155,6 +168,7 @@ body {
 }
 .roulette__select img {
   transform: rotate(90deg);
+  filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.25));
 }
 
 .item__card {
@@ -171,8 +185,10 @@ body {
 .item__card:nth-child(6) {
   position: relative;
   bottom: 15px;
-  width: 162px;
+  width: 142px;
   height: 224px;
+  border-radius: 12px 0px 0px 12px;
+  margin: 0px
 }
 
 .roulette__btn-spin {
@@ -187,8 +203,8 @@ body {
   background-color: #EABE3F;
   font-size: 3rem;
   color: #fff;
-  -webkit-text-stroke: 1px #000000;
   border-radius: 15px;
+  box-shadow: 2px 6px 5px rgb(20, 19, 19);
 }
 
 .win__container {
@@ -207,7 +223,7 @@ body {
 h3 {
   font-size: 6rem;
   color: #EABE3F;
-  -webkit-text-stroke: 2px #000000;
+  text-shadow: 0px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
 .item {
@@ -264,7 +280,7 @@ h3 {
   top: 2230px;
   left: 403px;
   color: #fff;
-  font-family: sans-serif;
-  font-size: 2.2rem;
+  font-family: 'BubblegumSans';
+  font-size: 3.2rem;
 }
 

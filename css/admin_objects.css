@@ -1,7 +1,9 @@
 /* font */
 @font-face {
-    font-family: 'heorot';
-    src: url(../font/heorot.ttf);
+    font-family: 'BubblegumSans';
+    src: url('../font/BubblegumSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
 }
 
 * {
@@ -14,7 +16,7 @@ html {
     font-size: 62.5%
 }
 
-/* GodBox colors */
+/* GodBox variables*/
 :root {
     --azul1: #0c1059;
     --azul2: #2168a6;
@@ -22,13 +24,14 @@ html {
     --amarillo1: #d9b752;
     --amarillo2: #bf9341;
     --header_color: rgba(86, 101, 132, 0.67);
-    --font: 'heorot';
+    --font: 'BubblegumSans', sans-serif;
 }
 
 body {
     width: 100%;
     height: 100%;
     background: var(--azul1);
+    font-family: var(--font);
 }
 
 /* |---- Header ----| */
@@ -65,6 +68,14 @@ body {
     align-content: center;
     justify-content: space-around;
     align-items: center;
+    width: 226px;
+}
+
+.center-title .ico-header {
+    display: flex;
+    justify-content: center;
+    width: 102px;
+
 }
 
 .boxes-link {
@@ -73,6 +84,7 @@ body {
 
 .about-link {
     margin-left: 20px;
+    text-align: center;
 }
 
 .links-r {
@@ -91,7 +103,6 @@ body {
 
 a {
     color: #fff;
-    -webkit-text-stroke: 0.5px black;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }

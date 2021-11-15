@@ -1,16 +1,26 @@
 /* |---- Font ----| */
-
 @font-face {
-    font-family: 'heorot';
-    src: url(../font/heorot.ttf);
+    font-family: 'BubblegumSans';
+    src: url('../font/BubblegumSans-Regular.ttf');
 }
 
+button,
+input[type='submit'],
+input[type='reset'] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
 body {
     background: #0C1059;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Heorot';
+    font-family: 'BubblegumSans';
 }
 .header {
     display: flex;
@@ -27,29 +37,34 @@ body {
     justify-content: center;
     width: 138px;
     height: 119px;
-  }
-  
-  .menu__container {
+}
+
+.menu__container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     font-size: 25px;
     color: #fff;
-    -webkit-text-stroke: 1px black;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  
-  }
-  
-  .menu__item {
+}
+
+.basic__menu {
+    width: 229px;
+}
+
+.basic__menu .menu__item:nth-child(3) {
+    text-align: center;
+}
+
+.menu__item {
     list-style: none;
     display: flex;
     align-items: center;
-  }
+}
 .menu .menu__item a{
     text-decoration: none;
     color: #ffffff;
-  }
+}
 
 .menu {
     display: flex;
@@ -64,15 +79,13 @@ body {
 .menu__item-icon img {
     width: 75.83px;
     height: 75.34px;
-  }
+}
 .menu li{
-      display: flex;
+    display: flex;
 }
 
 a {
     color: #fff;
-    -webkit-text-stroke: 0.5px black;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
 
@@ -101,6 +114,9 @@ a {
 }
 
 .title-form h2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
     color: #ffffff;
 }
 
@@ -140,12 +156,11 @@ a {
 
 .l-q {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    flex-flow: row wrap;
+    align-items: flex-start;
     width: 50%;
     height: 50%;
-    margin: 10px;
+    
 }
 
 .l-q label {
@@ -161,7 +176,7 @@ input[type=email] {
     border: none;
     border-bottom: 2px solid #fff;
     outline: none;
-    font-family: 'heorot';
+    font-family: 'BubblegumSans';
     font-size: 1.5rem;
     color: white;
     background-color: transparent;
@@ -179,12 +194,11 @@ input[type=email] {
 
 .r-q {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 50%;
     height: 50%;
-    margin-top: 10px;
 }
 
 .r-q label {
@@ -210,6 +224,6 @@ input[type=submit] {
     background: radial-gradient(93.28% 1635.74% at 6.72% 50%, rgba(14, 16, 55, 0.75) 0%, #0C1059 45.83%, rgba(14, 16, 55, 0.75) 100%);
     color: #fff;
     font-size: 1.5rem;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
