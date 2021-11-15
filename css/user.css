@@ -4,9 +4,6 @@
     src: url('../font/BubblegumSans-Regular.ttf');
 }
 
-/* Fuente Textos */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap');
-
 /* Colores GodBox */
 :root {
     --color1: #0c1059;
@@ -49,16 +46,15 @@ body {
     width: 118px;
     height: 99px;
     margin-right: auto;
-    padding-left: 20px;
 }
 
 .header .container-header .center-title {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 229px;
     margin-right: auto;
     margin-left: 60px;
-    width: 229px;
 }
 
 .header .container-header .center-title .boxes-link {
@@ -71,8 +67,10 @@ body {
 }
 
 .header .container-header .options {
+    width: 250px;
     display: flex;
-    align-items: center;
+    text-align: center;
+    justify-content: space-around;
 }
 
 .header .container-header .options .link {
@@ -86,6 +84,7 @@ body {
 
 a {
     color: #fff;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
 /* fin header */
@@ -225,19 +224,13 @@ a {
     transition: 0.2s;
 }
 
-.btn1 {
-    background: var(--color2);
-    box-shadow: 0 0 10px var(--color3), 0 0 40px var(--color3), 0 0 80px var(--color3);
-    transition-delay: 1s;
-}
-
 .button:hover {
     background: var(--color2);
     box-shadow: 0 0 10px var(--color3), 0 0 40px var(--color3), 0 0 80px var(--color3);
     transition-delay: 1s;
 }
 
-.btn2 span {
+.btn span {
     position: absolute;
     display: block;
 }
@@ -250,7 +243,7 @@ a {
     background: linear-gradient(90deg, transparent, var(--color3));
 }
 
-.btn2:hover #span1 {
+.btn:hover #span1 {
     left: 100%;
     transition: 1s;
 }
@@ -263,7 +256,7 @@ a {
     background: linear-gradient(270deg, transparent, var(--color3));
 }
 
-.btn2:hover #span3 {
+.btn:hover #span3 {
     right: 100%;
     transition: 1s;
     transition-delay: 0.5s;
@@ -277,7 +270,7 @@ a {
     background: linear-gradient(180deg, transparent, var(--color3));
 }
 
-.btn2:hover #span2 {
+.btn:hover #span2 {
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -291,196 +284,9 @@ a {
     background: linear-gradient(360deg, transparent, var(--color3));
 }
 
-.btn2:hover #span4 {
+.btn:hover #span4 {
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;
 }
 /* fin botones */
-
-.objetos {
-    background: radial-gradient(100% 100% at 46.69% 86.55%, var(--color2) 0%, rgba(234, 190, 63, 0.1) 100%);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
-    width: 70%;
-    height: 500px;
-    border-radius: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.objetos .container h3 {
-    color: white;
-    font-size: 2rem;
-    font-family: var(--fuenteTitulos);
-    text-align: center;
-    padding-top: 20px;
-    text-transform: uppercase;
-}
-
-.objetos .container img {
-    width: 200px;
-    height: 200px;
-    padding: 40px;
-    margin-top: 30px;
-}
-
-/* boton modal */
-.boton-modal {
-    padding: 40px;
-    text-align: center;
-}
-
-.boton-modal label {
-    padding: 10px 15px;
-    background-color: var(--color4);
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 300ms ease;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 2rem;
-    font-family: var(--fuenteTitulos);
-}
-
-.boton-modal label:hover {
-    background-color: var(--color5);
-}
-/* fin boton modal */
-
-/* ventana modal */
-#btn-modal {
-    display: none;
-}
-
-.container-modal {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0; left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-
-#btn-modal:checked ~ .container-modal {
-    display: flex;
-}
-
-.content-modal {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    background-color: var(--color4);
-    border-radius: 4px;
-}
-
-.content-modal .logo {
-    display: flex;
-    align-items: center;
-    width: 118px;
-    height: 99px;
-    margin-right: auto;
-}
-
-.content-modal h2 {
-    margin-bottom: 15px;
-    font-family: var(--fuenteTitulos);
-    font-size: 2rem;
-    width: 200px;
-    margin-left: 120px;
-    margin-top: -70px;
-    margin-bottom: 50px;
-    text-align: center;
-    
-}
-
-.content-modal p {
-    padding: 15px 0px;
-    border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;
-    font-family: var(--fuenteTexto);
-    font-size: 1rem;
-}
-
-.container-modal .content-modal .img {
-    text-align: center;
-}
-
-.container-modal .content-modal .img img {
-    width: 100px;
-    height: 100px;
-    padding: 30px;
-}
-
-.content-modal .btn-cerrar {
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.content-modal .btn-cerrar label {
-    padding: 7px 10px;
-    background-color: white;
-    color: #000;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 300ms ease;
-    font-family: var(--fuenteTitulos);
-    font-size: 1rem;
-}
-
-.content-modal .btn-cerrar label:hover {
-    background-color: var(--color3);
-    color: white;
-}
-
-.cerrar-modal {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
-}
-
-.container-modal .container {
-    width: 300px;
-    height: 40px;
-    top: 0; right: 0;
-    margin-top: -30px;
-}
-
-.cta {
-    background: #fff;
-    font-family: var(--fuenteTitulos);
-    color: #000;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0 10px;
-    padding: 10px 0px;
-    text-align: center;
-    width: 120px;
-    text-decoration: none;
-    border-radius: 1rem;
-    top: 0; right: 0;
-}
-
-.cta:hover {
-    background: var(--color5);
-    color: #000;
-}
-/* fin ventana modal */
-/* fin body */
-
-/* Footer */
-footer {
-    background-image: url(../img/footer.png);
-    width: 100%;
-    height: 550px;
-    margin-bottom: auto;
-    background-repeat: no-repeat;
-}
-/* Fin Footer */
