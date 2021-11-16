@@ -129,42 +129,41 @@ body {
   background-image: url('../img/Ades_resized.png');
   background-repeat: no-repeat;
 }
+
 .roulette__container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 1072px;
-  height: 432px;
-  background-color: rgba(106, 110, 127, 0.6);
-  border-radius: 15px;
-  margin-right: 15px;
+  justify-content: center;
+  width: 75%;
+  height: 62%;
+  background-color: rgba(56, 62, 66, 0.3);
+  border-radius: 20px;
+  margin: 20px 20px 0px 0px;
 }
 
-.roulette__ {
-  display: flex;
-  flex-wrap: wrap;
-  width: 97%;
-  height: 397px;
-  background-color: #515A78;
-  border-radius: 15px;
-  padding: 0px 10px;
-}
-
-.roulette__decoration {
-  width: 100%;
-  height: 54px;
-  background-image: url('../img/Greek-Key.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.roulette__container-cards {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px;
+  justify-content: space-around;
+  width: 96%;
+  height: 65%;
+  overflow: hidden;
+  animation-name: translateBox;
+  animation-duration: 4ms;
+  animation-iteration-count: initial;
+  animation-timing-function: linear;
 }
 
 .roulette__select {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
-  width: 100%;
+  align-self: flex-start;
+  width: 70%;
   height: 64px;
+  margin: 20px 0px 0px 0px;
 }
 .roulette__select img {
   transform: rotate(90deg);
@@ -172,23 +171,21 @@ body {
 }
 
 .item__card {
-  position: relative;
-  bottom: 15px;
-  width: 250px;
+  width: 220px;
   height: 224px;
-  background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);;
+  background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);
   filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
-  margin-right: 10px;
   border-radius: 12px;
 }
 
-.item__card:nth-child(6) {
-  position: relative;
-  bottom: 15px;
-  width: 142px;
-  height: 224px;
-  border-radius: 12px 0px 0px 12px;
-  margin: 0px
+
+@keyframes translateBox {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .roulette__btn-spin {
@@ -196,7 +193,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 928px;
+  top: 872px;
   left: 765px;
   width: 186px;
   height: 60px;
