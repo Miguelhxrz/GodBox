@@ -67,8 +67,10 @@ body {
 }
 
 .header .container-header .options {
+    width: 250px;
     display: flex;
-    align-items: center;
+    text-align: center;
+    justify-content: space-around;
 }
 
 .header .container-header .options .link {
@@ -85,11 +87,10 @@ a {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
-
 /* fin header */
 
 /* Menú lateral */
-.header .btn-menu label {
+.btn-menu label {
     border-left: 3rem transparent;
     color: #fff;
     font-size: 30px;
@@ -104,10 +105,10 @@ a {
 
 .container-menu {
     position: absolute;
-    width: 100%;
+    width: 20%;
     height: 100vh;
     top: 0;
-    left: 0;
+    right: 0;
     transition: all 500ms ease;
     opacity: 0;
     visibility: hidden;
@@ -125,7 +126,7 @@ a {
     height: 100vh;
     position: relative;
     transition: all 500ms ease;
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
 
 #btn-menu:checked ~ .container-menu .menu {
@@ -147,7 +148,6 @@ a {
     font-family: var(--fuenteTitulos);
 }
 
-
 .container-menu .menu label {
     position: absolute;
     right: 5px;
@@ -160,7 +160,6 @@ a {
 .profil {
     background-color: var(--color3);
 }
-
 /* Fin menu lateral*/
 
 /* body */
