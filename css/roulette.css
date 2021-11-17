@@ -136,6 +136,7 @@ a {
 }
 
 .roulette__container {
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,6 +172,41 @@ a {
     justify-content: center;
     width: 100%;
     height: 64px;
+=======
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 62%;
+  background-color: rgba(56, 62, 66, 0.3);
+  border-radius: 20px;
+  margin: 20px 20px 0px 0px;
+}
+
+.roulette__container-cards {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px;
+  justify-content: space-around;
+  width: 96%;
+  height: 65%;
+  overflow: hidden;
+  animation-name: translateBox;
+  animation-duration: 4ms;
+  animation-iteration-count: initial;
+  animation-timing-function: linear;
+}
+
+.roulette__select {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  width: 70%;
+  height: 64px;
+  margin: 20px 0px 0px 0px;
+>>>>>>> dc15948ab3ac3c99b9f3d4aaac4451aab7f7de0b
 }
 
 .roulette__select img {
@@ -179,6 +215,7 @@ a {
 }
 
 .item__card {
+<<<<<<< HEAD
     position: relative;
     bottom: 15px;
     width: 250px;
@@ -213,6 +250,39 @@ a {
     color: #fff;
     border-radius: 15px;
     box-shadow: 2px 6px 5px rgb(20, 19, 19);
+=======
+  width: 220px;
+  height: 224px;
+  background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);
+  filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 12px;
+}
+
+
+@keyframes translateBox {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.roulette__btn-spin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 872px;
+  left: 765px;
+  width: 186px;
+  height: 60px;
+  background-color: #EABE3F;
+  font-size: 3rem;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 2px 6px 5px rgb(20, 19, 19);
+>>>>>>> dc15948ab3ac3c99b9f3d4aaac4451aab7f7de0b
 }
 
 .win__container {
