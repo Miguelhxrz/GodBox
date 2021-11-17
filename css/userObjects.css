@@ -1,13 +1,17 @@
 /* Fuente Titulos */
+
 @font-face {
     font-family: 'BubblegumSans';
     src: url('../font/BubblegumSans-Regular.ttf');
 }
 
+
 /* Fuente Textos */
+
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap');
 
 /* Colores GodBox */
+
 :root {
     --color1: #0c1059;
     --color2: #2168a6;
@@ -24,7 +28,9 @@ body {
     background-repeat: no-repeat;
 }
 
+
 /* header */
+
 .header {
     width: 100%;
     height: 130px;
@@ -32,6 +38,11 @@ body {
     font-size: 2rem;
     font-family: var(--fuenteTitulos);
     margin-top: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .header .container-header {
@@ -88,9 +99,13 @@ a {
     color: #fff;
     text-decoration: none;
 }
+
+
 /* fin header */
 
+
 /* Menú lateral */
+
 .btn-menu label {
     border-left: 3rem transparent;
     color: #fff;
@@ -115,7 +130,7 @@ a {
     visibility: hidden;
 }
 
-#btn-menu:checked ~ .container-menu {
+#btn-menu:checked~.container-menu {
     opacity: 1;
     visibility: visible;
 }
@@ -130,7 +145,7 @@ a {
     transform: translateX(100%);
 }
 
-#btn-menu:checked ~ .container-menu .menu {
+#btn-menu:checked~.container-menu .menu {
     transform: translateX(0%);
 }
 
@@ -157,9 +172,13 @@ a {
     cursor: pointer;
     font-size: 30px;
 }
+
+
 /* Fin menu lateral*/
 
+
 /* body */
+
 .perfil {
     width: 200px;
     margin: 100px auto 20px auto;
@@ -179,7 +198,9 @@ a {
     color: white;
 }
 
+
 /* botones */
+
 .selecction .container {
     display: inline;
     align-items: center;
@@ -199,7 +220,7 @@ a {
     padding-bottom: 2rem;
     margin-top: 9rem;
 }
-  
+
 .button {
     font-family: var(--fuenteTitulos);
     color: white;
@@ -296,6 +317,8 @@ a {
     transition: 1s;
     transition-delay: 0.75s;
 }
+
+
 /* fin botones */
 
 .objetos {
@@ -324,7 +347,9 @@ a {
     margin-top: 30px;
 }
 
+
 /* boton modal */
+
 .boton-modal {
     padding: 40px;
     text-align: center;
@@ -346,9 +371,13 @@ a {
 .boton-modal label:hover {
     background-color: var(--color5);
 }
+
+
 /* fin boton modal */
 
+
 /* ventana modal */
+
 #btn-modal {
     display: none;
 }
@@ -357,7 +386,8 @@ a {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.6);
     display: none;
     justify-content: center;
@@ -365,7 +395,7 @@ a {
     z-index: 100;
 }
 
-#btn-modal:checked ~ .container-modal {
+#btn-modal:checked~.container-modal {
     display: flex;
 }
 
@@ -394,7 +424,6 @@ a {
     margin-top: -70px;
     margin-bottom: 50px;
     text-align: center;
-    
 }
 
 .content-modal p {
@@ -442,14 +471,16 @@ a {
     width: 100%;
     height: 100vh;
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: -1;
 }
 
 .container-modal .container {
     width: 300px;
     height: 40px;
-    top: 0; right: 0;
+    top: 0;
+    right: 0;
     margin-top: -30px;
 }
 
@@ -465,17 +496,24 @@ a {
     width: 120px;
     text-decoration: none;
     border-radius: 1rem;
-    top: 0; right: 0;
+    top: 0;
+    right: 0;
 }
 
 .cta:hover {
     background: var(--color5);
     color: #000;
 }
+
+
 /* fin ventana modal */
+
+
 /* fin body */
 
+
 /* Footer */
+
 footer {
     background-image: url(../img/footer.png);
     width: 100%;
@@ -483,4 +521,6 @@ footer {
     margin-bottom: auto;
     background-repeat: no-repeat;
 }
+
+
 /* Fin Footer */
