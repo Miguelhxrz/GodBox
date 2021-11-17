@@ -6,9 +6,15 @@ const inputs = document.querySelectorAll('#form-register input');
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,45}$/, //letras, numeros, guion, guin_bajo y de 4 a 45 digitos
-    password: /^.{4,45}$/ //de 8 a 45 digitos
-}
 
+    password: /^.{4,45}$/, //de 4 a 45 digitos
+
+    id: /^[0-9]+$/, //Letra guion y numeros
+
+    direccion: /^[a-zA-Z0-9\s-]+$/, //Solo letras - numeros espacios y guiones
+
+    email: /[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/, //Email
+}
 
 const validarFormulario = (e) => {
     switch (e.target.name) {
@@ -37,9 +43,45 @@ const validarFormulario = (e) => {
                 document.querySelector('#password .password_input').classList.add('password_input-red');
             }
             break;
-    }
+        case "email_input":
+            if (expresiones.email.test(e.target.value)) {
+                document.querySelector('#email .formulario__grupo-incorrecto').classList.add('formulario__grupo-incorrecto-block');
+                document.querySelector('#email .email_input').classList.remove('email_input-red');
+                document.getElementById('btn').disabled = false;
 
+
+            } else {
+                document.querySelector('#email .formulario__grupo-incorrecto').classList.remove('formulario__grupo-incorrecto-block');
+                document.querySelector('#email .email_input').classList.add('email_input-red');
+            }
+            break;
+        case "id_input":
+            if (expresiones.id.test(e.target.value)) {
+                document.querySelector('#id .formulario-grupo-incorrecto').classList.add('formulario-grupo-incorrecto-block');
+                document.querySelector('#id .id_input').classList.remove('id_input-red');
+                document.getElementById('btn').disabled = false;
+
+
+            } else {
+                document.querySelector('#id .formulario-grupo-incorrecto').classList.remove('formulario-grupo-incorrecto-block');
+                document.querySelector('#id .id_input').classList.add('id_input-red');
+            }
+            break;
+        case "addres_input":
+            if (expresiones.direccion.test(e.target.value)) {
+                document.querySelector('#addres .formulario__grupo-incorrecto').classList.add('formulario__grupo-incorrecto-block');
+                document.querySelector('#addres .addres_input').classList.remove('addres_input-red');
+                document.getElementById('btn').disabled = false;
+
+
+            } else {
+                document.querySelector('#addres .formulario__grupo-incorrecto').classList.remove('formulario__grupo-incorrecto-block');
+                document.querySelector('#addres .addres_input').classList.add('addres_input-red');
+            }
+            break;
+    }
 }
+
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
