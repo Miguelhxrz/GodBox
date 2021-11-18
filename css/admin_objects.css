@@ -1,4 +1,5 @@
 /* font */
+
 @font-face {
     font-family: 'BubblegumSans';
     src: url('../font/BubblegumSans-Regular.ttf');
@@ -16,7 +17,9 @@ html {
     font-size: 62.5%
 }
 
+
 /* GodBox variables*/
+
 :root {
     --azul1: #0c1059;
     --azul2: #2168a6;
@@ -34,6 +37,7 @@ body {
     font-family: var(--font);
 }
 
+
 /* |---- Header ----| */
 
 .header {
@@ -41,6 +45,11 @@ body {
     height: 130px;
     background-color: rgba(86, 101, 132, 0.67);
     font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .container-header {
@@ -75,7 +84,6 @@ body {
     display: flex;
     justify-content: center;
     width: 102px;
-
 }
 
 .boxes-link {
@@ -132,9 +140,13 @@ a {
     background-image: url('../img/footer.png');
 }
 
+
 /* body */
+
+
 /* user */
-.box-container{
+
+.box-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,7 +154,7 @@ a {
     padding: 0 600px;
 }
 
-.box-container .box{
+.box-container .box {
     background: transparent;
     margin: 1rem;
     padding: 1rem;
@@ -152,7 +164,7 @@ a {
     border-radius: 1rem;
 }
 
-.box-container .box .user img{
+.box-container .box .user img {
     border-radius: 50%;
     object-fit: cover;
     height: 15rem;
@@ -160,23 +172,26 @@ a {
     margin-top: 2rem;
 }
 
-.box-container .box .user h3{
+.box-container .box .user h3 {
     color: white;
     font-size: 3rem;
     font-family: var(--font);
 }
 
+
 /* bottons */
 
+
 /* content */
+
 .selecction .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  
-  .selecction .container .box {
+}
+
+.selecction .container .box {
     background: transparent;
     margin: 0;
     padding: 0;
@@ -185,15 +200,15 @@ a {
     flex: 1 1 30rem;
     border-radius: 1rem;
     padding-bottom: 3rem;
-  }
+}
 
-  .selecction .container .box img {
-      height: 30px;
-      width: 30px;
-      margin-right: 10px;
-  }
-  
-  .button {
+.selecction .container .box img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.button {
     background: var(--header_color);
     font-family: var(--font);
     color: white;
@@ -205,14 +220,14 @@ a {
     width: 50rem;
     text-decoration: none;
     box-shadow: 0px 4px 0px var(--azul2);
-  }
-  
-  .button:hover{
+}
+
+.button:hover {
     background: var(--azul3);
     color: #000;
-  }
+}
 
-.objectsContainer{
+.objectsContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,7 +235,7 @@ a {
     padding: 0 200px;
 }
 
-.objectsContainer .box{
+.objectsContainer .box {
     background: var(--header_color);
     margin: 1rem;
     padding: 1rem;
@@ -231,7 +246,7 @@ a {
     border-radius: 2rem;
 }
 
-.objectsContainer .box .objects img{
+.objectsContainer .box .objects img {
     object-fit: cover;
     height: 20rem;
     width: 20rem;

@@ -60,6 +60,11 @@ body {
     justify-content: space-between;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -274,11 +279,11 @@ option {
     margin-top: 10px;
 }
 
-.error-envio {
+.envio {
     color: transparent;
 }
 
-.error-envio-red {
+.envio-red {
     font-size: 1.5rem;
     color: green;
 }

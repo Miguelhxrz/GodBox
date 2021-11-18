@@ -1,10 +1,13 @@
 /* Fuente Titulos */
+
 @font-face {
     font-family: 'BubblegumSans';
     src: url('../font/BubblegumSans-Regular.ttf');
 }
 
+
 /* Colores GodBox */
+
 :root {
     --color1: #0c1059;
     --color2: #2168a6;
@@ -21,7 +24,9 @@ body {
     background-repeat: no-repeat;
 }
 
+
 /* header */
+
 .header {
     width: 100%;
     height: 130px;
@@ -29,6 +34,11 @@ body {
     font-size: 2rem;
     font-family: var(--fuenteTitulos);
     margin-top: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .header .container-header {
@@ -87,9 +97,13 @@ a {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
+
+
 /* fin header */
 
+
 /* Menú lateral */
+
 .btn-menu label {
     border-left: 3rem transparent;
     color: #fff;
@@ -114,7 +128,7 @@ a {
     visibility: hidden;
 }
 
-#btn-menu:checked ~ .container-menu {
+#btn-menu:checked~.container-menu {
     opacity: 1;
     visibility: visible;
 }
@@ -129,7 +143,7 @@ a {
     transform: translateX(100%);
 }
 
-#btn-menu:checked ~ .container-menu .menu {
+#btn-menu:checked~.container-menu .menu {
     transform: translateX(0%);
 }
 
@@ -156,9 +170,13 @@ a {
     cursor: pointer;
     font-size: 30px;
 }
+
+
 /* Fin menu lateral*/
 
+
 /* body */
+
 .perfil {
     width: 200px;
     margin: 100px auto 20px auto;
@@ -178,7 +196,9 @@ a {
     color: white;
 }
 
+
 /* botones */
+
 .selecction .container {
     display: inline;
     align-items: center;
@@ -198,7 +218,7 @@ a {
     padding-bottom: 2rem;
     margin-top: 9rem;
 }
-  
+
 .button {
     font-family: var(--fuenteTitulos);
     color: white;
@@ -289,4 +309,6 @@ a {
     transition: 1s;
     transition-delay: 0.75s;
 }
+
+
 /* fin botones */

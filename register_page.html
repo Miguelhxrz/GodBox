@@ -17,21 +17,22 @@
 
             <section class="logo">
                 <img src="./img/Logo-rezised.png" alt="" class="logoo">
+                <a href="./index.html"></a>
             </section>
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="">
+                    <a href="./Boxes.html">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="">
+                    <a href="./index.html">
                         <img src="./icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
-                    <a href="">
+                    <a href="#">
                         <h4>Sobre nosotros</h4>
                     </a>
                 </div>
@@ -53,40 +54,43 @@
             <div class="title-form">
                 <h5>Registrarse</h5>
             </div>
-            <form action="" class="form-register">
+            <form action="" class="form-register" id="form-register">
                 <div class="conta">
                     <section class="l-q">
-                        <label for="username" class="label-username">
+                        <label for="username" class="username" id="username">
                             Username
-                            <input type="text" placeholder="Add your Username" size="45" maxlength="45" class="username_input">
+                            <input type="text" placeholder="Add your Username" size="45"  minlength="4" maxlength="45" class="username_input" id="username_input" name="username_input" required>
+                            <p class="formulario__grupo-incorrecto">*Admite letras, numeros, guion, guionbajo, minimo 4 digitos (sin espacios U otros simbolos)*</p>
                         </label>
-                        <label for="password" class="label-password">
+                        <label for="password" class="password" id="password">
                             Contraseña
-                            <input type="password" placeholder="Add your Password" size="45" maxlength="45" class="password_input">
+                            <input type="password" placeholder="Add your Password" size="45" maxlength="45" class="password_input" id="password_input" name="password_input" required>
+                            <p class="formulario__grupo-incorrecto">*Debe tener al menos 4 digitos*</p>
                         </label>
-                        <label for="addres" class="label-addres">
+                        <label for="addres" class="addres" id="addres">
                             Direccion
-                            <input type="text"  placeholder="Direccion" size="45" maxlength="45" class="addres_input">
+                            <input type="text"  placeholder="Direccion" size="45" maxlength="45" class="addres_input" id="addres_input" name="addres_input" required>
+                            <p class="formulario__grupo-incorrecto">*Admite letras numeros y guiones*</p>
                         </label>
                     </section>
                     <div class="line"></div>
                     <section class="r-q">
-                        <label for="id" class="label-id">
-                            Documento de identidad
-                            <input type="text" placeholder="Documento de identidad" size="45" maxlength="45" class="id_input">
-                        </label>
-                        <label for="email" class="label-email">
+
+                        <label for="email" class="email" id="email">
                             Email
-                            <input type="email" placeholder="Dirección de email" size="45" maxlength="45" class="email_input">
+                            <input type="email" placeholder="Dirección de email" size="45" maxlength="45" class="email_input" id="email_input" name="email_input" required>
+                            <p class="formulario__grupo-incorrecto">*Asegura colocar el @ y .com = example@gmail.com*</p>
                         </label>
                         <label for="birth" class="label-birth">
                             Fecha de nacimiento
-                            <input type="text" placeholder="Fecha de nacimiento" size="45" maxlength="45" class="birth_input">
+                            <input type="date" placeholder="Fecha de nacimiento" class="birth_input" id="birth_input" min="1921-01-01" max="2003-11-24" required>
                         </label>
                     </section>
                 </div>
 
-                <input type="submit" class="btn" name="Register" value="Registrarse"></input>
+                <input type="submit" class="btn" id="btn" name="Register" value="Registrarse"></input>
+                <p class="envio">•Registro realizado exitosamente•</p>
+                <script src="./js/register-validation.js"></script>
             </form>
         </section>
 

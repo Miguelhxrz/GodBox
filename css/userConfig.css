@@ -1,10 +1,13 @@
 /* Fuente Titulos */
+
 @font-face {
     font-family: 'BubblegumSans';
     src: url('../font/BubblegumSans-Regular.ttf');
 }
 
+
 /* Colores GodBox */
+
 :root {
     --color1: #0c1059;
     --color2: #2168a6;
@@ -21,7 +24,9 @@ body {
     background-repeat: no-repeat;
 }
 
+
 /* header */
+
 .header {
     width: 100%;
     height: 130px;
@@ -29,6 +34,11 @@ body {
     font-size: 2rem;
     font-family: var(--fuenteTitulos);
     margin-top: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .header .container-header {
@@ -87,9 +97,13 @@ a {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
+
+
 /* fin header */
 
+
 /* Menú lateral */
+
 .btn-menu label {
     border-left: 3rem transparent;
     color: #fff;
@@ -114,7 +128,7 @@ a {
     visibility: hidden;
 }
 
-#btn-menu:checked ~ .container-menu {
+#btn-menu:checked~.container-menu {
     opacity: 1;
     visibility: visible;
 }
@@ -129,7 +143,7 @@ a {
     transform: translateX(100%);
 }
 
-#btn-menu:checked ~ .container-menu .menu {
+#btn-menu:checked~.container-menu .menu {
     transform: translateX(0%);
 }
 
@@ -160,9 +174,13 @@ a {
 .config {
     background-color: var(--color3);
 }
+
+
 /* Fin menu lateral*/
 
+
 /* body */
+
 .perfil {
     width: 200px;
     margin: 20px auto;
@@ -187,8 +205,8 @@ a {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  
+}
+
 .button {
     background: var(--navbar);
     font-family: var(--fuenteTitulos);
@@ -203,10 +221,11 @@ a {
     box-shadow: 0px 4px 0px var(--color5);
     margin-bottom: 20px;
 }
-  
+
 
 /* form */
-.principalContainer{
+
+.principalContainer {
     margin-top: 60px;
     display: flex;
     align-items: center;
@@ -214,8 +233,9 @@ a {
     flex-wrap: wrap;
 }
 
-.principalContainer .box{
-    background: radial-gradient(100% 100% at 46.69% 86.55%, var(--color2) 0%, rgba(234, 190, 63, 0.1) 100%);;
+.principalContainer .box {
+    background: radial-gradient(100% 100% at 46.69% 86.55%, var(--color2) 0%, rgba(234, 190, 63, 0.1) 100%);
+    ;
     margin: 1rem;
     padding: 1rem;
     text-align: center;
@@ -268,7 +288,7 @@ input[type=email] {
 }
 
 .l-q label .title {
-    margin-bottom: 2px; 
+    margin-bottom: 2px;
     width: 350px;
     margin-right: 300px;
 }
@@ -282,6 +302,8 @@ input[type=email] {
     font-size: 3rem;
     margin-bottom: -20px;
 }
+
+
 /* fin form */
 
 .cta {
@@ -303,7 +325,9 @@ input[type=email] {
 
 /* fin body */
 
+
 /* Footer */
+
 footer {
     background-image: url(../img/footer.png);
     width: 100%;
@@ -311,4 +335,6 @@ footer {
     margin-bottom: auto;
     background-repeat: no-repeat;
 }
+
+
 /* Fin Footer */

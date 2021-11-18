@@ -21,17 +21,17 @@
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="">
+                    <a href="./Boxes.html">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="">
+                    <a href="./index.html">
                         <img src="./icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
-                    <a href="">
+                    <a href="#">
                         <h4>Sobre nosotros</h4>
                     </a>
                 </div>
@@ -61,21 +61,20 @@
                     <section class="l-q">
                         <label for="username" class="label-username" id="username">
                             Username
-                            <input type="text" placeholder="Put your username" size="45" maxlength="45" name ="username_input"class="username_input" id="username_input">
-
+                            <input type="text" placeholder="Put your username" size="45" minlength="4"  maxlength="45" name ="username_input"class="username_input" id="username_input" required>
                             <p class="formulario__grupo-incorrecto">*Admite letras, numeros, guion, guionbajo, minimo 4 digitos (sin espacios U otros simbolos)*</p>
 
                         </label>
                         <label for="password" class="label-password" id="password">
                             Contraseña
-                            <input type="password" placeholder="Put your password" size="45" maxlength="45" name="password_input" class="password_input" id="password_input"> 
+                            <input type="password" placeholder="Put your password" size="45" minlength="4" maxlength="45" name="password_input" class="password_input" id="password_input" required> 
                             <p class="formulario__grupo-incorrecto">*Debe tener al menos 4 digitos*</p>
                         </label>
                     </section>
                 </div>
 
                 <input type="submit" class="btn" id="btn" name="Login" value="Login"></input>
-                <p class="error-envio">•Iniciando sesión•</p>
+                <p class="envio">•Iniciando sesión•</p>
 
             </form>
         </section>
