@@ -116,7 +116,7 @@ a {
     flex-flow: column wrap;
     align-items: center;
     width: 100%;
-    height: 1421px;
+    height: 1491px;
 }
 
 .roulette {
@@ -136,44 +136,7 @@ a {
 }
 
 .roulette__container {
-<<<<<<< HEAD
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1072px;
-    height: 432px;
-    background-color: rgba(106, 110, 127, 0.6);
-    border-radius: 15px;
-    margin-right: 15px;
-}
-
-.roulette__ {
-    display: flex;
-    flex-wrap: wrap;
-    width: 97%;
-    height: 397px;
-    background-color: #515A78;
-    border-radius: 15px;
-    padding: 0px 10px;
-}
-
-.roulette__decoration {
-    width: 100%;
-    height: 54px;
-    background-image: url('../img/Greek-Key.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.roulette__select {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 64px;
-=======
-  display: flex;
+  display: flex;  
   align-items: center;
   justify-content: center;
   width: 75%;
@@ -200,7 +163,6 @@ a {
   width: 70%;
   height: 64px;
   margin: 20px 0px 0px 0px;
->>>>>>> dc15948ab3ac3c99b9f3d4aaac4451aab7f7de0b
 }
 
 .roulette__select img {
@@ -209,60 +171,15 @@ a {
 }
 
 .item__card {
-<<<<<<< HEAD
-    position: relative;
-    bottom: 15px;
-    width: 250px;
-    height: 224px;
-    background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);
-    ;
-    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
-    margin-right: 10px;
-    border-radius: 12px;
-}
-
-.item__card:nth-child(6) {
-    position: relative;
-    bottom: 15px;
-    width: 142px;
-    height: 224px;
-    border-radius: 12px 0px 0px 12px;
-    margin: 0px
-}
-
-.roulette__btn-spin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 928px;
-    left: 765px;
-    width: 186px;
-    height: 60px;
-    background-color: #EABE3F;
-    font-size: 3rem;
-    color: #fff;
-    border-radius: 15px;
-    box-shadow: 2px 6px 5px rgb(20, 19, 19);
-=======
+  position: relative;
   width: 220px;
   height: 224px;
-  position: relative;
   background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);
   filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
   border-radius: 12px;
   flex-shrink: 0;
   white-space: nowrap;
   margin-right: 10px;
-}
-
-@keyframes scrolling {
-  0%{
-    transform: translateX(0px);
-  }
-  100%{
-    transform: translateX(calc(-920px * 2));
-  }
 }
 
 .roulette__btn-spin {
@@ -279,7 +196,6 @@ a {
   color: #fff;
   border-radius: 15px;
   box-shadow: 2px 6px 5px rgb(20, 19, 19);
->>>>>>> dc15948ab3ac3c99b9f3d4aaac4451aab7f7de0b
 }
 
 .win__container {
@@ -293,6 +209,7 @@ a {
     height: 579px;
     background-color: rgba(90, 103, 129, 0.6);
     border-radius: 15px;
+    margin-bottom: 30px;
 }
 
 h3 {
@@ -355,7 +272,7 @@ h3 {
 
 .footer h3 {
     position: absolute;
-    top: 2230px;
+    top: 2300px;
     left: 403px;
     color: #fff;
     font-family: 'BubblegumSans';
