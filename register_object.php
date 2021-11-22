@@ -63,7 +63,7 @@
                         </label>
                         <label for="stock" class="label-stock">
                             Cantidad
-                            <input type="number" placeholder="Cantidad del objeto" size="45" maxlength="45" class="password_input">
+                            <input type="text" placeholder="Cantidad del objeto" pattern = "[0-9]" size="10" maxlength="10" class="password_input">
                         </label>
                         <label for="price" class="label-price">
                             Precio   
@@ -105,6 +105,9 @@
 
                 <input type="submit" class="btn" name="Register" value="Registrar"></input>
             </form>
+            <?php 
+            
+            ?>
         </section>
 
         <section class="footer">

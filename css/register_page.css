@@ -187,11 +187,11 @@ input[type='email'],
     border: none;
     border-bottom: 2px solid #fff;
     outline: none;
-    font-family: 'heorot';
     font-size: 1.5rem;
     color: white;
     background-color: transparent;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .line {
@@ -229,6 +229,7 @@ input[type='email'],
     justify-content: center;
     width: 134px;
     height: 32px;
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 
