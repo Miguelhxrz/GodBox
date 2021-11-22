@@ -14,6 +14,8 @@ const expresiones = {
     direccion: /^[a-zA-Z0-9\s-]+$/, //Solo letras - numeros espacios y guiones
 
     email: /[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/, //Email
+
+    birth: /^.{4,6}$/
 }
 
 const validarFormulario = (e) => {
@@ -79,6 +81,18 @@ const validarFormulario = (e) => {
                 document.querySelector('#addres .addres_input').classList.add('addres_input-red');
             }
             break;
+        case "birth_input":
+            if (expresiones.birth.test(e.target.value)) {
+                document.querySelector('#email .formulario__grupo-incorrecto').classList.add('formulario__grupo-incorrecto-block');
+                document.querySelector('#email .birth_input').classList.remove('birth_input-red');
+                document.getElementById('btn').disabled = false;
+
+
+            } else {
+                document.querySelector('#email .formulario__grupo-incorrecto').classList.remove('formulario__grupo-incorrecto-block');
+                document.querySelector('#email .birth_input').classList.add('birth_input-red');
+            }
+            break;
     }
 }
 
@@ -89,7 +103,6 @@ inputs.forEach((input) => {
 
 
 formulario.addEventListener('submit', (event) => {
-    event.preventDefault();
     const formdata = new FormData(event.target);
     console.log([...formdata]);
     for (let [key, value] of formdata.entries()) {
@@ -99,5 +112,4 @@ formulario.addEventListener('submit', (event) => {
             document.querySelector('#form-register .envio').classList.remove('envio-red');
         }, 3000);
     }
-    formulario.reset();
 });

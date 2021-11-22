@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,32 +56,19 @@
             <div class="title-form">
                 <h5>Entrar</h5>
             </div>
-            <form action="" class="form-register" id="form-register">
-                <div class="conta">
-                    <section class="l-q">
-                        <label for="username" class="label-username" id="username">
-                            Username
-                            <input type="text" placeholder="Put your username" size="45" minlength="4"  maxlength="45" name ="username_input"class="username_input" id="username_input" required>
-                            <p class="formulario__grupo-incorrecto">*Admite letras, numeros, guion, guionbajo, minimo 4 digitos (sin espacios U otros simbolos)*</p>
-
-                        </label>
-                        <label for="password" class="label-password" id="password">
-                            Contraseña
-                            <input type="password" placeholder="Put your password" size="45" minlength="4" maxlength="45" name="password_input" class="password_input" id="password_input" required> 
-                            <p class="formulario__grupo-incorrecto">*Debe tener al menos 4 digitos*</p>
-                        </label>
-                    </section>
-                </div>
-
-                <input type="submit" class="btn" id="btn" name="Login" value="Login"></input>
-                <p class="envio">•Iniciando sesión•</p>
-
+            <form action="" method="post" name="form-register" class="form-register">
+                <input type="text" name="username_input" class="username_input">
+                <input type="password" name="password_input" class="password_input">
+                <input type="submit" value="Entrar" class="btn" name="btn">
             </form>
+            <?php   
+            
+                echo $_POST['username_input'];
+                echo $_POST['password_input'];
+
+                ?>
         </section>
-
     </main>
-
-    <script src="./js/login-validation.js"></script>
 
     <footer class="footer">
         <h5>Todos los derechos reservados 2021 GodBox</h5>
