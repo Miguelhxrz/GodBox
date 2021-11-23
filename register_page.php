@@ -156,6 +156,7 @@
                       echo "</div>";
                    }else {
                      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
+                     
                    }
                   
 

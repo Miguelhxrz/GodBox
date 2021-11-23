@@ -125,6 +125,40 @@ a {
 
 /* |---- Body ----| */
 
+
+/* |---- alerts ----| */
+
+.correcto {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 96%;
+    height: 100%;
+    background-color: #3FA846;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    font-size: 1.4rem;
+    width: 96%;
+    height: 100%;
+    background-color: #df1526;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.error li {
+    margin-right: 10px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -132,7 +166,7 @@ a {
     justify-content: center;
     align-content: space-around;
     width: 100%;
-    height: 594px;
+    height: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url('../img/footer.png');
@@ -141,8 +175,8 @@ a {
 .container-form {
     display: flex;
     flex-direction: column;
-    width: 340px;
-    height: 440px;
+    width: 640px;
+    height: 550px;
     background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
     border-radius: 32px;
     border-radius: 15px;
@@ -156,6 +190,7 @@ a {
     justify-content: center;
     width: 100%;
     height: 100%;
+    margin-top: 20px;
 }
 
 .form-register {
@@ -194,13 +229,7 @@ input[type=number] {
     font-size: 1.5rem;
     color: white;
     background-color: transparent;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-select {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 select {
@@ -262,6 +291,8 @@ input[type=submit] {
     color: #fff;
     font-size: 1.5rem;
     border-radius: 20px;
+    width: 134px;
+    height: 90px;
 }
 
 .footer {

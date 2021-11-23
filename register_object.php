@@ -3,7 +3,12 @@
 <?php 
   session_start();
   $_SESSION['sponsor'];
-  $errores = 0;
+  $errores = array();
+  #patrones
+  $PatronUsuario="/^[a-zA-Z0-9\s-]+$/";
+  $PatronCantidad="/^[0-9]+$/";
+  $PatronPrecio="/^[0-9].+$/";
+
 ?>
 
 <head>
@@ -60,116 +65,136 @@
                 <h5>Registrar objetos</h5>
             </div>
             <form action="" method="post" class="form-register">
+            <div class="conta">
+            <section class="l-q">
+            <label for="Name" class="label-name">
+                Nombre
                 <input type="text" name="name" placeholder="Nombre de Objeto" class="name" max="15" maxlength="15">
+            </label>
+            <label for="cantidad" class="label-cantidad">
+                Cantidad
                 <input type="text" name="cantidad" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10">
+             </label>
+             <label for="price" class="label-price">
+               Precio   
                 <input type="text" name="price" placeholder="Precio" class="price" max="10" maxlength="10">
+              </label>            
+              </section>
+              <div class="line"></div>
+              <section class="r-q">
+              <label for="Sponsor" class="label-sponsor" >
+                  Sponsor
                 <select name="Sponsor" id="">
-                    <option selected="true" disabled="disabled">Seleccionar</option>
+                    <option value="nada" selected="true" disabled="disabled">Seleccionar</option>
                     <option value="<?php echo $_SESSION['sponsor']["sponsor_name"]?>"><?php  echo($_SESSION['sponsor']["sponsor_name"]);?></option>
                     <option value="Nike">Nike</option>
                     <option value="Nintendo">Nintendo</option>
                 </select>
-                <select name="Rank" id="" require>
-                    <option selected="true" disabled="disabled">Seleccionar</option>
+              </label>
+              <label for="Rank" class="label-rank">
+              Rango
+                <select name="Rank">
+                    <option value="nada"selected="true" disabled="disabled">Seleccionar</option>
                     <option value="Dios">Dios</option>
                     <option value="SemiDios">SemiDios</option>
                     <option value="Olimpica">Olimpica</option>
                     <option value="Heroe">Heroe</option>
                 </select>
+              </label>
+              <label for="category" class="label-category" >
+              Categoria
                 <select name="Category" id="">
-                <option selected="true" disabled="disabled">Seleccionar</option>
+                <option value="nada" selected="true" disabled="disabled">Seleccionar</option>
                 <option value="Tecnologia">Tecnologia</option>
                 <option value="Accesorios">Accesorios</option>
                 <option value="Ropa">Ropa</option>
                 </select>
+              </label>
+              </section>
+              </div>
                 <input type="submit" name="btn" class="btn" value="registrar">
-            </form>
-            <?php 
+                <?php 
+            $name_object = $_POST['name'];
+            $cantidad = $_POST['cantidad'];
+            $price = $_POST['price'];
+            $Rank = $_POST['Rank'];
+            $Sponsor = $_POST['Sponsor'];
+            $Category = $_POST['Category'];
+
             #validacion de nombre (no funciona)
-            if (isset($_POST['name'])) {
-                if (empty($_POST['name'])) {
-    
-                  echo "<script>alert('ERROR: No puedes registrar el objeto sin nombre')</script>";
-    
-                  $errores= $errores + 1;
-                } else {
-    
-                  if (preg_match("/^[a-zA-Z0-9\s-]+$/", $_POST['name'])) {
-                  } else {
-                    echo "<script>alert('ERROR: Nombre invalido')</script>";
-    
-                    $errores = $errores + 1;
-                  }
-                }
+            if (isset($name_object)){
+              if($name_object == ''){
+                array_push($errores,"Error 000: El Nombre no puede estar vacio.");
               }
+              if(strlen($name_object) < 3) {
+                array_push($errores,"Error 001:El Nombre debe tener un tamaño mayor a 3 letras.");
+              }if(preg_match($PatronUsuario,$name_object)){
+              }else{
+                array_push($errores,"Error 003: El Nombre no debe llevar caracteres especial.");
+              }
+              }else {
+                    array_push($errores,"Error 002: El Nombre no existe.");
+                  }
             #validacion de cantidad
-            if (isset($_POST['cantidad'])) {
-                
-                if (empty($_POST['cantidad'])) {
-    
-                  echo "<script>alert('ERROR: No puedes registrar el objeto sin su cantidad')</script>";
-    
-                  $errores = $errores + 1;
-                } else {
-    
-                  if (preg_match("/^[0-9]+$/", $_POST['cantidad'])) {
-                    echo "<script>alert('Correcto')</script>";
-                  } else {
-                    echo "<script>alert('ERROR: Solo numeros')</script>";
-    
-                    $errores = $errores + 1;
-                  }
-                }
+            if (isset($cantidad)){
+              if($cantidad == '' ||$cantidad == '0'){
+                array_push($errores,"Error 000: La cantidad no puede estar vacia.");
               }
+              if(preg_match($PatronCantidad,$cantidad)){
+              }else{
+                array_push($errores,"Error 003: La cantidad solo admite numeros.");
+              }
+              }else {
+                    array_push($errores,"Error 002: La cantidad no existe.");
+                  }
             #validacion de precio
-            if (isset($_POST['price'])) {
-                
-                if (empty($_POST['price'])) {
-    
-                  echo "<script>alert('ERROR: No puedes registrar el objeto sin su precio')</script>";
-    
-                  $errores = $errores + 1;
-                } else {
-    
-                  if (preg_match("/^[0-9].+$/", $_POST['price'])) {
-                    echo "<script>alert('Correcto')</script>";
-                  } else {
-                    echo "<script>alert('ERROR: Solo numeros, Puede ser decimal')</script>";
-    
-                    $errores = $errores+ 1;
-                  }
-                }
+            if (isset($price)){
+              if($price == ''){
+                array_push($errores,"Error 000: El precio no puede estar vacio.");
               }
-              if ($errores === 0) {
-                session_start();
+              if(preg_match($PatronPrecio,$price)){
+              }else{
+                array_push($errores,"Error 003: El precio solo admite numeros, y punto.");
+              }
+              }else {
+                    array_push($errores,"Error 002: El precio  no existe.");
+                  }
+            
+            if(count($errores)>0){
+              echo "<div class='error'>";
+              for ($i=0; $i < count($errores); $i++) { 
+                echo "<li>".$errores[$i]."</li>";
+
+              } 
+            }else{
+              session_start();
 
                 $_SESSION['object_name'] = $_POST['name'];
-    
-                if (isset($_SESSION['object'])) {
-                  $_SESSION['object'] = array();
-                }
-                $name_object = $_POST['name'];
-                $cantidad = $_POST['cantidad'];
-                $price = $_POST['price'];
-                $Rank = $_POST['Rank'];
-                $Sponsor = $_POST['Sponsor'];
-                $Category = $_POST['Category'];
-    
-                $_SESSION['object'] = array(
+                
+                  if (isset($_SESSION['object'])) {
+                    $_SESSION['object'] = array();
+                  }
+                  $name_object = $_POST['name'];
+                  $cantidad = $_POST['cantidad'];
+                  $price = $_POST['price'];
+                  $Rank = $_POST['Rank'];
+                  $Sponsor = $_POST['Sponsor'];
+                  $Category = $_POST['Category'];
+
+                  $_SESSION['object'] = array(
                     "name_object" => $name_object,
                     "cantidad" => $cantidad,
                     "price" => $price,
                     "Rank" => $Rank,
                     "Sponsor" => $Sponsor,
                     "Category" => $Category
-                ); 
-              if (isset($_SESSION['object'])){
-                echo "<script>alert('Objeto agregado')</script>";
-              }
-              }else{
-                echo "<script>alert('ERROR: Verifica tus datos')</script>"; 
-              } 
+                  ); 
+                  if (isset($_SESSION['object'])){
+                    echo "<div class='correcto'><h4>¡Todo correcto, agregado!</h4></div>";
+                  }
+             }
             ?>
+            </form>
         </section>
 
         <section class="footer">

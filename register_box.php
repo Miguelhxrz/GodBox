@@ -90,10 +90,10 @@ $errores = 0;
                             Rango
                             <select name="rank" id="">
                                 <option selected="true" disabled="disabled">Seleccionar</option>
-                                <option value="Dios">iPhone 13 PRO MAX</option>
-                                <option value="SemiDios">Nike Air Jordan</option>
-                                <option value="Olimpica">Nintendo Switch</option>
-                                <option value="Heroe">Nintendo Switch</option>
+                                <option value="Dios">Dios</option>
+                                <option value="SemiDios">SemiDios</option>
+                                <option value="Olimpica">Olimpica</option>
+                                <option value="Heroe">Heroe</option>
                             </select>
                         </label>
                         <label for="objetos" class="label-objetos">
@@ -181,17 +181,17 @@ $errores = 0;
             $name = $_POST['name_input'];
             $codigo = $_POST['codigo_input']; 
             $price = $_POST['precio_input'];
-            $rank = $_POST['rank'];
-            $sponsor = $_POST['sponsor'];
             $category = $_POST['category'];
+            $rank = $_POST['rank'];
+            $objetos = $_POST['objetos'];
 
             $_SESSION['box'] = array(
                 "name" => $name,
                 "codigo" => $codigo,
                 "price" => $price,
+                "category" => $category,
                 "rank" => $rank,
-                "sponsor" => $sponsor,
-                "category" => $category
+                "objetos" => $objetos
             ); 
           echo $_SESSION['box']["sponsor"];
           if (isset($_SESSION['box'])){

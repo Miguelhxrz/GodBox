@@ -2,14 +2,14 @@
 <html lang="en">
 <?php 
   session_start();
-  $_SESSION['box'];
+  $_SESSION['object'];
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/inventory.css">
+    <link rel="stylesheet" href="./css/inventory-objects.css">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
     <title>GodBox - Inventario</title>
 </head>
@@ -54,46 +54,46 @@
     </header>
 
     <main class="container">
-        <h3>Inventario de Cajas</h3>
+        <h3>Inventario de Objetos</h3>
         <div class="container-inventory">
             <section class="item-title">
                 <div class="item-1">
                     <h6>Nombre</h6>
                 </div>
                 <div class="item-2">
-                    <h6>Codigo</h6>
+                    <h6>Cantidad</h6>
                 </div>
                 <div class="item-3">
                     <h6>Precio</h6>
                 </div>
                 <div class="item-4">
-                    <h6>Categoria</h6>
+                    <h6>Sponsor</h6>
                 </div>
                 <div class="item-5">
                     <h6>Rango</h6>
                 </div>
                 <div class="item-6">
-                    <h6>Objetos</h6>
+                    <h6>Categoria</h6>
                 </div>
             </section>
             <section class="item-title">
                 <div class="item-1">
-                    <h6><?php echo $_SESSION['box']["name"];?></h6>
+                    <h6><?php echo $_SESSION['object']["name_object"];?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $_SESSION['box']["codigo"];?></h6>
+                    <h6><?php echo $_SESSION['object']["cantidad"];?></h6>
                 </div>
                 <div class="item-3">
-                    <h6><?php echo $_SESSION['box']["price"];?></h6>
+                    <h6><?php echo $_SESSION['object']["price"];?></h6>
                 </div>
                 <div class="item-4">
-                    <h6><?php echo $_SESSION['box']["category"];?></h6>
+                    <h6><?php echo $_SESSION['object']["Sponsor"];?></h6>
                 </div>
                 <div class="item-5">
-                    <h6><?php echo $_SESSION['box']["rank"];?></h6>
+                    <h6><?php echo $_SESSION['object']["Rank"];?></h6>
                 </div>
                 <div class="item-6">
-                    <h6><?php echo $_SESSION['box']["objetos"];?></h6>
+                    <h6><?php echo $_SESSION['object']["Category"];?></h6>
                 </div>
             </section>
         </div>
