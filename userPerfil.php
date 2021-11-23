@@ -40,7 +40,7 @@
                 <div class="link">
                     <div class="btn-menu">
                         <label for="btn-menu"><img src="./icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="user.html"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
+                        <a href="user.php"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
                     </div>
                 </div>
             </section>
@@ -104,7 +104,7 @@
         <div class="menu">
             <nav>
                 <a href="#" class="profil">Perfil</a>
-                <a href="userConfig.html" class="config">Configuración</a>
+                <a href="userConfig.php" class="config">Configuración</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>

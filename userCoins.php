@@ -40,7 +40,7 @@
                 <div class="link">
                     <div class="btn-menu">
                         <label for="btn-menu"><img src="./icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="user.html"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
+                        <a href="user.php"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
                     </div>
                 </div>
             </section>
@@ -60,7 +60,7 @@
     <section class="selecction">
         <div class="container">
             <div class="box">
-                <a href="userObjects.html" class="button btn1">
+                <a href="userObjects.php" class="button btn1">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -99,8 +99,8 @@
     <div class="container-menu">
         <div class="menu">
             <nav>
-                <a href="userPerfil.html" class="profil">Perfil</a>
-                <a href="userConfig.html" class="config">Configuración</a>
+                <a href="userPerfil.php" class="profil">Perfil</a>
+                <a href="userConfig.php" class="config">Configuración</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>
