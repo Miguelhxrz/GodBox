@@ -1,5 +1,14 @@
 <?php
-$errores = 0;
+
+  $patron_username = "/^[A-Za-z0-9_]+$/";
+  $patron_address = "/^[a-zA-Z0-9\s-]+$/";
+  $patron_id = "/^(V|E|v|e)-[0-9]+$/";
+  $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
+
+  $errores = array();
+
+  error_reporting(0)
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,161 +76,94 @@ $errores = 0;
                 <input type="date" name="birth" placeholder="Fecha de nacimiento" min="1921-11-20" max="2021-11-24">
                 </label>
                 <input type="submit" class="btn" value="registrarse">
+
+                <?php
+                  $username = $_POST['username'];
+                  $password = $_POST['password'];
+                  $id = $_POST['id'];
+                  $email = $_POST['email'];
+                  $address = $_POST['address'];
+
+                  #validacion de username
+
+                  if(isset($username)){
+                    if($username == '') {
+                      array_push($errores,"Error 000: El Username no puede estar vacio.");
+                    } 
+                    if(strlen($username) < 3) {
+                      array_push($errores,"Error 001: El tamaño del username tiene que ser mayor a 3 letras.");
+                    }
+                  }else {
+                    array_push($errores,"Error 002: El Username no existe.");
+                  }
+
+                  #validacion password
+
+                  if(isset($password)){
+                    if($password == '') {
+                      array_push($errores,"Error 003: la contraseña no puede estar vacio.");
+                    } 
+                    if(strlen($password) < 3) {
+                      array_push($errores,"Error 004: el tamaño de la contraseña tiene que ser mayor a 3 caracteres.");
+                    }
+                  }else {
+                    array_push($errores,"Error 005: la contraseña no existe.");
+                  }
+
+                  #validacion de id
+
+                  if(isset($id)){
+                    if($id == '') {
+                      array_push($errores,"Error 006: el id no puede estar vacio.");
+                    } 
+                    if(strlen($id) < 3) {
+                      array_push($errores,"Error 007: el tamaño del id tiene que ser mayor a 3 caracteres.");
+                    }
+                  }else {
+                    array_push($errores,"Error 008: el id no existe.");
+                  }
+
+                  #Validacion Email
+
+                  if(!isset($email)){
+                    if($email = '') {
+                      array_push($errores,"Error 009: No puedes dejar el campo de email vacio.");
+                    }
+                    if(strlen($email) < 3){
+                      array_push($errores,"Error 010: El email debe tener mas de 3 caracteres.");
+                    }
+                  }
+
+                   #Validacion address
+
+                  if(!isset($address) || $address = '' || strlen($address) < 3){
+                    array_push($errores,"Error 005: Verifica el campo de nombre de usuario");
+                   }
+
+                   #Imprimiendo alertas
+
+                   if(count($errores) > 0){
+                    echo "<div class='error'>";
+                        for ($i=0; $i < count($errores); $i++) { 
+                          echo "<li>".$errores[$i]."</li>";
+
+                        }
+                        var_dump($password);
+                        var_dump($id);
+                        echo strlen($password);
+                        echo strlen($id);
+                        echo strlen($username);
+                      echo "</div>";
+                   }else {
+                     echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
+                   }
+                  
+
+                ?>
             </form>
+
         </section>
-        <?php 
-          #validacion de username
-        $patron_username = "/^[A-Za-z0-9_]+$/";
-        if (isset($_POST['username'])) {
-            if (empty($_POST['username'])) {
 
-              echo "<script>alert('ERROR: Coloca un nombre de usuario para registrarte')</script>";
-
-              $errores = $errores + 1;
-            } else {
-
-              if (preg_match($patron_username, $_POST['username'])) {
-                echo "<script>alert('Correcto')</script>";
-              } else {
-                echo "<script>alert('ERROR: El nombre de usuario solo acepta letras, numeros, y guiones. Debe ser mayor a 4 digitos')</script>";
-                $errores = $errores + 1;
-              }
-            }
-          }
-
-          #validacion de id
-          $patron_id = "/^(V|E|v|e)-[0-9]+$/";
-          if (isset($_POST['id'])) {
-            if (empty($_POST['id'])) {
-
-              echo "<script>alert('ERROR: Coloca la cedula de identidad para registrarte')</script>";
-
-              $errores = $errores + 1;
-            } else {
-
-              if (preg_match($patron_id,$_POST['id']) ) {
-                echo "<script>alert('Correcto')</script>";
-              } else {
-                echo "<script>alert('ERROR: La cedela de identidad de usuario debe ser: V ó E-12345678 ')</script>";
-                $errores = $errores + 1;
-              }
-            }
-          }
-
-          #validacion contraseña
-
-          if (isset($_POST['password'])) {
-            if (empty($_POST['password'])) {
-
-              echo "<script>alert('ERROR: No puedes registrate sin una contraseña')</script>";
-
-              $errores = $errores + 1;
-            } else {
-
-              if (strlen($_POST['password']) >= 4) {
-                echo "<script>alert('Correcto')</script>";
-              } else {
-
-                echo "<script>alert('ERROR: Tu contraseña debe tener mas de 4 caracteres')</script>";
-
-                $errores = $errores + 1;
-              }
-            }
-          }
-           #validacion email
-           $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
-
-           if (isset($_POST['email'])) {
-            if (empty($_POST['email'])) {
-
-              echo "<script>alert('ERROR: No puedes registrate sin correo electronico')</script>";
-
-              $errores = $errores + 1;
-            } else {
-
-              if (preg_match($patron_email,$_POST['email']) ) {
-                echo "<script>alert('Correcto')</script>";
-              } else  {
-
-                echo "<script>alert('ERROR: Dato invalido al escribir el correo')</script>";
-
-                $errores = $errores + 1;
-              }
-            }
-        }
-            #validacion address
-            $patron_address = "/^[a-zA-Z0-9\s-]+$/";
-
-            if (isset($_POST['address'])) {
-            if (empty($_POST['address'])) {
-
-                echo "<script>alert('ERROR: No puedes registrate sin direccion')</script>";
-
-                $errores = $errores + 1;
-            } else {
-
-                if (preg_match($patron_address,$_POST['address']) ) {
-                    echo "<script>alert('Correcto')</script>";
-                } else  {
-
-                    echo "<script>alert('ERROR: Acepta espacios y guiones')</script>";
-
-                    $errores = $errores + 1;
-                }
-            }
-        }
-            #validacion fecha de nacimiento
-
-            if (isset($_POST['birth'])) {
-            if (empty($_POST['birth'])) {
-
-                echo "<script>alert('ERROR: No puedes registrate sin fecha de nacimiento')</script>";
-
-                $errores = $errores + 1;
-            } 
-        }
-        if ($errores === 0) {
-
-            session_start();
-
-            $_SESSION['user'] = $username;
-
-            $_SESSION['password'] = $password;
-
-            session_start();
-            if (isset($_SESSION['userinfo'])) {
-              $_SESSION['userinfo'] = array();
-            }
-            $username = $_POST['username'];
-            $id = $_POST['id'];
-            $password = $_POST['password'];
-            $email = $_POST['email'];
-            $address = $_POST['address'];
-            $birth = $_POST['birth'];
-
-            $userinfo = array(
-
-              "username" => $username,
-              "id" => $id,
-              "password" => $password,
-              "email" => $email,
-              "address" => $address,
-              "birth" => $birth
-              
-            );
-
-            if (isset($_SESSION['userinfo'][$username])) {
-              echo "Se han modificado los datos del usuario" . $username;
-            } else {
-              echo "Agregado";
-            }
-            $_SESSION['userinfo'][$username] = $userinfo;
-    
-          } else {
-
-            echo "Error al registrarse, verifique sus datos";
-          }
-        ?>
         <section class="footer">
             <h5>Todos los derechos reservados 2021 GodBox</h5>
         </section>
