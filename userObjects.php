@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/userCoins.css">
+    <link rel="stylesheet" href="./css/userObjects.css">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-    <title>GodBox - Mis Movimientos</title>
+    <title>GodBox - Mis Objetos</title>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="about-link">
                     <a href="#">
-                        <h4>Sobre Nosotros</h4>
+                        <h4>Sobre nosotros</h4>
                     </a>
                 </div>
             </section>
@@ -40,11 +40,14 @@
                 <div class="link">
                     <div class="btn-menu">
                         <label for="btn-menu"><img src="./icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="user.html"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
+                        <a href="user.php"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
                     </div>
                 </div>
             </section>
         </div>
+        <section class="fondo">
+            <img src="./img/header.png" alt="">
+        </section>
     </header>
 
     <section class="perfil">
@@ -57,13 +60,13 @@
     <section class="selecction">
         <div class="container">
             <div class="box">
-                <a href="userObjects.html" class="button btn1">
+                <a href="#" class="button btn1">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
                     <span id="span4"></span> Mis Productos
                 </a>
-                <a href="#" class="button btn2">
+                <a href="userCoins.php" class="button btn2">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -73,31 +76,61 @@
         </div>
     </section>
 
-    <section class="movimientos">
+    <section class="objetos">
         <div class="container">
-            <h3>6 registros</h3>
-            <img src="./img/monedas.png" alt="coins">
-            <img src="./img/monedas.png" alt="coins">
-            <img src="./img/monedas.png" alt="coins">
-            <img src="./img/monedas.png" alt="coins">
-            <img src="./img/monedas.png" alt="coins">
-            <img src="./img/monedas.png" alt="coins">
+            <h3>3 objetos</h3>
+            <img src="./img/object1.png" alt="objects">
+            <img src="./img/object2.png" alt="objects">
+            <img src="./img/object3.png" alt="objects">
         </div>
     </section>
+
+    <div class="boton-modal">
+        <label for="btn-modal">
+            Inspeccionr objetos
+        </label>
+    </div>
+
+    <input type="checkbox" id="btn-modal">
+    <div class="container-modal">
+        <div class="content-modal">
+            <img src="./img/Logo-rezised.png" alt="logo" class="logo">
+            <h2>Operaciones</h2>
+            <p>Con los objetos pertenecientes a su inventario puede realizar el pedido de los objetos ganados, así como también canjearlo por las monedas del sitio web obteniendo más LilGods para seguir abriendo cajas sorpresa!</p>
+            <div class="img">
+                <img src="./img/object1.png" alt="objects">
+                <img src="./img/object2.png" alt="objects">
+                <img src="./img/object3.png" alt="objects">
+            </div>
+
+            <div class="btn-cerrar">
+                <label for="btn-modal">
+                    Cerrar
+                </label>
+            </div>
+
+            <div class="container">
+                <div class="box">
+                    <a href="#" class="cta">canjear</a>
+                    <a href="#" class="cta">solicitar</a>
+                </div>
+            </div>
+        </div>
+        <label for="btn-modal" class="cerrar-modal"></label>
+    </div>
 
     <br><br><br><br><br>
 
     <footer>
-        <h4>TODOS LOS DERECHOS RECERVADOS &copy; GODBOX</h4>
+
     </footer>
-    </div>
 
     <input type="checkbox" id="btn-menu">
     <div class="container-menu">
         <div class="menu">
             <nav>
-                <a href="userPerfil.html" class="profil">Perfil</a>
-                <a href="userConfig.html" class="config">Configuración</a>
+                <a href="userPerfil.php" class="profil">Perfil</a>
+                <a href="userConfig.php" class="config">Configuración</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>

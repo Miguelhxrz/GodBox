@@ -119,58 +119,6 @@ a {
     height: 1491px;
 }
 
-.container__alert-item {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    position: absolute;
-    top: 570px;
-    right: 274px;
-    z-index: 3;
-    width: 435px;
-    height: 350px;
-    background-color: rgba(1, 45, 100, 0.9);
-    border: 2px solid #EABE3F;
-    border-radius: 15px;
-}
-
-.container__alert-item .Y-item {
-  position: relative;
-  right: 1px;
-  width: 220px;
-  height: 224px;
-  background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);
-  filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 12px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-}
-
-.btn-accept {
-    position: relative;
-    padding: 10px 40px;
-    margin: 0px 10px 10px 0px;
-    float: left;
-    border-radius: 3px;
-    font-size: 20px;
-    color: #FFF;
-    text-decoration: none;
-    background-color: #352d9c;
-    border: none;
-    border-bottom: 5px solid #090541;
-    text-shadow: 0px -2px #120997;
-    transition: all 0.1s;
-   }
-   
-   button:hover, button:active {
-    transform: translate(0px,5px);
-    transform: translate(0px,5px);
-    transform: translate(0px,5px);
-    border-bottom: 1px solid #010038;
-   }
-
-
 .roulette {
     display: flex;
     width: 100%;
@@ -222,28 +170,16 @@ a {
     filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.25));
 }
 
-.wrapper {
-  display: flex;
-}
-
 .item__card {
   position: relative;
-  right: 1px;
   width: 220px;
   height: 224px;
   background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);
   filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
   border-radius: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
   margin-right: 10px;
-}
-
-@keyframes scrolling {
-  0%{
-    transform: translateX(0px);
-  }
-  100%{
-    transform: translateX(calc(-920px * 2));
-  }
 }
 
 .roulette__btn-spin {
@@ -324,19 +260,18 @@ h3 {
 .footer {
     width: 100%;
     height: 318px;
-    background-color: #2168A2;
 }
 
 .footer img {
     position: relative;
-    bottom: 277px;
-    width: 1349px;
+    bottom: auto;
+    width: 100%;
     height: 594px;
 }
 
 .footer h3 {
     position: absolute;
-    top: 2300px;
+    top: 2550px;
     left: 403px;
     color: #fff;
     font-family: 'BubblegumSans';

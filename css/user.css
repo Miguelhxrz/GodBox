@@ -20,10 +20,7 @@
 
 body {
     background-color: var(--color1);
-    background-image: url(../img/header.png);
-    background-repeat: no-repeat;
 }
-
 
 /* header */
 
@@ -98,9 +95,11 @@ a {
     text-decoration: none;
 }
 
-
+.fondo img{
+    width: 100%;
+    height: 530px;
+}
 /* fin header */
-
 
 /* Menú lateral */
 
@@ -140,7 +139,6 @@ a {
     height: 100vh;
     position: relative;
     transition: all 500ms ease;
-    transform: translateX(100%);
 }
 
 #btn-menu:checked~.container-menu .menu {
@@ -179,7 +177,7 @@ a {
 
 .perfil {
     width: 200px;
-    margin: 100px auto 20px auto;
+    margin: 250px auto 20px auto;
 }
 
 .perfil .user img {
@@ -309,6 +307,4 @@ a {
     transition: 1s;
     transition-delay: 0.75s;
 }
-
-
 /* fin botones */
