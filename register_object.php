@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+  session_start();
+  $_SESSION['sponsor'];
+  $errores = 0;
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -54,59 +59,116 @@
             <div class="title-form">
                 <h5>Registrar objetos</h5>
             </div>
-            <form action="" class="form-register">
-                <div class="conta">
-                    <section class="l-q">
-                        <label for="Name" class="label-name">
-                            Nombre
-                            <input type="text" placeholder="Nombre del objeto" size="45" maxlength="45" class="username_input">
-                        </label>
-                        <label for="stock" class="label-stock">
-                            Cantidad
-                            <input type="text" placeholder="Cantidad del objeto" pattern = "[0-9]" size="10" maxlength="10" class="password_input">
-                        </label>
-                        <label for="price" class="label-price">
-                            Precio   
-                            <input type="number"  placeholder="Precio del objeto" size="45" maxlength="45" class="addres_input">
-                        </label>
-                    </section>
-                    <div class="line"></div>
-                    <section class="r-q">
-                        <label for="sponsor" class="label-sponsor">
-                            Patrocinador
-                            <select name="Sponsor" id="">
-                                <option selected="true" disabled="disabled">Seleccionar</option>
-                                <option value="2">Apple</option>
-                                <option value="3">Nike</option>
-                                <option value="4">Nintendo</option>
-                            </select>
-                        </label>
-                        <label for="rank" class="label-rank">
-                            Rango
-                            <select name="Rank" id="">
-                                <option selected="true" disabled="disabled">Seleccionar</option>
-                                <option value="2">Dios</option>
-                                <option value="3">SemiDios</option>
-                                <option value="4">Olimpica</option>
-                                <option value="4">Heroe</option>
-                            </select>
-                        </label>
-                        <label for="category" class="label-category">
-                            Categoria
-                            <select name="Category" id="">
-                                <option selected="true" disabled="disabled">Seleccionar</option>
-                                <option value="2">Tecnologia</option>
-                                <option value="3">Accesorios</option>
-                                <option value="4">Ropa</option>
-                            </select>
-                        </label>
-                    </section>
-                </div>
-
-                <input type="submit" class="btn" name="Register" value="Registrar"></input>
+            <form action="" method="post" class="form-register">
+                <input type="text" name="name" placeholder="Nombre de Objeto" class="name" max="15" maxlength="15">
+                <input type="text" name="cantidad" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10">
+                <input type="text" name="price" placeholder="Precio" class="price" max="10" maxlength="10">
+                <select name="Sponsor" id="">
+                    <option selected="true" disabled="disabled">Seleccionar</option>
+                    <option value="<?php echo $_SESSION['sponsor']["sponsor_name"]?>"><?php  echo($_SESSION['sponsor']["sponsor_name"]);?></option>
+                    <option value="Nike">Nike</option>
+                    <option value="Nintendo">Nintendo</option>
+                </select>
+                <select name="Rank" id="" require>
+                    <option selected="true" disabled="disabled">Seleccionar</option>
+                    <option value="Dios">Dios</option>
+                    <option value="SemiDios">SemiDios</option>
+                    <option value="Olimpica">Olimpica</option>
+                    <option value="Heroe">Heroe</option>
+                </select>
+                <select name="Category" id="">
+                <option selected="true" disabled="disabled">Seleccionar</option>
+                <option value="Tecnologia">Tecnologia</option>
+                <option value="Accesorios">Accesorios</option>
+                <option value="Ropa">Ropa</option>
+                </select>
+                <input type="submit" name="btn" class="btn" value="registrar">
             </form>
             <?php 
-            
+            #validacion de nombre (no funciona)
+            if (isset($_POST['name'])) {
+                if (empty($_POST['name'])) {
+    
+                  echo "<script>alert('ERROR: No puedes registrar el objeto sin nombre')</script>";
+    
+                  $errores= $errores + 1;
+                } else {
+    
+                  if (preg_match("/^[a-zA-Z0-9\s-]+$/", $_POST['name'])) {
+                  } else {
+                    echo "<script>alert('ERROR: Nombre invalido')</script>";
+    
+                    $errores = $errores + 1;
+                  }
+                }
+              }
+            #validacion de cantidad
+            if (isset($_POST['cantidad'])) {
+                
+                if (empty($_POST['cantidad'])) {
+    
+                  echo "<script>alert('ERROR: No puedes registrar el objeto sin su cantidad')</script>";
+    
+                  $errores = $errores + 1;
+                } else {
+    
+                  if (preg_match("/^[0-9]+$/", $_POST['cantidad'])) {
+                    echo "<script>alert('Correcto')</script>";
+                  } else {
+                    echo "<script>alert('ERROR: Solo numeros')</script>";
+    
+                    $errores = $errores + 1;
+                  }
+                }
+              }
+            #validacion de precio
+            if (isset($_POST['price'])) {
+                
+                if (empty($_POST['price'])) {
+    
+                  echo "<script>alert('ERROR: No puedes registrar el objeto sin su precio')</script>";
+    
+                  $errores = $errores + 1;
+                } else {
+    
+                  if (preg_match("/^[0-9].+$/", $_POST['price'])) {
+                    echo "<script>alert('Correcto')</script>";
+                  } else {
+                    echo "<script>alert('ERROR: Solo numeros, Puede ser decimal')</script>";
+    
+                    $errores = $errores+ 1;
+                  }
+                }
+              }
+              if ($errores === 0) {
+                session_start();
+
+                $_SESSION['object_name'] = $_POST['name'];
+    
+                if (isset($_SESSION['object'])) {
+                  $_SESSION['object'] = array();
+                }
+                $name_object = $_POST['name'];
+                $cantidad = $_POST['cantidad'];
+                $price = $_POST['price'];
+                $Rank = $_POST['Rank'];
+                $Sponsor = $_POST['Sponsor'];
+                $Category = $_POST['Category'];
+    
+                $_SESSION['object'] = array(
+                    "name_object" => $name_object,
+                    "cantidad" => $cantidad,
+                    "price" => $price,
+                    "Rank" => $Rank,
+                    "Sponsor" => $Sponsor,
+                    "Category" => $Category
+                ); 
+              if (isset($_SESSION['object'])){
+                echo "<script>alert('Objeto agregado')</script>";
+              }
+              }else{
+                echo "<script>alert('ERROR: Verifica tus datos')</script>"; 
+              } 
             ?>
         </section>
 

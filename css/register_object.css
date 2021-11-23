@@ -118,8 +118,7 @@ a {
     justify-content: center;
     color: #fff;
     font-size: 3rem;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 10px;
     text-decoration: underline;
 }
 
@@ -142,7 +141,7 @@ a {
 .container-form {
     display: flex;
     flex-direction: column;
-    width: 640px;
+    width: 340px;
     height: 440px;
     background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
     border-radius: 32px;
@@ -195,8 +194,13 @@ input[type=number] {
     font-size: 1.5rem;
     color: white;
     background-color: transparent;
-    margin-top: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+select {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 select {

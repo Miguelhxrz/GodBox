@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+$errores = 0;
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,7 +66,6 @@
             </form>
             <?php
             #validacion de rif
-            echo $_POST['rif_input'];
             $patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
             if (isset($_POST['rif_input'])) {
               if (empty($_POST['rif_input'])) {
@@ -73,27 +76,27 @@
               } else {
   
                 if (preg_match($patron_id,$_POST['rif_input']) ) {
-                  echo "<script>alert('Correcto')</script>";
+                  
                 } else {
                   echo "<script>alert('ERROR: El rif debe ser de esta manera: V,E,R,J,P ó G-12345678')</script>";
                   $errores = $errores + 1;
                 }
               }
             }
-             #validacion name (no funciona)
+            #validacion name (no funciona)
             if (isset($_POST['name_input'])) {
                 if (empty($_POST['name_input'])) {
     
                   echo "<script>alert('ERROR: No puedes registrar al sponsor sin nombre')</script>";
     
-                  $errorcount = $errorcount + 1;
+                  $errores = $errores+ 1;
                 } else {
     
-                  if (preg_match("/^[a-zA-ZÀ-ÿ\s]$/", $_POST['name_input'])) {
+                  if (preg_match("/^[a-zA-Z0-9\s-]+$/", $_POST['name_input'])) {
                   } else {
                     echo "<script>alert('ERROR: Elnombre no puede contener numeros ni caracteres especiales')</script>";
     
-                    $errorcount = $errorcount + 1;
+                    $errores = $errores + 1;
                   }
                 }
               }
@@ -108,8 +111,7 @@
               $errores = $errores + 1;
             } else {
 
-              if (preg_match($patron_email,$_POST['email_input']) ) {
-                echo "<script>alert('Correcto')</script>";
+              if (preg_match("/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/", $_POST['email_input']) ) {
               } else  {
 
                 echo "<script>alert('ERROR: Dato invalido al escribir el correo')</script>";
@@ -118,6 +120,30 @@
               }
             }
         }
+        if ($errores === 0) {
+
+            session_start();
+
+            $_SESSION['sponsor_name'] = $_POST['name_input'];
+
+            if (isset($_SESSION['sponsor'])) {
+              $_SESSION['sponsor'] = array();
+            }
+            $sponsor_name = $_POST['name_input'];
+            $rif = $_POST['rif_input'];
+            $email = $_POST['email_input'];
+
+            $_SESSION['sponsor'] = array(
+                "sponsor_name" => $sponsor_name,
+                "rif" => $rif,
+                "email" => $email
+            ); 
+
+          var_dump($_SESSION['sponsor']["sponsor_name"]);
+          if (isset($_SESSION['sponsor']["sponsor_name"])){
+            echo "<script>alert('Sponsor agregado')</script>";
+          }
+          } 
     
             ?>
             
