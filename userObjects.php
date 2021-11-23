@@ -45,6 +45,9 @@
                 </div>
             </section>
         </div>
+        <section class="fondo">
+            <img src="./img/header.png" alt="">
+        </section>
     </header>
 
     <section class="perfil">

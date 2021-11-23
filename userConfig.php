@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/userPerfil.css">
-    <title>GodBox - Perfil</title>
+    <link rel="stylesheet" href="./css/userConfig.css">
+    <title>GodBox - Configuración</title>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="about-link">
                     <a href="#">
-                        <h4>Sobre nosotros</h4>
+                        <h4>Sobre Nosotros</h4>
                     </a>
                 </div>
             </section>
@@ -39,18 +39,21 @@
             <section class="options">
                 <div class="link">
                     <div class="btn-menu">
-                        <label for="btn-menu"><img src="./icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="user.html"><img src="./icons/coin.png" alt="Objetos y Monedas" class="item"></a>
+                        <label for="btn-menu"><img src="./icons/user.png" alt="" class="item"></label>
+                        <a href="user.html"><img src="./icons/coin.png" alt="" class="item"></a>
                     </div>
                 </div>
             </section>
         </div>
+        <section class="fondo">
+            <img src="./img/header.png" alt="">
+        </section>
     </header>
 
     <section class="perfil">
         <div class="user">
             <img src="./img/avatar1.png" alt="user">
-            <h4>vanemaru</h4>
+            <h4>Username</h4>
         </div>
 
         <section class="selecction">
@@ -65,18 +68,27 @@
             <div class="box">
                 <main class="container">
                     <section class="container-form">
-                        <form action="" class="form-register">
+                        <form action="" class="form-register" id="form">
                             <div class="conta">
                                 <section class="l-q">
-                                    <label for="username" class="label-username">
-                                        Ingrese nombre de usuario
-                                        <input type="text" placeholder="Nuevo nombre de usuario" size="45" maxlength="45" class="username_input">
+                                    <label for="addres" class="label-addres">
+                                        Actualizar Dirección
+                                        <input type="text" name="" id="addres" placeholder="Actualizar" size="45" maxlength="45" class="addres_input">
                                     </label>
-                                    <label for="password" class="label-password">
-                                        Ingrese contraseña actual
-                                        <input type="password" placeholder="Contraseña" size="45" maxlength="45" class="password_input">
+                                    <label for="email" class="label-email">
+                                        Actualizar E-mail
+                                        <input type="email" name="" id="email" placeholder="Actualizar" size="45" maxlength="45" class="email_input">
+                                    </label>
+                                    <label for="birth" class="label-birth">
+                                        Fecha de nacimiento
+                                        <input type="date" name="" id="birth" class="birth_input" disabled="">
+                                        <p>Esta informacion no se puede modificar</p>
                                     </label>
                                 </section>
+
+                                <button type="submit">guardar</button>
+                                <button type="reset">reestablecer</button>
+                                <p class="warnings" id="warnings"></p>
                             </div>
                         </form>
                     </section>
@@ -85,16 +97,9 @@
         </div>
     </section>
 
-    <section class="selecction">
-        <div class="container">
-            <div class="box">
-                <a href="#" class="cta">guardar</a>
-                <a href="#" class="cta">reestablecer</a>
-            </div>
-        </div>
-    </section>
-
     <br><br><br><br><br>
+
+    <script src="./JS/userConfig_validation.js"></script>
 
     <footer>
 
@@ -104,8 +109,8 @@
     <div class="container-menu">
         <div class="menu">
             <nav>
-                <a href="#" class="profil">Perfil</a>
-                <a href="userConfig.html" class="config">Configuración</a>
+                <a href="userPerfil.html" class="profil">Perfil</a>
+                <a href="#" class="config">Configuración</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>
