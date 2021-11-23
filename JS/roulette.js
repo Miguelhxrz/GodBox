@@ -4,22 +4,39 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const cards_items = document.querySelectorAll('.item__card');
 
-  let rdn = getRandom(1, 9);
-  
-  itemsito = parseInt(rdn);
+  const alert = document.getElementById('container__alert-item');
 
-  let px = 220;
+  const text = document.getElementById('Y-item-text');
 
-  let stop = px * itemsito;
+  const r_select = document.getElementById('roulette__select');
 
-  let i = 0;
-  
   function getRandom(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-  button_spin.addEventListener('click', () => {
+  const moveIt = {
+    1: '-809px',
+    2: '-580px',
+    3: '-346px',
+    4: '-115px',
+    5: '110px',
+    6: '336px',
+    7: '570px',
+    8: '800px'
+  }
 
+  let rdn = getRandom(1, 8);
+  
+  let item = parseInt(rdn);
+
+  let stop = item * 110;
+  
+  let px = moveIt[item]
+  
+  let i = 0;
+
+  button_spin.addEventListener('click', function mover() {
+      
       cards_items.forEach (item =>  {
         item.style.animation = 'scrolling 2s infinite linear';
       })
@@ -28,56 +45,40 @@ document.addEventListener('DOMContentLoaded', function() {
         cards_items.forEach (item =>  {
           item.style.animation = '';
         })
-
-        while (px < stop) {
-
-          console.log('item->' + itemsito);
-    
-          console.log('stop->' + stop);
       
-          cards_items.forEach( item => {
-            item.style.left = `${stop}px`;
+      }, 5000); 
 
-            console.log(item.style.left);
-          });
+      console.log(item);
+      
+      while (i < stop) {
 
-          px++;
-        }
+        console.log(px);
         
-        console.log("Listo");
-      }, 1000);
+        cards_items.forEach (card =>  {
+          
+          card.style.right = px;
 
+        })
+
+        i = i + 115;
+
+      }
+        
       setTimeout(() => {
-        location.reload();
-      }, 20000)
-    
-      
 
-    // takfriend();
+        alert.style.display = 'flex';
 
+        text.innerText = `${item}`;
 
-    
-    
-    
-      
+        r_select.style.display = 'none';
+        
+        button_spin.disabled = true
 
+        cards_items.forEach (item =>  {
+          item.style.animation = '';
+        })
 
+      }, 6000);
 
-    
-
-
-    
-
-    
-
-
-  });
-
-
-
-
-
-
-
-
+    })
 })
