@@ -3,6 +3,9 @@
 
 <?php
 $errores = 0;
+$patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
+$patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
+$patron_name = "/^[a-zA-Z0-9\s-]+$/";
 ?>
 
 <head>
@@ -66,7 +69,6 @@ $errores = 0;
             </form>
             <?php
             #validacion de rif
-            $patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
             if (isset($_POST['rif_input'])) {
               if (empty($_POST['rif_input'])) {
   
@@ -83,7 +85,7 @@ $errores = 0;
                 }
               }
             }
-            #validacion name (no funciona)
+            #validacion name
             if (isset($_POST['name_input'])) {
                 if (empty($_POST['name_input'])) {
     
@@ -92,16 +94,15 @@ $errores = 0;
                   $errores = $errores+ 1;
                 } else {
     
-                  if (preg_match("/^[a-zA-Z0-9\s-]+$/", $_POST['name_input'])) {
+                  if (preg_match($patron_name, $_POST['name_input'])) {
                   } else {
-                    echo "<script>alert('ERROR: Elnombre no puede contener numeros ni caracteres especiales')</script>";
+                    echo "<script>alert('ERROR: Elnombre no puede contener caracteres especiales')</script>";
     
                     $errores = $errores + 1;
                   }
                 }
               }
                #validacion email
-           $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
 
            if (isset($_POST['email_input'])) {
             if (empty($_POST['email_input'])) {
@@ -111,7 +112,7 @@ $errores = 0;
               $errores = $errores + 1;
             } else {
 
-              if (preg_match("/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/", $_POST['email_input']) ) {
+              if (preg_match($patron_email, $_POST['email_input']) ) {
               } else  {
 
                 echo "<script>alert('ERROR: Dato invalido al escribir el correo')</script>";
@@ -138,8 +139,6 @@ $errores = 0;
                 "rif" => $rif,
                 "email" => $email
             ); 
-
-          var_dump($_SESSION['sponsor']["sponsor_name"]);
           if (isset($_SESSION['sponsor']["sponsor_name"])){
             echo "<script>alert('Sponsor agregado')</script>";
           }
