@@ -162,7 +162,7 @@ $PatronPrice = "/^[0-9].+$/";
                     array_push($errores,"Error 001:El Precio debe ser mayor que 0.");
                   }if(preg_match($PatronPrice,$Price)){
                   }else{
-                    array_push($errores,"Error 003: El Precio es en numeros, puede ser decimal.");
+                    array_push($errores,"Error 003: El Precio debe ser decimal.");
                   }
                   }else {
                         array_push($errores,"Error 002: El Codigo no existe.");
