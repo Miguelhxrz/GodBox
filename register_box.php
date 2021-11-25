@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
+
 session_start();
 $_SESSION['object'];
-$errores = 0;
+$errores = array();
+
+$PatronUsuario = "/^[a-zA-Z0-9\s-]+$/";
+$PatronCodigo = "/^[A-Z0-9]+$/";
+$PatronPrice = "/^[0-9].+$/";
 ?>
 
 <head>
@@ -68,7 +73,7 @@ $errores = 0;
                         </label>
                         <label for="code" class="label-code">
                             Codigo
-                            <input type="text" placeholder="Codigo de la caja" size="45" maxlength="45" name="codigo_input">
+                            <input type="text" placeholder="Codigo de la caja" size="8" maxlength="8" name="codigo_input">
                         </label>
                         <label for="price" class="label-price">
                             Precio
@@ -80,7 +85,7 @@ $errores = 0;
                         <label for="category" class="label-category" >
                             Categoria
                             <select name="category" id="">
-                                <option selected="true" disabled="disabled">Seleccionar</option>
+                                <option selected="" value ="" disabled="disabled">Seleccionar</option>
                                 <option value="Tecnologia">Tecnologia</option>
                                 <option value="Accesorios">Accesorios</option>
                                 <option value="Ropa">Ropa</option>
@@ -89,7 +94,7 @@ $errores = 0;
                         <label for="rank" class="label-rank">
                             Rango
                             <select name="rank" id="">
-                                <option selected="true" disabled="disabled">Seleccionar</option>
+                                <option selected="" value ="" disabled="disabled">Seleccionar</option>
                                 <option value="Dios">Dios</option>
                                 <option value="SemiDios">SemiDios</option>
                                 <option value="Olimpica">Olimpica</option>
@@ -99,7 +104,7 @@ $errores = 0;
                         <label for="objetos" class="label-objetos">
                             Objetos
                             <select name="objetos" id="">
-                                <option selected="true" disabled="disabled">Seleccionar</option>
+                                <option selected="" value ="" disabled="disabled">Seleccionar</option>
                                 <option value="<?php echo $_SESSION['object']["name_object"]?>"><?php echo $_SESSION['object']["name_object"]?></option>
                                 <option value="iPhone 13 PRO MAX">iPhone 13 PRO MAX</option>
                                 <option value="Nike Air Jordan">Nike Air Jordan</option>
@@ -111,66 +116,91 @@ $errores = 0;
 
                 <input type="submit" class="btn" name="Register" value="Registrar"></input>
 
-            </form>
-        </section>
+                <?php 
+                $name = $_POST['name_input'];
+                $codigo = $_POST['codigo_input']; 
+                $price = $_POST['precio_input'];
+                $category = $_POST['category'];
+                $rank = $_POST['rank'];
+                $objetos = $_POST['objetos'];
 
-        <?php 
-        #validacion de nombre (no funciona)
-        if (isset($_POST['name_input'])) {
-            if (empty($_POST['name_input'])) {
+                #validacion de nombre
+                if (isset($name)){
+                  if($name == ''){
+                    array_push($errores,"Error 000: El Nombre no puede estar vacio.");
+                  }
+                  if(strlen($name) < 3) {
+                    array_push($errores,"Error 001:El Nombre debe tener un tamaño mayor a 3 letras.");
+                  }if(preg_match($PatronUsuario,$name)){
+                  }else{
+                    array_push($errores,"Error 003: El Nombre no debe llevar caracteres especial.");
+                  }
+                  }else {
+                        array_push($errores,"Error 002: El Nombre no existe.");
+                      }
 
-              echo "<script>alert('ERROR: No puedes registrar el objeto sin nombre')</script>";
+                 #validacion de codigo
+                 if (isset($codigo)){
+                  if($codigo == ''){
+                    array_push($errores,"Error 000: El Codigo no puede estar vacio.");
+                  }
+                  if(strlen($codigo) < 8) {
+                    array_push($errores,"Error 001:El Codigo debe tener un tamaño de 8 caracteres.");
+                  }if(preg_match($PatronCodigo,$codigo)){
+                  }else{
+                    array_push($errores,"Error 003: El Codigo solo puede tener Mayusculas y Numeros.");
+                  }
+                  }else {
+                        array_push($errores,"Error 002: El Codigo no existe.");
+                      }
+                #validacion de precio
+                if (isset($price)){
+                  if($price == ''){
+                    array_push($errores,"Error 000: El Precio no puede estar vacio.");
+                  }
+                  if($price < 0) {
+                    array_push($errores,"Error 001:El Precio debe ser mayor que 0.");
+                  }if(preg_match($PatronPrice,$Price)){
+                  }else{
+                    array_push($errores,"Error 003: El Precio es en numeros, puede ser decimal.");
+                  }
+                  }else {
+                        array_push($errores,"Error 002: El Codigo no existe.");
+                      }
+                #validacion de Rank
+                if (isset($rank)){
+                  if($rank== ""){
+                    array_push($errores,"Error 000: Elige un rango.");
+                  }
+                  }else {
+                    array_push($errores,"Error 002:no existe rango.");
+                  }
 
-              $errores = $errores + 1;
-            } else {
+                #validacion de Objetos
+                if (isset($objetos)){
+                  if($objetos== ""){
+                    array_push($errores,"Error 000: Elige un patrocinador.");
+                  }
+                  }else {
+                    array_push($errores,"Error 002:no existe patrocinador.");
+                  }
+                  
+                #validacion de Category
+                if (isset($category)){
+                  if($category== ""){
+                    array_push($errores,"Error 000: Elige una Categoria.");
+                  }
+                  }else {
+                    array_push($errores,"Error 002: no existe Categoria.");
+                  }
+                #Errores
+          if(count($errores)>0){
+            echo "<div class='error'>";
+            for ($i=0; $i < count($errores); $i++) { 
+              echo "<li>".$errores[$i]."</li>";
 
-              if (preg_match("/^[a-zA-Z0-9\s-]+$/", $_POST['name_input'])) {
-              } else {
-                echo "<script>alert('ERROR: Nombre invalido')</script>";
-
-                $errores = $errores + 1;
-              }
-            }
-          }
-        #validacion de codigo
-        if (isset($_POST['codigo_input'])) {
-                
-            if (empty($_POST['codigo_input'])) {
-
-              echo "<script>alert('ERROR: No puedes registrar el objeto sin su cantidad')</script>";
-
-              $errores = $errores + 1;
-            } else {
-
-              if (preg_match("/^[A-Z0-9]+$/", $_POST['codigo_input'])) {
-                echo "<script>alert('Correcto')</script>";
-              } else {
-                echo "<script>alert('ERROR: Solo Acepta Mayusculas y numeros')</script>";
-
-                $errores = $errores + 1;
-              }
-            }
-          }
-        #validacion de precio
-        if (isset($_POST['precio_input'])) {
-                
-            if (empty($_POST['precio_input'])) {
-
-              echo "<script>alert('ERROR: No puedes registrar el objeto sin su precio')</script>";
-
-              $errores = $errores + 1;
-            } else {
-
-              if (preg_match("/^[0-9].+$/", $_POST['precio_input'])) {
-                echo "<script>alert('Correcto')</script>";
-              } else {
-                echo "<script>alert('ERROR: Solo numeros, Puede ser decimal')</script>";
-
-                $errores = $errores+ 1;
-              }
-            }
-          }
-          if ($errores === 0) {
+            } 
+          }else{
             session_start();
 
             $_SESSION['box_name'] = $_POST['name'];
@@ -195,11 +225,17 @@ $errores = 0;
             ); 
           echo $_SESSION['box']["sponsor"];
           if (isset($_SESSION['box'])){
-            echo "<script>alert('Caja agregada')</script>";
+            echo "<div class='correcto'><h4>¡Todo correcto, agregada!</h4></div>";
           }
-          }else{
-            echo "<script>alert('ERROR: Verifica tus datos')</script>"; 
-          } 
+          }
+                ?>
+
+            </form>
+        </section>
+
+        <?php 
+      
+          
         ?>
         <section class="footer">
             <h5>Todos los derechos reservados 2021 GodBox</h5>

@@ -85,7 +85,7 @@
               <label for="Sponsor" class="label-sponsor" >
                   Sponsor
                 <select name="Sponsor" id="">
-                    <option value="nada" selected="true" disabled="disabled">Seleccionar</option>
+                    <option value="" selected="true" disabled="disabled">Seleccionar</option>
                     <option value="<?php echo $_SESSION['sponsor']["sponsor_name"]?>"><?php  echo($_SESSION['sponsor']["sponsor_name"]);?></option>
                     <option value="Nike">Nike</option>
                     <option value="Nintendo">Nintendo</option>
@@ -94,7 +94,7 @@
               <label for="Rank" class="label-rank">
               Rango
                 <select name="Rank">
-                    <option value="nada"selected="true" disabled="disabled">Seleccionar</option>
+                    <option value=""selected="true" disabled="disabled">Seleccionar</option>
                     <option value="Dios">Dios</option>
                     <option value="SemiDios">SemiDios</option>
                     <option value="Olimpica">Olimpica</option>
@@ -103,8 +103,8 @@
               </label>
               <label for="category" class="label-category" >
               Categoria
-                <select name="Category" id="">
-                <option value="nada" selected="true" disabled="disabled">Seleccionar</option>
+                <select name="Category">
+                <option value="" selected="true" disabled="disabled">Seleccionar</option>
                 <option value="Tecnologia">Tecnologia</option>
                 <option value="Accesorios">Accesorios</option>
                 <option value="Ropa">Ropa</option>
@@ -117,9 +117,6 @@
             $name_object = $_POST['name'];
             $cantidad = $_POST['cantidad'];
             $price = $_POST['price'];
-            $Rank = $_POST['Rank'];
-            $Sponsor = $_POST['Sponsor'];
-            $Category = $_POST['Category'];
 
             #validacion de nombre (no funciona)
             if (isset($name_object)){
@@ -152,14 +149,45 @@
               if($price == ''){
                 array_push($errores,"Error 000: El precio no puede estar vacio.");
               }
-              if(preg_match($PatronPrecio,$price)){
+              if(strlen($name_object) < 0) {
+                array_push($errores,"Error 001:El precio debe ser mayor o igual a 0.");
+              }if(preg_match($PatronPrecio, $price)){
               }else{
                 array_push($errores,"Error 003: El precio solo admite numeros, y punto.");
-              }
-              }else {
+              }}else {
                     array_push($errores,"Error 002: El precio  no existe.");
                   }
-            
+            #validacion de Rank
+            $Rank = $_POST['Rank'];
+            if (isset($Rank)){
+              if($Rank== ""){
+                array_push($errores,"Error 000: Elige un rango.");
+              }
+              }else {
+                array_push($errores,"Error 002:no existe rango.");
+              }
+
+            #validacion de Sponsor
+            $Sponsor = $_POST['Sponsor'];
+            if (isset($Sponsor)){
+              if($Sponsor== ""){
+                array_push($errores,"Error 000: Elige un patrocinador.");
+              }
+              }else {
+                array_push($errores,"Error 002:no existe patrocinador.");
+              }
+              
+            #validacion de Category
+            $Category = $_POST['Category'];
+            if (isset($Category)){
+              if($Category== ""){
+                array_push($errores,"Error 000: Elige una Categoria.");
+              }
+              }else {
+                array_push($errores,"Error 002: no existe Categoria.");
+              }
+
+            #Errores
             if(count($errores)>0){
               echo "<div class='error'>";
               for ($i=0; $i < count($errores); $i++) { 
@@ -167,6 +195,7 @@
 
               } 
             }else{
+              #Sesion de Objetos
               session_start();
 
                 $_SESSION['object_name'] = $_POST['name'];
