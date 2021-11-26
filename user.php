@@ -60,13 +60,13 @@
     <section class="selecction">
         <div class="container">
             <div class="box">
-                <a href="userObjects.html" class="button btn">
+                <a href="userObjects.php" class="button btn">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
                     <span id="span4"></span> Mis Productos
                 </a>
-                <a href="userCoins.html" class="button btn">
+                <a href="userCoins.php" class="button btn">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -80,8 +80,8 @@
     <div class="container-menu">
         <div class="menu">
             <nav>
-                <a href="userPerfil.html" class="profil">Perfil</a>
-                <a href="userConfig.html" class="config">Configuración</a>
+                <a href="userPerfil.php" class="profil">Perfil</a>
+                <a href="userConfig.php" class="config">Configuración</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>

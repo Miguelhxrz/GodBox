@@ -71,9 +71,11 @@
                 <input type="text" name="id" placeholder="Documento de identidad" maxlength="10" size="10" require>
                 <input type="email" name="email" class="email" placeholder="Correo" maxlength="45" size="45" require> 
                 <input type="text" name="address" placeholder="Dirección" maxlength="45" size="45" require> 
-                <label for="birth">
-                  Fecha de nacimiento
-                <input type="date" name="birth" placeholder="Fecha de nacimiento" min="1921-11-20" max="2021-11-24">
+                <label for="birth" class="birth">
+                 <p>Fecha de nacimiento:</p>
+                  <input type="text" name="day" placeholder="Día" min="0" max="31">
+                  <input type="text" name="month" placeholder="Mes" min="1" max="12">
+                  <input type="text" name="age" placeholder="Año" min="1900" max="2003">
                 </label>
 
                 <input type="submit" class="btn" name="submit" value="registrarse" id="submit-btn">
@@ -82,13 +84,17 @@
 
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                $id = $_POST['id'];
+                $id = intval($_POST['id']);
                 $email = $_POST['email'];
                 $address = $_POST['address'];
+                $day = intval($_POST['day']);
+                $month = intval($_POST['month']);
+                $age = intval($_POST['age']) ;
                   
                 if(isset($_POST['submit'])) {
 
                   #validacion de username
+                  
                   if(isset($username)){
                     if (empty($username)) {
                       array_push($errores,"Error 001: El Username no puede estar vacio.");
@@ -116,6 +122,7 @@
                   }else {
                     array_push($errores,"Error 006: la contraseña no existe.");
                   }
+
                   #validacion de id
 
                   if(isset($id)){
@@ -153,7 +160,7 @@
 
                    if(isset($address)){
 
-                    if(empty($address)) {
+                  if(empty($address)) {
                     array_push($errores,"Error 014: No puedes dejar el campo de email vacio.");
                     }
                     if(strlen($address) < 3){
@@ -162,10 +169,85 @@
                     if(preg_match($patron_address, $address) == 0){
                       array_push($errores,"Error 16: Verifique su direccion.");
                     }
-
                   }else {
-                      array_push($errores,"Error 017: la direccion no existe.");
+                      array_push($errores,"Error 17: La direccion no existe.");
                     }
+
+                  #validacion de fecha (dia)
+                    
+                  if(isset($day)) {
+                    
+                    if(empty($day)){
+                      array_push($errores,"Error 018: No puede dejar el campo de dia vacio.");
+                    }
+
+                    if(is_numeric($day) == false) {
+                      array_push($errores,"Error 019: Imposible procesar.");
+                    }
+                    
+                    if(strlen($day) >= 3) {
+                      array_push($errores,"Error 020: No existe un dia con 3 cifras.");
+                    }
+                    
+                    if($day > 31 || $day < 0){
+                      array_push($errores,"Error 021: Los meses tiene 28, 30 y 31 días.");
+                    }
+                  
+                  }else {
+                    array_push($errores,"Error 021: El dia no existe.");
+                  }
+
+                  #validacion de fecha (mes)
+                    
+                  if(isset($month)) {
+                    
+                    if(empty($month)){
+                      array_push($errores,"Error 022: No puede dejar el campo de dia vacio.");
+                    }
+
+                    if(is_numeric($month) == false) {
+                      array_push($errores,"Error 023: Imposible procesar.");
+                    }
+                    
+                    if(strlen($month) >= 3) {
+                      array_push($errores,"Error 024: No existe un mes con 3 cifras.");
+                    }
+                    
+                    if($month > 12 || $month < 0){
+                      array_push($errores,"Error 025: Los meses son del 1 - 12.");
+                    }
+                  
+                  }else {
+                    array_push($errores,"Error 026: El mes no existe.");
+                  }
+
+                  #validacion de fecha (año)
+                    
+                  if(isset($age)) {
+                    
+                    if(empty($age)){
+                      array_push($errores,"Error 27: No puede dejar el campo de año vacio.");
+                    }
+
+                    if(is_numeric($age == false)) {
+                      array_push($errores,"Error 028: Imposible procesar.");
+                    }
+                    
+                    if(strlen($age) > 4) {
+                      array_push($errores,"Error 029: No existe aun, un año con 5 cifras.");
+                    }
+                    
+                    if($age <= 1920 || $age < 0){
+                      array_push($errores,"Error 030: Verifique el año en que nacio.");
+                    }
+
+                    if($age > 2003) {
+                      array_push($errores,"Error 031: Tienes que ser mayor de edad para poder registrarte.");
+                    }
+                  
+                  }else {
+                    array_push($errores,"Error 032: El año no existe.");
+                  }
 
                    #Imprimiendo alertas
                    if(count($errores) > 0){
@@ -177,17 +259,15 @@
                           echo "<li>".$errores[$i]."</li>";
 
                         }
+                        echo $age;
                       echo "</div>";
                    }else {
-                     echo "<div class='correcto'>
-                     <h4>¡Todo correcto!</h4>
-                     </div>";
+                     echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
                      header("location: ./index.html");
                    }
-
-                }
-                   
+                  
+                }  
                 ?>
             </form>
 

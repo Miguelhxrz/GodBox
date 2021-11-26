@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+$errores = array();
+$patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
+$patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
+$patron_name = "/^[a-zA-Z0-9\s-]+$/";
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,71 +63,92 @@
             </div>
             <form action="" name= "form-register" class= "form-register" method="post">
             <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
-            <input type="text" name="name_input" name="name_input" placeholder="Nombre" maxlength="15" size="15" require>
-            <input type="email" name="email_input" name="email_input" placeholder="Email" maxlength="45" size="45" require>
+            <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
+            <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
             <input type="submit"class="btn" name="register" value="Registrar">
-            </form>
-            <?php
+            
+            <?php 
+            $sponsor_name = $_POST['name_input'];
+            $rif = $_POST['rif_input'];
+            $email = $_POST['email_input'];
+
+
             #validacion de rif
-            echo $_POST['rif_input'];
-            $patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
-            if (isset($_POST['rif_input'])) {
-              if (empty($_POST['rif_input'])) {
-  
-                echo "<script>alert('ERROR: Coloca el rif del sponsor a registrar')</script>";
-  
-                $errores = $errores + 1;
-              } else {
-  
-                if (preg_match($patron_id,$_POST['rif_input']) ) {
-                  echo "<script>alert('Correcto')</script>";
-                } else {
-                  echo "<script>alert('ERROR: El rif debe ser de esta manera: V,E,R,J,P ó G-12345678')</script>";
-                  $errores = $errores + 1;
-                }
+            if (isset($rif)){
+              if($rif == ''){
+                array_push($errores,"Error 000: El Rif no puede estar vacio.");
               }
-            }
-             #validacion name (no funciona)
-            if (isset($_POST['name_input'])) {
-                if (empty($_POST['name_input'])) {
-    
-                  echo "<script>alert('ERROR: No puedes registrar al sponsor sin nombre')</script>";
-    
-                  $errorcount = $errorcount + 1;
-                } else {
-    
-                  if (preg_match("/^[a-zA-ZÀ-ÿ\s]$/", $_POST['name_input'])) {
-                  } else {
-                    echo "<script>alert('ERROR: Elnombre no puede contener numeros ni caracteres especiales')</script>";
-    
-                    $errorcount = $errorcount + 1;
+              if(strlen($rif) < 3) {
+                array_push($errores,"Error 001:El Rif debe tener un tamaño mayor a 3 letras.");
+              }if(preg_match($patron_id,$rif)){
+              }else{
+                array_push($errores,"Error 003: El Rif debe ser de esta manera: V,E,R,J,P ó G-12345678.");
+              }
+              }else {
+                    array_push($errores,"Error 002: El Rif no existe.");
                   }
+
+            #validacion name
+            if (isset($sponsor_name)){
+              if($sponsor_name == ''){
+                array_push($errores,"Error 000: El Nombre no puede estar vacio.");
+              }
+              if(strlen($sponsor_name) < 3) {
+                array_push($errores,"Error 001:El Nombre debe tener un tamaño mayor a 3 letras.");
+              }if(preg_match($patron_name ,$sponsor_name)){
+              }else{
+                array_push($errores,"Error 003: El Nombre no puede contener caracteres especiales.");
+              }
+              }else {
+                    array_push($errores,"Error 002: El Nombre no existe.");
+                  }
+
+            #validacion email
+            if (isset($email)){
+              if($email == ''){
+                array_push($errores,"Error 000: El Correo no puede estar vacio.");
+              }
+              if(strlen($email) < 15) {
+                array_push($errores,"Error 001:El Correo debe tener un tamaño mayor a 15 letras.");
+              }if(preg_match($patron_email, $email)){
+              }else{
+                array_push($errores,"Error 003: Dato invalido al escribir el correo.");
+              }
+              }else {
+                    array_push($errores,"Error 002: El Nombre no existe.");
+                  }
+
+            #Errores
+            if(count($errores)>0){
+              echo "<div class='error'>";
+              for ($i=0; $i < count($errores); $i++) { 
+                echo "<li>".$errores[$i]."</li>";
+
+              } 
+            }else{
+                  session_start();
+
+                $_SESSION['sponsor_name'] = $_POST['name_input'];
+
+                if (isset($_SESSION['sponsor'])) {
+                  $_SESSION['sponsor'] = array();
                 }
+                $sponsor_name = $_POST['name_input'];
+                $rif = $_POST['rif_input'];
+                $email = $_POST['email_input'];
+
+                $_SESSION['sponsor'] = array(
+                    "sponsor_name" => $sponsor_name,
+                    "rif" => $rif,
+                    "email" => $email
+                ); 
+              if (isset($_SESSION['sponsor']["sponsor_name"])){
+                echo "<div class='correcto'><h4>¡Todo correcto, agregado!</h4></div>";
               }
-               #validacion email
-           $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
-
-           if (isset($_POST['email_input'])) {
-            if (empty($_POST['email_input'])) {
-
-              echo "<script>alert('ERROR: No puedes registrar al sponsor sin correo electronico')</script>";
-
-              $errores = $errores + 1;
-            } else {
-
-              if (preg_match($patron_email,$_POST['email_input']) ) {
-                echo "<script>alert('Correcto')</script>";
-              } else  {
-
-                echo "<script>alert('ERROR: Dato invalido al escribir el correo')</script>";
-
-                $errores = $errores + 1;
-              }
-            }
-        }
-    
+            }     
             ?>
             
+          </form>
         </section>
 
         <section class="footer">

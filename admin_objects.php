@@ -51,8 +51,8 @@
         <div class="box-container">
             <div class="box">
                 <div class="user">
-                    <img src="./img/avatar1.png" alt="user">
-                    <h3>vanemaru</h3>
+                    <img src="./icons/casco.png" alt="user">
+                    <h3>Admin</h3>
                 </div>
             </div>
         </div>
@@ -98,6 +98,22 @@
                 <div class="box">
                     <a href="#" class="button">Reporte de productos ganados</a>
                     <a href="#" class="button">Reporte de canjes</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="selecction">
+            <div class="container">
+                <div class="box">
+                    <a href="./inventory.php" class="button">Inventario de Cajas</a>
+                    <a href="./inventory-sponsor.php" class="button">Inventario de Sponsors</a>
+                </div>
+            </div>
+        </section>
+        <section class="selecction">
+            <div class="container">
+                <div class="box">
+                    <a href="./inventory-objects.php" class="button">Inventario de Objetos</a>
                 </div>
             </div>
         </section>
