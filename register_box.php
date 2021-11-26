@@ -170,19 +170,25 @@ $PatronPrice = "/^[0-9].+$/";
                       }
                 #validacion de Rank
                 if (isset($rank)){
+
+                }else{
                     array_push($errores,"Error 002: Elige un Rango.");
                   }
 
                 #validacion de Objetos
                 if (isset($objetos)){
+
+                }else{
                     array_push($errores,"Error 002: Elige un patrocinador.");
                   }
                   
                 #validacion de Category
                 if (isset($category)){
+
+                }else{
                     array_push($errores,"Error 002: Elige una Categoria.");
                   }
-                  
+
                 #Errores
                 if(count($errores)>0){
                   echo "<div class='error'>";
@@ -213,7 +219,6 @@ $PatronPrice = "/^[0-9].+$/";
                       "rank" => $rank,
                       "objetos" => $objetos
                   ); 
-                echo $_SESSION['box']["sponsor"];
                 if (isset($_SESSION['box'])){
                   echo "<div class='correcto'><h4>¡Todo correcto, agregada!</h4></div>";
                 }
