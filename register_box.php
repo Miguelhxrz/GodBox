@@ -123,10 +123,11 @@ $PatronPrice = "/^[0-9].+$/";
                 $category = $_POST['category'];
                 $rank = $_POST['rank'];
                 $objetos = $_POST['objetos'];
+                $submit = $_POST['submit'];
 
                 #validacion de nombre
                 if (isset($name)){
-                  if($name == ''){
+                  if(empty($name)){
                     array_push($errores,"Error 000: El Nombre no puede estar vacio.");
                   }
                   if(strlen($name) < 3) {
@@ -141,7 +142,7 @@ $PatronPrice = "/^[0-9].+$/";
 
                  #validacion de codigo
                  if (isset($codigo)){
-                  if($codigo == ''){
+                  if(empty($codigo)){
                     array_push($errores,"Error 000: El Codigo no puede estar vacio.");
                   }
                   if(strlen($codigo) < 8) {
@@ -155,79 +156,68 @@ $PatronPrice = "/^[0-9].+$/";
                       }
                 #validacion de precio
                 if (isset($price)){
-                  if($price == ''){
+                  if(empty($price)){
                     array_push($errores,"Error 000: El Precio no puede estar vacio.");
                   }
                   if($price < 0) {
                     array_push($errores,"Error 001:El Precio debe ser mayor que 0.");
                   }if(preg_match($PatronPrice,$Price)){
                   }else{
-                    array_push($errores,"Error 003: El Precio es en numeros, puede ser decimal.");
+                    array_push($errores,"Error 003: El Precio debe ser decimal.");
                   }
                   }else {
                         array_push($errores,"Error 002: El Codigo no existe.");
                       }
                 #validacion de Rank
                 if (isset($rank)){
-                  if($rank== ""){
-                    array_push($errores,"Error 000: Elige un rango.");
-                  }
-                  }else {
-                    array_push($errores,"Error 002:no existe rango.");
+                    array_push($errores,"Error 002: Elige un Rango.");
                   }
 
                 #validacion de Objetos
                 if (isset($objetos)){
-                  if($objetos== ""){
-                    array_push($errores,"Error 000: Elige un patrocinador.");
-                  }
-                  }else {
-                    array_push($errores,"Error 002:no existe patrocinador.");
+                    array_push($errores,"Error 002: Elige un patrocinador.");
                   }
                   
                 #validacion de Category
                 if (isset($category)){
-                  if($category== ""){
-                    array_push($errores,"Error 000: Elige una Categoria.");
+                    array_push($errores,"Error 002: Elige una Categoria.");
                   }
-                  }else {
-                    array_push($errores,"Error 002: no existe Categoria.");
-                  }
+                  
                 #Errores
-          if(count($errores)>0){
-            echo "<div class='error'>";
-            for ($i=0; $i < count($errores); $i++) { 
-              echo "<li>".$errores[$i]."</li>";
+                if(count($errores)>0){
+                  echo "<div class='error'>";
+                  for ($i=0; $i < count($errores); $i++) { 
+                    echo "<li>".$errores[$i]."</li>";
 
-            } 
-          }else{
-            session_start();
+                  } 
+                }else{
+                  session_start();
 
-            $_SESSION['box_name'] = $_POST['name'];
+                  $_SESSION['box_name'] = $_POST['name'];
 
-            if (isset($_SESSION['box'])) {
-              $_SESSION['box'] = array();
-            }
-            $name = $_POST['name_input'];
-            $codigo = $_POST['codigo_input']; 
-            $price = $_POST['precio_input'];
-            $category = $_POST['category'];
-            $rank = $_POST['rank'];
-            $objetos = $_POST['objetos'];
+                  if (isset($_SESSION['box'])) {
+                    $_SESSION['box'] = array();
+                  }
+                  $name = $_POST['name_input'];
+                  $codigo = $_POST['codigo_input']; 
+                  $price = $_POST['precio_input'];
+                  $category = $_POST['category'];
+                  $rank = $_POST['rank'];
+                  $objetos = $_POST['objetos'];
 
-            $_SESSION['box'] = array(
-                "name" => $name,
-                "codigo" => $codigo,
-                "price" => $price,
-                "category" => $category,
-                "rank" => $rank,
-                "objetos" => $objetos
-            ); 
-          echo $_SESSION['box']["sponsor"];
-          if (isset($_SESSION['box'])){
-            echo "<div class='correcto'><h4>¡Todo correcto, agregada!</h4></div>";
-          }
-          }
+                  $_SESSION['box'] = array(
+                      "name" => $name,
+                      "codigo" => $codigo,
+                      "price" => $price,
+                      "category" => $category,
+                      "rank" => $rank,
+                      "objetos" => $objetos
+                  ); 
+                echo $_SESSION['box']["sponsor"];
+                if (isset($_SESSION['box'])){
+                  echo "<div class='correcto'><h4>¡Todo correcto, agregada!</h4></div>";
+                }
+                }
                 ?>
 
             </form>
