@@ -2,13 +2,15 @@
 <html lang="en">
 <?php 
 
+require_once('./bd-con.php');
+
 session_start();
 $_SESSION['object'];
 $errores = array();
 
 $PatronUsuario = "/^[a-zA-Z0-9\s-]+$/";
 $PatronCodigo = "/^[A-Z0-9]+$/";
-$PatronPrice = "/^[0-9].+$/";
+$PatronPrecio="/^[0-9].+$/";
 ?>
 
 <head>
@@ -64,7 +66,7 @@ $PatronPrice = "/^[0-9].+$/";
             <div class="title-form">
                 <h5>Register Box</h5>
             </div>
-            <form action="" class="form-register" name="form-register" method="POST">
+            <form action="" class="form-register" name="form-register" method="POST" enctype="multipart/form-data" >
                 <div class="conta">
                     <section class="l-q">
                         <label for="Name" class="label-name">
@@ -110,7 +112,8 @@ $PatronPrice = "/^[0-9].+$/";
                                 <option value="Nike Air Jordan">Nike Air Jordan</option>
                                 <option value="Nintendo Switch">Nintendo Switch</option>
                             </select>
-                        </label>
+                        </label><br>
+                        <input type="file" name="imagen" id="">
                     </section>
                 </div>
 
@@ -123,6 +126,7 @@ $PatronPrice = "/^[0-9].+$/";
                 $category = $_POST['category'];
                 $rank = $_POST['rank'];
                 $objetos = $_POST['objetos'];
+                $imagen = $_POST['imagen'];
                 $submit = $_POST['submit'];
 
                 #validacion de nombre
@@ -161,10 +165,11 @@ $PatronPrice = "/^[0-9].+$/";
                   }
                   if($price < 0) {
                     array_push($errores,"Error 001:El Precio debe ser mayor que 0.");
-                  }if(preg_match($PatronPrice,$Price)){
-                  }else{
-                    array_push($errores,"Error 003: El Precio debe ser decimal.");
                   }
+                  #if(preg_match($PatronPrecio,$Price)){
+                  #}else{
+                   # array_push($errores,"Error 003: El Precio debe ser decimal.");
+                  #}
                   }else {
                         array_push($errores,"Error 002: El Codigo no existe.");
                       }
@@ -189,6 +194,15 @@ $PatronPrice = "/^[0-9].+$/";
                     array_push($errores,"Error 002: Elige una Categoria.");
                   }
 
+                #validacion de imagen
+                #if(isset($imagen)){
+                 # if(empty($imagen)){
+                  #  array_push($errores,"Error 002: Coloca una imagen.");
+                  #}
+                #}else{
+                 # array_push($errores,"Error 001: Imagen no existe.");
+                #}
+
                 #Errores
                 if(count($errores)>0){
                   echo "<div class='error'>";
@@ -197,31 +211,23 @@ $PatronPrice = "/^[0-9].+$/";
 
                   } 
                 }else{
-                  session_start();
-
-                  $_SESSION['box_name'] = $_POST['name'];
-
-                  if (isset($_SESSION['box'])) {
-                    $_SESSION['box'] = array();
+                  $sql = mysqli_query($conexion, "SELECT `codigo` FROM `box` WHERE `codigo` = '$codigo'");
+                  if($row = mysqli_fetch_array($sql)){
+                    echo "<div class='error'><h4>¡Ya existe una caja con ese codigo!</h4></div>"; 
+                  }else{
+                    $nombreimagen = $_FILES['imagen']['name'];
+                    $tmpimagen = $_FILES ['imagen']['tmp_name'];
+                    $urlnueva = "img/".$nombreimagen;
+                    if (is_uploaded_file($tmpimagen)){
+                        copy($tmpimagen,$urlnueva);
+                        $query = mysqli_query($conexion,"INSERT INTO `box` VALUES ('$codigo','$name','$price','$objetos','$rank','$category','$urlnueva')");
+                        if ($query){
+                            echo "<div class='correcto'><h4>¡Datos Cargados!</h4></div>"; 
+                        } 
+                    }else{
+                      echo "<div class='error'><h4>¡Error al cargar!</h4></div>"; 
+                    }
                   }
-                  $name = $_POST['name_input'];
-                  $codigo = $_POST['codigo_input']; 
-                  $price = $_POST['precio_input'];
-                  $category = $_POST['category'];
-                  $rank = $_POST['rank'];
-                  $objetos = $_POST['objetos'];
-
-                  $_SESSION['box'] = array(
-                      "name" => $name,
-                      "codigo" => $codigo,
-                      "price" => $price,
-                      "category" => $category,
-                      "rank" => $rank,
-                      "objetos" => $objetos
-                  ); 
-                if (isset($_SESSION['box'])){
-                  echo "<div class='correcto'><h4>¡Todo correcto, agregada!</h4></div>";
-                }
                 }
                 ?>
 
