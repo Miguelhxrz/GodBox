@@ -21,6 +21,8 @@ html {
 /* GodBox variables*/
 
 :root {
+    --color2: #2168a6;
+    --color3: #23b7d9;
     --azul1: #0c1059;
     --azul2: #2168a6;
     --azul3: #23b7d9;
@@ -95,19 +97,11 @@ a {
     text-align: center;
 }
 
-.links-r {
-    display: flex;
-    align-items: center;
-}
 
 .login-link {
     margin-right: 35px;
 }
 
-.imgcasco {
-    width: 64px;
-    height: 64px;
-}
 
 a {
     color: #fff;
@@ -141,6 +135,109 @@ a {
 }
 
 
+.header .container-header .options {
+    width: 250px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .container-header .options .link {
+    margin-right: 35px;
+}
+
+.header .container-header .options .link .item {
+    width: 68px;
+    height: 68px;
+}
+
+a {
+    color: #fff;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+
+.fondo img{
+    width: 100%;
+    height: 530px;
+}
+
+
+/* Menú lateral */
+
+.btn-menu label {
+    border-left: 3rem transparent;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#btn-menu {
+    display: none;
+}
+
+.container-menu {
+    position: absolute;
+    width: 20%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.container-menu .menu {
+    width: 100%;
+    max-width: 300px;
+    background: var(--color2);
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+}
+
+#btn-menu:checked~.container-menu .menu {
+    transform: translateX(0%);
+}
+
+.container-menu .menu nav {
+    transform: translateY(15%);
+}
+
+.container-menu .menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+    font-size: 2.5rem;
+    font-family: var(--fuenteTitulos);
+}
+
+.container-menu .menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.config {
+    background-color: var(--color3);
+}
+
+
+
 /* body */
 
 
@@ -169,7 +266,7 @@ a {
     object-fit: cover;
     height: 15rem;
     width: 15rem;
-    margin-top: 2rem;
+    margin-top: 300px;
 }
 
 .box-container .box .user h3 {

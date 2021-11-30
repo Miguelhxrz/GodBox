@@ -37,25 +37,28 @@
                 </div>
             </section>
 
-            <section class="links-r">
-                <div class="login-link">
-                    <a href="">
-                        <img src="./icons/casco.png" alt="" class="imgcasco">
-                    </a>
+
+
+            <section class="options">
+                <div class="link">
+                    <div class="btn-menu">
+                        <label for="btn-menu"><img src="./icons/casco.png" alt="" class="item"></label>
+                        <a href="admin_objects.php"><img src="./icons/coin.png" alt="" class="item"></a>
+                    </div>
                 </div>
             </section>
 
         </div>
     </header>
     <div class="container-fondo">
+        <!--<div class="user">
         <div class="box-container">
             <div class="box">
-                <div class="user">
                     <img src="./icons/casco.png" alt="user">
-                    <h3>Admin</h3>
                 </div>
             </div>
         </div>
+        <h3>Admin</h3>-->
 
         <section class="selecction">
             <div class="container">
@@ -128,6 +131,22 @@
                     <img src="./img/object2.png" alt="objet">
                 </div>
             </div>
+        </div>
+    </div>
+
+    
+    <footer>
+
+    </footer>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="menu">
+            <nav>
+                <a href="userPerfil.php" class="profil">Perfil</a>
+                <a href="#" class="config">Configuración</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
         </div>
     </div>
 </body>

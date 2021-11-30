@@ -84,11 +84,29 @@
                                         <input type="date" name="" id="birth" class="birth_input" disabled="">
                                         <p>Esta informacion no se puede modificar</p>
                                     </label>
-                                </section>
+                                    <label for="text" class="label-email">
+                                        Numero de tarjeta de credito
+                                        <input type="text" placeholder="Actualizar" size="45" maxlength="45" class="email_input" required>
+                                    </label>
+                                    <select name="Tipo de tarjeta" aria-placeholder="Tipo de tarjeta de credito" id="">
+                                        <option selected="true" disabled="disabled">Tipo de tarjeta de credito</option>
+                                        <option value="2">Visa</option>
+                                        <option value="3">Mastercad</option>
+                                    </select>
+                                    <br>
+                                    <label for="fecha" class="label-birth">
+                                        Fecha de vencimiento
+                                        <input type="date" placeholder=" Fecha de nacimiento" class="date" required>
+                                    </label>
+                                    <label for="codigo" class="codigo">
+                                        Codigo CVV
+                                        <input type="text" placeholder="Actualizar" size="3" maxlength="3" class="codigoCvv" required>
+                                    </label>
 
-                                <button type="submit">guardar</button>
-                                <button type="reset">reestablecer</button>
-                                <p class="warnings" id="warnings"></p>
+
+                                    <button type="submit">guardar</button>
+                                    <button type="reset">reestablecer</button>
+                                    <p class="warnings" id="warnings"></p>
                             </div>
                         </form>
                     </section>

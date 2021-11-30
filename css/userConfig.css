@@ -240,7 +240,11 @@ a {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
     flex: 1 1 30rem;
     border-radius: 2rem;
-    height: 620px;
+    height: 1220px;
+}
+
+.conta {
+    height: 115rem;
 }
 
 .form-register {
