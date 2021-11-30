@@ -119,6 +119,54 @@ a {
     height: 1491px;
 }
 
+#container__alert-item {
+    display: none;
+    flex-flow: column wrap;
+    align-items: center;
+    position: absolute;
+    top: 566px;
+    left: 672px;
+    z-index: 3;
+    width: 375px;
+    height: 325px;
+    padding: 15px;
+    background-color: rgba(39, 20, 63,.9);
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.item__card-alert {
+    position: relative;
+    width: 220px;
+    height: 224px;
+    background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 100%);
+    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 12px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+
+button {
+    padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #EABE3F;
+    border: none;
+    border-bottom: 5px solid #B69431;
+    text-shadow: 0px -2px #B69431;
+    transition: all 0.1s;
+}
+   
+button:hover, button:active {
+   transform: translate(0px,5px);
+   border-bottom: 1px solid #B69431;
+}
+
 .roulette {
     display: flex;
     width: 100%;
@@ -144,6 +192,10 @@ a {
   background-color: rgba(56, 62, 66, 0.3);
   border-radius: 20px;
   margin: 20px 20px 0px 0px;
+}
+
+.wrapper {
+    display: flex;
 }
 
 .roulette__container-cards {
@@ -180,6 +232,15 @@ a {
   flex-shrink: 0;
   white-space: nowrap;
   margin-right: 10px;
+}
+
+@keyframes scrolling {
+    from {
+        transform: translate(0px);
+    }
+    to {
+        transform: translate(-926px);
+    }
 }
 
 .roulette__btn-spin {

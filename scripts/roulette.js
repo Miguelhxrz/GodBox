@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const r_select = document.getElementById('roulette__select');
 
+  const accept = document.getElementById('accept');
+
   function getRandom(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -35,10 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
   let i = 0;
 
-  button_spin.addEventListener('click', function mover() {
+  button_spin.addEventListener('click', ()  => {
+
+    
       
       cards_items.forEach (item =>  {
-        item.style.animation = 'scrolling 2s infinite linear';
+        item.style.animation = 'scrolling 1s infinite linear';
       })
 
       setTimeout(() => {
@@ -72,13 +76,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         r_select.style.display = 'none';
         
-        button_spin.disabled = true
+        button_spin.disabled = true;
 
         cards_items.forEach (item =>  {
           item.style.animation = '';
         })
 
+        accept.addEventListener('click', () => {
+          window.location = 'index.php';
+        });
+        
       }, 6000);
 
-    })
+      
+    });
+
 })

@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 const nombre = document.getElementById("usemane")
 const contra = document.getElementById("password")
 const formulario = document.getElementById("form")
@@ -25,4 +26,6 @@ formulario.addEventListener("submit", e=>{
     } else {
         parrafo.innerHTML = "Modificación exitosa!"
     }
+})
+
 })

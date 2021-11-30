@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 $errores = array();
 $patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
 $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
 $patron_name = "/^[a-zA-Z0-9\s-]+$/";
+
+
+error_reporting(0);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/register_sponsor.css">
-    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/register_sponsor.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <title>GodBox - Register Sponsor</title>
 </head>
 
@@ -23,19 +26,19 @@ $patron_name = "/^[a-zA-Z0-9\s-]+$/";
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
+                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
                 <a href="./index.html"></a>
             </section>
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.html">
+                    <a href="./Boxes.php">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                    <a href="./index.php">
+                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -48,7 +51,7 @@ $patron_name = "/^[a-zA-Z0-9\s-]+$/";
             <section class="links-r">
                 <div class="login-link">
                     <a href="#">
-                        <img src="./icons/casco.png" alt="" class="imgcasco">
+                        <img src="../assets/icons/casco.png" alt="" class="imgcasco">
                     </a>
                 </div>
             </section>
@@ -71,7 +74,10 @@ $patron_name = "/^[a-zA-Z0-9\s-]+$/";
             $sponsor_name = $_POST['name_input'];
             $rif = $_POST['rif_input'];
             $email = $_POST['email_input'];
+            $register = $_POST['register'];
 
+
+            if(isset($register)){
 
             #validacion de rif
             if (isset($rif)){
@@ -145,15 +151,17 @@ $patron_name = "/^[a-zA-Z0-9\s-]+$/";
               if (isset($_SESSION['sponsor']["sponsor_name"])){
                 echo "<div class='correcto'><h4>¡Todo correcto, agregado!</h4></div>";
               }
-            }     
+            }
+          }     
             ?>
             
           </form>
         </section>
 
-        <section class="footer">
-            <h5>Todos los derechos reservados 2021 GodBox</h5>
-        </section>
+      <footer class="footer">
+        <img src="../assets/img/footer.png" alt="footer image">
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+    </footer>
     </main>
 </body>
 

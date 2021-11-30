@@ -1,3 +1,12 @@
+<?php 
+
+error_reporting(0);
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
     
@@ -21,12 +30,12 @@
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.html">
+                    <a href="./Boxes.php">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
+                    <a href="./index.php">
                         <img src="./icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
@@ -39,8 +48,8 @@
 
             <section class="links-r">
                 <div class="login-link">
-                    <a href="./register_page.html">
-                        <h4>Registro</h4>
+                    <a href="./register_page.php">
+                        <h4>Registrarse</h4>
                     </a>
                 </div>
             </section>
@@ -57,21 +66,22 @@
                 <h5>Entrar</h5>
             </div>
             <form action="" method="post" name="form-register" class="form-register">
-                <input type="text" name="username_input" class="username_input">
-                <input type="password" name="password_input" class="password_input">
+                <input type="text" name="username_input" placeholder="Username" class="username_input">
+                <input type="password" name="password_input" placeholder="Contraseña" class="password_input">
                 <input type="submit" value="Entrar" class="btn" name="btn">
             </form>
             <?php   
             
-                echo $_POST['username_input'];
-                echo $_POST['password_input'];
+                $username = $_POST['username_input'];
+                $password = $_POST['password_input'];
 
-                ?>
+            ?>
         </section>
     </main>
 
     <footer class="footer">
-        <h5>Todos los derechos reservados 2021 GodBox</h5>
+      <img src="./img/footer.png" alt="footer image">
+      <h3>Todos los derechos reservados 2021 GodBox</h3>
     </footer>
 
 </body>

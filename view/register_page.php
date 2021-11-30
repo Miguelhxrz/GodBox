@@ -8,6 +8,8 @@
 
   error_reporting(0);
 
+  
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,17 +31,17 @@
 
             <section class="logo">
                 <img src="./img/Logo-rezised.png" alt="" class="logoo">
-                <a href="./index.html"></a>
+                <a href="./index.php"></a>
             </section>
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.html">
+                    <a href="./Boxes.php">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
+                    <a href="./index.php">
                         <img src="./icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
@@ -52,8 +54,8 @@
 
             <section class="links-r">
                 <div class="login-link">
-                    <a href="./login.html">
-                        <h4>Entrar</h4>
+                    <a href="./login.php">
+                        <h4>Iniciar sesion</h4>
                     </a>
                 </div>
             </section>
@@ -263,6 +265,8 @@
                       echo "</div>";
                    }else {
                      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
+
+                     
 
                      header("location: ./index.html");
                    }
