@@ -116,20 +116,16 @@
     <br><br><br><br><br>
 
     <footer class="footer">
-        <img src="../assets/img/footer.png" alt="">
-        <h3>Todos los derechos reservados &copy; GodBox</h3>
+      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+      </div>
     </footer>
 
-<!--     <input type="checkbox" id="btn-menu">
-    <div class="container-menu">
-        <div class="menu">
-            <nav>
-                <a href="userPerfil.php" class="profil">Perfil</a>
-                <a href="userConfig.php" class="config">Configuración</a>
-            </nav>
-            <label for="btn-menu">✖️</label>
-        </div>
-    </div> -->
 </body>
+
+
 
 </html>

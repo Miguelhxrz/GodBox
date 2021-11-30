@@ -224,7 +224,7 @@ error_reporting(0);
     </main>
 
     <footer class="footer">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
+      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
       <div class="footer__social-media">
         <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
         <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
