@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'BubblegumSans';
-    src: url('../font/BubblegumSans-Regular.ttf');
+    src: url('../assets/font/BubblegumSans-Regular.ttf');
 }
 
 
@@ -61,7 +61,7 @@ a {
     align-items: center;
     width: 229px;
     margin-right: auto;
-    margin-left: 60px;
+    margin-left: 150px;
 }
 
 .header .container-header .center-title .boxes-link {
