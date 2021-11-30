@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'BubblegumSans';
+    src: url('../font/BubblegumSans-Regular.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+button,
+input[type='submit'],
+input[type='reset'] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    background-color: #111059;
+    font-family: 'BubblegumSans', Arial, Helvetica, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 130px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 130px;
+    padding: 25px;
+    background-color: rgba(86, 101, 132, 0.67);
+    font-family: 'BubblegumSans';
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.logo__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33.3%;
+    height: 100%;
+}
+
+.basic__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 229px;
+}
+
+.basic__menu .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.basic__menu .menu li {
+    margin: 12px;
+    cursor: pointer;
+}
+
+.basic__menu .menu li:nth-child(3) {
+    text-align: center;
+}
+
+.user__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33.3%;
+}
+
+.user__menu .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.user__menu .menu li {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.user__menu .menu li:nth-child(2) {
+    cursor: default;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 550px;
+    background-image: url("../img/vector-beautiful-landscape-illustration\ [Convertido]2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.conta {
+    width: 640px;
+    height: 460px;
+    background-color: rgba(90, 101, 132, 0.90);
+    border-radius: 32px;
+    padding: 20px;
+}
+
+.cont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.cont p {
+    color: #fff;
+    font-family: 'BubblegumSans';
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cont h3 {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-family: 'BubblegumSans';
+    font-size: 3.5rem;
+    text-decoration: underline;
+}
+
+.l-us {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-us {
+    width: 110px;
+    height: 100px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    height: 90px;
+}
+
+.footer img {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    height: 594px;
+}
+
+.footer h3 {
+    color: #fff;
+    font-family: 'BubblegumSans';
+    font-size: 3.2rem;
+}

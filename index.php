@@ -14,15 +14,15 @@
     <header class="header">
         <nav class="menu__container">
             <div class="logo__container">
-                <img src="./img/Logo-rezised.png" alt="Company logo">
+                <img src="./assets/img/Logo-rezised.png" alt="Company logo">
             </div>
             <section class="basic__menu">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a href="./Boxes.html">Cajas</a>
+                        <a href="./Boxes.php">Cajas</a>
                     </li>
-                    <a href="./index.html">
-                        <img src="./icons/Home.png" alt="">
+                    <a href="./index.php">
+                        <img src="./assets/icons/Home.png" alt="">
                     </a>
                     <li class="menu__item">
                         <a href="./">Sobre Nosotros</a>
@@ -33,7 +33,7 @@
             <section class="user__menu">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a href="./login.html">Iniciar Sesion</a>
+                        <a href="./login.php">Iniciar Sesion</a>
                     </li>
                     <li class="menu__item">o</li>
                     <li class="menu__item">
@@ -63,7 +63,7 @@
         </section>
         <section class="items__container">
             <article class="img__container">
-                <img src="./img/proteger.png" alt="">
+                <img src="./assets/img/proteger.png" alt="">
                 <h3>Nuevos objetos</h3>
             </article>
             <article class="item__box"></article>
@@ -85,7 +85,7 @@
     </main>
 
     <footer class="footer">
-        <img src="./img/eezy_17.png" alt="">
+        <img src="./assets/img/eezy_17.png" alt="">
         <h3>Todos los derechos reservados &copy; GodBox</h3>
     </footer>
 

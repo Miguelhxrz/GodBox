@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'BubblegumSans';
-    src: url('../font/BubblegumSans-Regular.ttf');
+    src: url('../assets/font/BubblegumSans-Regular.ttf');
 }
 
 * {
@@ -155,8 +155,16 @@ a {
     padding: 10px;
 }
 
-.error li {
-    margin-right: 10px;
+.error figure {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.error figure img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 .container {
@@ -298,11 +306,37 @@ input[type=submit] {
 
 .footer {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
     width: 100%;
-    height: 50px;
-    margin-top: 20px;
-    font-size: 2.5rem;
-    color: #fff;
+    height: 629px;
+    background-image: url('../assets/img/footer_test.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer h3 {
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin-left: 20px;
+    color: white;
+    font-size: 3.2rem;
+}
+
+.footer .footer__social-media {
+    align-self: flex-end;
+    justify-content: flex-end;
+    display: flex;
+    width: 50%;
+}
+
+.footer__social-media figure {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.footer__social-media img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }

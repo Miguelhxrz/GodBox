@@ -2,12 +2,15 @@
 <html lang="en">
 <?php 
   session_start();
-  $_SESSION['sponsor'];
+  // $_SESSION['sponsor'];
   $errores = array();
   #patrones
   $PatronUsuario="/^[a-zA-Z0-9\s-]+$/";
   $PatronCantidad="/^[0-9]+$/";
   $PatronPrecio="/^[0-9].+$/";
+
+
+  error_reporting(0);
 
 ?>
 
@@ -15,8 +18,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/register_object.css">
-    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/register_object.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <script src="../scripts/helper.js"></script>
     <title>GodBox - Registro de objetos</title>
 </head>
 
@@ -26,19 +30,19 @@
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
-                <a href="./index.html"></a>
+                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
+                <a href="../index.php"></a>
             </section>
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.html">
+                    <a href="./Boxes.php">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                    <a href="../index.php">
+                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -51,7 +55,7 @@
             <section class="links-r">
                 <div class="login-link">
                     <a href="#">
-                        <img src="./icons/casco.png" alt="" class="imgcasco">
+                        <img src="../assets/icons/casco.png" alt="" class="imgcasco">
                     </a>
                 </div>
             </section>
@@ -69,7 +73,7 @@
             <section class="l-q">
             <label for="Name" class="label-name">
                 Nombre
-                <input type="text" name="name" placeholder="Nombre de Objeto" class="name" max="15" maxlength="15">
+                <input type="text" name="name" placeholder="Nombre de Objeto" class="name" max="30" maxlength="30">
             </label>
             <label for="cantidad" class="label-cantidad">
                 Cantidad
@@ -86,9 +90,10 @@
                   Sponsor
                 <select name="Sponsor" id="">
                     <option value="" selected="true" disabled="disabled">Seleccionar</option>
-                    <option value="<?php echo $_SESSION['sponsor']["sponsor_name"]?>"><?php  echo($_SESSION['sponsor']["sponsor_name"]);?></option>
+                    <option value="Apple">Apple</option>
                     <option value="Nike">Nike</option>
                     <option value="Nintendo">Nintendo</option>
+                    <option value="Asus">Asus</option>
                 </select>
               </label>
               <label for="Rank" class="label-rank">
@@ -113,124 +118,125 @@
               </section>
               </div>
                 <input type="submit" name="btn" class="btn" value="registrar">
-                <?php 
-            $name_object = $_POST['name'];
-            $cantidad = $_POST['cantidad'];
-            $price = $_POST['price'];
+            <?php 
+              $name_object = $_POST['name'];
+              $cantidad = $_POST['cantidad'];
+              $price = $_POST['price'];
+              $register = $_POST['btn'];
 
+            if(isset($register)) {
+            
             #validacion de nombre (no funciona)
+
             if (isset($name_object)){
               if($name_object == ''){
                 array_push($errores,"Error 000: El Nombre no puede estar vacio.");
               }
               if(strlen($name_object) < 3) {
-                array_push($errores,"Error 001:El Nombre debe tener un tamaño mayor a 3 letras.");
+                array_push($errores,"Error 002:El Nombre debe tener un tamaño mayor a 3 letras.");
               }if(preg_match($PatronUsuario,$name_object)){
               }else{
                 array_push($errores,"Error 003: El Nombre no debe llevar caracteres especial.");
               }
-              }else {
-                    array_push($errores,"Error 002: El Nombre no existe.");
-                  }
+            }else {
+                array_push($errores,"Error 004: El Nombre no existe.");
+              }
+
             #validacion de cantidad
+
             if (isset($cantidad)){
               if($cantidad == '' ||$cantidad == '0'){
-                array_push($errores,"Error 000: La cantidad no puede estar vacia.");
+                array_push($errores,"Error 005: La cantidad no puede estar vacia.");
               }
               if(preg_match($PatronCantidad,$cantidad)){
               }else{
-                array_push($errores,"Error 003: La cantidad solo admite numeros.");
+                array_push($errores,"Error 006: La cantidad solo admite numeros.");
               }
-              }else {
-                    array_push($errores,"Error 002: La cantidad no existe.");
+            }else {
+                    array_push($errores,"Error 007: La cantidad no existe.");
                   }
+
             #validacion de precio
+
             if (isset($price)){
               if($price == ''){
-                array_push($errores,"Error 000: El precio no puede estar vacio.");
+                array_push($errores,"Error 008: El precio no puede estar vacio.");
               }
               if(strlen($name_object) < 0) {
-                array_push($errores,"Error 001:El precio debe ser mayor o igual a 0.");
+                array_push($errores,"Error 009:El precio debe ser mayor o igual a 0.");
               }if(preg_match($PatronPrecio, $price)){
+
               }else{
-                array_push($errores,"Error 003: El precio solo admite numeros, y punto.");
-              }}else {
-                    array_push($errores,"Error 002: El precio  no existe.");
-                  }
+                array_push($errores,"Error 010: El precio solo admite numeros, y punto.");
+              }
+            }else {
+              array_push($errores,"Error 011: El precio  no existe.");
+            }
+
             #validacion de Rank
+
             $Rank = $_POST['Rank'];
             if (isset($Rank)){
               if($Rank== ""){
-                array_push($errores,"Error 000: Elige un rango.");
+                array_push($errores,"Error 012: Elige un rango.");
               }
               }else {
-                array_push($errores,"Error 002:no existe rango.");
+                array_push($errores,"Error 013:no existe rango.");
               }
 
             #validacion de Sponsor
+
             $Sponsor = $_POST['Sponsor'];
             if (isset($Sponsor)){
               if($Sponsor== ""){
-                array_push($errores,"Error 000: Elige un patrocinador.");
+                array_push($errores,"Error 014: Elige un patrocinador.");
               }
               }else {
-                array_push($errores,"Error 002:no existe patrocinador.");
+                array_push($errores,"Error 015:no existe patrocinador.");
               }
               
             #validacion de Category
+
             $Category = $_POST['Category'];
             if (isset($Category)){
               if($Category== ""){
-                array_push($errores,"Error 000: Elige una Categoria.");
+                array_push($errores,"Error 016: Elige una Categoria.");
               }
               }else {
-                array_push($errores,"Error 002: no existe Categoria.");
+                array_push($errores,"Error 017: no existe Categoria.");
               }
 
             #Errores
-            if(count($errores)>0){
-              echo "<div class='error'>";
+
+            if(count($errores) > 0){
+              echo "<div class='error'>
+              <figure>
+              <img src='../assets/icons/close.png' alt='icon close' id='close'>
+             </figure>";
               for ($i=0; $i < count($errores); $i++) { 
-                echo "<li>".$errores[$i]."</li>";
+                    echo "<li>".$errores[$i]."</li>";
 
-              } 
-            }else{
-              #Sesion de Objetos
-              session_start();
-
-                $_SESSION['object_name'] = $_POST['name'];
-                
-                  if (isset($_SESSION['object'])) {
-                    $_SESSION['object'] = array();
                   }
-                  $name_object = $_POST['name'];
-                  $cantidad = $_POST['cantidad'];
-                  $price = $_POST['price'];
-                  $Rank = $_POST['Rank'];
-                  $Sponsor = $_POST['Sponsor'];
-                  $Category = $_POST['Category'];
+                  echo $age;
+                echo "</div>";
+             }else {
 
-                  $_SESSION['object'] = array(
-                    "name_object" => $name_object,
-                    "cantidad" => $cantidad,
-                    "price" => $price,
-                    "Rank" => $Rank,
-                    "Sponsor" => $Sponsor,
-                    "Category" => $Category
-                  ); 
-                  if (isset($_SESSION['object'])){
-                    echo "<div class='correcto'><h4>¡Todo correcto, agregado!</h4></div>";
-                  }
+               header("location: ./index.html");
              }
+            }
             ?>
             </form>
         </section>
-
-        <section class="footer">
-            <h5>Todos los derechos reservados 2021 GodBox</h5>
-        </section>
     </main>
 
+    <footer class="footer">
+      <h3>Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+      </div>
+    </footer>
 </body>
 
 </html>

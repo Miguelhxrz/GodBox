@@ -18,9 +18,9 @@
             </div>
             <section class="basic__menu">
                 <ul class="menu">
-                    <li class="menu__item"> <a href="./Boxes.html">Cajas</a></li>
+                    <li class="menu__item"> <a href="./Boxes.php">Cajas</a></li>
                     <li class="menu__item">
-                        <a href="./index.html">
+                        <a href="./index.php">
                             <img src="./icons/Home.png" alt="">
                         </a>
                     </li>
@@ -30,9 +30,9 @@
 
             <section class="user__menu">
                 <ul class="menu">
-                    <li class="menu__item"><a href="./login.html">Iniciar sesión</a></li>
+                    <li class="menu__item"><a href="./login.php">Iniciar sesión</a></li>
                     <li class="menu__item">o</li>
-                    <li class="menu__item"><a href="./register_page.html">Registrar</a></li>
+                    <li class="menu__item"><a href="./register_page.php">Registrar</a></li>
                 </ul>
             </section>
         </nav>

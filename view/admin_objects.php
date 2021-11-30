@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/admin_objects.css">
+    <link rel="stylesheet" href="../css/admin_objects.css">
     <title>GodBox - User Objects</title>
 </head>
 
@@ -15,19 +15,19 @@
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
-                <a href="./index.html"></a>
+                <img src="../img/Logo-rezised.png" alt="" class="logoo">
+                <a href="../index.html"></a>
             </section>
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.html">
+                    <a href="../Boxes.html">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                    <a href="../index.html">
+                        <img src="../icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -42,8 +42,8 @@
             <section class="options">
                 <div class="link">
                     <div class="btn-menu">
-                        <label for="btn-menu"><img src="./icons/casco.png" alt="" class="item"></label>
-                        <a href="admin_objects.php"><img src="./icons/coin.png" alt="" class="item"></a>
+                        <label for="btn-menu"><img src="../icons/casco.png" alt="" class="item"></label>
+                        <a href="admin_objects.php"><img src="../icons/coin.png" alt="" class="item"></a>
                     </div>
                 </div>
             </section>
@@ -63,26 +63,8 @@
         <section class="selecction">
             <div class="container">
                 <div class="box">
-                    <a href="#" class="button"><img src="./icons/buycart.png" alt=""> Mis Productos</a>
-                    <a href="#" class="button"><img src="./icons/coin2.png" alt=""> Transacciones</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="selecction">
-            <div class="container">
-                <div class="box">
-                    <a href="#" class="button">Registrar sponsor</a>
-                    <a href="#" class="button">Registrar producto</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="selecction">
-            <div class="container">
-                <div class="box">
-                    <a href="#" class="button">Registrar caja</a>
-                    <a href="#" class="button">Comprar monedas</a>
+                    <a href="#" class="button"><img src="../icons/buycart.png" alt=""> Mis Productos</a>
+                    <a href="#" class="button"><img src="../icons/coin2.png" alt=""> Transacciones</a>
                 </div>
             </div>
         </section>
@@ -135,8 +117,13 @@
     </div>
 
     
-    <footer>
-
+    <footer class="footer">
+      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+      </div>
     </footer>
 
     <input type="checkbox" id="btn-menu">
@@ -145,6 +132,11 @@
             <nav>
                 <a href="userPerfil.php" class="profil">Perfil</a>
                 <a href="#" class="config">Configuración</a>
+                <a href="userPerfil.php" class="profil">Comprar lidGod</a>
+                <a href="#" class="config">Registrar patrocinador</a>
+                <a href="#" class="config">Registrar objetos</a>
+                <a href="#" class="config">Registrar producto</a>
+                <a href="#" class="config">Registrar caja</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>
@@ -152,3 +144,4 @@
 </body>
 
 </html>
+
