@@ -2,6 +2,8 @@
 <html lang="en">
 <?php 
 
+require_once('./bd-con.php');
+
 session_start();
 
 $errores = array();
@@ -67,7 +69,7 @@ error_reporting(0);
             <div class="title-form">
                 <h5>Register Box</h5>
             </div>
-            <form action="" class="form-register" name="form-register" method="POST">
+            <form action="" class="form-register" name="form-register" method="POST" enctype="multipart/form-data" >
                 <div class="conta">
                     <section class="l-q">
                         <label for="Name" class="label-name">
@@ -113,7 +115,8 @@ error_reporting(0);
                                 <option value="Nike Air Jordan">Nike Air Jordan</option>
                                 <option value="Nintendo Switch">Nintendo Switch</option>
                             </select>
-                        </label>
+                        </label><br>
+                        <input type="file" name="imagen" id="">
                     </section>
                 </div>
 
@@ -170,6 +173,10 @@ error_reporting(0);
                   }else{
                     array_push($errores,"Error 010: El Precio debe ser decimal.");
                   }
+                  #if(preg_match($PatronPrecio,$Price)){
+                  #}else{
+                   # array_push($errores,"Error 003: El Precio debe ser decimal.");
+                  #}
                   }else {
                         array_push($errores,"Error 011: El Codigo no existe.");
                       }
@@ -193,6 +200,15 @@ error_reporting(0);
                 }else{
                     array_push($errores,"Error 014: Elige una Categoria.");
                   }
+
+                #validacion de imagen
+                #if(isset($imagen)){
+                 # if(empty($imagen)){
+                  #  array_push($errores,"Error 002: Coloca una imagen.");
+                  #}
+                #}else{
+                 # array_push($errores,"Error 001: Imagen no existe.");
+                #}
 
                 #Errores
                 if(count($errores) > 0){
