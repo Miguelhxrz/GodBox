@@ -2,7 +2,7 @@
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
+                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
                 <a href="./index.html"></a>
             </section>
 
@@ -14,7 +14,7 @@
                 </div>
                 <div class="ico-header">
                     <a href="./index.html">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -27,11 +27,14 @@
             <section class="options">
                 <div class="link">
                     <div class="btn-menu">
-                        <label for="btn-menu"><img src="./icons/casco.png" alt="" class="item"></label>
-                        <a href="admin_objects.php"><img src="./icons/coin.png" alt="" class="item"></a>
+                        <label for="btn-menu"><img src="../assets/icons/casco.png" alt="" class="item"></label>
+                        <a href="admin_objects.php"><img src="../assets/icons/coin.png" alt="" class="item"></a>
                     </div>
                 </div>
             </section>
 
         </div>
+        <section class="fondo">
+            <img src="../assets/img/header.png" alt="">
+        </section>
     </header>

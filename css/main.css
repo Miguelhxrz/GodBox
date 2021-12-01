@@ -27,7 +27,7 @@ body {
 
 .header {
     width: 100%;
-    height: 530px;
+    height: 649px;
     background-image: url("../assets/img/vector-beautiful-landscape-illustration\ [Convertido]2.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -131,7 +131,7 @@ a {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    width: 96%;
+    width: 85%;
     height: 368px;
     background-color: #C4C4C4;
     padding: 34px;
@@ -141,6 +141,14 @@ a {
     margin-bottom: 46px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.offers__container h3 {
+    position: absolute;
+    top: 604px;
+    font-size: 7.5rem;
+    color: #FFC92B;
+    text-shadow: 0px 12px 4px rgba(29, 29, 29, 0.66);
 }
 
 .offers__container .controls {
@@ -168,9 +176,9 @@ a {
 .sponsor__container {
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(5, 200px);
+    grid-template-columns: repeat(5, 220px);
     grid-template-rows: 200px;
-    gap: 11px;
+    gap: 12px;
     margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
@@ -286,7 +294,7 @@ a {
 
 .footer h3 {
     position: absolute;
-    top: 2740px;
+    top: 2866px;
     left: 403px;
     color: #fff;
     font-size: 3.2rem;

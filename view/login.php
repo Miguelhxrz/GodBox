@@ -1,31 +1,30 @@
-<?php 
+<?php
 
 error_reporting(0);
-
-
 
 ?>
 
 
 <!DOCTYPE html>
 <html lang="es">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/login.css">
-    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <title>GodBox - Entrar</title>
 </head>
 
 <body>
 
+
     <header class="header">
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
+                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
             </section>
 
             <section class="center-title">
@@ -36,7 +35,7 @@ error_reporting(0);
                 </div>
                 <div class="ico-header">
                     <a href="./index.php">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -60,7 +59,7 @@ error_reporting(0);
     <main class="container">
         <section class="container-form">
             <div class="title-icon">
-                <img src="./icons/user.png" alt="">
+                <img src="../assets/icons/user.png" alt="">
             </div>
             <div class="title-form">
                 <h5>Entrar</h5>
@@ -70,20 +69,23 @@ error_reporting(0);
                 <input type="password" name="password_input" placeholder="Contraseña" class="password_input">
                 <input type="submit" value="Entrar" class="btn" name="btn">
             </form>
-            <?php   
-            
-                $username = $_POST['username_input'];
-                $password = $_POST['password_input'];
+            <?php
+
+            $username = $_POST['username_input'];
+            $password = $_POST['password_input'];
 
             ?>
         </section>
     </main>
 
     <footer class="footer">
-      <img src="./img/footer.png" alt="footer image">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+            <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+            <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+        </div>
     </footer>
-
 </body>
 
 </html>

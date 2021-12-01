@@ -158,11 +158,16 @@ error_reporting(0);
           </form>
         </section>
 
-      <footer class="footer">
-        <img src="../assets/img/footer.png" alt="footer image">
-        <h3>Todos los derechos reservados 2021 GodBox</h3>
-    </footer>
     </main>
+
+    <footer class="footer">
+      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+      </div>
+    </footer>
 </body>
 
 </html>

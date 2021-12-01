@@ -2,10 +2,27 @@
 
 @font-face {
     font-family: 'BubblegumSans';
-    src: url('../font/BubblegumSans-Regular.ttf');
+    src: url('../assets/font/BubblegumSans-Regular.ttf');
 }
 
-button,
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px
+}
+
+html {
+    font-size: 62.5%
+}
+
+:root {
+    /* |---- colors ----| */
+    --blue-bg: rgb(12, 16, 89, 1);
+    --header-bg: rgba(86, 101, 132, 0.67);
+    /* |---- Fonts ----| */
+    --font: 'BubblegumSans';
+}
+
 input[type='submit'],
 input[type='reset'] {
     background: none;
@@ -18,20 +35,79 @@ input[type='reset'] {
 }
 
 body {
-    background: #0C1059;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'BubblegumSans';
+    width: 100%;
+    background-color: var(--blue-bg);
+    font-family: var(--font);
+    background-image: url('../assets/img/background.png');
+    background-repeat: no-repeat;
+    background-position-x: 369px;
+    background-position-y: -105px;
+    background-size: 45%;
 }
 
-.header {
+/* |---- alerts ----| */
+.correcto {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 96%;
+    height: 100%;
+    background-color: #3FA846;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.correcto figure {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.correcto figure img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    font-size: 1.4rem;
+    width: 96%;
+    height: 100%;
+    background-color: #df1526;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.error figure {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.error figure img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.error li {
+    margin-right: 10px;
+}
+
+/* |---- Header ----| */
+
+.header {
     width: 100%;
     height: 130px;
-    background-color: rgba(86, 101, 132, 0.67);
+    background-color: var(--header-bg);
+    font-size: 2.5rem;
 }
 
 a {
@@ -39,66 +115,66 @@ a {
     color: #fff;
 }
 
-.logo__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 138px;
-    height: 119px;
-}
-
-.menu__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container-header {
+    width: 100%;
     height: 100%;
-    font-size: 25px;
-    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
 }
 
-.basic__menu {
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
+}
+
+.logoo {
+    width: 118px;
+    height: 99px;
+}
+
+.center-title {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
     width: 229px;
 }
 
-.basic__menu .menu__item:nth-child(3) {
-    text-align: center;
+.boxes-link {
+    margin-right: 20px;
 }
 
-.menu__item {
-    list-style: none;
+.about-link {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.links-r {
     display: flex;
     align-items: center;
 }
 
-.menu .menu__item a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.menu {
-    display: flex;
-}
-
-.menu .menu__item {
-    margin: 10px;
-}
-
-.menu__item-icon {
-    list-style: none;
-}
-
-.menu__item-icon img {
-    width: 75.83px;
-    height: 75.34px;
-}
-
-.menu li {
-    display: flex;
+.login-link {
+    margin-right: 35px;
 }
 
 a {
     color: #fff;
     text-decoration: none;
+}
+
+.title-form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-decoration: underline;
 }
 
 .container {
@@ -108,40 +184,17 @@ a {
     justify-content: center;
     align-content: space-around;
     width: 100%;
-    height: 594px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-image: url('../img/header.png');
-}
-
-.container-registro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-content: space-around;
-    width: 100%;
-    height: 594px;
-    background-size: 100% 100%;
-}
-
-.title-form h2 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    color: #ffffff;
 }
 
 .container-form {
     display: flex;
     flex-direction: column;
-    width: 855.53px;
-    height: 437.11px;
+    width: 620px;
     background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
     border-radius: 32px;
     border-radius: 15px;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .conta {
@@ -149,11 +202,10 @@ a {
     align-content: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 75%;
 }
 
 .form-register {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,17 +213,14 @@ a {
     height: 100%;
 }
 
-.monedas-1 img {
-    width: 101.72px;
-    height: 107.6px;
-}
-
 .l-q {
     display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 50%;
     height: 50%;
+    margin: 10px;
 }
 
 .l-q label {
@@ -180,18 +229,21 @@ a {
     margin-top: 40px;
 }
 
-input[type=text],
-input[type=password],
-input[type=email] {
+input[type='text'],
+input[type='password'],
+input[type='email'],
+.email,
+.password {
     width: 250px;
-    border: none;
-    border-bottom: 2px solid #fff;
-    outline: none;
-    font-family: 'BubblegumSans';
     font-size: 1.5rem;
+    font-family: var(--font);
     color: white;
+    border: none;
     background-color: transparent;
-    margin-top: 10px;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .line {
@@ -205,11 +257,12 @@ input[type=email] {
 
 .r-q {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 50%;
     height: 50%;
+    margin-top: 10px;
 }
 
 .r-q label {
@@ -228,12 +281,91 @@ input[type=email] {
     justify-content: center;
     width: 134px;
     height: 32px;
+    margin-top: 15px;
     margin-bottom: 20px;
+}
+
+.envio {
+    color: transparent;
+}
+
+.envio-red {
+    font-size: 1.5rem;
+    color: green;
 }
 
 input[type=submit] {
     background: radial-gradient(93.28% 1635.74% at 6.72% 50%, rgba(14, 16, 55, 0.75) 0%, #0C1059 45.83%, rgba(14, 16, 55, 0.75) 100%);
     color: #fff;
     font-size: 1.5rem;
-    border-radius: 10px;
+    border-radius: 20px;
+}
+
+label {
+    color: white;
+    font-size: 1.6rem;
+}
+
+.birth {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.birth p {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-right: 5px;
+}
+
+.birth input[type='text'] {
+    width: 10%;
+    height: 20px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    font-size: 1.5rem;
+    color: white;
+    font-family: var(--font);
+    margin-right: 5px;
+    outline: none;
+}
+
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 629px;
+    background-image: url('../assets/img/footer_test.png');
+    background-repeat: no-repeat;
+    background-position-y: 95px;
+    background-size: 1484px;
+}
+
+.footer h3 {
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin-left: 20px;
+    color: white;
+    font-size: 3.2rem;
+}
+
+.footer .footer__social-media {
+    align-self: flex-end;
+    justify-content: flex-end;
+    display: flex;
+    width: 50%;
+}
+
+.footer__social-media figure {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.footer__social-media img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }

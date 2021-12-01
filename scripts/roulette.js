@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
 
         accept.addEventListener('click', () => {
-          window.location = 'index.php';
+          window.location = '../index.php';
         });
         
       }, 6000);
