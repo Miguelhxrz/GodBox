@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/register_page.css">
+    <link rel="stylesheet" href="../css/register_page.css">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
     <script src="./JS/helper.js"></script>
     <title>GodBox - Registro </title>
@@ -30,8 +30,8 @@
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
-                <a href="./index.php"></a>
+                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
+                <a href="../index.php"></a>
             </section>
 
             <section class="center-title">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="ico-header">
                     <a href="./index.php">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -280,8 +280,12 @@
         
     </main>
     <footer class="footer">
-      <img src="./img/footer.png" alt="footer image">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
+      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+      </div>
     </footer>
 </body>
 

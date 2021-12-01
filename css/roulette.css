@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'BubblegumSans';
-    src: url('../font/BubblegumSans-Regular.ttf');
+    src: url('../assets/font/BubblegumSans-Regular.ttf');
 }
 
 * {
@@ -35,7 +35,7 @@ body {
 .header {
     width: 100%;
     height: 530px;
-    background-image: url("../img/vector-beautiful-landscape-illustration\ [Convertido]2.png");
+    background-image: url("../assets/img/vector-beautiful-landscape-illustration\ [Convertido]2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -121,11 +121,11 @@ a {
 
 #container__alert-item {
     display: none;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     position: absolute;
     top: 566px;
-    left: 672px;
+    left: 850px;
     z-index: 3;
     width: 375px;
     height: 325px;
@@ -179,7 +179,7 @@ button:hover, button:active {
     bottom: 15px;
     width: 400px;
     height: 838px;
-    background-image: url('../img/Ades_resized.png');
+    background-image: url('../assets/img/Ades_resized.png');
     background-repeat: no-repeat;
 }
 
@@ -202,7 +202,7 @@ button:hover, button:active {
   display: flex;
   justify-content: center;
   position: relative;
-  width: 926px;
+  width: 1211px;
   overflow: hidden;
 }
 
@@ -249,7 +249,7 @@ button:hover, button:active {
   align-items: center;
   position: absolute;
   top: 872px;
-  left: 765px;
+  left: 942px;
   width: 186px;
   height: 60px;
   background-color: #EABE3F;
@@ -319,22 +319,35 @@ h3 {
 }
 
 .footer {
+    display: flex;
     width: 100%;
-    height: 318px;
+    height: 629px;
+    background-image: url('../assets/img/footer_test.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.footer img {
-    position: relative;
-    bottom: auto;
-    width: 100%;
-    height: 594px;
+.footer .footer__text {
+    align-self: flex-end;
+    margin: 0px 0px 16px 20px;
+    color: white;
+    font-size: 2.2rem;
 }
 
-.footer h3 {
-    position: absolute;
-    top: 2550px;
-    left: 403px;
-    color: #fff;
-    font-family: 'BubblegumSans';
-    font-size: 3.2rem;
+.footer .footer__social-media {
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    width: 46%;
+}
+
+.footer__social-media figure {
+    margin-right: 10px;
+}
+
+.footer__social-media img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
 }
