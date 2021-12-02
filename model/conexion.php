@@ -4,9 +4,9 @@ class conect_db {
   var $conection;
 
   function connect () {
-    $server_conect = "locarlhost";
+    $server_conect = "localhost";
     $username = "root";
-    $password = ""; #<-- si tienen contraseña la cambian aqui.
+    $password = "12345678"; #<-- si tienen contraseña la cambian aqui.
     $use_db = "godbox";
     $this->conection = new mysqli($server_conect, $username, $password, $use_db);
 
@@ -17,6 +17,7 @@ class conect_db {
     }
 
   }
+
   function add_instruc($instruct) {
     return $this->conection->query($instruct);
   }

@@ -8,8 +8,6 @@
 
   error_reporting(0);
 
-  
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +16,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/register_page.css">
-    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/register_page.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <script src="./JS/helper.js"></script>
     <title>GodBox - Registro </title>
 </head>
@@ -129,12 +127,12 @@
 
                   if(isset($id)){
                   
-                    if(empty($id)) {
-                      array_push($errores,"Error 007: el id no puede estar vacio.");
-                    }
-                    if(strlen($id) < 3) {
-                      array_push($errores,"Error 008: el tamaño del id tiene que ser mayor a 3 caracteres.");
-                    }
+                    #if(empty($id)) {
+                     # array_push($errores,"Error 007: el id no puede estar vacio.");
+                    #}
+                    #if(strlen($id) < 3) {
+                     # array_push($errores,"Error 008: el tamaño del id tiene que ser mayor a 3 caracteres.");
+                    #}
                     if(preg_match($patron_id, $id) == 0){
                       array_push($errores,"Error 009: Verifique su numero de identificación");
                     }
@@ -265,9 +263,6 @@
                       echo "</div>";
                    }else {
                      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
-
-                     
-
                      header("location: ./index.html");
                    }
                   

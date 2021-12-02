@@ -65,10 +65,6 @@
         </div>
     </main>
 
-    <footer class="footer">
-        <h3>Todos los derechos reservados &copy; GodBox</h3>
-    </footer>
 
 </body>
-
 </html>

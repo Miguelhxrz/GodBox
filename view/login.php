@@ -2,8 +2,6 @@
 
 error_reporting(0);
 
-
-
 ?>
 
 
@@ -14,8 +12,8 @@ error_reporting(0);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/login.css">
-    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="shortcut icon" href="../icons/favicon.ico" type="image/x-icon">
     <title>GodBox - Entrar</title>
 </head>
 
@@ -25,7 +23,7 @@ error_reporting(0);
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
+                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
             </section>
 
             <section class="center-title">
@@ -35,8 +33,8 @@ error_reporting(0);
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.php">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                    <a href="../index.php">
+                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -60,7 +58,7 @@ error_reporting(0);
     <main class="container">
         <section class="container-form">
             <div class="title-icon">
-                <img src="./icons/user.png" alt="">
+                <img src="../assets/icons/user.png" alt="">
             </div>
             <div class="title-form">
                 <h5>Entrar</h5>
