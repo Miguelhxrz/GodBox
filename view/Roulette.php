@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/roulette.css">
-  <script src="./JS/roulette.js"></script>
+  <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/roulette.css">
+  <script src="../scripts/roulette.js"></script>
   
   <title>GodBox | Caja 🎁</title>
 </head>
@@ -16,14 +16,14 @@
     <header class="header">
         <nav class="menu__container">
             <div class="logo__container">
-                <img src="./img/Logo-rezised.png" alt="Company logo">
+                <img src="../assets/img/Logo-rezised.png" alt="Company logo">
             </div>
             <section class="basic__menu">
                 <ul class="menu">
-                    <li class="menu__item"> <a href="./Boxes.html">Cajas</a></li>
+                    <li class="menu__item"> <a href="./Boxes.php">Cajas</a></li>
                     <li class="menu__item">
                         <a href="./index.html">
-                            <img src="./icons/Home.png" alt="">
+                            <img src="../assets/icons/Home.png" alt="">
                         </a>
                     </li>
                     <li class="menu__item">
@@ -34,9 +34,9 @@
             <section class="user__menu">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a href="./login.html"></a>Entrar</li>
+                        <a href="./login.php"></a>Entrar</li>
                     <li class="menu__item">o</li>
-                    <li class="menu__item"><a href="./register_page.html">Registrarse</a></li>
+                    <li class="menu__item"><a href="./register_page.php">Registrarse</a></li>
                 </ul>
             </section>
         </nav>
@@ -56,7 +56,7 @@
             </div>
             <article class="roulette__container">
                 <div class="roulette__select" id="roulette__select">
-                    <img src="./icons/play.png">
+                    <img src="../assets/icons/play.png">
                 </div>
                 <div class="roulette__container-cards">
                     <div class="wrapper">
@@ -157,8 +157,12 @@
     </main>
 
     <footer class="footer">
-        <img src="../assets/img/footer.png" alt="">
-        <h3>Todos los derechos reservados &copy; GodBox</h3>
+      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+      </div>
     </footer>
 
 </body>

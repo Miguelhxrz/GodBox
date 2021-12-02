@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'BubblegumSans';
-    src: url('../font/BubblegumSans-Regular.ttf');
+    src: url('../assets/font/BubblegumSans-Regular.ttf');
 }
 
 * {
@@ -36,14 +36,15 @@ input[type='reset'] {
 
 body {
     width: 100%;
-    height: 100%;
     background-color: var(--blue-bg);
     font-family: var(--font);
     background-image: url('../assets/img/background.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 67%;
+    background-position-x: 369px;
+    background-position-y: -105px;
+    background-size: 45%;
 }
+
 
 
 /* |---- Header ----| */
@@ -294,7 +295,7 @@ input[type=submit] {
     background: radial-gradient(93.28% 1635.74% at 6.72% 50%, rgba(14, 16, 55, 0.75) 0%, #0C1059 45.83%, rgba(14, 16, 55, 0.75) 100%);
     color: #fff;
     font-size: 1.5rem;
-    border-radius: 20px;
+    border-radius: 12px;
 }
 
 .formulario__grupo-incorrecto {
@@ -308,20 +309,38 @@ input[type=submit] {
 }
 
 .footer {
+    display: flex;
     width: 100%;
-    height: 318px;
-}
-
-.footer img {
-    position: relative;
-    width: 100%;
-    height: 594px;
+    height: 629px;
+    background-image: url('../assets/img/footer_test.png');
+    background-repeat: no-repeat;
+    background-position-y: 95px;
+    background-size: 1484px;
 }
 
 .footer h3 {
-    position: absolute;
-    top: 1290px;
-    left: 403px;
-    color: #fff;
-    font-size: 2.2rem;
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin-left: 20px;
+    color: white;
+    font-size: 3.2rem;
+}
+
+.footer .footer__social-media {
+    align-self: flex-end;
+    justify-content: flex-end;
+    display: flex;
+    width: 50%;
+}
+
+.footer__social-media figure {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.footer__social-media img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/boxes.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/boxes.css">
     <title>GodBox | Boxes</title>
 </head>
 
@@ -14,14 +14,14 @@
     <header class="header">
         <nav class="menu__container">
             <div class="logo__container">
-                <img src="./img/Logo-rezised.png" alt="Company logo">
+                <img src="../assets/img/Logo-rezised.png" alt="Company logo">
             </div>
             <section class="basic__menu">
                 <ul class="menu">
                     <li class="menu__item"> <a href="./Boxes.php">Cajas</a></li>
                     <li class="menu__item">
                         <a href="./index.php">
-                            <img src="./icons/Home.png" alt="">
+                            <img src="../assets/icons/Home.png" alt="">
                         </a>
                     </li>
                     <li class="menu__item"><a href="./">Sobre Nosotros </a></li>
@@ -77,7 +77,7 @@
 
             <article class="box__card">
                 <div class="box__image">
-                    <img src="./img/boxes/box_apple-god_resized.png" alt="">
+                    <img src="../assets/img/boxes/box_apple-god_resized.png" alt="">
                 </div>
                 <div class="box__description">
                     <h3>Categoria:</h3>
@@ -90,7 +90,7 @@
 
             <article class="box__card">
                 <div class="box__image">
-                    <img src="./img/boxes/box_apple-semidios-resized.png" alt="">
+                    <img src="../assets/img/boxes/box_apple-semidios-resized.png" alt="">
                 </div>
                 <div class="box__description">
                     <h3>Categoria:</h3>
@@ -103,7 +103,7 @@
 
             <article class="box__card">
                 <div class="box__image">
-                    <img src="./img/boxes/box_apple-heroe_resized.png" alt="">
+                    <img src="../assets/img/boxes/box_apple-heroe_resized.png" alt="">
                 </div>
                 <div class="box__description">
                     <h3>Categoria:</h3>
@@ -116,7 +116,7 @@
 
             <article class="box__card">
                 <div class="box__image">
-                    <img src="./img/boxes/box_apple-Olimpica_resized.png" alt="">
+                    <img src="../assets/img/boxes/box_apple-Olimpica_resized.png" alt="">
                 </div>
                 <div class="box__description">
                     <h3>Categoria:</h3>
@@ -130,9 +130,16 @@
     </main>
 
     <footer class="footer">
-        <img src="./img/eezy_17.png" alt="">
-        <h3>Todos los derechos reservados &copy; GodBox</h3>
+      <h3>Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+      </div>
     </footer>
+</body>
+
+</html>
 
 </body>
 

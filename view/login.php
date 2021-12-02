@@ -13,7 +13,7 @@ error_reporting(0);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="shortcut icon" href="../icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <title>GodBox - Entrar</title>
 </head>
 
@@ -33,7 +33,7 @@ error_reporting(0);
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="../index.php">
+                    <a href="./index.php">
                         <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
@@ -78,10 +78,13 @@ error_reporting(0);
     </main>
 
     <footer class="footer">
-      <img src="./img/footer.png" alt="footer image">
       <h3>Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+      </div>
     </footer>
-
 </body>
 
 </html>

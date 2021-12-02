@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/about-us.css">
-  <script src="./JS/roulette.js"></script>
   
   <title>GodBox | Sobre Nosotros</title>
 </head>
@@ -16,14 +15,14 @@
     <header class="header">
         <nav class="menu__container">
             <div class="logo__container">
-                <img src="./img/Logo-rezised.png" alt="Company logo">
+                <img src="../assets/img/Logo-rezised.png" alt="Company logo">
             </div>
             <section class="basic__menu">
                 <ul class="menu">
                     <li class="menu__item"> <a href="./Boxes.html">Cajas</a></li>
                     <li class="menu__item">
-                        <a href="./index.html">
-                            <img src="./icons/Home.png" alt="">
+                        <a href="../index.php">
+                            <img src="../assets/icons/Home.png" alt="">
                         </a>
                     </li>
                     <li class="menu__item">
@@ -34,9 +33,9 @@
             <section class="user__menu">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a href="./login.html"></a>Entrar</li>
+                        <a href="./login.php"></a>Entrar</li>
                     <li class="menu__item">o</li>
-                    <li class="menu__item"><a href="./register_page.html">Registrarse</a></li>
+                    <li class="menu__item"><a href="./register_page.php">Registrarse</a></li>
                 </ul>
             </section>
         </nav>
@@ -47,7 +46,7 @@
             <section class="cont">
                 <h3>Sobre Nosotros</h3>
                 <div class="l-us">
-                <img class= "logo-us"src="./img/Logo-rezised.png" alt="">
+                <img class= "logo-us"src="../assets/img/Logo-rezised.png" alt="">
                 </div>
                 <p>Somos un juego de azar digital, en nuestra interfaz puedes obtener productos interesantes de diferentes patrocinadores en muy buen precio: <br>
                 Cómo funciona nuestra interfaz: </p>
@@ -65,6 +64,17 @@
         </div>
     </main>
 
+    <footer class="footer">
+      <h3>Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+      </div>
+    </footer>
+    
+</body>
 
+</html>
 </body>
 </html>

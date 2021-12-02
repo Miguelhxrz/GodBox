@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/admin_objects.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/admin_objects.css">
     <title>GodBox - User Objects</title>
 </head>
 
@@ -15,19 +15,19 @@
         <div class="container-header">
 
             <section class="logo">
-                <img src="./img/Logo-rezised.png" alt="" class="logoo">
-                <a href="./index.html"></a>
+                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
+                <a href="../index.php"></a>
             </section>
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.html">
+                    <a href="./Boxes.php">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
-                        <img src="./icons/icons8-ruins-50.png" alt="">
+                    <a href="../index.php">
+                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
@@ -40,18 +40,20 @@
             <section class="links-r">
                 <div class="login-link">
                     <a href="">
-                        <img src="./icons/casco.png" alt="" class="imgcasco">
+                        <img src="../assets/icons/casco.png" alt="" class="imgcasco">
                     </a>
                 </div>
             </section>
 
         </div>
     </header>
-    <div class="container-fondo">
+
+    <main class="container">
+
         <div class="box-container">
             <div class="box">
                 <div class="user">
-                    <img src="./icons/casco.png" alt="user">
+                    <img src="../assets/icons/casco.png" alt="user">
                     <h3>Admin</h3>
                 </div>
             </div>
@@ -60,8 +62,8 @@
         <section class="selecction">
             <div class="container">
                 <div class="box">
-                    <a href="#" class="button"><img src="./icons/buycart.png" alt=""> Mis Productos</a>
-                    <a href="#" class="button"><img src="./icons/coin2.png" alt=""> Transacciones</a>
+                    <a href="#" class="button"><img src="../assets/icons/buycart.png" alt=""> Mis Productos</a>
+                    <a href="#" class="button"><img src="../assets/icons/coin2.png" alt=""> Transacciones</a>
                 </div>
             </div>
         </section>
@@ -124,12 +126,24 @@
                     <div>
                         <h5>2 objetos</h5>
                     </div>
-                    <img src="./img/object1.png" alt="objet">
-                    <img src="./img/object2.png" alt="objet">
+                    <img src="../assets/img/object1.png" alt="objet">
+                    <img src="../assets/img/object2.png" alt="objet">
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="footer">
+      <h3>Todos los derechos reservados 2021 GodBox</h3>
+      <div class="footer__social-media">
+        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+      </div>
+    </footer>
+</body>
+
+</html>
 </body>
 
 </html>
