@@ -309,22 +309,23 @@ input[type=submit] {
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position-y: 95px;
+    background-size: 1484px;
 }
 
-.footer .footer__text {
+.footer h3 {
     align-self: flex-end;
-    margin: 0px 0px 16px 20px;
+    justify-self: flex-start;
+    margin: 0px 0px 10px 20px;
     color: white;
     font-size: 2.2rem;
 }
 
 .footer .footer__social-media {
     align-self: flex-end;
-    display: flex;
     justify-content: flex-end;
-    width: 46%;
+    display: flex;
+    width: 60%;
 }
 
 .footer__social-media figure {
@@ -332,7 +333,7 @@ input[type=submit] {
 }
 
 .footer__social-media img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
 }

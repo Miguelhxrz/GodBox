@@ -116,7 +116,7 @@
     <br><br><br><br><br>
 
     <footer class="footer">
-      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+      <h3 class="footer__text">Todos los derechos reservados 2021 &copy; GodBox</h3>
       <div class="footer__social-media">
         <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
         <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
