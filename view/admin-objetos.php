@@ -15,7 +15,7 @@
 <body>
 
   <!-- Header -->
-  <?php require('../partials/header-admin.php') ?>
+  <?php require('../partials/header-user.php') ?>
 
     <section class="perfil">
         <div class="user">

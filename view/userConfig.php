@@ -1,3 +1,4 @@
+<?php require_once('../controllers/user-config-controller.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 

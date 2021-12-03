@@ -1,4 +1,6 @@
 <?php
+require_once('../controllers/register-page-controller.php');
+
 $patron_username = "/^[A-Za-z0-9_]+$/";
 $patron_address = "/^[a-zA-Z0-9\s-]+$/";
 $patron_id = "/^[0-9]+$/";

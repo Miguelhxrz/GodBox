@@ -1,3 +1,4 @@
+<?php require_once('../controllers/boxes-controller.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,32 +12,8 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="menu__container">
-            <div class="logo__container">
-                <img src="../assets/img/Logo-rezised.png" alt="Company logo">
-            </div>
-            <section class="basic__menu">
-                <ul class="menu">
-                    <li class="menu__item"> <a href="./Boxes.php">Cajas</a></li>
-                    <li class="menu__item">
-                        <a href="./index.php">
-                            <img src="../assets/icons/Home.png" alt="">
-                        </a>
-                    </li>
-                    <li class="menu__item"><a href="./">Sobre Nosotros </a></li>
-                </ul>
-            </section>
-
-            <section class="user__menu">
-                <ul class="menu">
-                    <li class="menu__item"><a href="./login.php">Iniciar sesión</a></li>
-                    <li class="menu__item">o</li>
-                    <li class="menu__item"><a href="./register_page.php">Registrar</a></li>
-                </ul>
-            </section>
-        </nav>
-    </header>
+     <!-- Header -->
+  <?php include($header); ?>
 
     <main class="container">
 

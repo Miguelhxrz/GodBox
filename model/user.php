@@ -72,9 +72,77 @@ class user{
 
   }
 
+  
+  function encontrar_user($user) {
+    $insturction = "select * from user where Username ='$user'";
+
+    $result = $this->data_base->add($insturction);
+
+    if(mysqli_num_rows($result) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+  }
+
+  function encontrar_password($pass) {
+    $insturction = "select * from user where Password ='$pass'";
+
+    $result = $this->data_base->add($insturction);
+
+      if(mysqli_num_rows($result) > 0) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+
+
+  function encontrar_email($correo) {
+    $insturction = "select * from user where Email ='$correo'";
+
+    $result = $this->data_base->add($insturction);
+
+    if(mysqli_num_rows($result) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+  }
+
+  function encontrar_admin($user) {
+    $insturction = "select `Username`, `Perfil` FROM `user` where `Username` = '".$user."' and `Perfil`= 'admin'";
+
+    $result = $this->data_base->add($insturction);
+
+    if(mysqli_num_rows($result) > 0) {
+
+      return 1;
+
+    }else {
+      
+      return 0;
+
+    }
+  }
+
+  function user_login($user,$pass) {
+
+    $insturction = "SELECT * FROM `user` where Username='$user' and Password='$pass'";
+
+    $result = $this->data_base->add($insturction);
+
+    if(mysqli_num_rows($result) > 0) {
+
+      return 1;
+
+    }else {
+      
+      return 0;
+
+    }
+  }
+
 
 }
-
-
-
 ?>

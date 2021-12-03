@@ -1,3 +1,4 @@
+<?php require_once('../controllers/user-objects-controller.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 

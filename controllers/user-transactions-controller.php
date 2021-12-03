@@ -1,4 +1,6 @@
 <?php
+require_once('../model/user.php');
+
 session_start();
 
 // Evaluacion de condiciones para retornar el Header segun el usuario

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
+
+require_once('../controllers/register-object-controller.php');
+
   session_start();
   // $_SESSION['sponsor'];
   $errores = array();

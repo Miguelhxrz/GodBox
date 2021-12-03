@@ -1,3 +1,5 @@
+<?php require_once('../controllers/user-profile-controller.php'); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 

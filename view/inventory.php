@@ -1,5 +1,7 @@
 <?php 
 
+require_once('../controllers/inventory-controller.php');
+
     error_reporting(0);
 
 ?>

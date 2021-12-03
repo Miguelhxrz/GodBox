@@ -1,4 +1,5 @@
 <?php
+require_once("../controllers/login-controller.php");
 
 error_reporting(0);
 
@@ -64,7 +65,7 @@ error_reporting(0);
             <div class="title-form">
                 <h5>Entrar</h5>
             </div>
-            <form action="" method="post" name="form-register" class="form-register">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form-register" class="form-register">
                 <input type="text" name="username_input" placeholder="Username" class="username_input">
                 <input type="password" name="password_input" placeholder="Contraseña" class="password_input">
                 <input type="submit" value="Entrar" class="btn" name="btn">
