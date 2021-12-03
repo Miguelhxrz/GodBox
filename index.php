@@ -25,7 +25,7 @@
                         <img src="./assets/icons/Home.png" alt="">
                     </a>
                     <li class="menu__item">
-                        <a href="./">Sobre Nosotros</a>
+                        <a href="./view/About-us.php">Sobre Nosotros</a>
                     </li>
                 </ul>
             </section>
@@ -33,11 +33,11 @@
             <section class="user__menu">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a href="./login.php">Iniciar Sesion</a>
+                        <a href="./view/login.php">Iniciar Sesion</a>
                     </li>
                     <li class="menu__item">o</li>
                     <li class="menu__item">
-                        <a href="./register_page.php">Registrarse</a>
+                        <a href="./view/register_page.php">Registrarse</a>
                     </li>
                 </ul>
             </section>

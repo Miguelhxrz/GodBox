@@ -180,16 +180,16 @@ a {
 .footer h3 {
     align-self: flex-end;
     justify-self: flex-start;
-    margin-left: 20px;
+    margin: 0px 0px 10px 20px;
     color: white;
-    font-size: 3.2rem;
+    font-size: 2.2rem;
 }
 
 .footer .footer__social-media {
     align-self: flex-end;
     justify-content: flex-end;
     display: flex;
-    width: 50%;
+    width: 60%;
 }
 
 .footer__social-media figure {

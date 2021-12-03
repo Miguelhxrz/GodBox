@@ -25,8 +25,9 @@ body {
     font-family: var(--fuenteTitulos);
     background-image: url('../assets/img/background.png');
     background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 47%;
+    background-position-x: 265px;
+    background-position-y: 446px;
+    background-size: 60%;
 }
 
 
@@ -340,22 +341,23 @@ button {
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position-y: 95px;
+    background-size: 1484px;
 }
 
-.footer .footer__text {
+.footer h3 {
     align-self: flex-end;
-    margin: 0px 0px 16px 20px;
+    justify-self: flex-start;
+    margin: 0px 0px 10px 20px;
     color: white;
     font-size: 2.2rem;
 }
 
 .footer .footer__social-media {
     align-self: flex-end;
-    display: flex;
     justify-content: flex-end;
-    width: 46%;
+    display: flex;
+    width: 40%;
 }
 
 .footer__social-media figure {
@@ -363,8 +365,8 @@ button {
 }
 
 .footer__social-media img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
 }
 
