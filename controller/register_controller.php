@@ -9,7 +9,7 @@ $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
 
 $errores = array();
 
-// $user = new user();
+$user = new User();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -193,7 +193,7 @@ if(isset($_POST['submit'])) {
     
     echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
-    /* $user->setUsername($username);
+    $user->setUsername($username);
     $user->setPassword($password);
     $user->setId($id);
     $user->setEmail($email);
@@ -203,11 +203,11 @@ if(isset($_POST['submit'])) {
     $user->setYear($year);
     $user->setBirth();
 
-    echo $user->addDataBase(); */
+    echo $user->addDataBase();
 
 
 
-    header("location: ../index.php");
+    // header("location: ../index.php");
    }
   
 }

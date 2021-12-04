@@ -20,6 +20,7 @@
     function __construct(){
       
       $this->data_base = new connect_db();
+
     }
     
     #--Set--
@@ -94,15 +95,22 @@
     #Data base functions for users
 
     function addDataBase() {
-      $query_send = "insert into `users` (`username`, `password`, `id`, `email`, `address`, `birth`) values ('".$this->username."',''".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."',')";
+      try {
+        $query_send = "insert into `users` (`username`, `password`, `id`, `email`, `address`, `birth`) values ('".$this->username."',''".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."',')";
     
-      $question = $this->data_base->sendQuery($query_send);
+        $question = $this->data_base->sendQuery($query_send);
 
-      if($question){
-        return 1;
-      }else {
-        return 0;
+        if($question){
+          return 1;
+        }else {
+          return 0;
+        }
+
+      } catch (\Throwable $th) {
+        print $th;
       }
+      
+      
     
     }
 

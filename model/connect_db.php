@@ -13,25 +13,30 @@ class connect_db {
       $db_name = "godbox";
 
 
-      $conn = new mysqli($host,$username,$password,$db_name);
+      $this->conn = new mysqli($host,$username,$password,$db_name);
 
       echo"Todo chevere";
     
     } catch (\Throwable $th) {
-      throw $th;
+      echo $th;
     }
     
   }
 
   function sendQuery($q) {
+    try {
+      return $this->conn->query($q);
 
-    return $this->con->que;
+      if($this->conn){
+        return 1;
+      }else {
+        return 0;
+      }
 
-    if($this->con){
-      return 1;
-    }else {
-      return 0;
+    } catch (\Throwable $th) {
+      print $th;
     }
+    
   
   } 
 

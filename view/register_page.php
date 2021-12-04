@@ -69,10 +69,10 @@
                 <input type="submit" class="btn" name="submit" value="registrarse" id="submit-btn">
 
                 <?php 
-                    // require_once('../controller/register_controller.php');
-                    require_once('../model/connect_db.php');
+                    require_once('../controller/register_controller.php');
+                    /* require_once('../model/connect_db.php');
                     
-                    $obj = new connect_db ();
+                    $obj = new connect_db (); */
                 ?>
 
             </form>
