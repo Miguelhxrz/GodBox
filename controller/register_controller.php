@@ -1,7 +1,5 @@
 <?php 
 
-require_once('../model/user.php');
-
 $patron_username = "/^[A-Za-z0-9_]+$/";
 $patron_address = "/^[a-zA-Z0-9\s-]+$/";
 $patron_id = "/^[0-9]+$/";
@@ -180,6 +178,7 @@ if(isset($_POST['submit'])) {
 
    #Imprimiendo alertas
    if(count($errores) > 0){
+
     echo "<div class='error'>
     <figure>
     <img src='../assets/icons/close.png' alt='icon close' id='close'>
@@ -193,7 +192,11 @@ if(isset($_POST['submit'])) {
     
     echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
-    /* $user->setUsername($username);
+    require_once('../model/user.php');
+
+    $user = new user();
+
+    $user->setUsername($username);
     $user->setPassword($password);
     $user->setId($id);
     $user->setEmail($email);
@@ -201,13 +204,11 @@ if(isset($_POST['submit'])) {
     $user->setDay($day);
     $user->setMonth($month);
     $user->setYear($year);
-    $user->setBirth();
 
-    echo $user->addDataBase(); */
-
-
+    $user->addDataBase(); 
 
     header("location: ../index.php");
+
    }
   
 }
