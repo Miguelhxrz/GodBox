@@ -9,7 +9,7 @@ $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
 
 $errores = array();
 
-$user = new User();
+$user = new user();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -23,7 +23,6 @@ $year = intval($_POST['year']);
 if(isset($_POST['submit'])) {
 
   #validacion de username
-  
   if(isset($username)){
     if (empty($username)) {
       array_push($errores,"Error 001: El Username no puede estar vacio.");
@@ -39,7 +38,6 @@ if(isset($_POST['submit'])) {
   }
 
   #validacion password
-
   if(isset($password)){
    
     if(empty($password)) {
@@ -53,7 +51,6 @@ if(isset($_POST['submit'])) {
   }
 
   #validacion de id
-
   if(isset($id)){
   
     if(empty($id)) {
@@ -70,7 +67,6 @@ if(isset($_POST['submit'])) {
   }
   
   #Validacion Email
-
   if(isset($email)){
     if(empty($email)) {
     array_push($errores,"Error 010: No puedes dejar el campo de email vacio.");
@@ -86,7 +82,6 @@ if(isset($_POST['submit'])) {
   }  
 
    #Validacion address
-
    if(isset($address)){
 
   if(empty($address)) {
@@ -103,7 +98,6 @@ if(isset($_POST['submit'])) {
     }
 
   #validacion de fecha (dia)
-    
   if(isset($day)) {
     
     if(empty($day)){
@@ -127,7 +121,6 @@ if(isset($_POST['submit'])) {
   }
 
   #validacion de fecha (mes)
-    
   if(isset($month)) {
     
     if(empty($month)){

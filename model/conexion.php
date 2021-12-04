@@ -1,13 +1,12 @@
-<?php 
+0<?php 
 
-class connect_db {
-  
+class conect_db {
   var $conection;
 
   function connect () {
     $server_conect = "localhost";
     $username = "root";
-    $password = "123456789"; #<-- si tienen contraseña la cambian aqui.
+    $password = "12345678"; #<-- si tienen contraseña la cambian aqui.
     $use_db = "godbox";
     $this->conection = new mysqli($server_conect, $username, $password, $use_db);
 
@@ -15,8 +14,6 @@ class connect_db {
     if($this->conection->connect_errno) {
       echo "<h3>Hubo un error con la conexion de la base de datos, intentelo nuevamente</h3>";
       exit;
-    }else{
-      echo "correcto";
     }
 
   }
@@ -25,8 +22,16 @@ class connect_db {
     return $this->conection->query($instruct);
   }
 
+  public function getConection() {
+    return $this->conection;
+  }
+
 
 }
+
+
+
+
 
 
 ?>
