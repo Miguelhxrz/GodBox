@@ -1,6 +1,6 @@
 <?php 
   
- error_reporting(0); 
+require_once('../model/sponsor.php'); 
 
 ?>
 
@@ -69,17 +69,23 @@
                     <h6>Correo Electronico</h6>
                 </div>
             </section>
+            <?php 
+            $question->Show();
+
+            while ($row = mysqli_fetch_array($question)){
+            ?>
             <section class="item-title">
                 <div class="item-1">
-                    <h6><?php echo $_SESSION['sponsor']["rif"];?></h6>
+                    <h6><?php echo $row['rif']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $_SESSION['sponsor']["sponsor_name"];?></h6>
+                    <h6><?php echo $row['name']?></h6>
                 </div>
                 <div class="item-3">
-                    <h6><?php echo $_SESSION['sponsor']["email"];?></h6>
+                    <h6><?php echo $row['email']?></h6>
                 </div>
             </section>
+            <?php }?>
         </div>
     </main>
 

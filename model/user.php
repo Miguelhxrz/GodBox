@@ -98,7 +98,7 @@
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."')";
+      $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
     
       $question = $this->data_base->add_instruc($query_send);
 
