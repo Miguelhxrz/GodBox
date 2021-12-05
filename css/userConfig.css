@@ -177,12 +177,6 @@ a {
     cursor: pointer;
     font-size: 30px;
 }
-
-.config {
-    background-color: var(--color3);
-}
-
-
 /* Fin menu lateral*/
 
 
@@ -206,33 +200,9 @@ a {
     margin-top: auto;
     color: white;
 }
-
-.selecction .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.button {
-    background: var(--navbar);
-    font-family: var(--fuenteTitulos);
-    color: white;
-    display: inline-block;
-    font-size: 2rem;
-    margin: 0 5rem;
-    padding: 20px 0px;
-    text-align: center;
-    width: 20rem;
-    text-decoration: none;
-    box-shadow: 0px 4px 0px var(--color5);
-    margin-top: 80px;
-}
-
-
 /* form */
 .principalContainer {
-    margin-top: 60px;
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,13 +218,13 @@ a {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
     flex: 1 1 30rem;
     border-radius: 2rem;
-    height: 620px;
+    height: 720px;
 }
 
 .form-register {
     display: flex;
     height: 30rem;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .l-q {
@@ -281,7 +251,7 @@ a {
 }
 
 input[type=text],
-input[type=date],
+input[type=password],
 input[type=email] {
     border: 3px solid #fff;
     border-radius: 10px;
@@ -317,7 +287,7 @@ button {
     width: 10rem;
     text-decoration: none;
     border-radius: 1rem;
-    margin-top: 90px;
+    margin-top: 150px;
 }
 
 .warnings {
@@ -350,6 +320,7 @@ button {
     justify-self: flex-start;
     margin: 0px 0px 10px 20px;
     color: white;
+    font-family: var(--fuenteTitulos);
     font-size: 2.2rem;
 }
 

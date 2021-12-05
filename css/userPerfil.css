@@ -176,10 +176,6 @@ a {
     cursor: pointer;
     font-size: 30px;
 }
-
-.profil {
-    background-color: var(--color3);
-}
 /* Fin menu lateral*/
 
 /* body */
@@ -224,10 +220,9 @@ a {
     box-shadow: 0px 4px 0px var(--color5);
     margin-top: 80px;
 }
-
 /* form */
 .principalContainer {
-    margin-top: 60px;
+    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -245,11 +240,12 @@ a {
     border-radius: 2rem;
     height: 550px;
     border: 1px solid white;
+    margin-top: 80px;
 }
 
 .form-register {
     display: flex;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 .l-q {
@@ -275,66 +271,49 @@ a {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email],
+input[type=date] {
     border: 3px solid #fff;
     border-radius: 10px;
     padding: 10px;
     outline: none;
-    font-family: var(--fuenteTitulos);
+    font-family: var(--fuenteTexto);
     font-size: 1.5rem;
     color: white;
     background-color: transparent;
     margin-top: 10px;
-}
-
-.warnings {
-    width: 500px;
-    text-align: center;
-    margin: auto;
-    color: #bf9341;
-    padding-top: 30px;
-}
-
-button {
-    background: #fff;
-    font-family: var(--fuenteTitulos);
-    color: #000;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0 2rem;
-    padding: 20px 0px;
-    text-align: center;
-    width: 10rem;
-    text-decoration: none;
-    border-radius: 1rem;
-    margin-top: 70px;
+    width: 400px;
 }
 /* fin form */
 /* fin body */
 
 /* Footer */
+
 .footer {
     display: flex;
     width: 100%;
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position-y: 95px;
+    background-size: 1484px;
 }
 
-.footer .footer__text {
+.footer h3 {
     align-self: flex-end;
-    margin: 0px 0px 16px 20px;
+    justify-self: flex-start;
+    margin: 0px 0px 10px 20px;
     color: white;
+    font-family: var(--fuenteTitulos);
     font-size: 2.2rem;
 }
 
 .footer .footer__social-media {
     align-self: flex-end;
-    display: flex;
     justify-content: flex-end;
-    width: 46%;
+    display: flex;
+    width: 40%;
 }
 
 .footer__social-media figure {
@@ -342,8 +321,10 @@ button {
 }
 
 .footer__social-media img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
 }
+
+
 /* Fin Footer */

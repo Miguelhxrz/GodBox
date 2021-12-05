@@ -61,10 +61,16 @@
         <div class="container">
             <div class="box">
                 <a href="#" class="button btn1">
-                     Mis Productos
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Mis Productos
                 </a>
-                <a href="userCoins.php" class="button btn2">
-                     Transacciones
+                <a href="./user_Transactions.php" class="button btn2">
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Transacciones
                 </a>
             </div>
         </div>
@@ -88,13 +94,13 @@
     <input type="checkbox" id="btn-modal">
     <div class="container-modal">
         <div class="content-modal">
-            <img src="./img/Logo-rezised.png" alt="logo" class="logo">
+            <img src="../assets/img/Logo-rezised.png" alt="logo" class="logo">
             <h2>Operaciones</h2>
             <p>Con los objetos pertenecientes a su inventario puede realizar el pedido de los objetos ganados, así como también canjearlo por las monedas del sitio web obteniendo más LilGods para seguir abriendo cajas sorpresa!</p>
             <div class="img">
-                <img src="./img/object1.png" alt="objects">
-                <img src="./img/object2.png" alt="objects">
-                <img src="./img/object3.png" alt="objects">
+                <img src="../assets/img/object1.png" alt="objects">
+                <img src="../assets/img/object2.png" alt="objects">
+                <img src="../assets/img/object3.png" alt="objects">
             </div>
 
             <div class="btn-cerrar">
@@ -123,6 +129,17 @@
         <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
       </div>
     </footer>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="menu">
+            <nav>
+                <a href="./user_Profile.php" class="profil">Perfil</a>
+                <a href="./userConfig.php" class="config">Configuración</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
 
 </body>
 
