@@ -39,8 +39,8 @@
             <section class="options">
                 <div class="link">
                     <div class="btn-menu">
-                        </a><label for="btn-menu"><img src="../assets/icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="#"><img src="../assets/icons/coin.png" alt="Objetos y Monedas" class="item"></a>
+                        <label for="btn-menu"><img src="../assets/icons/user.png" alt="Opciones de Usuario" class="item"></label>
+                        <a href="user.php"><img src="../assets/icons/coin.png" alt="Objetos y Monedas" class="item"></a>
                     </div>
                 </div>
             </section>

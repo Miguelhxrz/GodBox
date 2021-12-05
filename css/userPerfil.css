@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'BubblegumSans';
-    src: url('../assets/font/BubblegumSans-Regular.ttf')
+    src: url('../assets/font/BubblegumSans-Regular.ttf');
 }
 
 
@@ -19,16 +19,12 @@
 }
 
 body {
-    width: 100%;
     background-color: var(--color1);
-    font-family: var(--fuenteTitulos);
-    background-image: url('../assets/img/background.png');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 53%;
+    font-family: var(--font);
 }
 
 /* header */
+
 .header {
     width: 100%;
     height: 130px;
@@ -58,15 +54,16 @@ a {
     width: 118px;
     height: 99px;
     margin-right: auto;
+    padding-left: 20px;
 }
 
 .header .container-header .center-title {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 229px;
     margin-right: auto;
-    margin-left: 155px;
+    margin-left: 60px;
+    width: 229px;
 }
 
 .header .container-header .center-title .boxes-link {
@@ -79,10 +76,8 @@ a {
 }
 
 .header .container-header .options {
-    width: 250px;
     display: flex;
-    text-align: center;
-    justify-content: space-around;
+    align-items: center;
 }
 
 .header .container-header .options .link {
@@ -96,7 +91,6 @@ a {
 
 a {
     color: #fff;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
 

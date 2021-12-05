@@ -31,7 +31,7 @@
                 </div>
                 <div class="about-link">
                     <a href="#">
-                        <h4>Sobre Nosotros</h4>
+                        <h4>Sobre nosotros</h4>
                     </a>
                 </div>
             </section>
@@ -39,8 +39,8 @@
             <section class="options">
                 <div class="link">
                     <div class="btn-menu">
-                        <label for="btn-menu"><img src="../assets/icons/user.png" alt="" class="item"></label>
-                        <a href="user.php"><img src="../assets/icons/coin.png" alt="" class="item"></a>
+                        <label for="btn-menu"><img src="../assets/icons/user.png" alt="Opciones de Usuario" class="item"></label>
+                        <a href="user.php"><img src="../assets/icons/coin.png" alt="Objetos y Monedas" class="item"></a>
                     </div>
                 </div>
             </section>

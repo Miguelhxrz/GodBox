@@ -20,12 +20,12 @@
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.html">
+                    <a href="./Boxes.php">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
+                    <a href="../index.php">
                         <img src="../assets/icons/Home.png" alt="">
                     </a>
                 </div>

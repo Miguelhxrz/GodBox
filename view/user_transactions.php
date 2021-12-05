@@ -31,7 +31,7 @@
                 </div>
                 <div class="about-link">
                     <a href="#">
-                        <h4>Sobre Nosotros</h4>
+                        <h4>Sobre nosotros</h4>
                     </a>
                 </div>
             </section>
