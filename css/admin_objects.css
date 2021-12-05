@@ -379,10 +379,14 @@ a {
 .footer h3 {
     align-self: flex-end;
     justify-self: flex-start;
-    margin-left: 20px;
+    margin: 0px 0px 10px 20px;
     color: white;
+<<<<<<< HEAD
     font-size: 3.2rem;
 >>>>>>> 6c858a4728ef1a692922e982a51306f1248be4e3
+=======
+    font-size: 2.2rem;
+>>>>>>> bd99309aca6daba77ace0e3d81a99860d6daabc1
 }
 
 .footer .footer__social-media {
@@ -397,7 +401,7 @@ a {
 =======
     justify-content: flex-end;
     display: flex;
-    width: 50%;
+    width: 60%;
 }
 
 .footer__social-media figure {

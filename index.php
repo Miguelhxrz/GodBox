@@ -1,5 +1,5 @@
-<?php require_once "./controllers/home-controller.php";?>
- 
+<?php require_once "./controllers/home-controller.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +13,8 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <?php include($header); ?>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <main class="container">
         <section class="offers__container">

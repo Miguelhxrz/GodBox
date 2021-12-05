@@ -1,117 +1,112 @@
 <?php 
-include_once('./classes/conexion.php');
 
-class user{
-  private $username;
-  private $password;
-  private $id;
-  private $email;
-  private $address;
-  // private $birth;
+  require_once('../model/connect_db.php');
 
+  class user {
 
-  #conection db 
-  private $db;
+    private $username;
+    private $password;
+    private $id;
+    private $email;
+    private $address;
+    private $day;
+    private $month;
+    private $year;
+    private $birth;
 
-  #constructor
-  function user () {
-    $this->db =  new conect_db();
-  }
+    #connnect data base
+    private $data_base;
 
-  #Metodos set
-
-  function set_username($user) {
-  $this->username = $user;
-  }
-
-  function set_password($pass) {
-    $this->password = $pass;
-  }
-  
-  function set_id($ced) {
-    $this->id = $ced;
-  }
-
-  function set_email($correo) {
-    $this->email = $correo;
-  }
-
-  function set_address($direc) {
-    $this->address = $direc;
-  }
-
-  /* function set_password($d, $m, $y) {
-    $this-> = $pass;
-  } */
-
-  #Metodos de db
-
-  function add_user() {
-    $inst ="insert into user (`username`, `password`, `id`, `email`, `Address`,) values ('".$this->username."','".$this->password."','".$this->id."','".$this->password."','user','".$this->email."','".$this->address."')";
-
-    $requestdb = $this->data_base->add_instruc($inst);
-
-    if($requestdb) {
-      return 1;
+    function __construct(){
+      
+      $this->data_base = new connect_db();
     }
-    else {
-      return 0;
-    }
-  }
-
-  function search_user_byid($id) {
-    $inst = "select * from user where id ='$id'";
-
-    $requestdb = $this->data_base->add_instruc($inst);
     
-    if(mysqli_num_rows($requestdb) > 0) {
-      return 1;
-    }else {
-      return 0;
+    #--Set--
+
+    function setUsername($user) {
+      $this->username = $user;
     }
 
-  }
-
-  
-  function encontrar_user($user) {
-    $insturction = "select * from user where Username ='$user'";
-
-    $result = $this->data_base->add($insturction);
-
-    if(mysqli_num_rows($result) > 0) {
-      return 1;
-    }else {
-      return 0;
+    function setPassword($pass) {
+      $this->password = $pass;
     }
-  }
 
-  function encontrar_password($pass) {
-    $insturction = "select * from user where Password ='$pass'";
+    function setId($ced) {
+      $this->id = $ced;
+    }
 
-    $result = $this->data_base->add($insturction);
+    function setEmail($correo) {
+      $this->email = $correo;
+    }
 
-      if(mysqli_num_rows($result) > 0) {
+    function setAddress($direc) {
+      $this->address = $direc;
+    }
+
+    function setDay($d) {
+      $this->day = $d;
+    }
+
+    function setMonth($m) {
+      $this->month = $m;
+    }
+
+    function setYear($y) {
+      $this->year = $y;
+    }
+
+    function setBirth() {
+      $this->birth = $this->day."-".$this->month."-".$this->year;
+    }
+
+    #--Get--
+
+    function getUsername() {
+      return $this->username;
+    }
+
+    function getPassword() {
+      return $this->password;
+    }
+
+    function getId() {
+      return $this->id;
+    }
+
+    function getEmail() {
+      return $this->email;
+    }
+
+    function getAddress() {
+      return $this->address;
+    }
+
+    function getYear() {
+      $this->year;
+    }
+
+    function get_fullbirth() {
+      $this->birth;
+    }
+
+
+    #Data base functions for users
+
+    function addDataBase() {
+      $query_send = "insert into `users` (`username`, `password`, `id`, `email`, `address`, `birth`) values ('".$this->username."',''".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."',')";
+    
+      $question = $this->data_base->sendQuery($query_send);
+
+      if($question){
         return 1;
-      } else {
+      }else {
         return 0;
       }
+    
     }
 
-
-  function encontrar_email($correo) {
-    $insturction = "select * from user where Email ='$correo'";
-
-    $result = $this->data_base->add($insturction);
-
-    if(mysqli_num_rows($result) > 0) {
-      return 1;
-    }else {
-      return 0;
-    }
   }
-
-  function encontrar_admin($user) {
-    $insturction = "select `Username`, `Perfil` FROM `user` where `Username` = '".$user."' and `Perfil`= 'admin'";
 
     $result = $this->data_base->add($insturction);
 
@@ -124,14 +119,13 @@ class user{
       return 0;
 
     }
-  }
 
   function user_login($user,$pass) {
 
     $insturction = "SELECT * FROM `user` where Username='$user' and Password='$pass'";
 
     $result = $this->data_base->add($insturction);
-
+    
     if(mysqli_num_rows($result) > 0) {
 
       return 1;
@@ -142,7 +136,3 @@ class user{
 
     }
   }
-
-
-}
-?>

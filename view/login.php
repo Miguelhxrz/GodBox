@@ -1,8 +1,7 @@
 <?php
 require_once("../controllers/login-controller.php");
 
-error_reporting(0);
-
+include_once('./model/user.php');
 ?>
 
 

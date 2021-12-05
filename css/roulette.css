@@ -125,7 +125,7 @@ a {
     align-items: center;
     position: absolute;
     top: 566px;
-    left: 850px;
+    left: 653px;
     z-index: 3;
     width: 375px;
     height: 325px;
@@ -249,10 +249,10 @@ button:hover, button:active {
   align-items: center;
   position: absolute;
   top: 872px;
-  left: 942px;
+  left: 742px;
   width: 186px;
   height: 60px;
-  background-color: #EABE3F;
+  background-color: 653BE3F;
   font-size: 3rem;
   color: #fff;
   border-radius: 15px;
@@ -324,22 +324,23 @@ h3 {
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position-y: 95px;
+    background-size: 1484px;
 }
 
-.footer .footer__text {
+.footer h3 {
     align-self: flex-end;
-    margin: 0px 0px 16px 20px;
+    justify-self: flex-start;
+    margin-left: 20px;
     color: white;
-    font-size: 2.2rem;
+    font-size: 3.2rem;
 }
 
 .footer .footer__social-media {
     align-self: flex-end;
-    display: flex;
     justify-content: flex-end;
-    width: 46%;
+    display: flex;
+    width: 50%;
 }
 
 .footer__social-media figure {
@@ -347,7 +348,7 @@ h3 {
 }
 
 .footer__social-media img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
 }

@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php 
 
 require_once('../controllers/register-box-controller.php');
@@ -15,6 +13,10 @@ $PatronPrice = "/^[0-9]+([,.][0-9]+)?$/";
 
 error_reporting(0);
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">

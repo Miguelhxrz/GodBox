@@ -16,5 +16,3 @@ function getHeaderByUser(){
 }
 
 $header = getHeaderByUser();
-
-?>

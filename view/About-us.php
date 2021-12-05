@@ -20,7 +20,7 @@
             </div>
             <section class="basic__menu">
                 <ul class="menu">
-                    <li class="menu__item"> <a href="./Boxes.html">Cajas</a></li>
+                    <li class="menu__item"> <a href="./Boxes.php">Cajas</a></li>
                     <li class="menu__item">
                         <a href="../index.php">
                             <img src="../assets/icons/Home.png" alt="">
