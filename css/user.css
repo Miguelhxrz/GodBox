@@ -309,6 +309,8 @@ a {
 }
 /* fin botones */
 
+/* Footer */
+
 .footer {
     display: flex;
     width: 100%;
@@ -344,3 +346,6 @@ a {
     height: 55px;
     cursor: pointer;
 }
+
+
+/* Fin Footer */

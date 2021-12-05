@@ -61,10 +61,16 @@
         <div class="container">
             <div class="box">
                 <a href="userObjects.php" class="button btn1">
-                     Mis Productos
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Mis Productos
                 </a>
                 <a href="#" class="button btn2">
-                     Transacciones
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Transacciones
                 </a>
             </div>
         </div>
@@ -92,6 +98,16 @@
       </div>
     </footer>
 
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="menu">
+            <nav>
+                <a href="user_Profile.php" class="profile">Perfil</a>
+                <a href="userConfig.php" class="config">Configuración</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
 </body>
 
 </html>

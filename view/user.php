@@ -66,7 +66,7 @@
                     <span id="span3"></span>
                     <span id="span4"></span> Mis Productos
                 </a>
-                <a href="userCoins.php" class="button btn">
+                <a href="user_Transactions.php" class="button btn">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -84,6 +84,17 @@
         <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
       </div>
     </footer>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="menu">
+            <nav>
+                <a href="./user_Profile.php" class="profil">Perfil</a>
+                <a href="./userConfig.php" class="config">Configuración</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
 </body>
 
 </html>

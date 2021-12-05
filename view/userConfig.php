@@ -56,14 +56,6 @@
             <h4>Username</h4>
         </div>
 
-        <section class="selecction">
-            <div class="container">
-                <div class="box">
-                    <a href="#" class="button">Modificar</a>
-                </div>
-            </div>
-        </section>
-
         <div class="principalContainer">
             <div class="box">
                 <main class="container">
@@ -71,6 +63,10 @@
                         <form action="" class="form-register" id="form">
                             <div class="conta">
                                 <section class="l-q">
+                                <label for="username" class="label-username">
+                                        Nombre de Usuario
+                                        <input type="text" name="" id="usemane" placeholder="Nuevo nombre de usuario" size="45" maxlength="45" class="username_input">
+                                    </label>
                                     <label for="addres" class="label-addres">
                                         Actualizar Dirección
                                         <input type="text" name="" id="addres" placeholder="Actualizar" size="45" maxlength="45" class="addres_input">
@@ -79,10 +75,15 @@
                                         Actualizar E-mail
                                         <input type="email" name="" id="email" placeholder="Actualizar" size="45" maxlength="45" class="email_input">
                                     </label>
-                                </section>
+                                    <label for="password" class="label-password">
+                                        Contraseña
+                                        <input type="password" name="" id="password" placeholder="Contraseña" size="45" maxlength="45" class="password_input">
+                                    </label>
+                                </section>                               
 
                                 <button type="submit">guardar</button>
                                 <button type="reset">reestablecer</button>
+                                <p class="warnings" id="warnings"></p>
                             </div>
                         </form>
                     </section>
@@ -104,6 +105,16 @@
       </div>
     </footer>
 
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="menu">
+            <nav>
+                <a href="user_Profile.php" class="profile">Perfil</a>
+                <a href="#" class="config">Configuración</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
 </body>
 
 </html>

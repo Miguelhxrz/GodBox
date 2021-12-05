@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/userPerfil.css">
-    <script src="../scripts/userPerfil_validation.js"></script>
     <title>GodBox - Perfil</title>
 </head>
 
@@ -60,7 +59,7 @@
         <section class="selecction">
             <div class="container">
                 <div class="box">
-                    <a href="#" class="button">Modificar</a>
+                    <a href="./userConfig.php" class="button">Modificar</a>
                 </div>
             </div>
         </section>
@@ -74,16 +73,21 @@
                                 <section class="l-q">
                                     <label for="username" class="label-username">
                                         Nombre de Usuario
-                                        <input type="text" name="" id="usemane" placeholder="Nuevo nombre de usuario" size="45" maxlength="45" class="username_input">
+                                        <input type="text" name="" id="usemane" placeholder="Username" size="45" maxlength="45" class="username_input" disabled>
                                     </label>
-                                    <label for="password" class="label-password">
-                                        Contraseña
-                                        <input type="password" name="" id="password" placeholder="Contraseña" size="45" maxlength="45" class="password_input">
+                                    <label for="addres" class="label-addres">
+                                        Dirección Actual
+                                        <input type="text" name="" id="addres" placeholder="Mi dirección" size="45" maxlength="45" class="addres_input" disabled>
+                                    </label>
+                                    <label for="email" class="label-email">
+                                        E-mail Actual
+                                        <input type="email" name="" id="email" placeholder="Mi E-mail" size="45" maxlength="45" class="email_input" disabled>
+                                    </label>
+                                    <label for="nacimiento" class="label-nacimiento">
+                                        Fecha de Nacimiento
+                                        <input type="date" name="" id="nacimiento" placeholder="Fecha de nacimiento" size="45" maxlength="45" class="nacimiento_input" disabled>
                                     </label>
                                 </section>
-                                <button type="submit">guardar</button>
-                                <button type="reset">reestablecer</button>
-                                <p class="warnings" id="warnings"></p>
                             </div>
                         </form>
                     </section>
@@ -100,6 +104,17 @@
         <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
       </div>
     </footer>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="menu">
+            <nav>
+                <a href="#" class="profil">Perfil</a>
+                <a href="./userConfig.php" class="config">Configuración</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
 
 </body>
 
