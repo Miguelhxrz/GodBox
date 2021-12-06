@@ -20,17 +20,15 @@
 
 body {
     background-color: var(--color1);
-    font-family: var(--font);
+    font-family: var(--fuenteTitulos);
 }
 
 /* header */
-
 .header {
     width: 100%;
     height: 130px;
     background-color: var(--navbar);
     font-size: 2rem;
-    font-family: var(--fuenteTitulos);
     margin-top: auto;
 }
 
@@ -47,7 +45,7 @@ a {
     align-items: center;
 }
 
-.header .container-header .logo {
+.header .container-header .logo img{
     display: flex;
     align-items: center;
     float: left;
@@ -62,9 +60,11 @@ a {
     justify-content: space-around;
     align-items: center;
     margin-right: auto;
-    margin-left: 60px;
+    margin-left: auto;
     width: 229px;
 }
+
+
 
 .header .container-header .center-title .boxes-link {
     margin-right: 20px;
@@ -73,6 +73,11 @@ a {
 .header .container-header .center-title .about-link {
     margin-left: 20px;
     text-align: center;
+}
+
+.ico-header img {
+    width: 50px;
+    height: 50px;
 }
 
 .header .container-header .options {
@@ -87,11 +92,6 @@ a {
 .header .container-header .options .link .item {
     width: 68px;
     height: 68px;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
 }
 
 .fondo img{
@@ -331,6 +331,163 @@ button {
     height: 55px;
     cursor: pointer;
 }
-
-
 /* Fin Footer */
+
+/* responsive */
+@media (max-width:1200px) {
+    /* header */
+    .header {
+        height: 115px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 500px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 25%;
+    }
+
+    .container-menu .menu {
+        max-width: 300px;
+    }
+}
+
+@media (max-width:990px) {
+    /* header */
+    .header {
+        height: 100px;
+        font-size: 30px;
+    }
+
+    .header .container-header .logo img{
+        width: 115px;
+        height: 95px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .ico-header img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 420px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 25%;
+    }
+
+    .container-menu .menu {
+        max-width: 300px;
+    }
+}
+
+@media (max-width:768px) {
+    /* header */
+    .header {
+        height: 90px;
+        font-size: 25px;
+    }
+
+    .header .container-header .logo img{
+        width: 100px;
+        height: 85px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .ico-header img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header .container-header .options .link .item {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 320px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 30%;
+    }
+
+    .container-menu .menu {
+        max-width: 320px;
+    }
+}
+
+@media (max-width:550px) {
+    /* header */
+    .header {
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .header .container-header .logo img{
+        width: 80px;
+        height: 68px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+        width: 100px;
+    }
+
+    .ico-header img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header .container-header .center-title .boxes-link {
+        margin-right: 10px;
+    }
+    
+    .header .container-header .center-title .about-link {
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .header .container-header .options .link .item {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 220px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 36%;
+    }
+
+    .container-menu .menu {
+        max-width: 340px;
+    }
+}
+/* fin responsive */
