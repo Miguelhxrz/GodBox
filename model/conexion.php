@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 class conect_db
@@ -9,10 +10,22 @@ class conect_db
     $server_conect = "locarlhost";
     $username = "root";
     $password = ""; #<-- si tienen contraseña la cambian aqui.
+=======
+0<?php 
+
+class conect_db {
+  var $conection;
+
+  function connect () {
+    $server_conect = "localhost";
+    $username = "root";
+    $password = "12345678"; #<-- si tienen contraseña la cambian aqui.
+>>>>>>> 8933bf94ac9e8ea034714595fab869c7b7e0eafe
     $use_db = "godbox";
     $this->conection = new mysqli($server_conect, $username, $password, $use_db);
 
     #Validando la conexion a la bd
+<<<<<<< HEAD
     if ($this->conection->connect_errno) {
       echo "<h3>Hubo un error con la conexion de la base de datos, intentelo nuevamente</h3>";
       exit;
@@ -28,3 +41,29 @@ class conect_db
     return $this->conection;
   }
 }
+=======
+    if($this->conection->connect_errno) {
+      echo "<h3>Hubo un error con la conexion de la base de datos, intentelo nuevamente</h3>";
+      exit;
+    }
+
+  }
+
+  function add_instruc($instruct) {
+    return $this->conection->query($instruct);
+  }
+
+  public function getConection() {
+    return $this->conection;
+  }
+
+
+}
+
+
+
+
+
+
+?>
+>>>>>>> 8933bf94ac9e8ea034714595fab869c7b7e0eafe

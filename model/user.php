@@ -1,10 +1,9 @@
 <?php 
-
-  require_once('../model/connect_db.php');
+    require_once('../model/connect_db.php');
 
   class user {
 
-    private $username;
+    public $username;
     private $password;
     private $id;
     private $email;
@@ -13,19 +12,23 @@
     private $month;
     private $year;
     private $birth;
+  
+    #database
+  private $data_base;
+  
+  #constructor
+  function User() {
 
-    #connnect data base
-    private $data_base;
-
-    function __construct(){
-      
-      $this->data_base = new connect_db();
-    }
+    $this->data_base=new connect_db;
+    $this->data_base->connect();
+  }
     
+
     #--Set--
 
     function setUsername($user) {
       $this->username = $user;
+      echo $this->username;
     }
 
     function setPassword($pass) {
@@ -94,21 +97,19 @@
     #Data base functions for users
 
     function addDataBase() {
-      $query_send = "insert into `users` (`username`, `password`, `id`, `email`, `address`, `birth`) values ('".$this->username."',''".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."',')";
-    
-      $question = $this->data_base->sendQuery($query_send);
 
-      if($question){
-        return 1;
-      }else {
-        return 0;
+      $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
+    
+      $question = $this->data_base->add_instruc($query_send);
+
+      if(isset($question)){
+        echo "registrado";
       }
     
     }
 
   }
 
-    $result = $this->data_base->add($insturction);
 
     if(mysqli_num_rows($result) > 0) {
 

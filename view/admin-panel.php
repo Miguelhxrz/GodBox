@@ -1,4 +1,4 @@
-<?php require_once('../controllers/admin-objetos-controller.php'); ?>
+<?php require_once('../controllers/admin-panel-controller.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/admin_panel.css">
     <title>GodBox - Mi Usuario</title>
 </head>
 
 <body>
-
-  <!-- Header -->
-  <?php require('../partials/header-user.php') ?>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <section class="perfil">
         <div class="user">
@@ -27,38 +26,59 @@
     <section class="selecction">
         <div class="container">
             <div class="box">
-                <a href="userObjects.php" class="button btn">
+                <a href="../view/userObjects.php" class="button btn">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
                     <span id="span4"></span> Mis Productos
                 </a>
-                <a href="userCoins.php" class="button btn">
+                <a href="../view/user_transactions.php" class="button btn">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
                     <span id="span4"></span> Transacciones
                 </a>
-                <a href="userCoins.php" class="button btn">
-                    <span id="span1"></span>
-                    <span id="span2"></span>
-                    <span id="span3"></span>
-                    <span id="span4"></span> Transacciones
-                </a>
-            </div>
-
-            <div class="box">
                 <a href="userObjects.php" class="button btn">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
-                    <span id="span4"></span> Mis Productos
+                    <span id="span4"></span> Reporte de usuarios
                 </a>
                 <a href="userCoins.php" class="button btn">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
-                    <span id="span4"></span> Transacciones
+                    <span id="span4"></span> Reporte de monedas vendidas
+                </a>
+                <a href="userObjects.php" class="button btn">
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Reportes de objetos ganados
+                </a>
+                <a href="userCoins.php" class="button btn">
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Reportes de objetos canjeados
+                </a>
+                <a href="../view/inventory.php" class="button btn">
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Inventario de cajas
+                </a>
+                <a href="../view/inventory-objects.php" class="button btn">
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Inventario de objetos
+                </a>
+                <a href="../view/sponsor.php" class="button btn">
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Patrocinadores
                 </a>
             </div>
         </div>
@@ -73,22 +93,6 @@
         </div>
     </footer>
 
-    <input type="checkbox" id="btn-menu">
-    <div class="container-menu">
-        <div class="menu">
-            <nav>
-                <a href="./user_Profile.php" class="profil">Perfil</a>
-                <a href="./userConfig.php" class="config">Configuración</a>
-                <a href="./compraMonedas.php" class="profil">Comprar lidGod</a>
-                <a href="./register_sponsor.php" class="config">Registrar patrocinador</a>
-                <a href="./register_object.php" class="config">Registrar producto</a>
-                <a href="./register_box.php" class="config">Registrar caja</a>
-                <a href="#" class="config">Reportes</a>
-                <a href="#" class="config">Inventarios</a>
-            </nav>
-            <label for="btn-menu">✖️</label>
-        </div>
-    </div>
 </body>
 
 </html>

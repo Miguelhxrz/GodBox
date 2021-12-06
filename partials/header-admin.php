@@ -13,12 +13,12 @@
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.html">
+                    <a href="../index.php">
                         <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
                 <div class="about-link">
-                    <a href="./">
+                    <a href="../view/About-us.php">
                         <h4>Sobre nosotros</h4>
                     </a>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="link">
                     <div class="btn-menu">
                         <label for="btn-menu"><img src="../assets/icons/casco.png" alt="" class="item"></label>
-                        <a href="admin_objects.php"><img src="../assets/icons/coin.png" alt="" class="item"></a>
+                        <a href="../view/admin-panel.php"><img src="../assets/icons/coin.png" alt="" class="item"></a>
                     </div>
                 </div>
             </section>
@@ -41,14 +41,10 @@
     <div class="container-menu">
         <div class="menu">
             <nav>
-                <a href="../view/user_Profile.php" class="profil">Perfil</a>
-                <a href="../view/userConfig.php" class="config">Configuración</a>
-                <a href="./compraMonedas.php" class="profil">Comprar lidGod</a>
-                <a href="./register_sponsor.php" class="config">Registrar patrocinador</a>
-                <a href="./register_object.php" class="config">Registrar producto</a>
-                <a href="./register_box.php" class="config">Registrar caja</a>
-                <a href="#" class="config">Reportes</a>
-                <a href="#" class="config">Inventarios</a>
+                <a href="../view/buy_coins.php" class="profil">Comprar LidGod</a>
+                <a href="../view/register_sponsor.php" class="config">Registrar patrocinador</a>
+                <a href="../view/register_object.php" class="config">Registrar producto</a>
+                <a href="../view/register_box.php" class="config">Registrar caja</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>

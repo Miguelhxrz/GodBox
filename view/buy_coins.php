@@ -12,36 +12,9 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo__container">
-            <img src="../assets/img/Logo-rezised.png" alt="Company logo">
-        </div>
+    <!-- Header -->
+    <?php include($header); ?>
 
-        <nav class="menu__container">
-            <section class="basic__menu">
-                <ul class="menu">
-                    <li class="menu__item"><a href="./Boxes.php">Cajas</a></li>
-                    <li class="menu__item">
-                        <a href="./index.html"> <img src="../assets/icons/Home.png" alt=""></a>
-                    </li>
-                    <li class="menu__item"><a href="#">Sobre Nosotros</a> </li>
-                </ul>
-            </section>
-        </nav>
-
-        <nav class="menu__container">
-            <section class="user__menu">
-                <ul class="menu">
-                    <li class="menu__item-icon"><img src="../assets/icons/coin.png" alt="">
-                        <a href="#"></a>
-                    </li>
-                    <li class="menu__item"><img src="../assets/icons/user.png" alt="">
-                        <a href="#"></a>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </header>
     <main class="container">
         <div class="grid-container">
             <div class="grid-item-2">
@@ -128,12 +101,12 @@
     </main>
 
     <footer class="footer">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
-        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
-        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
-      </div>
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+            <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+            <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+        </div>
     </footer>
 </body>
 

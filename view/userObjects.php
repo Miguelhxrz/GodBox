@@ -13,43 +13,8 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container-header">
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="">
-            </section>
-
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="./Boxes.php">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="../index.php">
-                        <img src="../assets/icons/Home.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre nosotros</h4>
-                    </a>
-                </div>
-            </section>
-
-            <section class="options">
-                <div class="link">
-                    <div class="btn-menu">
-                        <label for="btn-menu"><img src="../assets/icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="user.php"><img src="../assets/icons/coin.png" alt="Objetos y Monedas" class="item"></a>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <section class="fondo">
-            <img src="../assets/img/header.png" alt="">
-        </section>
-    </header>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <section class="perfil">
         <div class="user">
@@ -62,10 +27,16 @@
         <div class="container">
             <div class="box">
                 <a href="#" class="button btn1">
-                     Mis Productos
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Mis Productos
                 </a>
-                <a href="userCoins.php" class="button btn2">
-                     Transacciones
+                <a href="./user_Transactions.php" class="button btn2">
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span> Transacciones
                 </a>
             </div>
         </div>
@@ -89,13 +60,13 @@
     <input type="checkbox" id="btn-modal">
     <div class="container-modal">
         <div class="content-modal">
-            <img src="./img/Logo-rezised.png" alt="logo" class="logo">
+            <img src="../assets/img/Logo-rezised.png" alt="logo" class="logo">
             <h2>Operaciones</h2>
             <p>Con los objetos pertenecientes a su inventario puede realizar el pedido de los objetos ganados, así como también canjearlo por las monedas del sitio web obteniendo más LilGods para seguir abriendo cajas sorpresa!</p>
             <div class="img">
-                <img src="./img/object1.png" alt="objects">
-                <img src="./img/object2.png" alt="objects">
-                <img src="./img/object3.png" alt="objects">
+                <img src="../assets/img/object1.png" alt="objects">
+                <img src="../assets/img/object2.png" alt="objects">
+                <img src="../assets/img/object3.png" alt="objects">
             </div>
 
             <div class="btn-cerrar">
@@ -117,12 +88,12 @@
     <br><br><br><br><br>
 
     <footer class="footer">
-      <h3 class="footer__text">Todos los derechos reservados 2021 &copy; GodBox</h3>
-      <div class="footer__social-media">
-        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
-      </div>
+        <h3 class="footer__text">Todos los derechos reservados 2021 &copy; GodBox</h3>
+        <div class="footer__social-media">
+            <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+        </div>
     </footer>
 
 </body>

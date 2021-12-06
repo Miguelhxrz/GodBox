@@ -42,7 +42,8 @@
         <div class="menu">
             <nav>
                 <a href="userPerfil.php" class="profil">Perfil</a>
-                <a href="#" class="config">Configuración</a>
+                <a href="userConfig.php" class="config">Configuración</a>
+                <a href="userPerfil.php" class="Compra">Comprar LidGod</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>

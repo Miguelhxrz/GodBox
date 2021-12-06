@@ -29,102 +29,100 @@ body {
 }
 
 /* header */
+
 .header {
     width: 100%;
     height: 130px;
-    background-color: var(--navbar);
+    background-color: rgba(86, 101, 132, 0.67);
     font-size: 2rem;
     font-family: var(--fuenteTitulos);
     margin-top: auto;
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
     color: #fff;
-}
-
-.header .container-header {
+  }
+  
+  .container-header {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header .container-header .logo {
+  }
+  
+  .header .container-header .logo {
     display: flex;
     align-items: center;
     float: left;
     width: 118px;
     height: 99px;
     margin-right: auto;
-}
-
-.header .container-header .center-title {
+  }
+  
+  .header .container-header .center-title {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 229px;
     margin-right: auto;
-    margin-left: 155px;
-}
-
-.header .container-header .center-title .boxes-link {
+    margin-left: 150px;
+  }
+  
+  .header .container-header .center-title .boxes-link {
     margin-right: 20px;
-}
-
-.header .container-header .center-title .about-link {
+  }
+  
+  .header .container-header .center-title .about-link {
     margin-left: 20px;
     text-align: center;
-}
-
-.header .container-header .options {
+  }
+  
+  .header .container-header .options {
     width: 250px;
     display: flex;
     text-align: center;
     justify-content: space-around;
-}
-
-.header .container-header .options .link {
+  }
+  
+  .header .container-header .options .link {
     margin-right: 35px;
-}
-
-.header .container-header .options .link .item {
+  }
+  
+  .header .container-header .options .link .item {
     width: 68px;
     height: 68px;
-}
-
-a {
+  }
+  
+  a {
     color: #fff;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-}
-
-.fondo img{
+  }
+  
+  .fondo img {
     width: 100%;
     height: 530px;
-}
-/* fin header */
-
-::placeholder{
-    color: white;
-}
-
-/* Menú lateral */
-.btn-menu label {
+  }
+  /* fin header */
+  
+  /* Menú lateral */
+  
+  .btn-menu label {
     border-left: 3rem transparent;
     color: #fff;
     font-size: 30px;
     cursor: pointer;
     margin-right: 10px;
     margin-left: 10px;
-}
-
-#btn-menu {
+  }
+  
+  #btn-menu {
     display: none;
-}
-
-.container-menu {
+  }
+  
+  .container-menu {
     position: absolute;
     width: 20%;
     height: 100vh;
@@ -133,31 +131,31 @@ a {
     transition: all 500ms ease;
     opacity: 0;
     visibility: hidden;
-}
-
-#btn-menu:checked~.container-menu {
+  }
+  
+  #btn-menu:checked ~ .container-menu {
     opacity: 1;
     visibility: visible;
-}
-
-.container-menu .menu {
+  }
+  
+  .container-menu .menu {
     width: 100%;
     max-width: 300px;
-    background: var(--color2);
+    background: #2168a6;
     height: 100vh;
     position: relative;
     transition: all 500ms ease;
-}
-
-#btn-menu:checked~.container-menu .menu {
+  }
+  
+  #btn-menu:checked ~ .container-menu .menu {
     transform: translateX(0%);
-}
-
-.container-menu .menu nav {
+  }
+  
+  .container-menu .menu nav {
     transform: translateY(15%);
-}
-
-.container-menu .menu nav a {
+  }
+  
+  .container-menu .menu nav a {
     display: block;
     text-decoration: none;
     padding: 20px;
@@ -166,21 +164,18 @@ a {
     transition: all 400ms ease;
     font-size: 1.5rem;
     font-family: var(--fuenteTitulos);
-}
-
-.container-menu .menu label {
+  }
+  
+  .container-menu .menu label {
     position: absolute;
     right: 5px;
     top: 10px;
     color: #fff;
     cursor: pointer;
     font-size: 30px;
-}
-
-.profil {
-    background-color: var(--color3);
-}
-/* Fin menu lateral*/
+  }
+  
+  /* Fin menu lateral*/
 
 /* body */
 .perfil {
@@ -224,10 +219,9 @@ a {
     box-shadow: 0px 4px 0px var(--color5);
     margin-top: 80px;
 }
-
 /* form */
 .principalContainer {
-    margin-top: 60px;
+    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -245,11 +239,12 @@ a {
     border-radius: 2rem;
     height: 550px;
     border: 1px solid white;
+    margin-top: 80px;
 }
 
 .form-register {
     display: flex;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 .l-q {
@@ -275,66 +270,49 @@ a {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email],
+input[type=date] {
     border: 3px solid #fff;
     border-radius: 10px;
     padding: 10px;
     outline: none;
-    font-family: var(--fuenteTitulos);
+    font-family: var(--fuenteTexto);
     font-size: 1.5rem;
     color: white;
     background-color: transparent;
     margin-top: 10px;
-}
-
-.warnings {
-    width: 500px;
-    text-align: center;
-    margin: auto;
-    color: #bf9341;
-    padding-top: 30px;
-}
-
-button {
-    background: #fff;
-    font-family: var(--fuenteTitulos);
-    color: #000;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0 2rem;
-    padding: 20px 0px;
-    text-align: center;
-    width: 10rem;
-    text-decoration: none;
-    border-radius: 1rem;
-    margin-top: 70px;
+    width: 400px;
 }
 /* fin form */
 /* fin body */
 
 /* Footer */
+
 .footer {
     display: flex;
     width: 100%;
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position-y: 95px;
+    background-size: 1484px;
 }
 
-.footer .footer__text {
+.footer h3 {
     align-self: flex-end;
-    margin: 0px 0px 16px 20px;
+    justify-self: flex-start;
+    margin: 0px 0px 10px 20px;
     color: white;
+    font-family: var(--fuenteTitulos);
     font-size: 2.2rem;
 }
 
 .footer .footer__social-media {
     align-self: flex-end;
-    display: flex;
     justify-content: flex-end;
-    width: 46%;
+    display: flex;
+    width: 40%;
 }
 
 .footer__social-media figure {
@@ -342,8 +320,10 @@ button {
 }
 
 .footer__social-media img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
 }
+
+
 /* Fin Footer */

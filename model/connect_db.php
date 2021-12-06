@@ -1,37 +1,32 @@
 <?php
 
-class connect_db
-{
+class connect_db {
+  
+  var $conection;
 
-  var $conn;
+  function connect () {
+    $server_conect = "localhost";
+    $username = "root";
+    $password = "12345678"; #<-- si tienen contraseña la cambian aqui.
+    $use_db = "godbox";
+    $this->conection = new mysqli($server_conect, $username, $password, $use_db);
 
-  function __construct()
-  {
-
-    try {
-      $host = "localhost";
-      $username = "root";
-      $password = "123456789";
-      $db_name = "godbox";
-
-
-      $conn = new mysqli($host, $username, $password, $db_name);
-
-      echo "Todo chevere";
-    } catch (\Throwable $th) {
-      throw $th;
+    #Validando la conexion a la bd
+    if($this->conection->connect_errno) {
+      echo "<h3>Hubo un error con la conexion de la base de datos, intentelo nuevamente</h3>";
+      exit;
+    }else{
+      echo "correcto";
     }
+
   }
 
-  function sendQuery($q)
-  {
-
-    return $this->con->que;
-
-    if ($this->con) {
-      return 1;
-    } else {
-      return 0;
-    }
+  function add_instruc($instruct) {
+    return $this->conection->query($instruct);
   }
+
+
 }
+
+
+?>

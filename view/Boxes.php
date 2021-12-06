@@ -12,42 +12,42 @@
 </head>
 
 <body>
-     <!-- Header -->
-  <?php include($header); ?>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <main class="container">
 
         <section class="search__container">
             <label for="rank">
-      Rango
-      <select id="rank" name='rank'>
-        <option value="Nothing"></option>
-        <option value="Olimpica">Olimpica</option>
-        <option value="Heroe">Heroe</option>
-        <option value="SemiDios">SemiDios</option>
-        <option value="Dios">Dios</option>
-      </select>
-    </label>
+                Rango
+                <select id="rank" name='rank'>
+                    <option value="Nothing"></option>
+                    <option value="Olimpica">Olimpica</option>
+                    <option value="Heroe">Heroe</option>
+                    <option value="SemiDios">SemiDios</option>
+                    <option value="Dios">Dios</option>
+                </select>
+            </label>
             <label for="category">
-      Categoria:
-      <select id="category" name='category'>
-        <option value="Nothing"></option>
-        <option value="Tecnologia">Tecnologia</option>
-        <option value="Ropa">Ropa</option>
-        <option value="accesorios">accesorios</option>
-        <option value="zapatos">zapatos</option>
-      </select>
-    </label>
+                Categoria:
+                <select id="category" name='category'>
+                    <option value="Nothing"></option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="accesorios">accesorios</option>
+                    <option value="zapatos">zapatos</option>
+                </select>
+            </label>
             <label for="sponsor">
-      Patrocinador
-      <select id="sponsor" name='sponsor'>
-        <option value="Nothing"></option>
-        <option value="Nike">Nike</option>
-        <option value="Ropa">Adidas</option>
-        <option value="accesorios">Fila</option>
-        <option value="zapatos">Apple</option>
-      </select>
-    </label>
+                Patrocinador
+                <select id="sponsor" name='sponsor'>
+                    <option value="Nothing"></option>
+                    <option value="Nike">Nike</option>
+                    <option value="Ropa">Adidas</option>
+                    <option value="accesorios">Fila</option>
+                    <option value="zapatos">Apple</option>
+                </select>
+            </label>
         </section>
 
         <section class="box__container">
@@ -107,12 +107,12 @@
     </main>
 
     <footer class="footer">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
-        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
-        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
-      </div>
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+            <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+            <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+        </div>
     </footer>
 </body>
 
