@@ -14,7 +14,7 @@
 </head>
 
 <body>
-        <!-- Header -->
+    <!-- Header -->
     <?php include($header); ?>
 
     <section class="perfil">
@@ -64,12 +64,12 @@
     </section>
 
     <footer class="footer">
-      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
-      </div>
+        <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+        </div>
     </footer>
 
 
