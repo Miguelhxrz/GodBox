@@ -1,5 +1,7 @@
+<?php require_once('./controller/index_controller.php')?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">

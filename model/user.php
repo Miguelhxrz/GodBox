@@ -1,5 +1,5 @@
 <?php 
-    require_once('../model/connect_db.php');
+    require('../model/connect_db.php');
 
   class user {
 
@@ -97,20 +97,47 @@
     #Data base functions for users
 
     function addDataBase() {
-
-      $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
-    
-      $question = $this->data_base->add_instruc($query_send);
-
-      if($question){
-        echo "registrado";
-      }else {
-        echo "error";
-      }
       
-      
+        $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
     
+        $question = $this->data_base->add_instruc($query_send);
+
+        if($question == false){
+          echo "error";
+        }else {
+          
+        }
+
     }
+
+    function searchUser($user) {
+      $query_send = "SELECT `username` FROM `users` WHERE `username` = '$user'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      return $question;
+
+    }
+
+
+    function searchId($id) {
+      $query_send = "SELECT `id` FROM `users` WHERE `id` = '$id'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      return $question;
+
+    }
+
+    function searchEmail($email) {
+      $query_send = "SELECT `email` FROM `users` WHERE `email` = '$email'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      return $question;
+
+    }
+
 
   }
 ?>
