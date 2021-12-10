@@ -115,7 +115,11 @@
 
       $question = $this->data_base->add_instruc($query_send);
       
-      return $question;
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
 
     }
 
@@ -125,7 +129,11 @@
 
       $question = $this->data_base->add_instruc($query_send);
       
-      return $question;
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
 
     }
 
@@ -134,12 +142,13 @@
 
       $question = $this->data_base->add_instruc($query_send);
       
-      return $question;
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
 
     }
 
 
   }
-?>
-
-

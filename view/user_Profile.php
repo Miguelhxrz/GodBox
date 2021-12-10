@@ -1,3 +1,5 @@
+<?php require_once('../controllers/user-profile-controller.php'); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,43 +14,8 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container-header">
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="">
-            </section>
-
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="./Boxes.html">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="./index.html">
-                        <img src="../assets/icons/Home.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre nosotros</h4>
-                    </a>
-                </div>
-            </section>
-
-            <section class="options">
-                <div class="link">
-                    <div class="btn-menu">
-                        <label for="btn-menu"><img src="../assets/icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="user.php"><img src="../assets/icons/coin.png" alt="Objetos y Monedas" class="item"></a>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <section class="fondo">
-            <img src="../assets/img/header.png" alt="">
-        </section>
-    </header>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <section class="perfil">
         <div class="user">
@@ -97,24 +64,14 @@
     </section>
 
     <footer class="footer">
-      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
-      </div>
+        <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+        </div>
     </footer>
 
-    <input type="checkbox" id="btn-menu">
-    <div class="container-menu">
-        <div class="menu">
-            <nav>
-                <a href="#" class="profil">Perfil</a>
-                <a href="./userConfig.php" class="config">Configuración</a>
-            </nav>
-            <label for="btn-menu">✖️</label>
-        </div>
-    </div>
 
 </body>
 

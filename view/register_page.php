@@ -1,4 +1,5 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,6 @@
 </head>
 
 <body>
-
     <header class="header">
         <div class="container-header">
 
@@ -68,8 +68,8 @@
 
                 <input type="submit" class="btn" name="submit" value="registrarse" id="submit-btn">
 
-                <?php 
-                    require_once('../controller/register_controller.php');
+                <?php
+                    require_once('../controllers/register-page-controller.php');
                 ?>
 
             </form>

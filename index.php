@@ -1,4 +1,4 @@
-<?php require_once('./controller/index_controller.php')?>
+<?php require('./controllers/home-controller.php')?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,38 +13,8 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="menu__container">
-            <div class="logo__container">
-                <img src="./assets/img/Logo-rezised.png" alt="Company logo">
-            </div>
-            <section class="basic__menu">
-                <ul class="menu">
-                    <li class="menu__item">
-                        <a href="./Boxes.php">Cajas</a>
-                    </li>
-                    <a href="./index.php">
-                        <img src="./assets/icons/Home.png" alt="">
-                    </a>
-                    <li class="menu__item">
-                        <a href="./view/About-us.php">Sobre Nosotros</a>
-                    </li>
-                </ul>
-            </section>
-            
-            <section class="user__menu">
-                <ul class="menu">
-                    <li class="menu__item">
-                        <a href="./view/login.php">Iniciar Sesion</a>
-                    </li>
-                    <li class="menu__item">o</li>
-                    <li class="menu__item">
-                        <a href="./view/register_page.php">Registrarse</a>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </header>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <main class="container">
         <section class="offers__container">
@@ -91,7 +61,6 @@
         <img src="./assets/img/eezy_17.png" alt="">
         <h3>Todos los derechos reservados &copy; GodBox</h3>
     </footer>
-
 </body>
 
 </html>

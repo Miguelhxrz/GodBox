@@ -1,4 +1,5 @@
-<?php 
+<?php
+require_once("../controllers/login-controller.php");
 
 include_once('./model/user.php');
 
@@ -9,7 +10,7 @@ error_reporting(0);
 
 <!DOCTYPE html>
 <html lang="es">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +21,7 @@ error_reporting(0);
 </head>
 
 <body>
+
 
     <header class="header">
         <div class="container-header">
@@ -65,27 +67,27 @@ error_reporting(0);
             <div class="title-form">
                 <h5>Entrar</h5>
             </div>
-            <form action="" method="post" name="form-register" class="form-register">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form-register" class="form-register">
                 <input type="text" name="username_input" placeholder="Username" class="username_input">
                 <input type="password" name="password_input" placeholder="Contraseña" class="password_input">
                 <input type="submit" value="Entrar" class="btn" name="btn">
             </form>
-            <?php   
-            
-                $username = $_POST['username_input'];
-                $password = $_POST['password_input'];
+            <?php
+
+            $username = $_POST['username_input'];
+            $password = $_POST['password_input'];
 
             ?>
         </section>
     </main>
 
     <footer class="footer">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
-        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
-        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
-      </div>
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+            <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+            <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+        </div>
     </footer>
 </body>
 

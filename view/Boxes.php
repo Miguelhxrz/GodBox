@@ -1,3 +1,4 @@
+<?php require_once('../controllers/boxes-controller.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,66 +12,42 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="menu__container">
-            <div class="logo__container">
-                <img src="../assets/img/Logo-rezised.png" alt="Company logo">
-            </div>
-            <section class="basic__menu">
-                <ul class="menu">
-                    <li class="menu__item"> <a href="./Boxes.php">Cajas</a></li>
-                    <li class="menu__item">
-                        <a href="../index.php">
-                            <img src="../assets/icons/Home.png" alt="">
-                        </a>
-                    </li>
-                    <li class="menu__item"><a href="./About-us.php">Sobre Nosotros </a></li>
-                </ul>
-            </section>
-
-            <section class="user__menu">
-                <ul class="menu">
-                    <li class="menu__item"><a href="./login.php">Iniciar sesión</a></li>
-                    <li class="menu__item">o</li>
-                    <li class="menu__item"><a href="./register_page.php">Registrar</a></li>
-                </ul>
-            </section>
-        </nav>
-    </header>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <main class="container">
 
         <section class="search__container">
             <label for="rank">
-      Rango
-      <select id="rank" name='rank'>
-        <option value="Nothing"></option>
-        <option value="Olimpica">Olimpica</option>
-        <option value="Heroe">Heroe</option>
-        <option value="SemiDios">SemiDios</option>
-        <option value="Dios">Dios</option>
-      </select>
-    </label>
+                Rango
+                <select id="rank" name='rank'>
+                    <option value="Nothing"></option>
+                    <option value="Olimpica">Olimpica</option>
+                    <option value="Heroe">Heroe</option>
+                    <option value="SemiDios">SemiDios</option>
+                    <option value="Dios">Dios</option>
+                </select>
+            </label>
             <label for="category">
-      Categoria:
-      <select id="category" name='category'>
-        <option value="Nothing"></option>
-        <option value="Tecnologia">Tecnologia</option>
-        <option value="Ropa">Ropa</option>
-        <option value="accesorios">accesorios</option>
-        <option value="zapatos">zapatos</option>
-      </select>
-    </label>
+                Categoria:
+                <select id="category" name='category'>
+                    <option value="Nothing"></option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="accesorios">accesorios</option>
+                    <option value="zapatos">zapatos</option>
+                </select>
+            </label>
             <label for="sponsor">
-      Patrocinador
-      <select id="sponsor" name='sponsor'>
-        <option value="Nothing"></option>
-        <option value="Nike">Nike</option>
-        <option value="Ropa">Adidas</option>
-        <option value="accesorios">Fila</option>
-        <option value="zapatos">Apple</option>
-      </select>
-    </label>
+                Patrocinador
+                <select id="sponsor" name='sponsor'>
+                    <option value="Nothing"></option>
+                    <option value="Nike">Nike</option>
+                    <option value="Ropa">Adidas</option>
+                    <option value="accesorios">Fila</option>
+                    <option value="zapatos">Apple</option>
+                </select>
+            </label>
         </section>
 
         <section class="box__container">
@@ -130,12 +107,12 @@
     </main>
 
     <footer class="footer">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
-        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
-        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
-      </div>
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+            <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+            <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+        </div>
     </footer>
 </body>
 
