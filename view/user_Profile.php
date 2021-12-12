@@ -1,3 +1,5 @@
+<?php require_once('../controllers/user-profile-controller.php'); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,48 +10,12 @@
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/userPerfil.css">
-    <script src="../scripts/userPerfil_validation.js"></script>
     <title>GodBox - Perfil</title>
 </head>
 
 <body>
-    <header class="header">
-        <div class="container-header">
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="">
-            </section>
-
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="./Boxes.html">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="./index.html">
-                        <img src="../assets/icons/Home.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre nosotros</h4>
-                    </a>
-                </div>
-            </section>
-
-            <section class="options">
-                <div class="link">
-                    <div class="btn-menu">
-                        <label for="btn-menu"><img src="../assets/icons/user.png" alt="Opciones de Usuario" class="item"></label>
-                        <a href="user.php"><img src="../assets/icons/coin.png" alt="Objetos y Monedas" class="item"></a>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <section class="fondo">
-            <img src="../assets/img/header.png" alt="">
-        </section>
-    </header>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <section class="perfil">
         <div class="user">
@@ -60,7 +26,7 @@
         <section class="selecction">
             <div class="container">
                 <div class="box">
-                    <a href="#" class="button">Modificar</a>
+                    <a href="./userConfig.php" class="button">Modificar</a>
                 </div>
             </div>
         </section>
@@ -74,16 +40,21 @@
                                 <section class="l-q">
                                     <label for="username" class="label-username">
                                         Nombre de Usuario
-                                        <input type="text" name="" id="usemane" placeholder="Nuevo nombre de usuario" size="45" maxlength="45" class="username_input">
+                                        <input type="text" name="" id="usemane" placeholder="Username" size="45" maxlength="45" class="username_input" disabled>
                                     </label>
-                                    <label for="password" class="label-password">
-                                        Contraseña
-                                        <input type="password" name="" id="password" placeholder="Contraseña" size="45" maxlength="45" class="password_input">
+                                    <label for="addres" class="label-addres">
+                                        Dirección Actual
+                                        <input type="text" name="" id="addres" placeholder="Mi dirección" size="45" maxlength="45" class="addres_input" disabled>
+                                    </label>
+                                    <label for="email" class="label-email">
+                                        E-mail Actual
+                                        <input type="email" name="" id="email" placeholder="Mi E-mail" size="45" maxlength="45" class="email_input" disabled>
+                                    </label>
+                                    <label for="nacimiento" class="label-nacimiento">
+                                        Fecha de Nacimiento
+                                        <input type="date" name="" id="nacimiento" placeholder="Fecha de nacimiento" size="45" maxlength="45" class="nacimiento_input" disabled>
                                     </label>
                                 </section>
-                                <button type="submit">guardar</button>
-                                <button type="reset">reestablecer</button>
-                                <p class="warnings" id="warnings"></p>
                             </div>
                         </form>
                     </section>
@@ -93,13 +64,14 @@
     </section>
 
     <footer class="footer">
-      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
-      </div>
+        <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
+            <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
+        </div>
     </footer>
+
 
 </body>
 

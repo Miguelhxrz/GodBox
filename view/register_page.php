@@ -1,4 +1,5 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,42 +12,10 @@
 </head>
 
 <body>
-
-    <header class="header">
-        <div class="container-header">
-
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
-                <a href="../index.php"></a>
-            </section>
-
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="./Boxes.php">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="../index.php">
-                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre nosotros</h4>
-                    </a>
-                </div>
-            </section>
-
-            <section class="links-r">
-                <div class="login-link">
-                    <a href="./login.php">
-                        <h4>Iniciar sesion</h4>
-                    </a>
-                </div>
-            </section>
-        </div>
-    </header>
+    
+    <?php 
+        include("../partials/header-no_register.php");
+    ?>
 
     <main class="container">
         <section class="container-form">
@@ -68,8 +37,8 @@
 
                 <input type="submit" class="btn" name="submit" value="registrarse" id="submit-btn">
 
-                <?php 
-                    require_once('../controller/register_controller.php');
+                <?php
+                    require_once('../controllers/register-page-controller.php');
                 ?>
 
             </form>

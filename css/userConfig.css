@@ -19,113 +19,103 @@
 }
 
 body {
-    width: 100%;
-    height: 100%;
     background-color: var(--color1);
     font-family: var(--fuenteTitulos);
-    background-image: url('../assets/img/background.png');
-    background-repeat: no-repeat;
-    background-position-x: 265px;
-    background-position-y: 446px;
-    background-size: 60%;
 }
 
-
 /* header */
+
 .header {
     width: 100%;
     height: 130px;
-    background-color: var(--navbar);
+    background-color: rgba(86, 101, 132, 0.67);
     font-size: 2rem;
-    font-family: var(--fuenteTitulos);
     margin-top: auto;
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
     color: #fff;
-}
-
-.header .container-header {
+  }
+  
+  .container-header {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header .container-header .logo {
+  }
+  
+  .header .container-header .logo {
     display: flex;
     align-items: center;
     float: left;
     width: 118px;
     height: 99px;
     margin-right: auto;
-}
-
-.header .container-header .center-title {
+  }
+  
+  .header .container-header .center-title {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 229px;
     margin-right: auto;
-    margin-left: 168px;
-}
-
-.header .container-header .center-title .boxes-link {
+    margin-left: 150px;
+  }
+  
+  .header .container-header .center-title .boxes-link {
     margin-right: 20px;
-}
-
-.header .container-header .center-title .about-link {
+  }
+  
+  .header .container-header .center-title .about-link {
     margin-left: 20px;
     text-align: center;
-}
-
-.header .container-header .options {
+  }
+  
+  .header .container-header .options {
     width: 250px;
     display: flex;
     text-align: center;
     justify-content: space-around;
-}
-
-.header .container-header .options .link {
+  }
+  
+  .header .container-header .options .link {
     margin-right: 35px;
-}
-
-.header .container-header .options .link .item {
+  }
+  
+  .header .container-header .options .link .item {
     width: 68px;
     height: 68px;
-}
-
-a {
+  }
+  
+  a {
     color: #fff;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-}
-
-.fondo img{
+  }
+  
+  .fondo img {
     width: 100%;
     height: 530px;
-}
-/* fin header */
-
-
-/* Menú lateral */
-
-.btn-menu label {
+  }
+  /* fin header */
+  
+  /* Menú lateral */
+  
+  .btn-menu label {
     border-left: 3rem transparent;
     color: #fff;
     font-size: 30px;
     cursor: pointer;
     margin-right: 10px;
     margin-left: 10px;
-}
-
-#btn-menu {
+  }
+  
+  #btn-menu {
     display: none;
-}
-
-.container-menu {
+  }
+  
+  .container-menu {
     position: absolute;
     width: 20%;
     height: 100vh;
@@ -134,31 +124,31 @@ a {
     transition: all 500ms ease;
     opacity: 0;
     visibility: hidden;
-}
-
-#btn-menu:checked~.container-menu {
+  }
+  
+  #btn-menu:checked ~ .container-menu {
     opacity: 1;
     visibility: visible;
-}
-
-.container-menu .menu {
+  }
+  
+  .container-menu .menu {
     width: 100%;
     max-width: 300px;
-    background: var(--color2);
+    background: #2168a6;
     height: 100vh;
     position: relative;
     transition: all 500ms ease;
-}
-
-#btn-menu:checked~.container-menu .menu {
+  }
+  
+  #btn-menu:checked ~ .container-menu .menu {
     transform: translateX(0%);
-}
-
-.container-menu .menu nav {
+  }
+  
+  .container-menu .menu nav {
     transform: translateY(15%);
-}
-
-.container-menu .menu nav a {
+  }
+  
+  .container-menu .menu nav a {
     display: block;
     text-decoration: none;
     padding: 20px;
@@ -167,23 +157,18 @@ a {
     transition: all 400ms ease;
     font-size: 1.5rem;
     font-family: var(--fuenteTitulos);
-}
-
-.container-menu .menu label {
+  }
+  
+  .container-menu .menu label {
     position: absolute;
     right: 5px;
     top: 10px;
     color: #fff;
     cursor: pointer;
     font-size: 30px;
-}
-
-.config {
-    background-color: var(--color3);
-}
-
-
-/* Fin menu lateral*/
+  }
+  
+  /* Fin menu lateral*/
 
 
 /* body */
@@ -206,33 +191,9 @@ a {
     margin-top: auto;
     color: white;
 }
-
-.selecction .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.button {
-    background: var(--navbar);
-    font-family: var(--fuenteTitulos);
-    color: white;
-    display: inline-block;
-    font-size: 2rem;
-    margin: 0 5rem;
-    padding: 20px 0px;
-    text-align: center;
-    width: 20rem;
-    text-decoration: none;
-    box-shadow: 0px 4px 0px var(--color5);
-    margin-top: 80px;
-}
-
-
 /* form */
 .principalContainer {
-    margin-top: 60px;
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,13 +209,13 @@ a {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
     flex: 1 1 30rem;
     border-radius: 2rem;
-    height: 620px;
+    height: 720px;
 }
 
 .form-register {
     display: flex;
     height: 30rem;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .l-q {
@@ -281,7 +242,7 @@ a {
 }
 
 input[type=text],
-input[type=date],
+input[type=password],
 input[type=email] {
     border: 3px solid #fff;
     border-radius: 10px;
@@ -317,7 +278,7 @@ button {
     width: 10rem;
     text-decoration: none;
     border-radius: 1rem;
-    margin-top: 90px;
+    margin-top: 150px;
 }
 
 .warnings {
@@ -350,6 +311,7 @@ button {
     justify-self: flex-start;
     margin: 0px 0px 10px 20px;
     color: white;
+    font-family: var(--fuenteTitulos);
     font-size: 2.2rem;
 }
 
@@ -369,6 +331,163 @@ button {
     height: 55px;
     cursor: pointer;
 }
-
-
 /* Fin Footer */
+
+/* responsive */
+@media (max-width:1200px) {
+    /* header */
+    .header {
+        height: 115px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 500px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 25%;
+    }
+
+    .container-menu .menu {
+        max-width: 300px;
+    }
+}
+
+@media (max-width:990px) {
+    /* header */
+    .header {
+        height: 100px;
+        font-size: 30px;
+    }
+
+    .header .container-header .logo img{
+        width: 115px;
+        height: 95px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .ico-header img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 420px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 25%;
+    }
+
+    .container-menu .menu {
+        max-width: 300px;
+    }
+}
+
+@media (max-width:768px) {
+    /* header */
+    .header {
+        height: 90px;
+        font-size: 25px;
+    }
+
+    .header .container-header .logo img{
+        width: 100px;
+        height: 85px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .ico-header img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header .container-header .options .link .item {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 320px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 30%;
+    }
+
+    .container-menu .menu {
+        max-width: 320px;
+    }
+}
+
+@media (max-width:550px) {
+    /* header */
+    .header {
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .header .container-header .logo img{
+        width: 80px;
+        height: 68px;
+    }
+
+    .header .container-header .center-title {
+        margin-right: auto;
+        margin-left: auto;
+        width: 100px;
+    }
+
+    .ico-header img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header .container-header .center-title .boxes-link {
+        margin-right: 10px;
+    }
+    
+    .header .container-header .center-title .about-link {
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .header .container-header .options .link .item {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .fondo img{
+        width: 100%;
+        height: 220px;
+    }
+
+    /* menú lateral */
+    .container-menu {
+        width: 36%;
+    }
+
+    .container-menu .menu {
+        max-width: 340px;
+    }
+}
+/* fin responsive */

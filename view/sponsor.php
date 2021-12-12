@@ -5,6 +5,7 @@ $sponsor = new sponsor();
 
 $question = $sponsor->ShowSponsor();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,42 +19,8 @@ $question = $sponsor->ShowSponsor();
 </head>
 
 <body>
-    <header class="header">
-        <div class="container-header">
-
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
-                <a href="./index.php"></a>
-            </section>
-
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="./Boxes.php">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="./index.php">
-                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre nosotros</h4>
-                    </a>
-                </div>
-            </section>
-
-            <section class="links-r">
-                <div class="login-link">
-                    <a href="#">
-                        <img src="../assets/icons/casco.png" alt="" class="imgcasco">
-                    </a>
-                </div>
-            </section>
-
-        </div>
-    </header>
+    <!-- Header -->
+    <?php include($header); ?>
 
     <main class="container">
         <h3>Patrocinadores</h3>
@@ -468,12 +435,12 @@ $question = $sponsor->ShowSponsor();
     </main>
 
     <footer class="footer">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
-        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
-        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
-      </div>
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+            <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+            <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+        </div>
     </footer>
 </body>
 

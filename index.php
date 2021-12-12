@@ -1,5 +1,7 @@
+<?php require('./controllers/home-controller.php')?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,39 +13,9 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="menu__container">
-            <div class="logo__container">
-                <img src="./assets/img/Logo-rezised.png" alt="Company logo">
-            </div>
-            <section class="basic__menu">
-                <ul class="menu">
-                    <li class="menu__item">
-                        <a href="./Boxes.php">Cajas</a>
-                    </li>
-                    <a href="./index.php">
-                        <img src="./assets/icons/Home.png" alt="">
-                    </a>
-                    <li class="menu__item">
-                        <a href="./view/About-us.php">Sobre Nosotros</a>
-                    </li>
-                </ul>
-            </section>
-            
-            <section class="user__menu">
-                <ul class="menu">
-                    <li class="menu__item">
-                        <a href="./view/login.php">Iniciar Sesion</a>
-                    </li>
-                    <li class="menu__item">o</li>
-                    <li class="menu__item">
-                        <a href="./view/register_page.php">Registrarse</a>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </header>
-
+    <!-- Header -->
+        <?php include($header); ?>     
+    
     <main class="container">
         <section class="offers__container">
             <h3>Ofertas especiales</h3>
@@ -57,7 +29,8 @@
             <article class="sponsor__box"></article>
             <article class="sponsor__box"></article>
             <article class="sponsor__img">
-                <img src="./img/sponsors.png" alt="">
+                <h3 class="sponsor__title"><span class="N">N</span><span class="u">u</span><span class="e">e</span><span class="v">v</span><span class="o">o</span><span class="s">s</span> <span class="p">p</span><span class="a">a</span><span class="t">t</span><span class="r">r</span><span class="o2">o</span><span class="c">c</span><span class="i">i</span><span class="n">n</span><span class="a2">a</span><span class="d">d</span><span class="o3">o</span><span class="r2">r</span><span class="e2">e</span><span class="s2">s</span></h3>
+                <img src="./assets/img/man.png" alt="">
             </article>
             <article class="sponsor__box"></article>
             <article class="sponsor__box"></article>
@@ -86,10 +59,8 @@
     </main>
 
     <footer class="footer">
-        <img src="./assets/img/eezy_17.png" alt="">
         <h3>Todos los derechos reservados &copy; GodBox</h3>
     </footer>
-
 </body>
 
 </html>

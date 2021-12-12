@@ -1,4 +1,5 @@
-<?php 
+<?php
+require_once("../controllers/login-controller.php");
 
 include_once('./model/user.php');
 
@@ -9,7 +10,7 @@ error_reporting(0);
 
 <!DOCTYPE html>
 <html lang="es">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,41 +22,8 @@ error_reporting(0);
 
 <body>
 
-    <header class="header">
-        <div class="container-header">
 
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
-            </section>
-
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="./Boxes.php">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="./index.php">
-                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre nosotros</h4>
-                    </a>
-                </div>
-            </section>
-
-            <section class="links-r">
-                <div class="login-link">
-                    <a href="./register_page.php">
-                        <h4>Registrarse</h4>
-                    </a>
-                </div>
-            </section>
-
-        </div>
-    </header>
+    <?php include('../partials/header-no_singin.php'); ?>  
 
     <main class="container">
         <section class="container-form">
@@ -65,27 +33,31 @@ error_reporting(0);
             <div class="title-form">
                 <h5>Entrar</h5>
             </div>
-            <form action="" method="post" name="form-register" class="form-register">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form-register" class="form-register">
                 <input type="text" name="username_input" placeholder="Username" class="username_input">
                 <input type="password" name="password_input" placeholder="Contraseña" class="password_input">
                 <input type="submit" value="Entrar" class="btn" name="btn">
+
+                <div class="form__account">
+                    <h4>¿No tienes cuenta? <a href="./register_page.php">¡Registrate aqui!</a></h4>
+                </div>
             </form>
-            <?php   
-            
-                $username = $_POST['username_input'];
-                $password = $_POST['password_input'];
+            <?php
+
+            $username = $_POST['username_input'];
+            $password = $_POST['password_input'];
 
             ?>
         </section>
     </main>
 
     <footer class="footer">
-      <h3>Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
-        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
-        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
-      </div>
+        <h3>Todos los derechos reservados 2021 GodBox</h3>
+        <div class="footer__social-media">
+            <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+            <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+            <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+        </div>
     </footer>
 </body>
 

@@ -41,7 +41,7 @@ body {
     background-image: url('../assets/img/background.png');
     background-repeat: no-repeat;
     background-position-x: 369px;
-    background-position-y: -105px;
+    background-position-y: -149px;
     background-size: 45%;
 }
 
@@ -106,68 +106,67 @@ body {
 
 /* |---- Header ----| */
 
-.header {
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    height: 130px;
-    background-color: var(--header-bg);
-    font-size: 2.5rem;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.container-header {
+    height: 120px;
+    font-size: 3.5rem;
+  }
+  
+  .menu__container {
+    display: flex;
+    align-items: center;
     width: 100%;
+    height: 100px;
+    padding: 0px 10px;
+    background-color: rgba(79, 92, 128, .3);
+  }
+  
+  .menu__container .logo__container {
+    display: flex;
+    align-items: center;
+    width: 10%;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-}
-
-.logo {
+  }
+  
+  .menu__container .basic__menu {
     display: flex;
     align-items: center;
-    margin-left: 35px;
-}
-
-.logoo {
-    width: 118px;
-    height: 99px;
-}
-
-.center-title {
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
-    width: 229px;
-}
-
-.boxes-link {
-    margin-right: 20px;
-}
-
-.about-link {
-    text-align: center;
-    margin-left: 20px;
-}
-
-.links-r {
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+    font-size: 2.5rem;
+    padding-left: 240px;
+  }
+  
+  .menu__container .basic__menu .boxes-link, .ico-header, .about-link{
+    margin-left: 15px;
+  }
+  
+  .menu__container .user__menu {
     display: flex;
     align-items: center;
-}
-
-.login-link {
-    margin-right: 35px;
-}
-
-a {
-    color: #fff;
+    justify-content: flex-end;
+    width: 23%;
+    height: 100%;
+    font-size: 2.5rem;
+  }
+  
+  .menu__container .user__menu h3 {
+    color: white;
+  }
+  
+  .menu__container .user__menu a, h3 {
+    margin-right: 15px;
+  }
+  
+  a {
+    color: white;
+    -webkit-text-stroke: black;
     text-decoration: none;
-}
+  }
 
 .title-form {
     display: flex;
@@ -344,7 +343,7 @@ label {
     height: 700px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position-y: 95px;
+    background-position-y: 170px;
     background-size: 1484px;
 }
 
