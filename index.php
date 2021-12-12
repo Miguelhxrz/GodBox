@@ -14,8 +14,8 @@
 
 <body>
     <!-- Header -->
-    <?php include($header); ?>
-
+        <?php include($header); ?>     
+    
     <main class="container">
         <section class="offers__container">
             <h3>Ofertas especiales</h3>
@@ -29,7 +29,8 @@
             <article class="sponsor__box"></article>
             <article class="sponsor__box"></article>
             <article class="sponsor__img">
-                <img src="./img/sponsors.png" alt="">
+                <h3 class="sponsor__title"><span class="N">N</span><span class="u">u</span><span class="e">e</span><span class="v">v</span><span class="o">o</span><span class="s">s</span> <span class="p">p</span><span class="a">a</span><span class="t">t</span><span class="r">r</span><span class="o2">o</span><span class="c">c</span><span class="i">i</span><span class="n">n</span><span class="a2">a</span><span class="d">d</span><span class="o3">o</span><span class="r2">r</span><span class="e2">e</span><span class="s2">s</span></h3>
+                <img src="./assets/img/man.png" alt="">
             </article>
             <article class="sponsor__box"></article>
             <article class="sponsor__box"></article>
@@ -58,7 +59,6 @@
     </main>
 
     <footer class="footer">
-        <img src="./assets/img/eezy_17.png" alt="">
         <h3>Todos los derechos reservados &copy; GodBox</h3>
     </footer>
 </body>

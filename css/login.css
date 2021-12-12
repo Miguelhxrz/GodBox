@@ -8,7 +8,8 @@
 * {
     box-sizing: border-box;
     margin: 0px;
-    padding: 0px
+    padding: 0px;
+    text-decoration: none;
 }
 
 html {
@@ -46,94 +47,68 @@ body {
 }
 
 
+/* |---- header ----| */
 
-/* |---- Header ----| */
-
-.header {
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    height: 130px;
-    background-color: var(--header-bg);
-    font-size: 2.5rem;
-}
-
-.container-header {
+    height: 120px;
+    font-size: 3.5rem;
+  }
+  
+  .menu__container {
+    display: flex;
+    align-items: center;
     width: 100%;
+    height: 100px;
+    padding: 0px 10px;
+    background-color: rgba(79, 92, 128, .3);
+  }
+  
+  .menu__container .logo__container {
+    display: flex;
+    align-items: center;
+    width: 10%;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.logo {
+  }
+  
+  .menu__container .basic__menu {
     display: flex;
     align-items: center;
-    margin-left: 35px;
-}
-
-.logoo {
-    width: 118px;
-    height: 99px;
-}
-
-.center-title {
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
-    width: 224px;
-}
-
-.boxes-link {
-    margin-right: 20px;
-}
-
-.about-link {
-    text-align: center;
-    margin-left: 20px;
-}
-
-.links-r {
-    display: flex;
-    align-items: center;
-}
-
-.login-link {
-    margin-right: 35px;
-}
-
-.imgcasco {
-    width: 64px;
-    height: 64px;
-}
-
-a {
-    color: #fff;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-}
-
-.title-form {
-    display: flex;
-    align-content: center;
     justify-content: center;
-    color: #fff;
-    font-size: 3rem;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    text-decoration: underline;
-}
-
-.title-icon {
+    width: 70%;
+    height: 100%;
+    font-size: 2.5rem;
+    padding-left: 240px;
+  }
+  
+  .menu__container .basic__menu .boxes-link, .ico-header, .about-link{
+    margin-left: 15px;
+  }
+  
+  .menu__container .user__menu {
     display: flex;
-    align-content: center;
-    justify-content: center;
-}
+    align-items: center;
+    justify-content: flex-end;
+    width: 23%;
+    height: 100%;
+    font-size: 2.5rem;
+  }
+  
+  .menu__container .user__menu h3 {
+    color: white;
+  }
+  
+  .menu__container .user__menu a, h3 {
+    margin-right: 15px;
+  }
+  
+  a {
+    color: white;
+    -webkit-text-stroke: black;
+  }
 
 
 /* |---- Body ----| */
@@ -158,6 +133,25 @@ a {
     border-radius: 15px;
     padding: 15px;
     margin-top: 10px;
+}
+
+.container-form .title-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.container-form .title-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    font-size: 3rem;
+    color: #fff;
 }
 
 .conta {
@@ -296,6 +290,18 @@ input[type=submit] {
     color: #fff;
     font-size: 1.5rem;
     border-radius: 12px;
+}
+
+.form-register .form__account {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.form-register .form__account a {
+    color: white;
+    letter-spacing: 1px;
 }
 
 .formulario__grupo-incorrecto {
