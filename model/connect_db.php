@@ -15,8 +15,6 @@ class connect_db {
     if($this->conection->connect_errno) {
       echo "<h3>Hubo un error con la conexion de la base de datos, intentelo nuevamente</h3>";
       exit;
-    }else{
-      echo "correcto";
     }
 
   }

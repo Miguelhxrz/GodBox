@@ -61,43 +61,61 @@
         <h3>Inventario de Cajas</h3>
         <div class="container-inventory">
             <section class="item-title">
-                <div class="item-1">
+                <div class="item-1-1">
                     <h6>Nombre</h6>
                 </div>
-                <div class="item-2">
+                <div class="item-2-1">
                     <h6>Codigo</h6>
                 </div>
-                <div class="item-3">
+                <div class="item-5-1">
                     <h6>Precio</h6>
                 </div>
-                <div class="item-4">
+                <div class="item-5-1">
+                    <h6>Foto</h6>
+                </div>
+                <div class="item-2-1">
                     <h6>Categoria</h6>
                 </div>
-                <div class="item-5">
+                <div class="item-2-1">
                     <h6>Rango</h6>
                 </div>
-                <div class="item-6">
-                    <h6>Objetos</h6>
+                <div class="item-4-1">
+                    <h6>Opciones</h6>
                 </div>
             </section>
+            <div class="container-items">
             <section class="item-title">
                 <div class="item-1">
-                    <h6><?php echo $_SESSION['box']["name"];?></h6>
+                    <h6>BoxName</h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $_SESSION['box']["codigo"];?></h6>
-                </div>
-                <div class="item-3">
-                    <h6><?php echo $_SESSION['box']["price"];?></h6>
-                </div>
-                <div class="item-4">
-                    <h6><?php echo $_SESSION['box']["category"];?></h6>
+                    <h6>0A154A54</h6>
                 </div>
                 <div class="item-5">
-                    <h6><?php echo $_SESSION['box']["rank"];?></h6>
+                    <h6>2.99</h6>
                 </div>
-                <div class="item-6">
-                    <h6><?php echo $_SESSION['box']["objetos"];?></h6>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-2">
+                    <h6>Tecnologia</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Dios</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_box-update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
                 </div>
             </section>
         </div>

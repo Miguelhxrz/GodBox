@@ -1,9 +1,10 @@
 <?php 
-  
 require_once('../model/sponsor.php'); 
+            
+$sponsor = new sponsor();
 
+$question = $sponsor->ShowSponsor();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,6 @@ require_once('../model/sponsor.php');
 </head>
 
 <body>
-
     <header class="header">
         <div class="container-header">
 
@@ -59,33 +59,411 @@ require_once('../model/sponsor.php');
         <h3>Patrocinadores</h3>
         <div class="container-inventory">
             <section class="item-title">
-                <div class="item-1">
+                <div class="item-1-1">
                     <h6>Rif</h6>
                 </div>
-                <div class="item-2">
+                <div class="item-2-1">
                     <h6>Nombre</h6>
                 </div>
-                <div class="item-3">
+                <div class="item-5-1">
+                    <h6>Logo</h6>
+                </div>
+                <div class="item-3-1">
                     <h6>Correo Electronico</h6>
+                </div>
+                <div class="item-4-1">
+                    <h6>Opciones</h6>
                 </div>
             </section>
             <?php 
-            $question->Show();
-
             while ($row = mysqli_fetch_array($question)){
             ?>
             <section class="item-title">
                 <div class="item-1">
-                    <h6><?php echo $row['rif']?></h6>
+                    <h6><?php echo $row["rif"];?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $row['name']?></h6>
+                    <h6><?php echo $row["name"];?></h6>
+                </div>
+                <div class="item-5">
+                    <h6></h6>
                 </div>
                 <div class="item-3">
-                    <h6><?php echo $row['email']?></h6>
+                    <h6><?php echo $row["email"];?></h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="<?php echo $row["rif"]?>">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </button>
+                    <?php 
+                    $sponsorif = $_POST['rif'];
+                    $submit = $_POST['submit'];
+                    if(isset($submit)){
+                    $result = $sponsor->deleteSponsor($sponsorif);
+                    }
+                    ?>
+                    </form>
+
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="<?php echo $row["rif"]?>">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
                 </div>
             </section>
-            <?php }?>
+            <?php };?>
+            <div class="container-items">
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+
+            <section class="item-title">
+                <div class="item-1">
+                    <h6>J-12345678</h6>
+                </div>
+                <div class="item-2">
+                    <h6>Patrocinador</h6>
+                </div>
+                <div class="item-5">
+                    <img src="../assets/img/inte.png" alt="" class="imagen">
+                </div>
+                <div class="item-3">
+                    <h6>Patrocinador@gmail.com</h6>
+                </div>
+                <div class="item-4">
+                    <form action="" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" name ="submit" class="item-o">
+                    <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    </form>
+                    <form action="../CRUD/register_sponsor-Update.php" method="POST">
+                    <input type="hidden" name="rif" value="">
+                    <button type="submit" class="item-o">
+                    <img src="../assets/icons/Editar-crud.png" alt="" class="img">
+                    </button>
+                    </form>
+                    </button>
+                </div>
+            </section>
+            </div>
         </div>
     </main>
 

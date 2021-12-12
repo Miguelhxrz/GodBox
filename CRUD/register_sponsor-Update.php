@@ -1,3 +1,12 @@
+<?php 
+$id = $_POST['rif'];
+require_once('../model/sponsor.php'); 
+            
+$sponsor = new sponsor();
+
+$question = $sponsor->getById($id);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/register_sponsor.css">
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-    <title>GodBox - Register Sponsor</title>
+    <title>GodBox - Editar Sponsor</title>
 </head>
 
 <body>
@@ -17,17 +26,17 @@
 
             <section class="logo">
                 <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
-                <a href="./index.html"></a>
+                <a href="../index.php"></a>
             </section>
 
             <section class="center-title">
                 <div class="boxes-link">
-                    <a href="./Boxes.php">
+                    <a href="../Boxes.php">
                         <h4>Cajas</h4>
                     </a>
                 </div>
                 <div class="ico-header">
-                    <a href="./index.php">
+                    <a href="../index.php">
                         <img src="../assets/icons/icons8-ruins-50.png" alt="">
                     </a>
                 </div>
@@ -52,23 +61,13 @@
     <main class="container">
         <section class="container-form">
             <div class="title-form">
-                <h5>Registrar patrocinador</h5>
+                <h5>Editar patrocinador</h5>
             </div>
-            <form action="" name= "form-register" class= "form-register" method="post">
-            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
-            <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
-            <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
-            <label for="imagen">
-                Imagen del patrocinador
-            <input type="file" name="imagen" id="">
-            </label>
-            <input type="submit"class="btn" name="register" value="Registrar">
-            
-            <?php 
-            require_once('../controller/sponsor_registro_controller.php');    
-            ?>
-            
-          </form>
+            <form action="../CRUD/Update-sponsor.php" name= "form-register" class= "form-register" method="post">
+            <input type="text" name="rif_input" placeholder="Rif" value="J-12345678"class="rif_input" maxlength="12" max="12">
+            <input type="text" name="name_input"  placeholder="Nombre" value="Patrocinador" maxlength="15" size="15" require>
+            <input type="email" name="email_input"  placeholder="Email" value="Patrocinador@gmail.com" maxlength="45" size="45" require>
+            <input type="submit"class="btn" name="register" value="Editar">    
         </section>
 
     </main>

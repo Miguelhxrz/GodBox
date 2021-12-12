@@ -28,7 +28,6 @@
 
     function setUsername($user) {
       $this->username = $user;
-      echo $this->username;
     }
 
     function setPassword($pass) {
@@ -104,8 +103,8 @@
 
       if(isset($question)){
         echo "registrado";
+        header("location: ../index.php");
       }
-    
     }
 
   }

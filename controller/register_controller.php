@@ -204,10 +204,12 @@ if(isset($_POST['submit'])) {
     $user->setDay($day);
     $user->setMonth($month);
     $user->setYear($year);
+    
+    $useradd = $user->addDataBase(); 
 
-    $user->addDataBase(); 
-
-    header("location: ../index.php");
+    if(isset($useradd)){
+     
+    }
 
    }
   

@@ -6,6 +6,7 @@
     public $name;
     private $rif;
     private $email;
+    private $imagen;
   
     #database
   private $data_base;
@@ -31,6 +32,10 @@
       $this->email = $correo;
     }
 
+    function setImagen($imagen){
+      $this->imagen = $imagen;
+    }
+
 
     #--Get--
 
@@ -45,12 +50,26 @@
       return $this->email;
     }
 
+    function getImagen(){
+      return $this->imagen;
+    }
+
+    #Data base validations
+
+    function searchSponsor($name){
+      $query_send = "SELECT `name`FROM `sponsor` WHERE `name` = '$name'";
+
+      $question = $this->data_base->add_instruc($query_send);
+
+      return $question;
+    }
+
 
     #Data base functions for sponsor
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `sponsor` (`rif`, `name`, `email`) VALUES ('".$this->rif."','".$this->name."','".$this->email."')";
+      $query_send = "INSERT INTO `sponsor` (`rif`, `name`, `email`,`img`) VALUES ('".$this->rif."','".$this->name."','".$this->email."','".$this->imagen."')";
     
       $question = $this->data_base->add_instruc($query_send);
 
@@ -60,13 +79,39 @@
     
     }
 
-    function Show(){
+    function ShowSponsor(){
         
         $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor`";
 
         $question = $this->data_base->add_instruc($query_send);
 
         return $question;
+    }
+
+    function getById($id){
+
+        $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor` WHERE `rif` = '$id'";
+
+        $question = $this->data_base->add_instruc($query_send);
+
+        return $question;
+
+      
+    }
+
+    function deleteSponsor($sponsorif){
+
+      $query_send  = "DELETE FROM `sponsor` where `rif` = '$sponsorif'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      return $question;
+    }
+
+    function updateSponsor(){
+      $query_send = " UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email' WHERE `rif` = '$this->rif'";
+      $question = $this->data_base->add_instruc($query_send);
+      return $question;
     }
 
   }
