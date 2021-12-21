@@ -1,12 +1,4 @@
-<?php
-require_once("../controllers/login-controller.php");
-
-include_once('./model/user.php');
-
-error_reporting(0);
-
-?>
-
+<?php error_reporting(0); ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +14,6 @@ error_reporting(0);
 
 <body>
 
-
     <?php include('../partials/header-no_singin.php'); ?>  
 
     <main class="container">
@@ -34,13 +25,14 @@ error_reporting(0);
                 <h5>Entrar</h5>
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form-register" class="form-register">
-                <input type="text" name="username_input" placeholder="Username" class="username_input">
-                <input type="password" name="password_input" placeholder="Contraseña" class="password_input">
+                <input type="text" name="username" placeholder="Username" class="username_input">
+                <input type="password" name="password" placeholder="Contraseña" class="password_input">
                 <input type="submit" value="Entrar" class="btn" name="btn">
 
                 <div class="form__account">
                     <h4>¿No tienes cuenta? <a href="./register_page.php">¡Registrate aqui!</a></h4>
                 </div>
+                <?php require_once("../controllers/login-controller.php"); ?>
             </form>
             <?php
 

@@ -38,7 +38,7 @@
                 <input type="submit" class="btn" name="submit" value="registrarse" id="submit-btn">
 
                 <?php
-                    require_once('../controllers/register-page-controller.php');
+                    require_once('../controllers/register__controller.php');
                 ?>
 
             </form>

@@ -1,8 +1,14 @@
 <?php 
 
+require ('../model/user.php');
+
+$user = new user();
+
 session_start();
 
 $_SESSION['user'];
+
+$errores = array();
 // Evaluacion de condiciones para retornar el Header segun el usuario
 function getHeaderByUser(){
   if(empty($_SESSION['user'])){
@@ -17,38 +23,29 @@ function getHeaderByUser(){
 
 $header = getHeaderByUser();
 
-include('model/user.php');
+$username = $_POST['username'];
 
-session_start();
+$password = $_POST['password'];
 
-$_SESSION['user'];
-
-$_SESSION['password'];
 
 if(isset($_POST['btn'])) {
-
-    if(!empty($_POST['username_input']) && ($_POST['username_input'] === $_SESSION['user']) && 
-       !empty($_POST['password_input']) &&($_POST['password_input'] === $_SESSION['password'])) {
-        
-
-        header("Location: ../index.php");
-
-
-       }elseif(!empty($_POST['username_input']) && ($_POST['username_input'] === 'admin') && 
-               !empty($_POST['password_input']) &&($_POST['password_input'] === 'admindb')) {
-                   
-                $_SESSION['user'] = $_POST['username_input'];
-
-                $_SESSION['password'] = $_POST['password_input'];
-
-                header("Location: ../index.php");
-
-       }else {
-
-        echo "<script>alert('ERROR: Verifique sus datos')</script>";
-
-       }
-
-}
-
+ 
+    if($user->userLogin($username, $password) == 0) {
+      array_push($errores, "Error 041: La combinación username y contraseña son erroneos");
+    }
+    
+    if(count($errores) > 0){
+      echo "<div class='error'>
+      <figure>
+      <img src='../assets/icons/close.png' alt='icon close' id='close'>
+     </figure>";
+      for ($i=0; $i < count($errores); $i++) { 
+            echo "<li>".$errores[$i]."</li>";
+    
+          }
+        echo "</div>";
+     }else {
+      header("location: ../index.php");
+    }
+  }
 ?>

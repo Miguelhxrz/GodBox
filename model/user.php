@@ -102,15 +102,43 @@
         $question = $this->data_base->add_instruc($query_send);
 
         if($question == false){
-          echo "error";
+          return 1;
         }else {
-          
+          return 0;
         }
 
     }
 
-    function searchUser($user) {
-      $query_send = "SELECT `username` FROM `users` WHERE `username` = '$user'";
+    function userLogin($user, $password) {
+      $query_send = "SELECT * FROM `users` WHERE `username` = '$user' and `password` = '$password'";
+
+      $question = $this->data_base->add_instruc($query_send);
+
+      $rows = mysqli_num_rows($question);
+      
+      if($rows) {
+        return 1;
+      }else {
+        return 0;
+      }
+
+    }
+
+    function searchUsername($username) {
+      $query_send = "SELECT `username` FROM `users` WHERE `username` = '$username'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
+
+    }
+
+    function searchPassword($password) {
+      $query_send = "SELECT `password` FROM `users` WHERE `password` = '$password'";
 
       $question = $this->data_base->add_instruc($query_send);
       

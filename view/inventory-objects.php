@@ -1,5 +1,4 @@
 <?php
-
 require_once('../controllers/inventory-objects-controller.php');
 error_reporting(0);
 ?>

@@ -19,26 +19,6 @@ $day = intval($_POST['day']);
 $month = intval($_POST['month']);
 $year = intval($_POST['year']);
 
-
-session_start();
-
-// Evaluacion de condiciones para retornar el Header segun el usuario
-function getHeaderByUser(){
-  if(empty($_SESSION['user'] && $_SESSION['password'])){
-    return ('../partials/header.php');
-  }elseif ($_SESSION['user'] === "admin") {
-    return  ('../partials/header-admin.php');
-  }elseif (!empty($_SESSION['user']) && $_SESSION['user'] !== "admin") {
-    return ('../partials/header_user.php');
-  }
-  
-}
-
-$header = getHeaderByUser();
-
-
-
-
 if(isset($_POST['submit'])) {
 
   #validacion de username
@@ -52,13 +32,13 @@ if(isset($_POST['submit'])) {
     if(preg_match($patron_username, $username) == 0){
       array_push($errores,"Error 003: El nombre de usuario solo admite el _");
     }
-
     #validacion con db
-    if($user->searchUser($username) > 0) {
+    if($user->searchUsername(strtolower($username)) > 0) {
       array_push($errores,"Error 004: El nombre de usuario ya existe");
     }
     
   }else {
+    
     array_push($errores,"Error 005: El Username no existe.");
   }
 
@@ -129,9 +109,10 @@ if(isset($_POST['submit'])) {
     if(preg_match($patron_address, $address) == 0){
       array_push($errores,"Error 21: Verifique su direccion.");
     }
+  
   }else {
       array_push($errores,"Error 22: La direccion no existe.");
-    }
+  }
 
   #validacion de fecha (dia)
   if(isset($day)) {
@@ -222,11 +203,11 @@ if(isset($_POST['submit'])) {
     
     echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
-    $user->setUsername($username);
+    $user->setUsername(strtolower($username));
     $user->setPassword($password);
     $user->setId($id);
-    $user->setEmail($email);
-    $user->setAddress($address);
+    $user->setEmail(strtolower($email));
+    $user->setAddress(strtolower($address));
     $user->setDay($day);
     $user->setMonth($month);
     $user->setYear($year);
@@ -237,7 +218,7 @@ if(isset($_POST['submit'])) {
     session_start();
     $_SESSION['user'] = $username;
     
-    header("location: ../index.php");
+    header("location: ../view/login.php");
    }
   
 }

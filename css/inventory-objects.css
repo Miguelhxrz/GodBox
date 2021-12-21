@@ -38,83 +38,71 @@ body {
 }
 
 
-/* header */
 
-.header {
-    width: 100%;
-    height: 130px;
-    background-color: rgba(86, 101, 132, 0.67);
-    font-size: 2rem;
-    font-family: var(--fuenteTitulos);
-    margin-top: auto;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .container-header {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header .container-header .logo {
-    display: flex;
-    align-items: center;
-    float: left;
-    width: 118px;
-    height: 99px;
-    margin-right: auto;
-  }
-  
-  .header .container-header .center-title {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 229px;
-    margin-right: auto;
-    margin-left: 150px;
-  }
-  
-  .header .container-header .center-title .boxes-link {
-    margin-right: 20px;
-  }
-  
-  .header .container-header .center-title .about-link {
-    margin-left: 20px;
-    text-align: center;
-  }
-  
-  .header .container-header .options {
-    width: 250px;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-  }
-  
-  .header .container-header .options .link {
-    margin-right: 35px;
-  }
-  
-  .header .container-header .options .link .item {
-    width: 68px;
-    height: 68px;
-  }
-  
-  a {
-    color: #fff;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-  }
-  
-  .fondo img {
-    width: 100%;
-    height: 530px;
-  }
+/* |---- header ----| */
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 120px;
+  font-size: 3.5rem;
+}
+
+.menu__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 0px 10px;
+  background-color: rgba(79, 92, 128, .3);
+}
+
+.menu__container .logo__container {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  height: 100%;
+}
+
+.menu__container .basic__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+  font-size: 2.5rem;
+  padding-left: 240px;
+}
+
+.menu__container .basic__menu .boxes-link, .ico-header, .about-link{
+  margin-left: 15px;
+}
+
+.menu__container .user__menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 23%;
+  height: 100%;
+  font-size: 2.5rem;
+}
+
+.menu__container .user__menu h3 {
+  color: white;
+}
+
+.menu__container .user__menu a, h3 {
+  margin-right: 15px;
+}
+
+a {
+  color: white;
+  -webkit-text-stroke: black;
+  text-decoration: none;
+} 
+
   /* fin header */
   
   /* Menú lateral */
