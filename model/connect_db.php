@@ -4,7 +4,7 @@ class connect_db {
   
   var $conection;
 
-  function connect_db () {
+  function connect () {
 
     $server_conect = "localhost";
     $username = "root";
@@ -15,7 +15,7 @@ class connect_db {
 
     #Validando la conexion a la bd
     if($this->conection->connect_errno) {
-      echo "</h3>".$this->conection->connect_error."</h3>";
+      echo "<h3>Hubo un error con la conexion de la base de datos, intentelo nuevamente</h3>";
       exit;
     }else{
       
@@ -24,19 +24,10 @@ class connect_db {
   }
   
   function add_instruc($instruct) {
-    $query = $this->conection->query($instruct);
-
-    if (!$query) {
-      return 0;
-    }else {
-      return 1;
-    }
-  }
-
-  public function getConection(){
-    return $this->conection;
+    return $this->conection->query($instruct);
   }
 
 }
+
 
 ?>

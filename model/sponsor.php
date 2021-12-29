@@ -1,23 +1,22 @@
 <?php 
-    require('../model/connect_db.php');
+    require_once('../model/connect_db.php');
 
   class sponsor {
 
     public $name;
     private $rif;
     private $email;
-    private $image;
+    private $imagen;
   
     #database
-    private $data_base;
+  private $data_base;
   
   #constructor
-  function sponsor() {
+  function Sponsor() {
 
-    $this->data_base= new connect_db();
-  
+    $this->data_base=new connect_db;
+    $this->data_base->connect();
   }
-    
 
     #--Set--
 
@@ -33,16 +32,16 @@
       $this->email = $correo;
     }
 
-    function setImage($img) {
-      $this->image = $img;
+    function setImagen($imagen){
+      $this->imagen = $imagen;
     }
+
 
     #--Get--
 
     function getName() {
       return $this->name;
     }
-
     function getRif() {
       return $this->rif;
     }
@@ -51,80 +50,69 @@
       return $this->email;
     }
 
-    function getImage() {
-      return $this->image;
+    function getImagen(){
+      return $this->imagen;
     }
+
+    #Data base validations
+
+    function searchSponsor($name){
+      $query_send = "SELECT `name`FROM `sponsor` WHERE `name` = '$name'";
+
+      $question = $this->data_base->add_instruc($query_send);
+
+      return $question;
+    }
+
 
     #Data base functions for sponsor
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `sponsor`(`name`, `rif`, `email`, `image`) VALUES ('".$this->name."','".$this->rif."','".$this->email."','".$this->image."')";
+      $query_send = "INSERT INTO `sponsor` (`rif`, `name`, `email`,`img`) VALUES ('".$this->rif."','".$this->name."','".$this->email."','".$this->imagen."')";
     
-      $result = $this->data_base->add_instruc($query_send);
+      $question = $this->data_base->add_instruc($query_send);
 
-      if($result) {
-        return "Se añadio";
-      }else {
-        return 0;
-      };
-
-  }
-
-  function getName_db($name) {
-    $query = "SELECT `name` FROM `sponsor` WHERE `name` = `$name` ";
-
-    $result = $this->data_base->add_instruc($query);
-
-    $rows = mysqli_num_rows($result);
-      
-      if($rows) {
-        return 1;
-      }else {
-        return 0;
+      if(isset($question)){
+        echo "registrado";
       }
-  }
+    
+    }
 
-  function getRif_db($rif) {
-    $query = "SELECT `rif` FROM `sponsor` WHERE `rif` = `$rif` ";
+    function ShowSponsor(){
+        
+        $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor`";
 
-    $result = $this->data_base->add_instruc($query);
+        $question = $this->data_base->add_instruc($query_send);
 
-    $rows = mysqli_num_rows($result);
+        return $question;
+    }
+
+    function getById($id){
+
+        $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor` WHERE `rif` = '$id'";
+
+        $question = $this->data_base->add_instruc($query_send);
+
+        return $question;
+
       
-      if($rows) {
-        return 1;
-      }else {
-        return 0;
-      }
-  }
+    }
 
-  function getEmail_db($email) {
-    $query = "SELECT `email` FROM `sponsor` WHERE `email` = `$email` ";
+    function deleteSponsor($sponsorif){
 
-    $result = $this->data_base->add_instruc($query);
+      $query_send  = "DELETE FROM `sponsor` where `rif` = '$sponsorif'";
 
-    $rows = mysqli_num_rows($result);
+      $question = $this->data_base->add_instruc($query_send);
       
-      if($rows) {
-        return 1;
-      }else {
-        return 0;
-      }
+      return $question;
+    }
+
+    function updateSponsor(){
+      $query_send = " UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email' WHERE `rif` = '$this->rif'";
+      $question = $this->data_base->add_instruc($query_send);
+      return $question;
+    }
+
   }
-
-  function getImage_db($name) {
-    $query = "SELECT `image` FROM `sponsor` WHERE `name` = `$name` ";
-
-    $result = $this->data_base->add_instruc($query);
-
-    $rows = mysqli_num_rows($result);
-      
-      if($rows) {
-        return 1;
-      }else {
-        return 0;
-      }
-  }
-  
-}
+?>

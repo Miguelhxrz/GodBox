@@ -33,9 +33,6 @@ body {
     font-family: 'BubblegumSans', Arial, Helvetica, sans-serif;
 }
 
-<<<<<<< HEAD
-/* |---- header ----| */
-=======
 
 /* Header */
 
@@ -46,123 +43,13 @@ body {
     font-size: 2rem;
     margin-top: auto;
 }
->>>>>>> 7fb2d4ae1d9350b257867819066120d0797f3a76
 
-.header{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: 543px;
-  background-image: url('../assets/img/header.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  font-size: 3.5rem;
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .menu__container {
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100px;
-  padding: 0px 10px;
-  background-color: rgba(79, 92, 128, .3);
-}
-
-.menu__container .logo__container {
-  display: flex;
-  align-items: center;
-  width: 10%;
-  height: 100%;
-}
-
-.menu__container .basic__menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  height: 100%;
-  font-size: 2.5rem;
-  padding-left: 240px;
-}
-
-.menu__container .basic__menu .boxes-link, .ico-header, .about-link{
-  margin-left: 15px;
-}
-
-.menu__container .user__menu {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 23%;
-  height: 100%;
-  font-size: 2.5rem;
-}
-
-.menu__container .user__menu h4 {
-  color: white;
-}
-
-.menu__container .user__menu a, h4 {
-  margin: 0px 3px 0px 3px;
-}
-
-a {
-  color: white;
-}
-  /* Menú lateral */
-  
-  .btn-menu label {
-    border-left: 3rem transparent;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  
-  #btn-menu {
-    display: none;
-  }
-  
-  .container-menu {
-    position: absolute;
-    width: 20%;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    transition: all 500ms ease;
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  #btn-menu:checked ~ .container-menu {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .container-menu .menu {
-    width: 100%;
-    max-width: 300px;
-    background: #2168a6;
-    height: 100vh;
-    position: relative;
-    transition: all 500ms ease;
-  }
-  
-  #btn-menu:checked ~ .container-menu .menu {
-    transform: translateX(0%);
-  }
-  
-  .container-menu .menu nav {
-    transform: translateY(15%);
-  }
-  
-  .container-menu .menu nav a {
-    display: block;
-=======
     width: 100%;
     height: 100%;
     display: flex;
@@ -334,7 +221,6 @@ a {
 .item-nav-a {
     margin-left: 30%;
     list-style: none;
->>>>>>> 7fb2d4ae1d9350b257867819066120d0797f3a76
     text-decoration: none;
 }
 
@@ -561,14 +447,8 @@ a {
     display: none;
     flex-flow: column nowrap;
     align-items: center;
-<<<<<<< HEAD
-    position: absolute;
-    top: 587px;
-    left: 733px;
-=======
     top: 566px;
     left: 653px;
->>>>>>> 7fb2d4ae1d9350b257867819066120d0797f3a76
     z-index: 3;
     width: 375px;
     height: 325px;
@@ -687,21 +567,6 @@ button:active {
 }
 
 .roulette__btn-spin {
-<<<<<<< HEAD
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 881px;
-  left: 822px;
-  width: 186px;
-  height: 60px;
-  background-color: 653BE3F;
-  font-size: 3rem;
-  color: #fff;
-  border-radius: 15px;
-  box-shadow: 2px 6px 5px rgb(20, 19, 19);
-=======
     display: flex;
     justify-content: center;
     align-items: center;
@@ -715,7 +580,6 @@ button:active {
     color: #fff;
     border-radius: 15px;
     box-shadow: 2px 6px 5px rgb(20, 19, 19);
->>>>>>> 7fb2d4ae1d9350b257867819066120d0797f3a76
 }
 
 .win__container {
@@ -783,8 +647,8 @@ h3 {
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position-y: 88px;
-    background-size: 1502px;
+    background-position-y: 95px;
+    background-size: 1484px;
 }
 
 .footer h3 {
@@ -799,7 +663,7 @@ h3 {
     align-self: flex-end;
     justify-content: flex-end;
     display: flex;
-    width: 45%;
+    width: 50%;
 }
 
 .footer__social-media figure {

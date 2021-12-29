@@ -4,7 +4,7 @@ require_once('../controllers/header-controller.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -21,33 +21,22 @@ require_once('../controllers/header-controller.php');
 
     <main class="container">
         <section class="container-form">
-            
             <div class="title-form">
                 <h5>Registrar patrocinador</h5>
             </div>
-
-            <form action="" name= "form-register" class= "form-register" method="post" enctype="multipart/form-data">
-
+            <form action="" name= "form-register" class= "form-register" method="post">
+            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
             <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
             <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
             <label for="imagen">
                 Imagen del patrocinador
-            <input accept="image/png,image/jpeg" type="file" name="imagen" id="">
+            <input type="file" name="imagen" id="">
             </label>
             <input type="submit"class="btn" name="register" value="Registrar">
             
-            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
-            
-            <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
-            
-            <label for="sponsor_imagen">
-                Imagen del patrocinador
-            <input type="file" name="sponsor_imagen" id="">
-            </label>
-            
-            <input type="submit" class="btn" name="register" value="Registrar">
-            
-            <?php require_once('../controllers/register-sponsor-controller.php');?>
+            <?php 
+            require_once('../controller/sponsor_registro_controller.php');    
+            ?>
             
           </form>
         </section>

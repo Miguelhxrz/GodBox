@@ -27,8 +27,8 @@
                 <a href="../view/login.php">
                     <h4>Iniciar Sesion</h4>
                 </a>
-                <h4>o</h4>
-                <a href="../../view/register_page.php">
+                <h3>o</h3>
+                <a href="../view/register_page.php">
                     <h4>Registrarse</h4>
                 </a>
 
