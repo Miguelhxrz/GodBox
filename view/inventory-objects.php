@@ -1,5 +1,6 @@
 <?php
 require_once('../controllers/inventory-objects-controller.php');
+require_once('../controllers/header-controller.php');
 error_reporting(0);
 ?>
 <!DOCTYPE html>

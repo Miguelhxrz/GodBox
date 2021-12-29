@@ -3,6 +3,7 @@
 <?php
 
 require_once('../controllers/register-object-controller.php');
+require_once('../controllers/header-controller.php');
 
 session_start();
 // $_SESSION['sponsor'];

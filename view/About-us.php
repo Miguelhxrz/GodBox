@@ -1,4 +1,7 @@
-<?php require_once('../controllers/about-us-controller.php'); ?>
+<?php 
+  require_once('../controllers/about-us-controller.php'); 
+  require_once('../controllers/header-controller.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

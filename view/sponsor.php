@@ -1,9 +1,6 @@
 <?php 
-require_once('../model/sponsor.php'); 
-            
-$sponsor = new sponsor();
-
-$question = $sponsor->ShowSponsor();
+require_once('../controllers/sponsor-controller.php'); 
+require_once('../controllers/header-controller.php');
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +39,7 @@ $question = $sponsor->ShowSponsor();
                     <h6>Opciones</h6>
                 </div>
             </section>
+            <div class="container-items">
             <?php 
             while ($row = mysqli_fetch_array($question)){
             ?>
@@ -82,7 +80,6 @@ $question = $sponsor->ShowSponsor();
                 </div>
             </section>
             <?php };?>
-            <div class="container-items">
             <section class="item-title">
                 <div class="item-1">
                     <h6>J-12345678</h6>

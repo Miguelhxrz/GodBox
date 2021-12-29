@@ -1,5 +1,6 @@
 <?php
 require_once('../controllers/register-sponsor-controller.php');
+require_once('../controllers/header-controller.php');
 ?>
 
 <!DOCTYPE html>

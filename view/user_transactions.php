@@ -1,4 +1,7 @@
-<?php require_once('../controllers/user-transactions-controller.php'); ?>
+<?php 
+require_once('../controllers/user-transactions-controller.php'); 
+require_once('../controllers/header-controller.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

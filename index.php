@@ -1,4 +1,6 @@
-<?php require('./controllers/home-controller.php')?>
+<?php 
+require('./controllers/home-controller.php');
+?>
 
 <!DOCTYPE html>
 <html lang="es">

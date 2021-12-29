@@ -1,4 +1,8 @@
-<?php require_once('../controllers/buy-coins-controller.php'); ?>
+<?php 
+    require_once('../controllers/buy-coins-controller.php');
+    require_once('../controllers/header-controller.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

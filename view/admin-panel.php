@@ -1,4 +1,7 @@
-<?php require_once('../controllers/admin-panel-controller.php'); ?>
+<?php 
+    require_once('../controllers/admin-panel-controller.php'); 
+    require_once('../controllers/header-controller.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
