@@ -16,7 +16,7 @@ require('./controllers/home-controller.php');
 
 <body>
     <!-- Header -->
-        <?php include($header); ?>     
+        <?php include($header)?>     
     
     <main class="container">
         <section class="offers__container">
