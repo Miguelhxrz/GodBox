@@ -1,6 +1,7 @@
 <?php
 
 require_once('../controllers/register-box-controller.php');
+require_once('../controllers/header-controller.php');
 
 session_start();
 

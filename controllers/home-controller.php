@@ -3,6 +3,7 @@
 session_start();
 
 $_SESSION['user'];
+
 // Evaluacion de condiciones para retornar el Header segun el usuario
 function getHeaderByUser(){
   if(empty($_SESSION['user'])){
@@ -14,7 +15,6 @@ function getHeaderByUser(){
   }
   
 }
-
 $header = getHeaderByUser();
 
 

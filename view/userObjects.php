@@ -1,4 +1,7 @@
-<?php require_once('../controllers/user-objects-controller.php'); ?>
+<?php 
+require_once('../controllers/user-objects-controller.php');
+require_once('../controllers/header-controller.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 

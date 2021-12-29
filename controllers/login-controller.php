@@ -46,6 +46,7 @@ if(isset($_POST['btn'])) {
         echo "</div>";
      }else {
       header("location: ../index.php");
+      $_SESSION['user'] = $username;
     }
   }
 ?>

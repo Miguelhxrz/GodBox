@@ -216,6 +216,7 @@ if(isset($_POST['submit'])) {
     echo $user->addDataBase();
 
     session_start();
+    
     $_SESSION['user'] = $username;
     
     header("location: ../view/login.php");

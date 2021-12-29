@@ -1,4 +1,8 @@
-<?php require_once('../controllers/user-controller.php'); ?>
+<?php 
+require_once('../controllers/user-controller.php'); 
+require_once('../controllers/header-controller.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,16 +1,7 @@
 <?php 
 
-// Evaluacion de condiciones para retornar el Header segun el usuario
-function getHeaderByUser(){
-  if(empty($_SESSION['user'] && $_SESSION['password'])){
-    return ('../partials/header.php');
-  }elseif ($_SESSION['user'] === "admin") {
-    return  ('../partials/header-admin.php');
-  }elseif (!empty($_SESSION['user']) && $_SESSION['user'] !== "admin") {
-    return ('../partials/header_user.php');
-  }
-  
-}
+require_once('../controllers/register-object-controller.php');
+require_once('../controllers/header-controller.php');
 
 $header = getHeaderByUser();
 
