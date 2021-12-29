@@ -1,7 +1,6 @@
 <?php
 
 require_once('../controllers/register-box-controller.php');
-#require_once('./bd-con.php');
 
 session_start();
 

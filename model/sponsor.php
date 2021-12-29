@@ -1,22 +1,23 @@
 <?php 
-    require_once('../model/connect_db.php');
+    require('../model/connect_db.php');
 
   class sponsor {
 
     public $name;
     private $rif;
     private $email;
-    private $imagen;
+    private $image;
   
     #database
-  private $data_base;
+    private $data_base;
   
   #constructor
-  function Sponsor() {
+  function sponsor() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base= new connect_db();
+  
   }
+    
 
     #--Set--
 
@@ -32,16 +33,16 @@
       $this->email = $correo;
     }
 
-    function setImagen($imagen){
-      $this->imagen = $imagen;
+    function setImage($img) {
+      $this->image = $img;
     }
-
 
     #--Get--
 
     function getName() {
       return $this->name;
     }
+
     function getRif() {
       return $this->rif;
     }
@@ -50,69 +51,80 @@
       return $this->email;
     }
 
-    function getImagen(){
-      return $this->imagen;
+    function getImage() {
+      return $this->image;
     }
-
-    #Data base validations
-
-    function searchSponsor($name){
-      $query_send = "SELECT `name`FROM `sponsor` WHERE `name` = '$name'";
-
-      $question = $this->data_base->add_instruc($query_send);
-
-      return $question;
-    }
-
 
     #Data base functions for sponsor
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `sponsor` (`rif`, `name`, `email`,`img`) VALUES ('".$this->rif."','".$this->name."','".$this->email."','".$this->imagen."')";
+      $query_send = "INSERT INTO `sponsor`(`name`, `rif`, `email`, `image`) VALUES ('".$this->name."','".$this->rif."','".$this->email."','".$this->image."')";
     
-      $question = $this->data_base->add_instruc($query_send);
+      $result = $this->data_base->add_instruc($query_send);
 
-      if(isset($question)){
-        echo "registrado";
-      }
-    
-    }
-
-    function ShowSponsor(){
-        
-        $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor`";
-
-        $question = $this->data_base->add_instruc($query_send);
-
-        return $question;
-    }
-
-    function getById($id){
-
-        $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor` WHERE `rif` = '$id'";
-
-        $question = $this->data_base->add_instruc($query_send);
-
-        return $question;
-
-      
-    }
-
-    function deleteSponsor($sponsorif){
-
-      $query_send  = "DELETE FROM `sponsor` where `rif` = '$sponsorif'";
-
-      $question = $this->data_base->add_instruc($query_send);
-      
-      return $question;
-    }
-
-    function updateSponsor(){
-      $query_send = " UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email' WHERE `rif` = '$this->rif'";
-      $question = $this->data_base->add_instruc($query_send);
-      return $question;
-    }
+      if($result) {
+        return "Se añadio";
+      }else {
+        return 0;
+      };
 
   }
-?>
+
+  function getName_db($name) {
+    $query = "SELECT `name` FROM `sponsor` WHERE `name` = `$name` ";
+
+    $result = $this->data_base->add_instruc($query);
+
+    $rows = mysqli_num_rows($result);
+      
+      if($rows) {
+        return 1;
+      }else {
+        return 0;
+      }
+  }
+
+  function getRif_db($rif) {
+    $query = "SELECT `rif` FROM `sponsor` WHERE `rif` = `$rif` ";
+
+    $result = $this->data_base->add_instruc($query);
+
+    $rows = mysqli_num_rows($result);
+      
+      if($rows) {
+        return 1;
+      }else {
+        return 0;
+      }
+  }
+
+  function getEmail_db($email) {
+    $query = "SELECT `email` FROM `sponsor` WHERE `email` = `$email` ";
+
+    $result = $this->data_base->add_instruc($query);
+
+    $rows = mysqli_num_rows($result);
+      
+      if($rows) {
+        return 1;
+      }else {
+        return 0;
+      }
+  }
+
+  function getImage_db($name) {
+    $query = "SELECT `image` FROM `sponsor` WHERE `name` = `$name` ";
+
+    $result = $this->data_base->add_instruc($query);
+
+    $rows = mysqli_num_rows($result);
+      
+      if($rows) {
+        return 1;
+      }else {
+        return 0;
+      }
+  }
+  
+}

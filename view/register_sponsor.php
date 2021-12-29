@@ -1,9 +1,5 @@
-<?php
-require_once('../controllers/register-sponsor-controller.php');
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,22 +16,27 @@ require_once('../controllers/register-sponsor-controller.php');
 
     <main class="container">
         <section class="container-form">
+            
             <div class="title-form">
                 <h5>Registrar patrocinador</h5>
             </div>
-            <form action="" name= "form-register" class= "form-register" method="post">
-            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
+
+            <form action="" name= "form-register" class= "form-register" method="post" enctype="multipart/form-data">
+
             <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
-            <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
-            <label for="imagen">
-                Imagen del patrocinador
-            <input type="file" name="imagen" id="">
-            </label>
-            <input type="submit"class="btn" name="register" value="Registrar">
             
-            <?php 
-            require_once('../controller/sponsor_registro_controller.php');    
-            ?>
+            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
+            
+            <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
+            
+            <label for="sponsor_imagen">
+                Imagen del patrocinador
+            <input type="file" name="sponsor_imagen" id="">
+            </label>
+            
+            <input type="submit" class="btn" name="register" value="Registrar">
+            
+            <?php require_once('../controllers/register-sponsor-controller.php');?>
             
           </form>
         </section>

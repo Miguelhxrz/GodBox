@@ -49,163 +49,65 @@ body {
 
 /* |---- Header ----| */
 
-.header {
-    width: 100%;
-    height: 130px;
-    background-color: var(--header-bg);
-    font-size: 2.5rem;
-}
+/* |---- header ----| */
 
-a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.container-header {
-    width: 100%;
-    height: 100%;
+.header{
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    margin-left: 35px;
-}
-
-.logoo {
-    width: 118px;
-    height: 99px;
-}
-
-.center-title {
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
-    width: 229px;
-}
-
-.boxes-link {
-    margin-right: 20px;
-}
-
-.about-link {
-    margin-left: 20px;
-    text-align: center;
-}
-
-.links-r {
-    display: flex;
-    align-items: center;
-}
-
-.login-link {
-    margin-right: 35px;
-}
-
-.imgcasco {
-    width: 64px;
-    height: 64px;
-}
-
-a {
-    color: #fff;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-}
-
-.title-form {
-    display: flex;
-    align-content: center;
     justify-content: center;
-    color: #fff;
-    font-size: 3rem;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    text-decoration: underline;
-}
-
-
-/* header */
-
-.header {
+    align-items: flex-start;
     width: 100%;
-    height: 130px;
-    background-color: rgba(86, 101, 132, 0.67);
-    font-size: 2rem;
-    font-family: var(--fuenteTitulos);
-    margin-top: auto;
+    font-size: 3.5rem;
   }
   
-  a {
-    text-decoration: none;
-    color: #fff;
+  .menu__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0px 10px;
+    background-color: rgba(79, 92, 128, .3);
   }
   
-  .container-header {
-    width: 100%;
+  .menu__container .logo__container {
+    display: flex;
+    align-items: center;
+    width: 10%;
     height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   
-  .header .container-header .logo {
+  .menu__container .basic__menu {
     display: flex;
     align-items: center;
-    float: left;
-    width: 118px;
-    height: 99px;
-    margin-right: auto;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+    font-size: 2.5rem;
+    padding-left: 240px;
   }
   
-  .header .container-header .center-title {
+  .menu__container .basic__menu .boxes-link, .ico-header, .about-link{
+    margin-left: 15px;
+  }
+  
+  .menu__container .user__menu {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 229px;
-    margin-right: auto;
-    margin-left: 150px;
+    justify-content: flex-end;
+    width: 23%;
+    height: 100%;
+    font-size: 2.5rem;
   }
   
-  .header .container-header .center-title .boxes-link {
-    margin-right: 20px;
+  .menu__container .user__menu h3 {
+    color: white;
   }
   
-  .header .container-header .center-title .about-link {
-    margin-left: 20px;
-    text-align: center;
-  }
-  
-  .header .container-header .options {
-    width: 250px;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-  }
-  
-  .header .container-header .options .link {
-    margin-right: 35px;
-  }
-  
-  .header .container-header .options .link .item {
-    width: 68px;
-    height: 68px;
+  .menu__container .user__menu a, h3 {
+    margin-right: 15px;
   }
   
   a {
-    color: #fff;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-  }
-  
-  .fondo img {
-    width: 100%;
-    height: 530px;
+    color: white;
   }
   /* fin header */
   
@@ -336,9 +238,6 @@ a {
     justify-content: center;
     align-content: space-around;
     width: 100%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-image: url('../img/footer.png');
 }
 
 .container-form {
@@ -469,8 +368,8 @@ input[type=submit] {
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position-y: 95px;
-    background-size: 1484px;
+    background-position-y: 88px;
+    background-size: 1502px;
 }
 
 .footer h3 {
@@ -485,7 +384,7 @@ input[type=submit] {
     align-self: flex-end;
     justify-content: flex-end;
     display: flex;
-    width: 60%;
+    width: 57%;
 }
 
 .footer__social-media figure {

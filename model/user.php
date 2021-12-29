@@ -19,8 +19,8 @@
   #constructor
   function User() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base= new connect_db();
+  
   }
     
 
@@ -102,9 +102,9 @@
         $question = $this->data_base->add_instruc($query_send);
 
         if($question == false){
-          return 1;
+          echo "Error: ". $this->data_base->error;
         }else {
-          return 0;
+          return 1;
         }
 
     }
@@ -112,9 +112,9 @@
     function userLogin($user, $password) {
       $query_send = "SELECT * FROM `users` WHERE `username` = '$user' and `password` = '$password'";
 
-      $question = $this->data_base->add_instruc($query_send);
+      $result = $this->data_base->add_instruc($query_send);
 
-      $rows = mysqli_num_rows($question);
+      $rows = mysqli_num_rows($result);
       
       if($rows) {
         return 1;

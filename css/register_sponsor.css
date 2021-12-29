@@ -46,156 +46,76 @@ body {
     background-size: 39%;
 }
 
+/* |---- header ----| */
 
-/* |---- Header ----| */
-
-.header {
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    height: 130px;
-    background-color: var(--header-bg);
+    height: 100px;
+    font-size: 3.5rem;
+  }
+  
+  .menu__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0px 10px;
+    background-color: rgba(79, 92, 128, .3);
+  }
+  
+  .menu__container .logo__container {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+  }
+  
+  .menu__container .basic__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
     font-size: 2.5rem;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.container-header {
-    width: 100%;
+    padding-left: 240px;
+  }
+  
+  .menu__container .basic__menu .boxes-link, .ico-header, .about-link{
+    margin-left: 15px;
+  }
+  
+  .menu__container .user__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 23%;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    margin-left: 35px;
-}
-
-.logoo {
-    width: 118px;
-    height: 99px;
-}
-
-.center-title {
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
-    width: 229px;
-}
-
-.boxes-link {
-    margin-right: 20px;
-}
-
-.about-link {
-    margin-left: 20px;
-    text-align: center;
-}
-
-.links-r {
-    display: flex;
-    align-items: center;
-}
-
-.login-link {
-    margin-right: 35px;
-}
-
-.imgcasco {
-    width: 64px;
-    height: 64px;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-
-/* header */
-
-.header {
-    width: 100%;
-    height: 130px;
-    background-color: rgba(86, 101, 132, 0.67);
-    font-size: 2rem;
-    font-family: var(--fuenteTitulos);
-    margin-top: auto;
+    font-size: 2.5rem;
+  }
+  
+  .menu__container .user__menu h3 {
+    color: white;
+  }
+  
+  .menu__container .user__menu a, h3 {
+    margin-right: 15px;
   }
   
   a {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .container-header {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header .container-header .logo {
-    display: flex;
-    align-items: center;
-    float: left;
-    width: 118px;
-    height: 99px;
-    margin-right: auto;
-  }
-  
-  .header .container-header .center-title {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 229px;
-    margin-right: auto;
-    margin-left: 150px;
-  }
-  
-  .header .container-header .center-title .boxes-link {
-    margin-right: 20px;
-  }
-  
-  .header .container-header .center-title .about-link {
-    margin-left: 20px;
-    text-align: center;
-  }
-  
-  .header .container-header .options {
-    width: 250px;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-  }
-  
-  .header .container-header .options .link {
-    margin-right: 35px;
-  }
-  
-  .header .container-header .options .link .item {
-    width: 68px;
-    height: 68px;
-  }
-  
-  a {
-    color: #fff;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    color: white;
     text-decoration: none;
   }
   
-  .fondo img {
-    width: 100%;
-    height: 530px;
+  a:visited {
+    color: white;
   }
-  /* fin header */
+  
+
+
+/* fin header */
   
   /* Menú lateral */
   
@@ -451,6 +371,7 @@ input[type=submit] {
     color: #fff;
     font-size: 1.5rem;
     border-radius: 20px;
+    margin-top: 30px;
 }
 
 .footer {
@@ -459,8 +380,8 @@ input[type=submit] {
     height: 629px;
     background-image: url('../assets/img/footer_test.png');
     background-repeat: no-repeat;
-    background-position-y: 95px;
-    background-size: 1484px;
+    background-position-y: 88px;
+    background-size: 1502px;
 }
 
 .footer h3 {
