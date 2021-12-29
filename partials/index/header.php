@@ -24,7 +24,6 @@
             </section>
 
             <section class="user__menu">
-                
                 <a href="./view/login.php">
                     <h4>Iniciar Sesion</h4>
                 </a>
@@ -37,4 +36,3 @@
         </nav>
         
     </header>
-
