@@ -30,7 +30,7 @@ require_once('../controllers/header-controller.php');
             <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
             <label for="imagen">
                 Imagen del patrocinador
-            <input accept="image/png,image/jpeg" type="file" name="imagen" id="">
+            <input type="file" name="imagen" id="">
             </label>
             <input type="submit"class="btn" name="register" value="Registrar">
             
