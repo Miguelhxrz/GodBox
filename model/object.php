@@ -65,14 +65,14 @@
 
     function addDataBase() {
       
-      $query_send = "INSERT INTO `objects`(`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`) VALUES (". $this->id."','".$this->name."','".$this->stock."','".$this->price."','".$this->sponsor."','".$this->rank."','".$this->category."','".$this->image."')";
+      $query_send = "INSERT INTO `objects`(`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`) VALUES ('". $this->id."','".$this->name."','".$this->stock."','".$this->price."','".$this->sponsor."','".$this->rank."','".$this->category."','".$this->image."')";
   
       $question = $this->data_base->add_instruc($query_send);
 
-      if($question == false){
-        return 0;
+      if(isset($question)){
+        echo "Registrado ".$question;
       }else {
-        return 1;
+        return 0;
       }
 
   }

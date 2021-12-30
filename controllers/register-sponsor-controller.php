@@ -1,18 +1,5 @@
 <?php
 
-// Evaluacion de condiciones para retornar el Header segun el usuario
-function getHeaderByUser(){
-  if(empty($_SESSION['user'] && $_SESSION['password'])){
-    return ('../partials/header.php');
-  }elseif ($_SESSION['user'] === "admin") {
-    return  ('../partials/header-admin.php');
-  }elseif (!empty($_SESSION['user']) && $_SESSION['user'] !== "admin") {
-    return ('../partials/header_user.php');
-  }
-  
-}
-  $header = getHeaderByUser();
-
   require_once('../model/sponsor.php');
 
   $sponsor = new sponsor;
@@ -29,14 +16,14 @@ function getHeaderByUser(){
   $sponsor_name = $_POST['name_input'];
   $rif = $_POST['rif_input'];
   $email = $_POST['email_input'];
-  $img = $_FILES['sponsor_imagen'];
+  $img = $_FILES['imagen_input'];
   $register = $_POST['register'];
 
   #Tomando datos de la imagen
-  $img_name = $_FILES['sponsor_imagen']['name']; #nombre del archivo.
-  $img_type = $_FILES['sponsor_imagen']['type']; #typo del archivo.
-  $img_size = $_FILES['sponsor_imagen']['size']; #tamaño del archivo.
-  $img_temp = $_FILES['sponsor_imagen']['tmp_name']; #contiene la direccion temporal del archivo.
+  $img_name = $_FILES['imagen_input']['name']; #nombre del archivo.
+  $img_type = $_FILES['imagen_input']['type']; #typo del archivo.
+  $img_size = $_FILES['imagen_input']['size']; #tamaño del archivo.
+  $img_temp = $_FILES['imagen_input']['tmp_name']; #contiene la direccion temporal del archivo.
 
 if(isset($register)){
 
@@ -107,13 +94,17 @@ if(isset($register)){
  #validacion de bd 
  
  #Errores
- if(count($errores)>0){
-   echo "<div class='error'>";
-   for ($i=0; $i < count($errores); $i++) { 
-     echo "<li>".$errores[$i]."</li>";
+ if (count($errores) > 0) {
+    echo "<div class='error'>
+    <figure>
+    <img src='../assets/icons/close.png' alt='icon close' id='close'>
+   </figure>";
+    for ($i = 0; $i < count($errores); $i++) {
+    echo "<li>" . $errores[$i] . "</li>";
+    }
+    echo "</div>";
 
-   } 
- }else{
+  }else{
       echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
       #creando la ruta para la imagen

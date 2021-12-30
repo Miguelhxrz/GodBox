@@ -2,6 +2,7 @@
   require_once('../model/object.php');
 
   $errores = array();
+
   #patrones
   $PatronUsuario = "/^[a-zA-Z0-9\s-]+$/";
   $PatronCantidad = "/^[0-9]+$/";
@@ -106,7 +107,6 @@
     }
 
     #validacion de Category
-
     if (isset($object_category)) {
       if (empty($object_category)) {
         array_push($errores, "Error 074: Debes elegir una categorya para el objeto.");
@@ -155,18 +155,7 @@
 
       $result = $item->addDataBase();
       
-      echo "<h5> id: ".$object_id."</h5><br/>";
-      echo "<h5> name: ".$object_name."</h5><br/>";
-      echo "<h5> stock: ".$object_stock."</h5><br/>";
-      echo "<h5> price: ".$object_price."</h5><br/>";
-      echo "<h5> sponsor: ".$object_sponsor."</h5><br/>";
-      echo "<h5> rank: ".$object_rank."</h5><br/>";
-      echo "<h5> category: ".$object_category."</h5><br/>";
-      echo "<h5> img: ".$object_img."</h5><br/>";
-      echo "<h5> img-name: ".$object_img_name."</h5><br/>";
-      echo "<h5> folder: ".$folder."</h5><br/>";
-      echo "<h5> origin: ".$origin."</h5><br/>";
-      echo "<h5> move:".$move."</h5><br/>";
+
       echo "<h5> database: ".$result."</h5><br/>";
       
 
