@@ -8,7 +8,7 @@ class connect_db {
 
     $server_conect = "localhost";
     $username = "root";
-    $password = "123456789"; #<-- si tienen contraseña la cambian aqui.
+    $password = "12345678"; #<-- si tienen contraseña la cambian aqui.
     $use_db = "godbox";
     
     $this->conection = new mysqli($server_conect, $username, $password, $use_db);
