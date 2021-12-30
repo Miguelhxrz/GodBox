@@ -38,7 +38,7 @@
                         <li><a href="./view/register_sponsor.php" class="config">Registrar patrocinador</a></li>
                         <li><a href="./view/register_object.php" class="config">Registrar producto</a></li>
                         <li><a href="./view/register_box.php" class="config">Registrar caja</a></li>
-                        <li><a href="#" class="logout">Cerrar Sesión</a></li>
+                        <li><a href="./partials/logout.php" class="logout">Cerrar Sesión</a></li>
                     </ul>  
                     </li>
                     </ul>

@@ -42,6 +42,7 @@ $_SERVER['user'];
                         <li><a href="./view/user_Profile.php" class="profil">Perfil</a></li>
                         <li><a href="./view/userConfig.php" class="config">Configuración</a></li>
                         <li><a href="./view/buy_coins.php" class="Compra">Comprar LidGod</a></li>
+                        <li><a href="./partials/logout.php" class="logout">Cerrar Sesion</a></li>
                     </ul>  
                     </li>
                     </ul>
