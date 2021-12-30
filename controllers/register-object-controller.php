@@ -39,10 +39,10 @@
         array_push($errores, "Error 056:El ID debe tener un tamaño mayor a 4 letras.");
       }else
       if (!preg_match($PatronID, $object_id)) {
-        array_push($errores, "Error 057: El Nombre no debe llevar caracteres especial.");
+        array_push($errores, "Error 057: El ID no debe llevar caracteres especial.");
       }
     } else {
-      array_push($errores, "Error 058: El Nombre no existe.");
+      array_push($errores, "Error 058: El ID no existe.");
     }
 
     #Validacion de name
@@ -88,7 +88,6 @@
     }
 
     #validacion de Rank
-
     if (isset($object_rank)) {
       if (empty($object_rank)) {
         array_push($errores, "Error 070: Se debe elegir un rango para el objeto.");
@@ -134,6 +133,15 @@
       echo "</div>";
 
     } else {
+      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
+      
+      #creando la ruta para la imagen
+      $folder = "../public/items/";
+
+      $origin = $folder.$object_img_name; #../public/items/img_name.png
+
+      #moviendo la imagen a la carpeta
+      $move = move_uploaded_file($object_img_temp, $origin);
 
       $item->setID($object_id);
       $item->setName($object_name);
@@ -143,23 +151,10 @@
       $item->setRank($object_rank);
       $item->setCategory($object_category);
 
-      #creando la ruta para la imagen
-      $folder = "../public/items/";
-
-      $origin = $folder.$object_img_name; #../public/items/img_name.png
-
-      #moviendo la imagen a la carpeta
-      $move = move_uploaded_file($object_img_temp, $origin);
-
       $item->setImage($origin);
 
       $result = $item->addDataBase();
       
-
-      echo "<h5> database: ".$result."</h5><br/>";
-      
-
-      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
       // header("location: ../index.php");
     }
