@@ -2,6 +2,7 @@
   require_once('../model/object.php');
 
   $errores = array();
+
   #patrones
   $PatronUsuario = "/^[a-zA-Z0-9\s-]+$/";
   $PatronCantidad = "/^[0-9]+$/";
@@ -38,10 +39,10 @@
         array_push($errores, "Error 056:El ID debe tener un tamaño mayor a 4 letras.");
       }else
       if (!preg_match($PatronID, $object_id)) {
-        array_push($errores, "Error 057: El Nombre no debe llevar caracteres especial.");
+        array_push($errores, "Error 057: El ID no debe llevar caracteres especial.");
       }
     } else {
-      array_push($errores, "Error 058: El Nombre no existe.");
+      array_push($errores, "Error 058: El ID no existe.");
     }
 
     #Validacion de name
@@ -87,7 +88,6 @@
     }
 
     #validacion de Rank
-
     if (isset($object_rank)) {
       if (empty($object_rank)) {
         array_push($errores, "Error 070: Se debe elegir un rango para el objeto.");
@@ -106,7 +106,6 @@
     }
 
     #validacion de Category
-
     if (isset($object_category)) {
       if (empty($object_category)) {
         array_push($errores, "Error 074: Debes elegir una categorya para el objeto.");
@@ -134,6 +133,15 @@
       echo "</div>";
 
     } else {
+      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
+      
+      #creando la ruta para la imagen
+      $folder = "../public/items/";
+
+      $origin = $folder.$object_img_name; #../public/items/img_name.png
+
+      #moviendo la imagen a la carpeta
+      $move = move_uploaded_file($object_img_temp, $origin);
 
       $item->setID($object_id);
       $item->setName($object_name);
@@ -143,34 +151,10 @@
       $item->setRank($object_rank);
       $item->setCategory($object_category);
 
-      #creando la ruta para la imagen
-      $folder = "../public/items/";
-
-      $origin = $folder.$object_img_name; #../public/items/img_name.png
-
-      #moviendo la imagen a la carpeta
-      $move = move_uploaded_file($object_img_temp, $origin);
-
       $item->setImage($origin);
 
       $result = $item->addDataBase();
       
-      echo "<h5> id: ".$object_id."</h5><br/>";
-      echo "<h5> name: ".$object_name."</h5><br/>";
-      echo "<h5> stock: ".$object_stock."</h5><br/>";
-      echo "<h5> price: ".$object_price."</h5><br/>";
-      echo "<h5> sponsor: ".$object_sponsor."</h5><br/>";
-      echo "<h5> rank: ".$object_rank."</h5><br/>";
-      echo "<h5> category: ".$object_category."</h5><br/>";
-      echo "<h5> img: ".$object_img."</h5><br/>";
-      echo "<h5> img-name: ".$object_img_name."</h5><br/>";
-      echo "<h5> folder: ".$folder."</h5><br/>";
-      echo "<h5> origin: ".$origin."</h5><br/>";
-      echo "<h5> move:".$move."</h5><br/>";
-      echo "<h5> database: ".$result."</h5><br/>";
-      
-
-      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
       // header("location: ../index.php");
     }

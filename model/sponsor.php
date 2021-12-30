@@ -69,12 +69,14 @@
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `sponsor` (`rif`, `name`, `email`,`img`) VALUES ('".$this->rif."','".$this->name."','".$this->email."','".$this->imagen."')";
+      $query_send = "INSERT INTO `sponsor`(`name`, `rif`, `email`, `image`) VALUES ('".$this->rif."','".$this->name."','".$this->email."','".$this->imagen."')";
     
       $question = $this->data_base->add_instruc($query_send);
 
       if(isset($question)){
-        echo "registrado";
+        return 1;
+      }else {
+        return 0;
       }
     
     }

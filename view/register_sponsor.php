@@ -1,5 +1,4 @@
 <?php
-require_once('../controllers/register-sponsor-controller.php');
 require_once('../controllers/header-controller.php');
 ?>
 
@@ -12,6 +11,7 @@ require_once('../controllers/header-controller.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/register_sponsor.css">
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <script src="../scripts/helper.js"></script>
     <title>GodBox - Register Sponsor</title>
 </head>
 
@@ -28,14 +28,14 @@ require_once('../controllers/header-controller.php');
             <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
             <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
             <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
-            <label for="imagen">
+            <label for="imagen_input">
                 Imagen del patrocinador
-            <input type="file" name="imagen" id="">
+            <input type="file" name="imagen_input" id="">
             </label>
             <input type="submit"class="btn" name="register" value="Registrar">
             
             <?php 
-            require_once('../controller/sponsor_registro_controller.php');    
+            require_once('../controllers/register-sponsor-controller.php');    
             ?>
             
           </form>

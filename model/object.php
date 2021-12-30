@@ -17,6 +17,7 @@
 
     function object_() {
       $this->data_base= new connect_db();
+      $this->data_base->connect();
     }
 
     # ---set---
@@ -53,6 +54,7 @@
       $this->image = $img;
     }
 
+
     function getName() {
       return $this->name;
     }
@@ -64,18 +66,18 @@
     # data base functions
 
     function addDataBase() {
-      
-      $query_send = "INSERT INTO `objects`(`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`) VALUES (". $this->id."','".$this->name."','".$this->stock."','".$this->price."','".$this->sponsor."','".$this->rank."','".$this->category."','".$this->image."')";
-  
+
+      $query_send = "INSERT INTO `objects`(`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`) VALUES ('".$this->id."','".$this->name."','".$this->stock."','".$this->price."','".$this->sponsor."','".$this->rank."','".$this->category."','".$this->image."')";
+    
       $question = $this->data_base->add_instruc($query_send);
 
-      if($question == false){
-        return 0;
-      }else {
+      if(isset($question)){
         return 1;
+      }else {
+        return 0;
       }
-
-  }
+    
+    }
 
 
 
