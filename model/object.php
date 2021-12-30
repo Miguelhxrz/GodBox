@@ -2,13 +2,15 @@
   require('../model/connect_db.php');
 
   class object_ {
-
+    
+    private $id;
     private $name;
     private $stock;
     private $price;
     private $sponsor;
     private $rank;
     private $category;
+    private $image;
 
     #database
     private $data_base;
@@ -19,6 +21,10 @@
 
     # ---set---
 
+    function setID($id) {
+      $this->id = $id;
+    }
+    
     function setName($nam) {
       $this->name = $nam;
     }
@@ -43,42 +49,28 @@
       $this->category = $cat;
     }
 
-    # ---get---
+    function setImage($img) {
+      $this->image = $img;
+    }
 
     function getName() {
       return $this->name;
     }
 
-    function getStock() {
-      return $this->stock;
-    }
-
-    function getPrice() {
-      return $this->price;
-    }
-
-    function getSponsor() {
-      return $this->sponsor;
-    }
-
-    function getRank() {
-      return $this->rank;
-    }
-
-    function getCategory($cat) {
-      $this->category = $cat;
+    function getImage() {
+      return $this->image;
     }
 
     # data base functions
 
     function addDataBase() {
       
-      $query_send = "INSERT INTO `objects` (`name`, `stock`, `price`, `sponsor`, `rank`,`category`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
+      $query_send = "INSERT INTO `objects`(`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`) VALUES (". $this->id."','".$this->name."','".$this->stock."','".$this->price."','".$this->sponsor."','".$this->rank."','".$this->category."','".$this->image."')";
   
       $question = $this->data_base->add_instruc($query_send);
 
       if($question == false){
-        echo "Error: ". $this->data_base->error;
+        return 0;
       }else {
         return 1;
       }

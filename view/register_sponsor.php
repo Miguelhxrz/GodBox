@@ -24,7 +24,7 @@ require_once('../controllers/header-controller.php');
             <div class="title-form">
                 <h5>Registrar patrocinador</h5>
             </div>
-            <form action="" name= "form-register" class= "form-register" method="post">
+            <form action="" name= "form-register" class= "form-register" method="post" enctype="multipart/form-data">
             <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
             <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
             <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
