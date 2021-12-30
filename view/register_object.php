@@ -92,7 +92,7 @@ require_once('../controllers/header-controller.php');
             </label>
             
             <label for="object_image" class="label-name">
-              Imagen del objeto
+             <p>Imagen del objeto</p> 
               <input type="file" name="object_image"  accept="image/png,image/jpeg">
             </label>
           

@@ -506,7 +506,8 @@ a {
     display: flex;
     flex-direction: column;
     width: 640px;
-    background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
+    background: radial-gradient(100% 100% at 46.69% 86.55%, rgba(33, 104, 166, 0.67) 0%, rgba(33, 104, 166, 0.67) 17.71%, rgba(234, 190, 63, 0.87) 90.1%);
+    ;
     border-radius: 32px;
     border-radius: 15px;
     padding: 15px;
@@ -577,9 +578,8 @@ input[type=number] {
 }
 
 select {
-    width: 250px;
-    border: none;
-    border-bottom: 2px solid #fff;
+    width: 270px;
+    border: 2px solid #fff;
     outline: none;
     font-family: 'BubblegumSans';
     font-size: 1.5rem;
@@ -616,6 +616,10 @@ option {
     margin-top: 40px;
 }
 
+.label-name p {
+    margin-bottom: 10px;
+}
+
 ::placeholder {
     color: #fff;
 }
@@ -625,8 +629,9 @@ option {
     align-content: center;
     justify-content: center;
     width: 134px;
-    height: 10px;
-    margin: 15px 0px 15px 0px;
+    height: 32px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 input[type=submit] {
