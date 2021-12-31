@@ -143,20 +143,23 @@
       #moviendo la imagen a la carpeta
       $move = move_uploaded_file($object_img_temp, $origin);
 
+      $price_int = intval($object_price);
+
       $item->setID($object_id);
       $item->setName($object_name);
       $item->setStock($object_stock);
-      $item->setPrice($object_price);
+      $item->setPrice($price_int);
       $item->setSponsor($object_sponsor);
       $item->setRank($object_rank);
       $item->setCategory($object_category);
 
       $item->setImage($origin);
 
+
+
       $result = $item->addDataBase();
       
-
-      // header("location: ../index.php");
+      header("location: ../index.php");
     }
   
   }
