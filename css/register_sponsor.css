@@ -514,11 +514,12 @@ a {
     display: flex;
     flex-direction: column;
     width: 392px;
-    background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
+    background: radial-gradient(100% 100% at 46.69% 86.55%, rgba(33, 104, 166, 0.67) 0%, rgba(33, 104, 166, 0.67) 17.71%, rgba(234, 190, 63, 0.87) 90.1%);
+    ;
     border-radius: 32px;
     border-radius: 15px;
     padding: 15px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .conta {
@@ -551,7 +552,7 @@ a {
 label {
     font-size: 1.5rem;
     color: #fff;
-    margin-left: 30px;
+    margin-left: 9px;
 }
 
 input[type=text],
@@ -568,6 +569,15 @@ input[type=number] {
     background-color: transparent;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+input[type=file] {
+    width: 260px;
+}
+
+.imagen_input p {
+    margin-left: 0px;
+    margin-bottom: 10px;
 }
 
 select {
@@ -621,7 +631,7 @@ option {
     justify-content: center;
     width: 134px;
     height: 32px;
-    margin-top: 5px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 

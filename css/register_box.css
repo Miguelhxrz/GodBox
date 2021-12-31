@@ -510,7 +510,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 640px;
-    background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
+    background: radial-gradient(100% 100% at 46.69% 86.55%, rgba(33, 104, 166, 0.67) 0%, rgba(33, 104, 166, 0.67) 17.71%, rgba(234, 190, 63, 0.87) 90.1%);
     border-radius: 32px;
     border-radius: 15px;
     padding: 15px;
@@ -545,6 +545,14 @@ a {
     align-items: center;
     width: 100%;
     margin-top: 25px;
+}
+
+.title-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 4rem;
 }
 
 .l-q {
@@ -599,7 +607,7 @@ input[type=number] {
 }
 
 select {
-    width: 250px;
+    width: 270px;
     border: none;
     border: 2px solid #fff;
     outline: none;

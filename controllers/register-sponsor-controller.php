@@ -1,5 +1,4 @@
 <?php
-
   require_once('../model/sponsor.php');
 
   $sponsor = new sponsor;
