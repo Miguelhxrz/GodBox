@@ -1,10 +1,8 @@
 <?php 
-$id = $_POST['rif'];
-require_once('../model/sponsor.php'); 
-            
-$sponsor = new sponsor();
 
-$question = $sponsor->getById($id);
+require_once('../model/sponsor.php'); 
+require_once('../controllers/header-controller.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -20,56 +18,32 @@ $question = $sponsor->getById($id);
 </head>
 
 <body>
-
-    <header class="header">
-        <div class="container-header">
-
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
-                <a href="../index.php"></a>
-            </section>
-
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="../Boxes.php">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="../index.php">
-                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre Nosotros</h4>
-                    </a>
-                </div>
-            </section>
-
-            <section class="links-r">
-                <div class="login-link">
-                    <a href="#">
-                        <img src="../assets/icons/casco.png" alt="" class="imgcasco">
-                    </a>
-                </div>
-            </section>
-
-        </div>
-    </header>
-
+    <!-- Header -->
+  <?php include($header)?>
     <main class="container">
         <section class="container-form">
             <div class="title-form">
                 <h5>Editar patrocinador</h5>
             </div>
+            <?php
+            $id = $_POST['rif'];
+            $sponsor = new sponsor();
+
+            $question = $sponsor->getById($id);
+            $question = $sponsor->ShowSponsor();
+            while ($row = mysqli_fetch_array($question)){
+            ?>
             <form action="../CRUD/Update-sponsor.php" name= "form-register" class= "form-register" method="post">
-            <input type="text" name="rif_input" placeholder="Rif" value="J-12345678"class="rif_input" maxlength="12" max="12">
-            <input type="text" name="name_input"  placeholder="Nombre" value="Patrocinador" maxlength="15" size="15" require>
-            <input type="email" name="email_input"  placeholder="Email" value="Patrocinador@gmail.com" maxlength="45" size="45" require>
+            <input type="text" name="rif_input" placeholder="Rif" value="<?php echo $row["rif"] ?>"class="rif_input" maxlength="12" max="12">
+            <input type="text" name="name_input"  placeholder="Nombre" value="<?php echo $row["name"]?>" maxlength="15" size="15" require>
+            <input type="email" name="email_input"  placeholder="Email" value="<?php echo $row["email"]?>" maxlength="45" size="45" require>
+            <label for="imagen_input" class="imagen_input">
+               <p>Imagen del patrocinador</p> 
+            <input type="file" name="imagen_input" value = "<?php echo $row["image"]?>" id="">
+            </label>
             <input type="submit"class="btn" name="register" value="Editar">    
         </section>
-
+        <?php }?>
     </main>
 
     <footer class="footer">

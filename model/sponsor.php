@@ -83,7 +83,7 @@
 
     function ShowSponsor(){
         
-        $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor`";
+        $query_send = "SELECT `rif`, `name`, `email` , `image` FROM `sponsor`";
 
         $question = $this->data_base->add_instruc($query_send);
 
@@ -92,7 +92,7 @@
 
     function getById($id){
 
-        $query_send = "SELECT `rif`, `name`, `email` FROM `sponsor` WHERE `rif` = '$id'";
+        $query_send = "SELECT `rif`, `name`, `email` , `image` FROM `sponsor` WHERE `rif` = '$id'";
 
         $question = $this->data_base->add_instruc($query_send);
 
@@ -111,7 +111,7 @@
     }
 
     function updateSponsor(){
-      $query_send = " UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email' WHERE `rif` = '$this->rif'";
+      $query_send = " UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email', `image` = '$this->imagen' WHERE `rif` = '$this->rif'";
       $question = $this->data_base->add_instruc($query_send);
       return $question;
     }

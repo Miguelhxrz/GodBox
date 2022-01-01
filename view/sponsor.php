@@ -41,6 +41,8 @@ require_once('../controllers/header-controller.php');
             </section>
             <div class="container-items">
             <?php 
+            $sponsor = new sponsor;
+            $question = $sponsor->ShowSponsor();
             while ($row = mysqli_fetch_array($question)){
             ?>
             <section class="item-title">
@@ -51,7 +53,7 @@ require_once('../controllers/header-controller.php');
                     <h6><?php echo $row["name"];?></h6>
                 </div>
                 <div class="item-5">
-                    <?php echo $row["img"];?>
+                    <img src="<?php echo $row["image"]?>" class= "imagen" alt="">
                 </div>
                 <div class="item-3">
                     <h6><?php echo $row["email"];?></h6>
@@ -79,7 +81,7 @@ require_once('../controllers/header-controller.php');
                     </form>
                 </div>
             </section>
-            <?php };?>
+            <?php }?>
             </div>
         </div>
     </main>
