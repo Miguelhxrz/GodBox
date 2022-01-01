@@ -1,3 +1,6 @@
+<?php 
+$coins = 0;
+?>
 <header class="header-a">
         <div class="container-header-a">
 
@@ -29,7 +32,7 @@
                 <ul class="btn-menu-a">
                     <a href="../view/user.php">
                         <img src="../assets/icons/coin.png" alt="" class="item-a">
-                        <h3 class="name">0</h3>
+                        <h3 class="name"><?php echo $coins?></h3>
                     </a>
                     <li class="item-nav-a"><img src="../assets/icons/casco.png" alt="" class="item-a">
                     <h3 class="name">Admin</h3>

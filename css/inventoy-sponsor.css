@@ -41,7 +41,7 @@ body {
 }
 
 
-/* Header */
+/* Header sin logear*/
 
 .header {
     width: 100%;
@@ -75,23 +75,20 @@ a {
 
 .header .menu__container .basic__menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 229px;
+    align-self: center;
+    width: 100%;
     margin-right: auto;
-    margin-left: 150px;
-}
-
-.header .menu__container .basic__menu .boxes-link {
-    margin-right: 20px;
+    margin-left: 230px;
 }
 
 .header .menu__container .basic__menu .about-link {
-    margin-left: 20px;
     text-align: center;
 }
 
 .header .menu__container .user__menu {
+    width: 45%;
     display: flex;
     text-align: center;
     justify-content: space-around;
@@ -113,7 +110,7 @@ h3 {
 }
 
 
-/* Fin Header */
+/* Fin Header sin logear*/
 
 
 /* Header Admin */
@@ -153,9 +150,9 @@ a {
     justify-content: center;
     align-items: center;
     align-self: center;
-    width: 85%;
+    width: 100%;
     margin-right: auto;
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 .header-a .container-header-a .center-title-a .boxes-link-a {
@@ -220,9 +217,6 @@ a {
 }
 
 
-/* Fin Header Admin */
-
-
 /* Menú Admin*/
 
 .item-nav-a {
@@ -259,8 +253,11 @@ a {
 }
 
 .submenu-a li {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
 }
 
 .submenu-a li a {
@@ -279,6 +276,9 @@ a {
 .submenu-a a:hover {
     text-decoration: underline;
 }
+
+
+/* Fin Header Admin */
 
 
 /* Header Usuario */
@@ -317,9 +317,9 @@ a {
     justify-content: center;
     align-items: center;
     align-self: center;
-    width: 85%;
+    width: 100%;
     margin-right: auto;
-    margin-left: 60px;
+    margin-left: 100px;
 }
 
 .header-u .container-header-u .center-title-u .boxes-link-u {
@@ -379,9 +379,6 @@ a {
 }
 
 
-/* Fin Header Admin */
-
-
 /* Menú Usuario*/
 
 .item-nav {
@@ -418,8 +415,11 @@ a {
 }
 
 .submenu li {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
 }
 
 .submenu li a {
@@ -441,6 +441,9 @@ a {
 
 
 /* Fin menu Usuario*/
+
+
+/* Fin Header user */
 
 
 /*Body*/
