@@ -35,16 +35,17 @@ $coins = 0;
             <section class="options-u">
                 <div class="link-u">
                     <ul class="btn-menu-u">
-                    <a href="../view/user.php">
+                    <a href="../view/buy_coins.php">
                         <img src="../assets/icons/coin.png" alt="" class="item-u">
                         <h3 class="name"><?php echo $coins?></h3>
                     </a>
                     <li class="item-nav"><img src="../assets/icons/user.png" alt="" class="item-u">
                     <?php echo "<h3 class ='name'>".$_SESSION['user']."</h3>"?>
                     <ul class="submenu">
-                        <li><a href="../view/user_Profile.php" class="profil">Perfil</a></li>
-                        <li><a href="../view/userConfig.php" class="config">Configuración</a></li>
-                        <li><a href="../view/buy_coins.php" class="Compra">Comprar LidGod</a></li>
+                        <li><a href="../view/user_page.php" class="datos">Mis Datos</a></li>
+                        <li><a href="../view/transaciones_user.php" class="transaciones">Mis Transaciones</a></li>
+                        <li><a href="../view/productos_user.php" class="productos">Mis Productos</a></li>
+                        <li><a href="../view/buy_coins.php" class="Compra">Comprar LilGod</a></li>
                         <li><a href="../partials/logout.php" class="logout">Cerrar Sesión</a></li>
                     </ul>  
                     </li>

@@ -1,6 +1,7 @@
 <?php 
 require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -9,63 +10,68 @@ require_once('../controllers/header-controller.php');
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/reports_page.css">
+  <link rel="stylesheet" href="../css/admin_page.css">
   <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-  <title>GodBox | reportes</title>
+  <title>GodBox | Datos - admin</title>
 </head>
 
 <body>
        <!-- Header -->
-       <?php include($header); ?>
-
+       <?php include($header);?>
      <main class="container">
         <section class="panel__container">
           <articles class="admin__container">
             <div class="admin__profile">
               <figure class="admin__ico-container">
-                <img src="../assets/icons/user-profile.png" alt="" title="">
+                <img src="../assets/icons/casco.png" alt="" title="">
               </figure>
-              <h4 class="title">Username</h4>
+              <h4 class="title">Admin</h4>
             </div>
             <div class="select__reports">
-                <div class="btn__report">Datos</div>
-                <div class="btn__report">Transacciones</div>
-                <div class="btn__report">inventario</div>
-                <!-- <div class="btn__report">Mis productos </div>
-                <div class="btn__report">Mis transacciones</div>
-                <div class="btn__report">Inventario de cajas</div>
-                <div class="btn__report">Inventario de productos</div>
-                <div class="btn__report">Patrocinadores</div>
-            </div> -->
+                <a href="../view/admin_page.php"><div class="btn__report">Datos</div></a>
+                <a href="../view/transaciones_admin.php"><div class="btn__report">Mis Transacciones</div></a>
+                <a href="../view/productos_admin.php"><div class="btn__report">Mis Productos</div></a>
+                <a href="../view/buy_coins.php"><div class="btn__report">Compra LilGod</div></a>
+                <a href="../view/inventarios.php"><div class="btn__report">Inventarios</div></a>
+                <a href="../view/registros.php"><div class="btn__report">Registros</div></a>
+                <a href="../view/reportes_admin.php"><div class="btn__report">Reportes</div></a>
+            </div> 
         </articles>
       </section>
-
       <section class="reports__container">
-          <h4 class="title">Datos 🔒</h4>
+      <?php 
+      
+      ?>
+          <h4 class="title">Datos🔒</h4>
           <div class="put__reports">
             <div class="essencial__crud">
               <div class="crud username">
-                <h4>Username:</h4> <h4 class="respuesta">username</h4>
+                <h4>Username:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar username">
               </div>
               <div class="crud password">
-                <h4>Password:</h4> <h4 class="respuesta">123456789</h4>
+                <h4>Password:</h4> <h4 class="respuesta"><?echo $row["password"];?></h4>
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar password">
               </div>
               <div class="crud email">
-                <h4>Email:</h4> <h4 class="respuesta">username@domain.com</h4>
+                <h4>Email:</h4> <h4 class="respuesta"><?php echo $row["email"];?></h4>
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar email">
               </div>
             </div>
             <div class="other__crud">
+            <div class="crud LilGod">
+                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $coin?></h4> 
+                <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
+              </div>
               <div class="crud address">
-                <h4>address:</h4> <h4 class="respuesta">adress - 423414521r </h4>
+                <h4>address:</h4> <h4 class="respuesta"><?php echo $row["address"];?></h4>
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
               </div>
               <div class="crud credit-card">
                 <h4>tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
               </div>
+
             </div>
           </div>
       </section>
