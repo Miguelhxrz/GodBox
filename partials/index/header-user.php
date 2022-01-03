@@ -4,6 +4,8 @@ session_start();
 
 $_SERVER['user'];
 
+$_SESSION['coins'];
+
 ?>
 <header class="header-u">
         <div class="container-header-u">
@@ -34,7 +36,7 @@ $_SERVER['user'];
                     <ul class="btn-menu-u">
                     <a href="./view/user.php">
                         <img src="./assets/icons/coin.png" alt="" class="item-u">
-                        <h3 class="name">0</h3>
+                        <?php echo "<h3 class ='name'>".$_SESSION['coins']."</h3>"?>
                     </a>
                     <li class="item-nav"><img src="./assets/icons/user.png" alt="" class="item-u">
                     <?php echo "<h3 class ='name'>".$_SESSION['user']."</h3>"?>

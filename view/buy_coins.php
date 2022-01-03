@@ -26,8 +26,16 @@
                 <div class="cuadro_items-2">
                     <h3>Monedas: 100</h3>
                     <h3>Precio: 25$</h3>
+
+                    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                        <input type="hidden" name="monedas" value="100">
+                        <input type="hidden" name="price" value="25">
+                        
+                        <input type="submit" value="Comprar" name="buy_btn" class="box__button-buy" id="buy__btn">
+                    </form>
+
                 </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
+                
             </div>
             <div class="grid-item-3">
                 <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>

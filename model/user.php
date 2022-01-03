@@ -5,6 +5,7 @@
 
     public $username;
     private $password;
+    private $coins;
     private $id;
     private $email;
     private $address;
@@ -32,6 +33,10 @@
 
     function setPassword($pass) {
       $this->password = $pass;
+    }
+
+    function setcoins() {
+      $this->coins = 0;
     }
 
     function setId($ced) {
@@ -92,12 +97,16 @@
       $this->birth;
     }
 
+    function getCoins() {
+      $this->coins;
+    }
+
 
     #Data base functions for users
 
     function addDataBase() {
       
-        $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
+        $query_send = "INSERT INTO `users` (`username`, `password`,`coins`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->coins."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
     
         $question = $this->data_base->add_instruc($query_send);
 
@@ -175,6 +184,37 @@
         return 0;
       }
 
+    }
+
+    function getCoinsdb($username){
+      $query_send = "SELECT `coins` FROM `users` WHERE `username` = '".$username."'";
+
+      $question =  $this->data_base->add_instruc($query_send);
+
+      if(mysqli_num_rows($question) > 0){
+         $rows = mysqli_fetch_array($question);
+         return $rows['coins'];
+      }else {
+        return 0;
+      }
+
+    }
+
+    function buyCoins($coins_buy,$username) {
+
+      $mycoins = $this->getCoinsdb($username);
+
+      $buy_coins = $mycoins + $coins_buy;
+
+      $query_send =  "UPDATE `users` SET `coins`= '".$buy_coins."' WHERE `username` = '".$username."'";
+
+      $question =  $this->data_base->add_instruc($query_send);
+
+      if($question) {
+        return 1;
+      }else {
+        return 0;
+      }
     }
 
 
