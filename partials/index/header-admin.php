@@ -27,17 +27,21 @@
             <section class="options-a">
                 <div class="link-a">
                 <ul class="btn-menu-a">
-                    <a href="./view/user.php">
+                    <a href="./view/buy_coins.php">
                         <img src="./assets/icons/coin.png" alt="" class="item-a">
                         <h3 class="name">0</h3>
                     </a>
                     <li class="item-nav-a"><img src="./assets/icons/casco.png" alt="" class="item-a">
                     <h3 class="name">Admin</h3>
                     <ul class="submenu-a">
+                        <li><a href="./view/admin_page.php" class="config">Pagina Admin</a></li>
+                        <li><a href="./view/admin_page.php" class="config">Mis Datos</a></li>
+                        <li><a href="./view/transaciones_admin.php" class="config">Mis Transaciones</a></li>
+                        <li><a href="./view/productos_admin.php" class="config">Mis Productos</a></li>
                         <li><a href="./view/buy_coins.php" class="profil">Comprar LidGod</a></li>
-                        <li><a href="./view/register_sponsor.php" class="config">Registrar patrocinador</a></li>
-                        <li><a href="./view/register_object.php" class="config">Registrar producto</a></li>
-                        <li><a href="./view/register_box.php" class="config">Registrar caja</a></li>
+                        <li><a href="./view/inventarios.php" class="config">Inventarios</a></li>
+                        <li><a href="./view/registros.php" class="config">Registros</a></li>
+                        <li><a href="./view/reportes_admin.php" class="config">Reportes</a></li>
                         <li><a href="./partials/logout.php" class="logout">Cerrar Sesión</a></li>
                     </ul>  
                     </li>

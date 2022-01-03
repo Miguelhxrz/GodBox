@@ -29,10 +29,9 @@
 
                     <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                         <input type="hidden" name="monedas" value="100">
-                        <input type="hidden" name="price" value="25">
-                        
-                        <input type="submit" value="Comprar" name="buy_btn" class="box__button-buy" id="buy__btn">
+                        <input type="hidden" name="price" value="25">             
                     </form>
+                        <a href="" class="box__button-buy" id="buy__btn">Comprar</a>
 
                 </div>
                 

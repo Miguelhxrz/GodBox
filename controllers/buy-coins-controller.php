@@ -12,10 +12,4 @@
   $lilGods_buy = $_POST['monedas'];
   $price = $_POST['price'];
 
-  if(isset($buy_btn)) {
-
-    $lilGods_buy = intval($lilGods_buy);
-    $user->buyCoins($lilGods_buy,$username);
-
-  }
 ?>
