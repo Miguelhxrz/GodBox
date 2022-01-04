@@ -79,21 +79,16 @@
     
     }
 
+    function ShowObjects(){
 
-
-
-
+      $query_send = "SELECT `id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category` FROM `objects`";
+          
+      $question = $this->data_base->add_instruc($query_send);
+  
+      return $question;
+    
+    }
 
   }
-
-
-
-
-
-
-
-
-
-
 
 ?>

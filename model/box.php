@@ -74,6 +74,15 @@ class box {
   
   }
 
+  function ShowBoxes(){
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`  FROM `box`";
+        
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  
+  }
+
 
 }
 

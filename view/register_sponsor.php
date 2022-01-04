@@ -1,56 +1,39 @@
-<?php
-require_once('../controllers/header-controller.php');
-?>
+<?php 
+require ('../model/reports.php');
+require_once('../model/sponsor.php');
 
-<!DOCTYPE html>
-<html lang="en">
+date_default_timezone_set('America/Caracas');
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/register_sponsor.css">
-    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-    <script src="../scripts/helper.js"></script>
-    <title>GodBox - Register Sponsor</title>
-</head>
 
-<body>
-    <!-- Header -->
-    <?php include($header); ?>
+  $pdf = new PDF("L", "mm", "Letter");
+  $pdf->AddPage();
+  $pdf->AliasNbPages();
 
-    <main class="container">
-        <section class="container-form">
-            <div class="title-form">
-                <h5>Registrar patrocinador</h5>
-            </div>
-            <form action="" name= "form-register" class= "form-register" method="post" enctype="multipart/form-data">
-            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
-            <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
-            <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
-            <label for="imagen_input" class="imagen_input">
-               <p>Imagen del patrocinador</p> 
-            <input type="file" name="imagen_input" id="">
-            </label>
-            <input type="submit"class="btn" name="register" value="Registrar">
-            
-            <?php 
-            require_once('../controllers/register-sponsor-controller.php');    
-            ?>
-            
-          </form>
-        </section>
 
-    </main>
+  // Título
+  $pdf->Cell(150, 5, "Reporte de Patrocinadores Registrados", 0, 0, "C");
+  //Fecha
+  $pdf->Cell(0, 5, "Fecha: ". date("d/m/Y"), 0, 2, "C");
+  // Salto de línea
+  $pdf->Ln(15);
+  
 
-    <footer class="footer">
-        <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
-        <div class="footer__social-media">
-            <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
-            <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
-            <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
-        </div>
-    </footer>
-</body>
+  $pdf->SetFont("Arial","B",9);
+  $pdf->Cell(30, 5, "Rif", 1, 0, "C");
+  $pdf->Cell(30, 5, "Nombre", 1, 0, "C");
+  $pdf->Cell(80, 5, "Correo Electronico", 1, 1, "C");
 
-</html>
+  $pdf->SetFont("Arial","",9);
+
+  $sponsor = new sponsor;
+  $question = $sponsor->ShowSponsor();
+  while ($fila= mysqli_fetch_array($question)){
+    //`rif`, `name`, `email`
+    
+    $pdf->Cell(30, 5, $fila['rif'], 1, 0, "C");
+    $pdf->Cell(30, 5, $fila['name'], 1, 0, "C");
+    $pdf->Cell(80, 5, $fila['email'], 1, 1, "C");
+  }
+
+  $pdf->Output();
+?> 
