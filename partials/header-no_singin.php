@@ -17,14 +17,14 @@
                     </a>
                 </div>
                 <div class="about-link">
-                    <a href="../../view/About-us.php">
+                    <a href="../view/About-us.php">
                         <h4>Sobre Nosotros</h4>
                     </a>
                 </div>
             </section>
 
             <section class="user__menu">
-                <a href="../../view/register_page.php">
+                <a href="../view/register_page.php">
                     <h4>Registrarse</h4>
                 </a>
 

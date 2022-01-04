@@ -17,7 +17,7 @@
                     </a>
                 </div>
                 <div class="about-link">
-                    <a href="../../view/About-us.php">
+                    <a href="../view/About-us.php">
                         <h4>Sobre Nosotros</h4>
                     </a>
                 </div>
@@ -25,7 +25,7 @@
 
             <section class="user__menu">
                 
-                <a href="../../view/login.php">
+                <a href="../view/login.php">
                     <h4>Iniciar Sesion</h4>
                 </a>
                 
