@@ -1,6 +1,6 @@
 <?php 
-require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
+require_once('../model/user.php');
 
 ?>
 
@@ -17,15 +17,18 @@ require_once('../controllers/header-controller.php');
 
 <body>
        <!-- Header -->
-       <?php include($header);?>
+       <?php include($header); 
+       $user = new user;
+       $question = $user->GetByUsername($_SESSION['user']);
+       while ($row = mysqli_fetch_array($question)):?>
      <main class="container">
         <section class="panel__container">
           <articles class="admin__container">
             <div class="admin__profile">
               <figure class="admin__ico-container">
-                <img src="../assets/icons/casco.png" alt="" title="">
+                <img src="../assets/icons/user-profile.png" alt="" title="">
               </figure>
-              <h4 class="title">Admin</h4>
+              <h4 class="title"><?php echo $_SESSION['user']?></h4>
             </div>
             <div class="select__reports">
                 <a href="../view/admin_page.php"><div class="btn__report">Datos</div></a>
@@ -39,10 +42,7 @@ require_once('../controllers/header-controller.php');
         </articles>
       </section>
       <section class="reports__container">
-      <?php 
-      
-      ?>
-          <h4 class="title">Datos🔒</h4>
+      <h4 class="title">Datos🔒</h4>
           <div class="put__reports">
             <div class="essencial__crud">
               <div class="crud username">
@@ -50,7 +50,7 @@ require_once('../controllers/header-controller.php');
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar username">
               </div>
               <div class="crud password">
-                <h4>Password:</h4> <h4 class="respuesta"><?echo $row["password"];?></h4>
+                <h4>Password:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar password">
               </div>
               <div class="crud email">
@@ -59,8 +59,8 @@ require_once('../controllers/header-controller.php');
               </div>
             </div>
             <div class="other__crud">
-            <div class="crud LilGod">
-                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $coin?></h4> 
+              <div class="crud LilGod">
+                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $row["coins"];?></h4> 
                 <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
               </div>
               <div class="crud address">
@@ -71,7 +71,8 @@ require_once('../controllers/header-controller.php');
                 <h4>tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
               </div>
-
+              
+              <?php endwhile ?>
             </div>
           </div>
       </section>

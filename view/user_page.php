@@ -1,6 +1,6 @@
 <?php 
-require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
+require_once('../model/user.php');
 
 ?>
 
@@ -18,9 +18,9 @@ require_once('../controllers/header-controller.php');
 <body>
        <!-- Header -->
        <?php include($header); 
-        //$user = new user;
-       //$question = $user->GetByUsername($_SESSION['user']);
-       //while ($row = mysqli_fetch_array($question)):?>
+       $user = new user;
+       $question = $user->GetByUsername($_SESSION['user']);
+       while ($row = mysqli_fetch_array($question)):?>
      <main class="container">
         <section class="panel__container">
           <articles class="admin__container">
@@ -54,7 +54,7 @@ require_once('../controllers/header-controller.php');
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar username">
               </div>
               <div class="crud password">
-                <h4>Password:</h4> <h4 class="respuesta"><?echo $row["password"];?></h4>
+                <h4>Password:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar password">
               </div>
               <div class="crud email">
@@ -64,7 +64,7 @@ require_once('../controllers/header-controller.php');
             </div>
             <div class="other__crud">
               <div class="crud LilGod">
-                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $coin?></h4> 
+                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $row["coins"];?></h4> 
                 <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
               </div>
               <div class="crud address">
@@ -76,7 +76,7 @@ require_once('../controllers/header-controller.php');
                 <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
               </div>
               
-              <?php //endwhile ?>
+              <?php endwhile ?>
             </div>
           </div>
       </section>
