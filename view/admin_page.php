@@ -46,16 +46,15 @@ require_once('../model/user.php');
           <div class="put__reports">
             <div class="essencial__crud">
               <div class="crud username">
-                <h4>Username:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar username">
+                <h4>Usuario:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
               </div>
               <div class="crud password">
-                <h4>Password:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar password">
+                <h4>Contraseña:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
+                <a href="../CRUD/update-password-admin.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar contraseña"></a>
               </div>
               <div class="crud email">
-                <h4>Email:</h4> <h4 class="respuesta"><?php echo $row["email"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar email">
+                <h4>Correo:</h4> <h4 class="respuesta"><?php echo $row["email"];?></h4>
+                <a href="../CRUD/update-email-admin.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar correo"></a>
               </div>
             </div>
             <div class="other__crud">
@@ -64,12 +63,12 @@ require_once('../model/user.php');
                 <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
               </div>
               <div class="crud address">
-                <h4>address:</h4> <h4 class="respuesta"><?php echo $row["address"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
+                <h4>Dirección:</h4> <h4 class="respuesta"><?php echo $row["address"];?></h4>
+                <a href="../CRUD/update-address-admin.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
               </div>
               <div class="crud credit-card">
-                <h4>tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
+                <h4>Tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
+                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar tarjeta">
               </div>
               
               <?php endwhile ?>

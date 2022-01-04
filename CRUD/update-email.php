@@ -11,7 +11,7 @@ require_once('../model/user.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/user_page.css">
   <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-  <title>GodBox | Datos</title>
+  <title>GodBox | Editar-Correo</title>
 </head>
 
 <body>
@@ -51,13 +51,30 @@ require_once('../model/user.php');
               <div class="crud username">
                 <h4>Usuario:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
               </div>
+              
               <div class="crud password">
                 <h4>Contraseña:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
                 <a href="../CRUD/update-password.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar contraseña"></a>
               </div>
+              
               <div class="crud email">
-                <h4>Correo:</h4> <h4 class="respuesta"><?php echo $row["email"];?></h4>
-                <a href="../CRUD/update-email.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar correo"></a>
+              <h4>Correo:</h4>
+                <form method="POST">
+                  <input type="text" name="email" value="<?php echo $row["email"];?>" maxlength="45" size="45">
+                  <input type="submit" class="btn-edit" name="btn-edit" value="Editar">
+                  <a href="../view/user_page.php" class="volver">Volver</a>
+              </form>
+              <?php 
+                  $email = $_POST['email'];
+                  $submit = $_POST['btn-edit'];
+                  if (isset($submit)){
+                      $sesion = $_SESSION['user'];
+                      $update = $user->UpdateEmail($email,$sesion);
+                      if (isset($update)){
+                        echo "<meta http-equiv='refresh' content='0'>";
+                      }
+                  }
+              ?>
               </div>
             </div>
             <div class="other__crud">
@@ -70,8 +87,8 @@ require_once('../model/user.php');
                 <a href="../CRUD/update-address.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
               </div>
               <div class="crud credit-card">
-                <h4>Tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
-                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
+                <h4>tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
+                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar tarjeta"></a>
               </div>
               
               <?php endwhile ?>

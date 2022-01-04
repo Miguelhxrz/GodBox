@@ -11,7 +11,7 @@ require_once('../model/user.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/user_page.css">
   <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-  <title>GodBox | Datos</title>
+  <title>GodBox | Datos-Usuario</title>
 </head>
 
 <body>
@@ -49,8 +49,7 @@ require_once('../model/user.php');
           <div class="put__reports">
             <div class="essencial__crud">
               <div class="crud username">
-                <h4>Usuario:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
-              </div>
+              <h4>Usuario:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
               <div class="crud password">
                 <h4>Contraseña:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
                 <a href="../CRUD/update-password.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar contraseña"></a>
@@ -70,7 +69,7 @@ require_once('../model/user.php');
                 <a href="../CRUD/update-address.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
               </div>
               <div class="crud credit-card">
-                <h4>Tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
+                <h4>tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
                 <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
               </div>
               

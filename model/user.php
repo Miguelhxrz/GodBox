@@ -195,4 +195,37 @@
   
   }
 
+  function UpdateUsername($username, $sesion){
+    $query_send = "UPDATE `users` SET `username`= '$username' where `username`= '$sesion'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+  
+  function UpdateEmail($email, $sesion){
+    $query_send = "UPDATE `users` SET `email`= '$email' where `username`= '$sesion'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function UpdatePassword($password, $sesion){
+    $query_send = "UPDATE `users` SET `password`= '$password' where `username`= '$sesion'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function UpdateAddress($address, $sesion){
+    $query_send = "UPDATE `users` SET `address`= '$address' where `username`= '$sesion'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+
   }

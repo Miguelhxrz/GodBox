@@ -9,9 +9,9 @@ require_once('../model/user.php');
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/user_page.css">
+  <link rel="stylesheet" href="../css/admin_page.css">
   <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-  <title>GodBox | Datos</title>
+  <title>GodBox | Editar-Contraseña</title>
 </head>
 
 <body>
@@ -30,15 +30,14 @@ require_once('../model/user.php');
               <h4 class="title"><?php echo $_SESSION['user']?></h4>
             </div>
             <div class="select__reports">
-                <a href="../view/user_page.php"><div class="btn__report">Datos</div></a>
-                <a href="../view/transaciones_user.php"><div class="btn__report">Mis Transaciones</div></a>
-                <a href="../view/productos_user.php"><div class="btn__report">Mis Productos</div></a>
-                <a href="../view/buy_coins.php"><div class="btn__report">Comprar Monedas</div></a>
-                <!--<div class="btn__report">Mis transacciones</div>
-                <div class="btn__report">Inventario de cajas</div>
-                <div class="btn__report">Inventario de productos</div>
-                <div class="btn__report">Patrocinadores</div>
-            </div> -->
+                <a href="../view/admin_page.php"><div class="btn__report">Datos</div></a>
+                <a href="../view/transaciones_admin.php"><div class="btn__report">Mis Transacciones</div></a>
+                <a href="../view/productos_admin.php"><div class="btn__report">Mis Productos</div></a>
+                <a href="../view/buy_coins.php"><div class="btn__report">Compra LilGod</div></a>
+                <a href="../view/inventarios.php"><div class="btn__report">Inventarios</div></a>
+                <a href="../view/registros.php"><div class="btn__report">Registros</div></a>
+                <a href="../view/reportes_admin.php"><div class="btn__report">Reportes</div></a>
+            </div> 
         </articles>
       </section>
       <section class="reports__container">
@@ -52,12 +51,28 @@ require_once('../model/user.php');
                 <h4>Usuario:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
               </div>
               <div class="crud password">
-                <h4>Contraseña:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
-                <a href="../CRUD/update-password.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar contraseña"></a>
+              <h4>Contraseña:</h4> 
+                <form method="POST">
+                  <input type="text" name="password" value="<?php echo $row["password"];?>" maxlength="20" size="20">
+                  <input type="submit" class="btn-edit" name="btn-edit" value="Editar">
+                  <a href="../view/admin_page.php" class="volver">Volver</a>
+              </form>
+              <?php 
+                  $password = $_POST['password'];
+                  $submit = $_POST['btn-edit'];
+                  if (isset($submit)){
+                      $sesion = $_SESSION['user'];
+                      $update = $user->UpdatePassword($password,$sesion);
+
+                      if (isset($update)){
+                        echo "<meta http-equiv='refresh' content='0'>";
+                      }
+                  }
+              ?>
               </div>
               <div class="crud email">
                 <h4>Correo:</h4> <h4 class="respuesta"><?php echo $row["email"];?></h4>
-                <a href="../CRUD/update-email.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar correo"></a>
+                <a href="../CRUD/update-email-admin.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar correo"></a>
               </div>
             </div>
             <div class="other__crud">
@@ -67,11 +82,11 @@ require_once('../model/user.php');
               </div>
               <div class="crud address">
                 <h4>Dirección:</h4> <h4 class="respuesta"><?php echo $row["address"];?></h4>
-                <a href="../CRUD/update-address.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
+                <a href="../CRUD/update-address-admin.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
               </div>
               <div class="crud credit-card">
                 <h4>Tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
-                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
+                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar tarjeta"></a>
               </div>
               
               <?php endwhile ?>
