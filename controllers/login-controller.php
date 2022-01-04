@@ -36,15 +36,16 @@ if(isset($_POST['btn'])) {
     
     if(count($errores) > 0){
       echo "<div class='error'>
-      <figure>
-      <img src='../assets/icons/close.png' alt='icon close' id='close'>
-     </figure>";
+          <figure>
+            <img src='../assets/icons/close.png' alt='icon close' id='close'>
+          </figure>";
       for ($i=0; $i < count($errores); $i++) { 
             echo "<li>".$errores[$i]."</li>";
     
           }
-        echo "</div>";
+      echo "</div>";
      }else {
+      echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
       header("location: ../index.php");
       $_SESSION['user'] = $username;
     }

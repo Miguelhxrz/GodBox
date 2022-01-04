@@ -116,6 +116,49 @@ a {
 
 /* |---- Body ----| */
 
+
+/* |---- alerts ----| */
+
+.correcto {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 96%;
+    height: 100%;
+    background-color: #3FA846;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    font-size: 1.4rem;
+    width: 96%;
+    height: 100%;
+    background-color: #df1526;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.error figure {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.error figure img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -130,9 +173,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 392px;
-    height: 400px;
     background: radial-gradient(100% 100% at 46.69% 86.55%, rgba(33, 104, 166, 0.67) 0%, rgba(33, 104, 166, 0.67) 17.71%, rgba(234, 190, 63, 0.87) 90.1%);
-    ;
     border-radius: 32px;
     border-radius: 15px;
     padding: 15px;
@@ -277,7 +318,7 @@ option {
     justify-content: center;
     width: 134px;
     height: 32px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .envio {
@@ -301,6 +342,8 @@ input[type=submit] {
     justify-content: center;
     width: 100%;
     font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .form-register .form__account a {
