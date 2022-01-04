@@ -34,11 +34,8 @@ require_once('../model/user.php');
                 <a href="../view/transaciones_user.php"><div class="btn__report">Mis Transaciones</div></a>
                 <a href="../view/productos_user.php"><div class="btn__report">Mis Productos</div></a>
                 <a href="../view/buy_coins.php"><div class="btn__report">Comprar Monedas</div></a>
-                <!--<div class="btn__report">Mis transacciones</div>
-                <div class="btn__report">Inventario de cajas</div>
-                <div class="btn__report">Inventario de productos</div>
-                <div class="btn__report">Patrocinadores</div>
-            </div> -->
+                <a href="../view/card_register.php"><div class="btn__report">Agregar Tarjeta</div></a>
+            </div> 
         </articles>
       </section>
       <section class="reports__container">

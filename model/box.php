@@ -13,6 +13,7 @@ class box {
   private $rank;
   private $objects = array();
   private $image;
+  private $fecha;
 
   #database
   private $data_base;
@@ -58,11 +59,15 @@ class box {
     $this->image = $img;
   }
 
+  function setFechaRegistro($fecha){
+    $this->fecha = $fecha;
+  }
+
   #data base functions
 
   function addDataBase() {
 
-    $query_send = "INSERT INTO `box`(`id`, `name`, `price`, `stock`, `sponsor`, `category`, `rank`, `objects`, `img`) VALUES ('".$this->id."','".$this->name."','".$this->price."','".$this->stock."','".$this->sponsor."','".$this->category."','".$this->rank."','".$this->objects."','".$this->image."')";
+    $query_send = "INSERT INTO `box`(`id`, `name`, `price`, `stock`, `sponsor`, `category`, `rank`, `objects`, `img`, `fecha de registro`) VALUES ('".$this->id."','".$this->name."','".$this->price."','".$this->stock."','".$this->sponsor."','".$this->category."','".$this->rank."','".$this->objects."','".$this->image."','".$this->fecha."')";
   
     $question = $this->data_base->add_instruc($query_send);
 
@@ -75,7 +80,7 @@ class box {
   }
 
   function ShowBoxes(){
-    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`  FROM `box`";
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`  FROM `box`";
         
     $question = $this->data_base->add_instruc($query_send);
 

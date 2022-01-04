@@ -145,6 +145,9 @@
 
       $price_int = intval($object_price);
 
+      date_default_timezone_set('America/Caracas');
+      $fecha = date("d/m/Y");
+
       $item->setID($object_id);
       $item->setName($object_name);
       $item->setStock($object_stock);
@@ -152,6 +155,7 @@
       $item->setSponsor($object_sponsor);
       $item->setRank($object_rank);
       $item->setCategory($object_category);
+      $item->setFechaRegistro($fecha);
 
       $item->setImage($origin);
 
