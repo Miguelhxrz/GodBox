@@ -159,8 +159,6 @@
 
       $item->setImage($origin);
 
-
-
       $result = $item->addDataBase();
       
       header("location: ../index.php");

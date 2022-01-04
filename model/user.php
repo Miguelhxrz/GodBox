@@ -12,6 +12,7 @@
     private $month;
     private $year;
     private $birth;
+    private $fecha;
   
     #database
   private $data_base;
@@ -59,7 +60,11 @@
     }
 
     function setBirth() {
-      $this->birth = $this->day."-".$this->month."-".$this->year;
+      $this->birth = $this->day."/".$this->month."/".$this->year;
+    }
+
+    function SetFechaRegistro($fecha){
+      $this->fecha = $fecha;
     }
 
     #--Get--
@@ -97,7 +102,7 @@
 
     function addDataBase() {
       
-        $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
+        $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`,`fecha de registro`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."','".$this->fecha."')";
     
         $question = $this->data_base->add_instruc($query_send);
 
@@ -187,7 +192,7 @@
   }
 
   function ShowUsers(){
-    $query_send = "SELECT `username` , `password` , `id` , `email` , `address` , `birth` FROM `users`";
+    $query_send = "SELECT `username` , `password` , `id` , `email` , `address` , `birth` , `fecha de registro` FROM `users`";
         
       $question = $this->data_base->add_instruc($query_send);
 
