@@ -1,11 +1,14 @@
 <?php 
 
+require_once('../model/user.php');
+
+$user = new user();
+
 session_start();
 
-$_SERVER['user'];
+$username = $_SESSION['user'];
 
-$_SESSION['coins'];
-
+$_SESSION['coins'] =  $user->getCoinsdb($username);
 ?>
 <header class="header-u">
         <div class="container-header-u">

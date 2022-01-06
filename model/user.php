@@ -159,17 +159,17 @@
 
     }
 
-
-    function searchId($id) {
-      $query_send = "SELECT `id` FROM `users` WHERE `id` = '$id'";
+    function searchId($username) {
+      $query_send = "SELECT `id` FROM `users` WHERE `username` = '$username'";
 
       $question = $this->data_base->add_instruc($query_send);
       
-      if(mysqli_num_rows($question) > 0) {
-        return 1;
-      }else {
-        return 0;
-      }
+      if(mysqli_num_rows($question) > 0){
+        $rows = mysqli_fetch_array($question);
+        return $rows['id'];
+     }else {
+       return 0;
+     }
 
     }
 
@@ -204,18 +204,51 @@
 
       $mycoins = $this->getCoinsdb($username);
 
-      $buy_coins = $mycoins + $coins_buy;
+      $mycoins_int = intval($mycoins);
+
+      $buy_coins = $mycoins_int + $coins_buy;
 
       $query_send =  "UPDATE `users` SET `coins`= '".$buy_coins."' WHERE `username` = '".$username."'";
 
       $question =  $this->data_base->add_instruc($query_send);
 
       if($question) {
-        return 1;
+        return $buy_coins;
       }else {
         return 0;
       }
     }
 
+    function verifyCard($username) {
+      $query_send = "SELECT username FROM `users` INNER JOIN payment ON users.id = payment.id";
+
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+      
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+     }
+
+     $found = 0;
+
+     for ($i=0; $i < count($result); $i++) {
+
+      if($result[$i]['username'] == $username){
+        
+        $found = 1;
+          
+        return  $found;
+     
+       }else {
+     
+        return $found;
+
+     }
+
+    }
 
   }
+}
