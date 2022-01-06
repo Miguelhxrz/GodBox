@@ -11,6 +11,7 @@
     private $rank;
     private $category;
     private $image;
+    private $fecha;
 
     #database
     private $data_base;
@@ -54,6 +55,10 @@
       $this->image = $img;
     }
 
+    function setFechaRegistro($fecha){
+      $this->fecha = $fecha;
+    }
+
 
     function getName() {
       return $this->name;
@@ -67,7 +72,7 @@
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `objects`(`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`) VALUES ('".$this->id."','".$this->name."','".$this->stock."','".$this->price."','".$this->sponsor."','".$this->rank."','".$this->category."','".$this->image."')";
+      $query_send = "INSERT INTO `objects`(`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`, `fecha de registro`) VALUES ('".$this->id."','".$this->name."','".$this->stock."','".$this->price."','".$this->sponsor."','".$this->rank."','".$this->category."','".$this->image."','".$this->fecha."')";
     
       $question = $this->data_base->add_instruc($query_send);
 
@@ -79,21 +84,16 @@
     
     }
 
+    function ShowObjects(){
 
-
-
-
+      $query_send = "SELECT `id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`, `fecha de registro` FROM `objects`";
+          
+      $question = $this->data_base->add_instruc($query_send);
+  
+      return $question;
+    
+    }
 
   }
-
-
-
-
-
-
-
-
-
-
 
 ?>

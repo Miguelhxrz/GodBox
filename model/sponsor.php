@@ -7,6 +7,7 @@
     private $rif;
     private $email;
     private $imagen;
+    private $fecha;
   
     #database
   private $data_base;
@@ -34,6 +35,10 @@
 
     function setImagen($imagen){
       $this->imagen = $imagen;
+    }
+
+    function setFechaRegistro($fecha){
+      $this->fecha = $fecha;
     }
 
 
@@ -69,7 +74,7 @@
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `sponsor`(`name`, `rif`, `email`, `image`) VALUES ('".$this->rif."','".$this->name."','".$this->email."','".$this->imagen."')";
+      $query_send = "INSERT INTO `sponsor`(`name`, `rif`, `email`, `image`, `fecha de registro` ) VALUES ('".$this->name."','".$this->rif."','".$this->email."','".$this->imagen."','".$this->fecha."')";
     
       $question = $this->data_base->add_instruc($query_send);
 
@@ -83,7 +88,7 @@
 
     function ShowSponsor(){
         
-        $query_send = "SELECT `rif`, `name`, `email` , `image` FROM `sponsor`";
+        $query_send = "SELECT `name`, `rif`, `email`, `image`, `fecha de registro` FROM `sponsor`";
 
         $question = $this->data_base->add_instruc($query_send);
 

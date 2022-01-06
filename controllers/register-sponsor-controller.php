@@ -113,11 +113,15 @@ if(isset($register)){
 
       #moviendo la imagen a la carpeta
       $move = move_uploaded_file($img_temp, $origin);
+
+      date_default_timezone_set('America/Caracas');
+      $fecha = date("d/m/Y");
  
       $sponsor->setName($sponsor_name);
       $sponsor->setRif($rif);
       $sponsor->setEmail($email);
       $sponsor->setImagen($origin);
+      $sponsor->setFechaRegistro($fecha);
       
       $sponsor->addDataBase();
       

@@ -137,6 +137,10 @@
           $price_int = intval($box_price);
           $stock_int = intval($box_stock);
 
+          date_default_timezone_set('America/Caracas');
+          $fecha = date("d/m/Y");
+
+
           $box->setID($box_id);
           $box->setName($box_name);
           $box->setStock($stock_int);
@@ -144,6 +148,7 @@
           $box->setSponsor($box_sponsor);
           $box->setRank($box_rank);
           $box->setCategory($box_category);
+          $box->setFechaRegistro($fecha);
 
           $box->setImage($origin);
 

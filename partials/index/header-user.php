@@ -47,6 +47,7 @@ $_SESSION['coins'] =  $user->getCoinsdb($username);
                         <li><a href="./view/user_page.php" class="datos">Mis Datos</a></li>
                         <li><a href="./view/transaciones_user.php" class="transaciones">Mis Transaciones</a></li>
                         <li><a href="./view/productos_user.php" class="productos">Mis Productos</a></li>
+                        <li><a href="./view/card_register.php" class="Compra">Agregar Tarjeta</a></li>
                         <li><a href="./view/buy_coins.php" class="Compra">Comprar LilGod</a></li>
                         <li><a href="./partials/logout.php" class="logout">Cerrar Sesión</a></li>
                     </ul>  
