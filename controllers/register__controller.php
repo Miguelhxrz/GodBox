@@ -222,6 +222,8 @@ if(isset($_POST['submit'])) {
     session_start();
     
     $_SESSION['user'] = $username;
+
+    $_SESSION['coins'] = $user->getCoins();
     
     header("location: ../view/login.php");
    }

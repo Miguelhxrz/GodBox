@@ -9,23 +9,15 @@ session_start();
 $_SESSION['user'];
 
 $errores = array();
-// Evaluacion de condiciones para retornar el Header segun el usuario
-function getHeaderByUser(){
-  if(empty($_SESSION['user'])){
-    return ('./partials/index/header.php');
-  }elseif ($_SESSION['user'] === "admin") {
-    return  ('./partials/index/header-admin.php');
-  }elseif (!empty($_SESSION['user']) && $_SESSION['user'] !== "admin") {
-    return ('./partials/index/header-user.php');
-  }
-  
-}
 
-$header = getHeaderByUser();
 
 $username = $_POST['username'];
 
 $password = $_POST['password'];
+
+$user_coins = $user->getCoinsdb($username);
+
+$_SESSION['coins'];
 
 
 if(isset($_POST['btn'])) {
@@ -47,7 +39,10 @@ if(isset($_POST['btn'])) {
      }else {
       echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
       header("location: ../index.php");
+
       $_SESSION['user'] = $username;
+
+      $_SESSION['coins'] = $user_coins['coins'];
     }
   }
 ?>

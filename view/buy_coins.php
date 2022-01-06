@@ -21,86 +21,23 @@
 
     <main class="container">
         <div class="grid-container">
-            <div class="grid-item-2">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-3">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-4">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-5">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-6">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-7">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-8">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-9">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-10">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
-            <div class="grid-item-11">
-                <div class="cuadro_items-1"><img src="../assets/img/monedas.png" alt=""> </div>
-                <div class="cuadro_items-2">
-                    <h3>Monedas: 100</h3>
-                    <h3>Precio: 25$</h3>
-                </div>
-                <div class="box__button-buy"><a href="#">Comprar</a></div>
-            </div>
+            <?php for ($i=0; $i < count($show); $i++) { 
+                
+            echo "<div class='grid-item'>
+                <div class='cuadro_items-1'><img src=".$show[$i]['image']."></div>
+                    <div class='cuadro_items-2'>
+                        <h3 id='coins'>Monedas:".$show[$i]['quantity']."</h3>
+                        <h3 id='price'>Precio:".$show[$i]['price']."</h3>
+                    </div>
+
+                    <form method='POST' action='../view/confirmar.php'>        
+                        <input type='hidden' name='coin_id' value=".$show[$i]['id'].">
+                        <button class='box__button-buy'>Comprar</button>
+                    </form>
+
+                </div>";
+            } ?>
+            
         </div>
     </main>
 
