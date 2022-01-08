@@ -516,9 +516,9 @@ a {
 .container-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 392px;
     background: radial-gradient(100% 100% at 46.69% 86.55%, rgba(33, 104, 166, 0.67) 0%, rgba(33, 104, 166, 0.67) 17.71%, rgba(234, 190, 63, 0.87) 90.1%);
-    ;
     border-radius: 32px;
     border-radius: 15px;
     padding: 15px;
@@ -643,6 +643,21 @@ input[type=submit] {
     color: #fff;
     font-size: 1.5rem;
     border-radius: 20px;
+}
+
+.error h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volver-inven {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: underline;
+    margin-top: 20px;
 }
 
 .footer {

@@ -517,7 +517,7 @@ a {
 }
 
 .container h3 {
-    color: #fff;
+    color: #1c1d3b;
     font-size: 5rem;
     margin-top: 50px;
     text-decoration: underline;
@@ -527,7 +527,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 500px;
-    background: radial-gradient(100% 100% at 46.69% 86.55%, #EABE3F 0%, rgba(234, 190, 63, 0.1) 100%);
+    background: radial-gradient(100% 100% at 46.69% 86.55%, rgba(33, 104, 166, 0.67) 0%, rgba(33, 104, 166, 0.67) 17.71%, rgba(234, 190, 63, 0.87) 90.1%);
     border-radius: 32px;
     border-radius: 15px;
     padding: 20px;

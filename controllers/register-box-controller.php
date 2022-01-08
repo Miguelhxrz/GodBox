@@ -105,8 +105,8 @@
       #Falta la validacion de objetos
 
       #Validacion de imagen
-      if(isset($object_img_name)) {
-        if(empty($object_img_name)) {
+      if(isset($box_img_name)) {
+        if(empty($box_img_name)) {
           array_push($errores, "Error 076: Debes insertar la imagen del objeto.");
         }
       }

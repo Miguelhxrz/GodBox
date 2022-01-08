@@ -1,5 +1,5 @@
 <?php
-require_once('../controllers/inventory-controller.php');
+require_once('../controllers/inventory-objects-controller.php');
 require_once('../controllers/header-controller.php');
 ?>
 
@@ -12,7 +12,7 @@ require_once('../controllers/header-controller.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/inventory.css">
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-    <title>GodBox - Inventario</title>
+    <title>GodBox - Inventario Objetos</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@ require_once('../controllers/header-controller.php');
     <?php include($header); ?>
 
     <main class="container">
-        <h3>Inventario de Cajas</h3>
+        <h3>Inventario de Objetos</h3>
         <div class="container-inventory">
             <section class="item-title">
                 <div class="item-1-1">
@@ -33,7 +33,7 @@ require_once('../controllers/header-controller.php');
                     <h6>Precio</h6>
                 </div>
                 <div class="item-2-1">
-                    <h6>Sponsor</h6>
+                    <h6>Patrocinador</h6>
                 </div>
                 <div class="item-2-1">
                     <h6>Categoria</h6>
@@ -51,7 +51,7 @@ require_once('../controllers/header-controller.php');
         <div class="container-items">
             <?php 
             while ($fila= mysqli_fetch_array($question)){
-            #`id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro` 
+            #`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`
             ?>
             <section class="item-title">
                 <div class="item-1">
@@ -73,7 +73,7 @@ require_once('../controllers/header-controller.php');
                     <h6><?php echo $fila['rank']?></h6>
                 </div>
                 <div class="item-5">
-                    <img src="<?php echo $fila['img']?>" alt="" class="imagen">
+                    <img src="<?php echo $fila['image']?>" alt="" class="imagen">
                 </div>
                 <div class="item-4">
                     <form action="" method="POST">
@@ -83,14 +83,19 @@ require_once('../controllers/header-controller.php');
                     <?php 
                     $submit=$_POST['submit'];
                     if(isset($submit)){
-                        require_once('../CRUD/delete-box.php');
+                        require_once('../CRUD/delete-objects.php');
                      }?>
                     </form>
-                    <form action="../CRUD/register_box-update.php" method="POST">
+                    <form action="../CRUD/register_objects-update.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $fila['id']?>">
-                    <button type="submit" class="item-o">
+                    <button type="submit" name ="submit"  class="item-o">
                     <img src="../assets/icons/Editar-crud.png" alt="" class="img">
                     </button>
+                    <?php 
+                    $submit = $_POST['submit'];
+                    if(isset($submit)){
+                        require_once('../CRUD/register_objects-update.php.php');
+                     }?>
                     </form>
                     </button>
                 </div>

@@ -80,12 +80,35 @@ class box {
   }
 
   function ShowBoxes(){
-    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`  FROM `box`";
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img`  FROM `box`";
         
     $question = $this->data_base->add_instruc($query_send);
 
     return $question;
   
+  }
+
+  function getById($id){
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img` FROM `box` WHERE `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function DeleteBox($id){
+    $query_send  = "DELETE FROM `box` where `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    return $question;
+  }
+
+
+  function UpdateBox(){
+    $query_send = "UPDATE `box` SET `id`= '$this->id',`name`='$this->name',`price`='$this->price', `stock` = '$this->stock', `sponsor` = '$this->sponsor', `category` = '$this->category', `rank` = '$this->rank', `objects` = '$this->objets', `img` = '$this->image' WHERE `id` = '$this->id'";
+    $question = $this->data_base->add_instruc($query_send);
+    return $question;
   }
 
 

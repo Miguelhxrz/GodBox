@@ -1,5 +1,5 @@
 <?php 
-  require('../model/connect_db.php');
+  require_once('../model/connect_db.php');
 
   class object_ {
     
@@ -84,6 +84,23 @@
     
     }
 
+    function getObjectById($id){
+      $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `image` FROM `objects` WHERE `id` = '$id'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+  
+      return $question;
+    }
+
+    function DeleteObject($id){
+      $query_send  = "DELETE FROM `objects` where `id` = '$id'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+      
+      return $question;
+    }
+  
+
     function ShowObjects(){
 
       $query_send = "SELECT `id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`, `fecha de registro` FROM `objects`";
@@ -92,6 +109,12 @@
   
       return $question;
     
+    }
+
+    function updateObjects(){
+      $query_send = "UPDATE `objects` SET `id`= '$this->id',`name`='$this->name',`stock`='$this->stock', `price` = '$this->price', `sponsor` = '$this->sponsor', `rank` = '$this->rank', `category` = '$this->category', `image` = '$this->image' WHERE `id` = '$this->id'";
+      $question = $this->data_base->add_instruc($query_send);
+      return $question;
     }
 
   }

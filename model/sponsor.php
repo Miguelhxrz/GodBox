@@ -115,8 +115,8 @@
       return $question;
     }
 
-    function updateSponsor(){
-      $query_send = " UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email', `image` = '$this->imagen' WHERE `rif` = '$this->rif'";
+    function UpdateSponsor(){
+      $query_send = "UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email', `image` = '$this->imagen' WHERE `rif` = '$this->rif'";
       $question = $this->data_base->add_instruc($query_send);
       return $question;
     }
