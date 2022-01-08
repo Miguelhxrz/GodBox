@@ -287,7 +287,7 @@ if(isset($box_register)) {
         $result = $box->UpdateBox();
         var_dump($result);
         if($result==true){
-          header("location: ../view/inventory");
+          header("location: ../view/inventory.php");
         }
       }
   }

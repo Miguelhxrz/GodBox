@@ -1,6 +1,8 @@
 <?php
-require_once('../controllers/inventory-objects-controller.php');
 require_once('../controllers/header-controller.php');
+require_once('../model/object.php');
+$item = new object_;
+$question = $item->ShowObjects();
 ?>
 
 <!DOCTYPE html>
@@ -50,34 +52,34 @@ require_once('../controllers/header-controller.php');
             </section>
         <div class="container-items">
             <?php 
-            while ($fila= mysqli_fetch_array($question)){
+            for ($i=0; $i <count ($question); $i++){
             #`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`
             ?>
             <section class="item-title">
                 <div class="item-1">
-                    <h6><?php echo $fila['id'];?></h6>
+                    <h6><?php echo $question[$i]['id'];?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $fila['name']?></h6>
+                    <h6><?php echo $question[$i]['name']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $fila['price']?></h6>
+                    <h6><?php echo $question[$i]['price']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo  $fila['sponsor']?></h6>
+                    <h6><?php echo  $question[$i]['sponsor']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $fila['category']?></h6>
+                    <h6><?php echo $question[$i]['category']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $fila['rank']?></h6>
+                    <h6><?php echo $question[$i]['rank']?></h6>
                 </div>
                 <div class="item-5">
-                    <img src="<?php echo $fila['image']?>" alt="" class="imagen">
+                    <img src="<?php echo $question[$i]['image']?>" alt="" class="imagen">
                 </div>
                 <div class="item-4">
                     <form action="" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $fila['id']?>">
+                    <input type="hidden" name="id" value="<?php echo $question[$i]['id']?>">
                     <button type="submit" name ="submit" class="item-o">
                     <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
                     <?php 
@@ -87,7 +89,7 @@ require_once('../controllers/header-controller.php');
                      }?>
                     </form>
                     <form action="../CRUD/register_objects-update.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $fila['id']?>">
+                    <input type="hidden" name="id" value="<?php echo $question[$i]['id']?>">
                     <button type="submit" name ="submit"  class="item-o">
                     <img src="../assets/icons/Editar-crud.png" alt="" class="img">
                     </button>

@@ -79,17 +79,11 @@ if(isset($register)){
    }else {
       array_push($errores,"Error 052: El Nombre no existe.");
    }
-   if(isset($img)) {
-
-    if(empty($img)) {
-      array_push($errores,"Error 053: Se debe adjuntar una imagen que represente la compañia.");
+   if(isset($img_name)) {
+    if(empty($img_name)) {
+      array_push($errores, "Error 076: Debes insertar la imagen del objeto.");
     }
-    // if()
-
-   }else {
-     array_push($errores, "Error 054: la imagen no esta adjuntada");
-   }
-
+  }
  #validacion de bd 
  
  #Errores

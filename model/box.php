@@ -19,10 +19,9 @@ class box {
   private $data_base;
 
   #constructor
-  function box() {
+  function __construct() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base=new connect_db();
   }
 
   #--Set--
@@ -58,10 +57,15 @@ class box {
   function setImage($img) {
     $this->image = $img;
   }
-
+  
+  function setObjects($items) {
+    $this->objects = $items;
+  }
+  
   function setFechaRegistro($fecha){
     $this->fecha = $fecha;
   }
+
 
   #data base functions
 
@@ -84,7 +88,16 @@ class box {
         
     $question = $this->data_base->add_instruc($query_send);
 
-    return $question;
+    $result = array();
+
+    if(mysqli_num_rows($question) > 0){
+      while($rows = mysqli_fetch_array($question)){
+        array_push($result, $rows);
+      }
+      return $result;
+      }else {
+        return 0;
+      }
   
   }
 

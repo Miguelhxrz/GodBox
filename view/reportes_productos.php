@@ -30,19 +30,19 @@ date_default_timezone_set('America/Caracas');
 
   $pdf->SetFont("Arial","",9);
 
-  $object = new object_;
-  $question = $object->ShowObjects();
-  while ($fila= mysqli_fetch_array($question)){
+  $item = new object_;
+  $question = $item->ShowObjects();
+  for($i=0; $i=count($question); $i++){
     //`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `fecha de registro`
     
-    $pdf->Cell(30, 5, $fila['id'], 1, 0, "C");
-    $pdf->Cell(30, 5, $fila['name'], 1, 0, "C");
-    $pdf->Cell(30, 5, $fila['stock'], 1, 0, "C");
-    $pdf->Cell(30, 5, $fila['price'], 1, 0, "C");
-    $pdf->Cell(30, 5, $fila['sponsor'], 1, 0, "C");
-    $pdf->Cell(30, 5, $fila['rank'], 1, 0, "C");
-    $pdf->Cell(30, 5, $fila['fecha de registro'], 1, 0, "C");
-    $pdf->Cell(30, 5, $fila['category'], 1, 1, "C");
+    $pdf->Cell(30, 5, $question[$i]['id'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['name'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['stock'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['price'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['sponsor'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['rank'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['fecha de registro'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['category'], 1, 1, "C");
   }
 
   $pdf->Output();

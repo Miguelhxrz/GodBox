@@ -15,9 +15,6 @@ $username = $_POST['username'];
 
 $password = $_POST['password'];
 
-$user_coins = $user->getCoinsdb($username);
-
-$_SESSION['coins'];
 
 
 if(isset($_POST['btn'])) {
@@ -42,7 +39,7 @@ if(isset($_POST['btn'])) {
 
       $_SESSION['user'] = $username;
 
-      $_SESSION['coins'] = $user_coins['coins'];
+      // $_SESSION['coins'] = $user_coins['coins'];
     }
   }
 ?>

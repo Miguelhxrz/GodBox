@@ -18,7 +18,7 @@ require_once('../model/user.php');
        <!-- Header -->
        <?php include($header); 
        $user = new user;
-       $question = $user->GetByUsername($_SESSION['user']);
+      //  $question = $user->GetByUsername($_SESSION['user']); Que es esto?
        while ($row = mysqli_fetch_array($question)):?>
      <main class="container">
         <section class="panel__container">

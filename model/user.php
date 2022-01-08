@@ -1,5 +1,5 @@
 <?php 
-    require('../model/connect_db.php');
+  require_once('../model/connect_db.php');
 
   class user {
 
@@ -19,10 +19,9 @@
   private $data_base;
   
   #constructor
-  function User() {
+  function __construct() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base= new connect_db();
   }
     
 

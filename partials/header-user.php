@@ -1,14 +1,12 @@
 <?php 
 
-require_once('../model/user.php');
+    require_once('../model/user.php');
+    
+    $user = new user();
 
-$user = new user();
+    $username = $_SESSION['user'];
 
-session_start();
-
-$username = $_SESSION['user'];
-
-$_SESSION['coins'] =  $user->getCoinsdb($username);
+    $coins = $user->getCoinsdb($username);
 
 ?>
 
@@ -41,7 +39,7 @@ $_SESSION['coins'] =  $user->getCoinsdb($username);
                     <ul class="btn-menu-u">
                     <a href="../view/buy_coins.php">
                         <img src="../assets/icons/coin.png" alt="" class="item-u">
-                        <?php echo "<h3 class ='name' id='user_coins'>".$_SESSION['coins']."</h3>"?>
+                        <?php echo "<h3 class ='name'>".$coins."</h3>"?>
                     </a>
                     <li class="item-nav"><img src="../assets/icons/user.png" alt="" class="item-u">
                     <?php echo "<h3 class ='name' id='user_username'>".$_SESSION['user']."</h3>"?>
@@ -59,5 +57,3 @@ $_SESSION['coins'] =  $user->getCoinsdb($username);
             </section>
         </div>
     </header>
-
-

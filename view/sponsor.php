@@ -68,7 +68,7 @@ require_once('../controllers/header-controller.php');
                     $sponsorif = $_POST['rif'];
                     $submit = $_POST['submit'];
                     if(isset($submit)){
-                        require_once('../CRUD/delete-sponsor.php');
+                        require('../CRUD/delete-sponsor.php');
                     }
                     ?>
                     </form>

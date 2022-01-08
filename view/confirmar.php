@@ -13,7 +13,7 @@ require_once('../controllers/header-controller.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/confirmar.css">
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-    <script src="../scripts/buy.js"></script>
+    <script src="../scripts/buy_coins.js"></script>
     <title>GodBox - Register Sponsor</title>
 </head>
 
@@ -48,7 +48,7 @@ require_once('../controllers/header-controller.php');
 
         <section class="modal">
             <div class="modal__container">
-                <img src="../assets/img/Online payment_Isometric.svg" alt="" class="modal__img">
+                <img src="../assets/img/Piggy bank_Outline.svg" alt="" class="modal__img">
                 <h2 class="modal__title">¿Deseas comprar mas monedas?</h2>
                 <p class="modal__paragraph">Si deseas comprar mas monedas, presiona aceptar, si no es el caso, presiona continuar</p>
                 <div class="modal__select">
@@ -59,9 +59,7 @@ require_once('../controllers/header-controller.php');
                 </form>
                 
                 </div>
-            </div>
-            
-
+            </div>   
         </section>
 
     </main>
