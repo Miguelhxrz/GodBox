@@ -57,6 +57,14 @@ class credit_card {
   
   }
 
+  function GetCCbyid($id){
+    $query_send = "SELECT `id`, `type`, `number`, `expiration date`, `cvv` FROM `payment` WHERE  `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+  
+    return $question;
+  }
+
 
 }
 
