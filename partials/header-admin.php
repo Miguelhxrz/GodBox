@@ -1,5 +1,5 @@
 <?php 
-$coins = 0;
+// $coins = 0;
 ?>
 <header class="header-a">
         <div class="container-header-a">

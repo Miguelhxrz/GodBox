@@ -1,18 +1,3 @@
-<?php
-require_once('../controllers/header-controller.php');
-
-session_start();
-
-$errores = array();
-
-$PatronUsuario = "/^[a-zA-Z0-9\s-]+$/";
-$PatronCodigo = "/^[A-Z0-9-]+$/";
-$PatronPrice = "/^[0-9]+([,.][0-9]+)?$/";
-
-error_reporting(0);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,20 +7,25 @@ error_reporting(0);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/register_box.css">
   <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-  <script src="../scripts/helper.js"></script>
+  <!-- <script src="../scripts/helper.js"></script> -->
+  <script src="../scripts/register_box.js"></script>
   <title>GodBox - Registro de cajas Box</title>
 </head>
 
 <body>
   <!-- Header -->
+  <?php require_once('../controllers/header-controller.php');?>
+
   <?php include($header); ?>
 
   <main class="container">
     <section class="container-form">
       
     <div class="title-form">
-        <h5>Register Box</h5>
+        <h1>Registrar Cajas</h1>
+        <p>información Básica</p>
       </div>
+      
       
       <form action="" class="form-register" name="form-register" method="POST" enctype="multipart/form-data">
         
@@ -45,7 +35,7 @@ error_reporting(0);
             
             <label for="box_id" class="label-code">
               ID
-              <input type="text" placeholder="ID de la caja" size="12" maxlength="8" name="box_id">
+              <input type="text" placeholder="ID de la caja" size="12" maxlength="8" name="box_id" id="box_id">
             </label>
 
             <label for="box_name" class="label-name">
@@ -100,13 +90,7 @@ error_reporting(0);
                 <option value="Olimpica">Olimpica</option>
                 <option value="Heroe">Heroe</option>
               </select>
-            </label>
-            
-            <div for="box_objetos" class="choose-objects">
-              <p>Objetos:</p>
-              <a href="#">Escoger objetos</a>
-            </div>
-            
+            </label>            
             <br>
             
             <label for="box_image" class="label-img">
@@ -118,17 +102,12 @@ error_reporting(0);
         
         </div>
 
-        <input type="submit" class="btn" name="box_register" value="Registrar"></input>
+        <input type="submit" class="btn" name="box_continue" id='box_continue' value="Continuar"></input>
 
         <?php require_once('../controllers/register-box-controller.php');?>
 
       </form>
     </section>
-
-    <?php
-
-
-    ?>
 
   </main>
 

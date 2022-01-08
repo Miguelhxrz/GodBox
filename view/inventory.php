@@ -3,8 +3,6 @@
 require_once('../controllers/inventory-controller.php');
 require_once('../controllers/header-controller.php');
 
-error_reporting(0);
-
 ?>
 
 

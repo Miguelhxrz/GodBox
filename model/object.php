@@ -1,5 +1,5 @@
 <?php 
-  require('../model/connect_db.php');
+  require_once('../model/connect_db.php');
 
   class object_ {
     
@@ -18,7 +18,6 @@
 
     function object_() {
       $this->data_base= new connect_db();
-      $this->data_base->connect();
     }
 
     # ---set---
@@ -86,11 +85,20 @@
 
     function ShowObjects(){
 
-      $query_send = "SELECT `id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`, `fecha de registro` FROM `objects`";
+      $query_send = "SELECT * FROM `objects`";
           
       $question = $this->data_base->add_instruc($query_send);
   
-      return $question;
+      $result = array();
+
+      if(mysqli_num_rows($question) > 0){
+          while($rows = mysqli_fetch_array($question)){
+            array_push($result, $rows);
+          }
+          return $result;
+        }else {
+          return 0;
+        }
     
     }
 

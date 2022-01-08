@@ -4,7 +4,7 @@ class connect_db {
   
   var $conection;
 
-  function connect () {
+  function __construct () {
 
     $server_conect = "localhost";
     $username = "root";

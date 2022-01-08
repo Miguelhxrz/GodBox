@@ -14,9 +14,7 @@ class coins {
 
   #constructor
   function coins() {
-
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base=new connect_db();
   }
 
   #--Set--

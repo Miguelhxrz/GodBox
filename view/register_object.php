@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <?php
 require_once('../controllers/header-controller.php');
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
