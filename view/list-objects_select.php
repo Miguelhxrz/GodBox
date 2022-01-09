@@ -13,7 +13,7 @@
 
 <body>
     <!-- Header -->
-    <?php require_once('../controllers/header-controller.php'); #include($header); ?>
+    <?php require_once('../controllers/header-controller.php'); include($header); ?>
 
     <main class="container">
         

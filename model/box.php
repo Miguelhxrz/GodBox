@@ -11,7 +11,7 @@ class box {
   private $sponsor;
   private $category;
   private $rank;
-  private $objects = array();
+  private $objects;
   private $image;
   private $fecha;
 
@@ -117,6 +117,7 @@ class box {
     return $question;
   }
 
+
   function searchName($name) {
     $query_send = "SELECT `name` FROM `box` WHERE `name` = '$name'";
 
@@ -129,6 +130,8 @@ class box {
     }
 
   }
+
+  
 
   function searchId($id) {
     $query_send = "SELECT `id` FROM `box` WHERE `id` = '$id'";
@@ -150,7 +153,55 @@ class box {
     return $question;
   }
 
+    function getBox_db($id){
+    $query_send = "SELECT * FROM `box` WHERE `id` ='".$id."'";
+    
+    
+    $question = $this->data_base->add_instruc($query_send);
 
+    $result = array();
+
+    if(mysqli_num_rows($question) > 0){
+      while($rows = mysqli_fetch_array($question)){
+        array_push($result, $rows);
+      }
+      return $result;
+      }else {
+        return 0;
+      }
+  }
+
+  function getStock_db($id) {
+    $query_send = "SELECT `stock` FROM `box` WHERE `id` = '".$id."'";
+        
+    $question = $this->data_base->add_instruc($query_send);
+
+    $result = array();
+
+    if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+      }else {
+        return 0;
+      }
+  }
+
+  function soldBox($stock, $id) {
+
+    $new_stock = $stock - 1;
+
+    $query_send = "UPDATE `box` SET `stock`= '".$new_stock."' WHERE `id` = '".$id."'";
+  
+    $question = $this->data_base->add_instruc($query_send);
+
+    if(isset($question)){
+      return 1;
+    }else {
+      return 0;
+    }
+  }
 }
 
 

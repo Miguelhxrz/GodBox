@@ -1,5 +1,6 @@
 <?php 
-require('./controllers/home-controller.php');
+require_once('./controllers/home-controller.php');
+// require_once('./controllers/header-controller.php');
 ?>
 
 <!DOCTYPE html>

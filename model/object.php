@@ -16,7 +16,7 @@
     #database
     private $data_base;
 
-    function object_() {
+    function __construct() {
       $this->data_base= new connect_db();
     }
 
@@ -84,11 +84,20 @@
     }
 
     function getObjectById($id){
-      $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `image` FROM `objects` WHERE `id` = '$id'";
+      $query_send = "SELECT * FROM `objects` WHERE `id` = '$id'";
   
       $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
   
-      return $question;
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+        }else {
+          return 0;
+        }
     }
 
     function DeleteObject($id){
@@ -116,7 +125,6 @@
         }else {
           return 0;
         }
-    
     }
 
     function searchName($name) {
@@ -152,5 +160,6 @@
     }
 
   }
+
 
 ?>

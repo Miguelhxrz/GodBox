@@ -69,8 +69,13 @@
         $box->setSponsor($box_sponsor);
         $box->setCategory($box_category);
         $box->setRank($box_rank);
-        $box->setObjects($box_items);
         $box->setImage($origin);
+
+        $box_items_string = implode("-",$box_items);
+
+        // var_dump($box_items_string);
+
+        $box->setObjects($box_items_string);
 
 
 
@@ -78,7 +83,7 @@
 
         
         
-        var_dump($result);
+        header('Location: ../view/boxes.php');
 
 
 
