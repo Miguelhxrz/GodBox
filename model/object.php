@@ -119,6 +119,32 @@
     
     }
 
+    function searchName($name) {
+      $query_send = "SELECT `name` FROM `objects` WHERE `name` = '$name'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
+
+    }
+
+    function searchId($id) {
+      $query_send = "SELECT `id` FROM `objects` WHERE `id` = '$id'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
+
+    }
+
     function updateObjects(){
       $query_send = "UPDATE `objects` SET `id`= '$this->id',`name`='$this->name',`stock`='$this->stock', `price` = '$this->price', `sponsor` = '$this->sponsor', `rank` = '$this->rank', `category` = '$this->category', `image` = '$this->image' WHERE `id` = '$this->id'";
       $question = $this->data_base->add_instruc($query_send);
