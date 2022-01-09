@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   activate_modal.addEventListener('click', () => {
     
+    if(window.history.replaceState) { //evitar reenvio de formulario
+      window.history.replaceState(null, null, window.location.href)
+      }
+      
     modal.classList.add('modal--show');
 
   });

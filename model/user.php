@@ -255,4 +255,23 @@
     }
 
   }
+
+  function buyBox ($username, $box_coins) {
+   
+    $mycoins = $this->getCoinsdb($username);
+
+    $mycoins_int = intval($mycoins);
+
+    $buy_box = $mycoins_int - $box_coins;
+
+    $query_send =  "UPDATE `users` SET `coins`= '".$buy_box."' WHERE `username` = '".$username."'";
+
+    $question =  $this->data_base->add_instruc($query_send);
+
+    if($question) {
+      return $buy_box;
+    }else {
+      return 0;
+    }
+  }
 }

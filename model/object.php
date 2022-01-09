@@ -16,7 +16,7 @@
     #database
     private $data_base;
 
-    function object_() {
+    function __construct() {
       $this->data_base= new connect_db();
     }
 
@@ -99,9 +99,47 @@
         }else {
           return 0;
         }
-    
     }
 
+    function getObject_img($id) {
+      $query_send = "SELECT `image` FROM `objects` WHERE `id` = '".$id."'";
+
+      $question = $this->data_base->add_instruc($query_send);
+  
+      $result = array();
+
+      if(mysqli_num_rows($question) > 0){
+          while($rows = mysqli_fetch_array($question)){
+            array_push($result, $rows);
+          }
+          return $result;
+        }else {
+          return 0;
+        }
+    }
+
+    function getObject_db ($id) {
+
+      $query_send = "SELECT * FROM `objects` WHERE `id` ='".$id."'";
+      
+      
+      $question = $this->data_base->add_instruc($query_send);
+  
+      $result = array();
+  
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+         return $result;
+        }else {
+          return 0;
+        }
+    }
+    
+    
+
   }
+
 
 ?>
