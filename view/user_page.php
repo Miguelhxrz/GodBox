@@ -69,11 +69,17 @@ require_once('../model/credit_card.php');
               <h4>Tarjeta:</h4> 
               <?php
                 $CC = new credit_card;
-                $question = $CC->GetCCbyid($row['id']);
+                $id = $row['id'];
+                $question = $CC->GetCCbyid($id);
                 while ($fila = mysqli_fetch_array($question)){?>
                 <h4 class="respuesta"><?php echo $fila['number'];?></h4> 
                 <?php }?>
-                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
+                <form action="../CRUD/update-card_register.php" method="post">
+                  <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                  <button type="submit" class ="boton-submit">
+                  <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
+                  </button>
+                </form>
               </div>
               
               <?php };?>

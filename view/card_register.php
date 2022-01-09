@@ -1,4 +1,8 @@
-<?php require_once('../controllers/header-controller.php');?>
+<?php
+require_once('../controllers/header-controller.php');
+require_once('../model/user.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,17 +25,25 @@
             <div class="title-form">
                 <h5>Datos de la tarjeta</h5> 
             </div>
+            <h3 class="subtitle">Información Necesaria</h3>
             <form action="" class="form-register" name="form-register" method="POST" >
                     <div class="conta">
                         <section class="l-q">
-                            <label for="card_id" class="label-id">
-                            Identificación:
-                            <input type="text" name="card_id" size="45" maxlength="45" class="label-email">
+                            <?php
+                                $user = new user;
+                                $question = $user->GetByUsername($_SESSION['user']);
+                                while ($row = mysqli_fetch_array($question)){
+                            ?>
+                            <input type="hidden" name="card_id" size="45" maxlength="45" class="label-email" value="<?php echo $row['id']?>">
+                            <?php }?>
+                            <label for="card_num" class="label-email">
+                            Numero de tarjeta de credito
+                            <input type="text" name="card_num" size="45" maxlength="45" class="email_input">
                         </label>
                             <label for="card_type" class="label-category">
                             Tipo de tarjeta de credito:
-                            <select name="card_type" id="">
-                                <option value="">Select</option>
+                            <select name="select" id="">
+                                <option value="">Selecciona una opcion</option>
                                 <option value="Visa">Visa</option>
                                 <option value="Mastercard">Mastercad</option>
                             </select>
@@ -39,10 +51,6 @@
                         </section>
                         <div class="line"></div>
                         <section class="r-q">
-                            <label for="card_num" class="label-email">
-                            Numero de tarjeta de credito
-                            <input type="text" name="card_num" size="45" maxlength="45" class="email_input">
-                        </label>
                             <label for="card_expiration" class="label-birth">
                             Fecha de vencimiento
                             <input type="date" name="card_expiration" class="date">
