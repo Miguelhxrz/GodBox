@@ -117,6 +117,32 @@ class box {
     return $question;
   }
 
+  function searchName($name) {
+    $query_send = "SELECT `name` FROM `box` WHERE `name` = '$name'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
+  function searchId($id) {
+    $query_send = "SELECT `id` FROM `box` WHERE `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
 
   function UpdateBox(){
     $query_send = "UPDATE `box` SET `id`= '$this->id',`name`='$this->name',`price`='$this->price', `stock` = '$this->stock', `sponsor` = '$this->sponsor', `category` = '$this->category', `rank` = '$this->rank', `objects` = '$this->objets', `img` = '$this->image' WHERE `id` = '$this->id'";

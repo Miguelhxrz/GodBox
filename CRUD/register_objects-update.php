@@ -166,6 +166,10 @@ if (isset($object_register)) {
     }else
     if (!preg_match($PatronID, $object_id)) {
       array_push($errores, "Error 057: El ID no debe llevar caracteres especial.");
+    }else
+    #validacion con db
+    if ($item->searchId($object_id) > 0) {
+      array_push($errores, "Error 058: El ID ya existe, ingrese otro.");
     }
   } else {
     array_push($errores, "Error 058: El ID no existe.");
@@ -181,6 +185,10 @@ if (isset($object_register)) {
     }else
     if (!preg_match($PatronUsuario, $object_name)) {
       array_push($errores, "Error 061: El Nombre no debe llevar caracteres especial.");
+    } else
+    #validacion con db
+    if ($item->searchName(strtolower($object_name)) > 0) {
+      array_push($errores, "Error 004: El nombre del objeto ya existe, ingrese otro.");
     }
   } else {
     array_push($errores, "Error 062: El Nombre no existe.");

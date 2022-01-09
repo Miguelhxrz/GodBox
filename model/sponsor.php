@@ -114,6 +114,46 @@
       return $question;
     }
 
+    
+  function searchName($name) {
+    $query_send = "SELECT `name` FROM `sponsor` WHERE `name` = '$name'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
+  function searchRif($rif) {
+    $query_send = "SELECT `rif` FROM `sponsor` WHERE `rif` = '$rif'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
+  function searchEmail($email) {
+    $query_send = "SELECT `email` FROM `sponsor` WHERE `email` = '$email'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
     function UpdateSponsor(){
       $query_send = "UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email', `image` = '$this->imagen' WHERE `rif` = '$this->rif'";
       $question = $this->data_base->add_instruc($query_send);
