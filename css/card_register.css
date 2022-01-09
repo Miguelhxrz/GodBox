@@ -511,10 +511,19 @@ a {
     align-content: center;
     justify-content: center;
     color: #fff;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     text-decoration: underline;
+}
+
+.subtitle {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .container {
@@ -565,7 +574,7 @@ a {
 .l-q label {
     font-size: 1.5rem;
     color: #fff;
-    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 input[type='text'],
@@ -581,13 +590,11 @@ input[type='email'],
     background-color: transparent;
     outline: none;
     border-bottom: 2px solid #fff;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .line {
     width: 3px;
-    height: 307px;
     margin: 0px auto;
     margin-right: 30px;
     margin-bottom: 10px;
@@ -606,7 +613,7 @@ input[type='email'],
 .r-q label {
     font-size: 1.5rem;
     color: #fff;
-    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 ::placeholder {
@@ -637,6 +644,18 @@ input[type=submit] {
     color: #fff;
     font-size: 1.5rem;
     border-radius: 20px;
+}
+
+input[type=date] {
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    font-family: 'BubblegumSans';
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    margin-top: 10px;
 }
 
 label {
@@ -683,6 +702,22 @@ label {
     font-size: 2rem;
     text-decoration: underline;
     margin-top: 20px;
+}
+
+select {
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    font-family: 'BubblegumSans';
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    margin-top: 10px;
+}
+
+option {
+    color: black;
 }
 
 .footer {

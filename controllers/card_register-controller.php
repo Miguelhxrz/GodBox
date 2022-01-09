@@ -21,13 +21,6 @@
   $card_expiration = $_POST['card_expiration'];
   $array_expiration = explode("-",$card_expiration);
   $card_cvv = $_POST['card_cvv'];
-  
-  var_dump($card_register);
-  var_dump($card_id);
-  var_dump($card_expiration);
-  var_dump($array_expiration[0]);
-
-
     
   if(isset($card_register)) {
 
@@ -110,8 +103,6 @@
           $credit_card->setCvv($card_cvv);
 
           $result = $credit_card->addDataBase();
-
-          var_dump($result);
 
           header("location: ../index.php");
         }
