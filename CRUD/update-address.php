@@ -1,6 +1,7 @@
 <?php 
 require_once('../controllers/header-controller.php');
 require_once('../model/user.php');
+require_once('../model/credit_card.php')
 ?>
 
 <!DOCTYPE html>
@@ -48,9 +49,6 @@ require_once('../model/user.php');
           <h4 class="title">Datos🔒</h4>
           <div class="put__reports">
             <div class="essencial__crud">
-              <div class="crud username">
-                <h4>Usuario:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
-              </div>
               <div class="crud password">
               <h4>Contraseña:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
                 <a href="../CRUD/update-password.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar contraseña"></a>
@@ -68,26 +66,52 @@ require_once('../model/user.php');
               <div class="crud address">
               <h4>Dirección:</h4> 
                 <form method="POST">
-                  <input type="text" name="address" value="<?php echo $row["address"];?>" maxlength="45" size="45">
+                  <input type="text" name="address" value="" maxlength="45" size="45">
                   <input type="submit" class="btn-edit" name="btn-edit" value="Editar">
                   <a href="../view/user_page.php" class="volver">Volver</a>
               </form>
               <?php 
                   $address = $_POST['address'];
                   $submit = $_POST['btn-edit'];
+                  $errores = array();
+                  $patron_address = "/^[a-zA-Z0-9\s-]+$/";
                   if (isset($submit)){
+                    if(empty($address)) {
+                      array_push($errores,"Error 019: No puedes dejar el campo de direccion vacio.");
+                      }
+                    if(strlen($address) < 3){
+                      array_push($errores,"Error 020: La Direccion debe tener mas de 3 caracteres.");
+                      }
+                    if(preg_match($patron_address, $address) == 0){
+                        array_push($errores,"Error 21: Verifique su direccion.");
+                      }
+                    if (count($errores) > 0) {
+                      echo "<div class='error'>";
+                      for ($i = 0; $i < count($errores); $i++) {
+                        echo "<li>" . $errores[$i] . "</li>";
+                      }
+                      echo "</div>";
+                
+                    }else{
                       $sesion = $_SESSION['user'];
                       $update = $user->UpdateAddress($address,$sesion);
 
                       if (isset($update)){
-                        echo "<meta http-equiv='refresh' content='0'>";
+                        echo '<meta http-equiv="refresh" content="0;url=../view/user_page.php">';
                       }
+                    }
                   }
               ?>
               </div>
               <div class="crud credit-card">
-                <h4>Dirección:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
-                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
+              <h4>Tarjeta:</h4> 
+              <?php
+                $CC = new credit_card;
+                $question = $CC->GetCCbyid($row['id']);
+                while ($fila = mysqli_fetch_array($question)){?>
+                <h4 class="respuesta"><?php echo $fila['number'];?></h4> 
+                <?php }?>
+                <a href="#"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
               </div>
               
               <?php endwhile ?>

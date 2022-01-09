@@ -27,7 +27,7 @@ require_once('../model/credit_card.php');
           <articles class="admin__container">
             <div class="admin__profile">
               <figure class="admin__ico-container">
-                <img src="../assets/icons/user-profile.png" alt="" title="">
+                <img src="../assets/icons/casco.png" alt="" title="">
               </figure>
               <h4 class="title"><?php echo $_SESSION['user']?></h4>
             </div>

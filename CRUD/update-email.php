@@ -48,9 +48,6 @@ require_once('../model/user.php');
           <h4 class="title">Datos🔒</h4>
           <div class="put__reports">
             <div class="essencial__crud">
-              <div class="crud username">
-                <h4>Usuario:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
-              </div>
               
               <div class="crud password">
                 <h4>Contraseña:</h4> <h4 class="respuesta"><?php echo $row["password"];?></h4>
@@ -60,20 +57,41 @@ require_once('../model/user.php');
               <div class="crud email">
               <h4>Correo:</h4>
                 <form method="POST">
-                  <input type="text" name="email" value="<?php echo $row["email"];?>" maxlength="45" size="45">
+                  <input type="text" name="email" value="" maxlength="45" size="45">
                   <input type="submit" class="btn-edit" name="btn-edit" value="Editar">
                   <a href="../view/user_page.php" class="volver">Volver</a>
               </form>
               <?php 
-                  $email = $_POST['email'];
-                  $submit = $_POST['btn-edit'];
-                  if (isset($submit)){
+              $submit = $_POST['btn-edit'];
+              $errores = array();
+              $email = $_POST['email'];
+              $submit = $_POST['btn-edit'];
+              $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
+                if (isset($submit)){
+                    if(empty($email)) {
+                    array_push($errores,"Error 014: No puedes dejar el campo de email vacio.");
+                    }
+                    if(strlen($email) < 3){
+                    array_push($errores,"Error 015: El email debe tener mas de 3 caracteres.");
+                    }
+                    if(preg_match($patron_email, $email) == 0){
+                      array_push($errores,"Error 016: Verifique el campo email, puede tener un caracter no valido");
+                    }
+                    if (count($errores) > 0) {
+                      echo "<div class='error'>";
+                      for ($i = 0; $i < count($errores); $i++) {
+                        echo "<li>" . $errores[$i] . "</li>";
+                      }
+                      echo "</div>";
+                
+                    }else{
                       $sesion = $_SESSION['user'];
                       $update = $user->UpdateEmail($email,$sesion);
                       if (isset($update)){
-                        echo "<meta http-equiv='refresh' content='0'>";
+                         echo '<meta http-equiv="refresh" content="0;url=../view/user_page.php">';
                       }
-                  }
+                    }
+                    } 
               ?>
               </div>
             </div>
