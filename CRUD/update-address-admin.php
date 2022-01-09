@@ -102,8 +102,20 @@ require_once('../model/user.php');
               ?>
               </div>
               <div class="crud credit-card">
-                <h4>Dirección:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
-                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
+              <h4>Tarjeta:</h4> 
+              <?php
+                $CC = new credit_card;
+                $id = $row['id'];
+                $question = $CC->GetCCbyid($id);
+                while ($fila = mysqli_fetch_array($question)){?>
+                <h4 class="respuesta"><?php echo $fila['number'];?></h4> 
+                <?php }?>
+                <form action="../CRUD/update-card_register.php" method="post">
+                  <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                  <button type="submit" class ="boton-submit">
+                  <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
+                  </button>
+                </form>
               </div>
               
               <?php endwhile ?>

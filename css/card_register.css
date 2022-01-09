@@ -455,7 +455,7 @@ a {
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
-    width: 96%;
+    width: 100%;
     height: 100%;
     background-color: #3FA846;
     color: white;
@@ -528,6 +528,7 @@ a {
 
 .container-form {
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 620px;
     background: radial-gradient(100% 100% at 46.69% 86.55%, rgba(33, 104, 166, 0.67) 0%, rgba(33, 104, 166, 0.67) 17.71%, rgba(234, 190, 63, 0.87) 90.1%);
@@ -667,6 +668,21 @@ label {
     font-family: var(--font);
     margin-right: 5px;
     outline: none;
+}
+
+.error h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volver-inven {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: underline;
+    margin-top: 20px;
 }
 
 .footer {

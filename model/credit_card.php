@@ -65,6 +65,13 @@ class credit_card {
     return $question;
   }
 
+  function UpdateCC(){
+    $query_send = "UPDATE `payment` SET `id` = '$this->id' ,`type` = '$this->type' , `number`= '$this->num', `expiration date` = '$this->expiration_date', `cvv` = '$this->cvv' WHERE  `id` = '$this->id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+  
+    return $question;
+  }
 
 }
 
