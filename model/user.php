@@ -137,6 +137,14 @@
 
     }
 
+    function GetByUsername($username){
+      $query_send = "SELECT `username`, `password`, `id`, `email`, `address` FROM `users` WHERE  `username` = '$username'";
+
+      $question = $this->data_base->add_instruc($query_send);
+  
+      return $question;
+    }
+
     function searchUsername($username) {
       $query_send = "SELECT `username` FROM `users` WHERE `username` = '$username'";
 
@@ -274,4 +282,29 @@
       return 0;
     }
   }
+
+  function UpdatePassword($password,$session){
+    $query_send = "UPDATE `users` SET `password` = '$password'  WHERE  `username` = '$session'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function UpdateEmail($email,$session){
+    $query_send = "UPDATE `users` SET `email` = '$email'  WHERE  `username` = '$session'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function UpdateAddress($address,$session){
+    $query_send = "UPDATE `users` SET `address` = '$address' WHERE  `username` = '$session'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
 }
+?>

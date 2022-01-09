@@ -67,6 +67,12 @@
                 <option value="Nintendo">Nintendo</option>
                 <option value="Ropa">Nike</option>
                 <option value="variado">Variado</option>
+                <?php
+                $sponsor = new sponsor;
+                $question = $sponsor->ShowSponsor();
+                while ($fila= mysqli_fetch_array($question)){?>
+                <option value="<?php echo $fila['name']?>"><?php echo $fila['name']?></option>
+                <?php }?>
               </select>
             </label>
             

@@ -17,18 +17,12 @@
   $objects = array();
 
   for ($i=0; $i < count($box_items) ; $i++) { 
-    array_push($objects, $object->getObject_db($box_items[$i]));
-  }
+    array_push($objects, $object->getObjectById($box_items[$i])); 
+  } 
+
+
 
   
-
-
-
-
-
-  // for ($i=0; $i < count ; $i++) { 
-  //   # code...
-  // }
   
   
 

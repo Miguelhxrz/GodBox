@@ -46,6 +46,7 @@ require_once('../controllers/header-controller.php');
                         </figure>
                         </div>";
                     } ?>
+
                     <?php for ($i=0; $i < count($objects) ; $i++) { 
                         $k = 0;
                     echo "
@@ -63,6 +64,7 @@ require_once('../controllers/header-controller.php');
                         </figure>    
                     </div>";
                 } ?>
+
                     ?> <?php for ($i=0; $i < count($objects) ; $i++) { 
                         $k = 0;
                     echo "
@@ -72,6 +74,7 @@ require_once('../controllers/header-controller.php');
                         </figure>
                     </div>";
                 } ?>
+
                     <?php for ($i=0; $i < count($objects) ; $i++) { 
                         $k = 0;
                     echo "
@@ -81,6 +84,7 @@ require_once('../controllers/header-controller.php');
                         </figure>
                     </div>";
                 } ?>
+                
                 </div>
             </article>
             <button id="spin" class="roulette__btn-spin">GIRAR</button>

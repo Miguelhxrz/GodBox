@@ -1,6 +1,8 @@
 <?php
 require_once('../controllers/header-controller.php');
-require_once('../model/box.php');
+require_once('../model/object.php');
+$item = new object_;
+$question = $item->ShowObjects();
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,7 @@ require_once('../model/box.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/inventory.css">
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-    <title>GodBox - Inventario</title>
+    <title>GodBox - Inventario Objetos</title>
 </head>
 
 <body>
@@ -20,7 +22,7 @@ require_once('../model/box.php');
     <?php include($header); ?>
 
     <main class="container">
-        <h3>Inventario de Cajas</h3>
+        <h3>Inventario de Objetos</h3>
         <div class="container-inventory">
             <section class="item-title">
                 <div class="item-1-1">
@@ -33,7 +35,7 @@ require_once('../model/box.php');
                     <h6>Precio</h6>
                 </div>
                 <div class="item-2-1">
-                    <h6>Sponsor</h6>
+                    <h6>Patrocinador</h6>
                 </div>
                 <div class="item-2-1">
                     <h6>Categoria</h6>
@@ -50,50 +52,52 @@ require_once('../model/box.php');
             </section>
         <div class="container-items">
             <?php 
-            $box = new box;
-            $question = $box->ShowBoxes();
-            $show = $box->ShowBoxes();
-            for($i=0; $i< count($show); $i++){
-            #`id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro` 
+            for ($i=0; $i <count ($question); $i++){
+            #`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`
             ?>
             <section class="item-title">
                 <div class="item-1">
-                    <h6><?php echo $show[$i]['id'];?></h6>
+                    <h6><?php echo $question[$i]['id'];?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $show[$i]['name'];?></h6>
+                    <h6><?php echo $question[$i]['name']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $show[$i]['price'];?></h6>
+                    <h6><?php echo $question[$i]['price']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo  $show[$i]['sponsor'];?></h6>
+                    <h6><?php echo  $question[$i]['sponsor']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $show[$i]['category'];?></h6>
+                    <h6><?php echo $question[$i]['category']?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $show[$i]['rank'];?></h6>
+                    <h6><?php echo $question[$i]['rank']?></h6>
                 </div>
                 <div class="item-5">
-                    <img src="<?php echo $show[$i]['img'];?>" alt="" class="imagen">
+                    <img src="<?php echo $question[$i]['image']?>" alt="" class="imagen">
                 </div>
                 <div class="item-4">
                     <form action="" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $show[$i]['id'];?>">
+                    <input type="hidden" name="id" value="<?php echo $question[$i]['id']?>">
                     <button type="submit" name ="submit" class="item-o">
                     <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
                     <?php 
                     $submit=$_POST['submit'];
                     if(isset($submit)){
-                        require('../CRUD/delete-box.php');
+                        require_once('../CRUD/delete-objects.php');
                      }?>
                     </form>
-                    <form action="../CRUD/register_box-update.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $show[$i]['id'];?>">
-                    <button type="submit" class="item-o">
+                    <form action="../CRUD/register_objects-update.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $question[$i]['id']?>">
+                    <button type="submit" name ="submit"  class="item-o">
                     <img src="../assets/icons/Editar-crud.png" alt="" class="img">
                     </button>
+                    <?php 
+                    $submit = $_POST['submit'];
+                    if(isset($submit)){
+                        require_once('../CRUD/register_objects-update.php.php');
+                     }?>
                     </form>
                     </button>
                 </div>

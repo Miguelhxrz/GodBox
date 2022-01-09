@@ -1,6 +1,8 @@
-<?php 
+<?php
+require_once('../controllers/header-controller.php');
+require_once('../model/sponsor.php');
+require_once('../model/box.php');
 
-// require_once('./bd-con.php');
 
 session_start();
 
@@ -18,237 +20,306 @@ error_reporting(0);
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/register_box.css">
-    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-    <script src="../scripts/helper.js"></script>
-    <title>GodBox - Editar Cajas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/register_box.css">
+  <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+  <script src="../scripts/helper.js"></script>
+  <title>GodBox - Editar Cajas</title>
 </head>
 
 <body>
+  <!-- Header -->
+  <?php include($header); ?>
 
-    <header class="header">
-        <div class="container-header">
+  <main class="container">
+    <section class="container-form">
 
-            <section class="logo">
-                <img src="../assets/img/Logo-rezised.png" alt="" class="logoo">
-                <a href="../index.php"></a>
+      <div class="title-form">
+        <h5>Register Box</h5>
+      </div>
+      <?php
+      $id = $_POST['id'];
+      $box = new box;
+
+      $question = $box->getById($id);
+      while ($row = mysqli_fetch_array($question)) {
+      ?>
+        <form action="" class="form-register" name="form-register" method="POST" enctype="multipart/form-data">
+
+          <div class="conta">
+
+            <section class="l-q">
+
+              <label for="box_id" class="label-code">
+                ID
+                <input type="text" placeholder="ID de la caja" size="12" maxlength="8" name="box_id" value="<?php echo $row['id'] ?>">
+              </label>
+
+              <label for="box_name" class="label-name">
+                Nombre
+                <input type="text" placeholder="Nombre de la caja" size="45" maxlength="45" name="box_name" value="<?php echo $row['name'] ?>">
+              </label>
+
+              <label for="box_price" class="label-price">
+                Precio
+                <input type="text" placeholder="Precio de la caja" size="45" maxlength="45" name="box_price" value="<?php echo $row['price'] ?>">
+              </label>
+
+              <label for="box_stock" class="label-price">
+                Cantidad
+                <input type="text" placeholder="Cantidad de la caja" size="45" maxlength="45" name="box_stock" value="<?php echo $row['stock'] ?>">
+              </label>
+
             </section>
 
-            <section class="center-title">
-                <div class="boxes-link">
-                    <a href="./Boxes.php">
-                        <h4>Cajas</h4>
-                    </a>
-                </div>
-                <div class="ico-header">
-                    <a href="../index.php">
-                        <img src="../assets/icons/icons8-ruins-50.png" alt="">
-                    </a>
-                </div>
-                <div class="about-link">
-                    <a href="#">
-                        <h4>Sobre Nosotros</h4>
-                    </a>
-                </div>
+            <div class="line"></div>
+
+            <section class="r-q">
+
+              <label for="box_sponsor" class="label-category">
+                Sponsor
+                <select name="box_sponsor" id="box_sponsor">
+                  <option value="<?php echo $row['sponsor'] ?>"><?php echo $row['sponsor'] ?></option>
+                  <option value="Apple">Apple</option>
+                  <option value="Nintendo">Nintendo</option>
+                  <option value="Ropa">Nike</option>
+                  <option value="variado">Variado</option>
+                  <?php
+                  $sponsor = new sponsor;
+                  $question = $sponsor->ShowSponsor();
+                  while ($fila = mysqli_fetch_array($question)) { ?>
+                    <option value="<?php echo $fila['name'] ?>"><?php echo $fila['name'] ?></option>
+                  <?php } ?>
+                </select>
+              </label>
+
+              <label for="box_category" class="label-category">
+                Categoria
+                <select name="box_category" id="box_category">
+                  <option value="<?php echo $row['category'] ?>"><?php echo $row['category'] ?></option>
+                  <option value="Tecnologia">Tecnologia</option>
+                  <option value="Accesorios">Accesorios</option>
+                  <option value="Ropa">Ropa</option>
+                  <option value="variado">Variado</option>
+                </select>
+              </label>
+
+              <label for="box_rank" class="label-rank">
+                Rango
+                <select name="box_rank" id="box_rank">
+                  <option value="<?php echo $row['rank'] ?>"><?php echo $row['rank'] ?></option>
+                  <option value="Dios">Dios</option>
+                  <option value="SemiDios">SemiDios</option>
+                  <option value="Olimpica">Olimpica</option>
+                  <option value="Heroe">Heroe</option>
+                </select>
+              </label>
+
+              <div for="box_objetos" class="choose-objects">
+                <p>Objetos:</p>
+                <a href="#">Escoger objetos</a>
+              </div>
+
+              <br>
+
+              <label for="box_image" class="label-img">
+                <p>Agregar imagen</p>
+                <input type="file" name="box_image" accept="image/png,image/jpeg" id="box_image" value="<?php $row['img'] ?>">
+              </label>
+
             </section>
 
-            <section class="links-r">
-                <div class="login-link">
-                    <a href="#">
-                        <img src="../assets/icons/casco.png" alt="" class="imgcasco">
-                    </a>
-                </div>
-            </section>
+          </div>
+          <input type="submit" class="btn" name="box_register" value="Editar"></input>
 
-        </div>
-    </header>
+        <?php }
+      $box = new box();
 
-    <main class="container">
-        <section class="container-form">
-            <div class="title-form">
-                <h5>Editar Caja</h5>
-            </div>
-            <form action="" class="form-register" name="form-register" method="POST" enctype="multipart/form-data" >
-                <div class="conta">
-                    <section class="l-q">
-                        <label for="Name" class="label-name">
-                            Nombre
-                            <input type="text" placeholder="Nombre de la caja" size="45" maxlength="45" name="name_input">
-                        </label>
-                        <label for="code" class="label-code">
-                            Codigo
-                            <input type="text" placeholder="Codigo de la caja" size="12" maxlength="8" name="codigo_input">
-                        </label>
-                        <label for="price" class="label-price">
-                            Precio
-                            <input type="text"  placeholder="Precio de la caja" size="45" maxlength="45" name="precio_input">
-                        </label>
-                    </section>
-                    <div class="line"></div>
-                    <section class="r-q">
-                        <label for="category" class="label-category" >
-                            Categoria
-                            <select name="category" id="">
-                                <option selected="" value ="" disabled="disabled">Seleccionar</option>
-                                <option value="Tecnologia">Tecnologia</option>
-                                <option value="Accesorios">Accesorios</option>
-                                <option value="Ropa">Ropa</option>
-                            </select>
-                        </label>
-                        <label for="rank" class="label-rank">
-                            Rango
-                            <select name="rank" id="">
-                                <option selected="" value ="" disabled="disabled">Seleccionar</option>
-                                <option value="Dios">Dios</option>
-                                <option value="SemiDios">SemiDios</option>
-                                <option value="Olimpica">Olimpica</option>
-                                <option value="Heroe">Heroe</option>
-                            </select>
-                        </label>
-                        <label for="objetos" class="label-objetos">
-                            Objetos
-                            <select name="objetos" id="">
-                                <option selected="" value ="Seleccionar" disabled="disabled">Seleccionar</option>
-                                <option value="Play station 5">Play Station 5</option>
-                                <option value="iPhone 13 PRO MAX">iPhone 13 PRO MAX</option>
-                                <option value="Nike Air Jordan">Nike Air Jordan</option>
-                                <option value="Nintendo Switch">Nintendo Switch</option>
-                            </select>
-                        </label><br>
-                        <input type="file" name="imagen" id="">
-                    </section>
-                </div>
+      $errores = array();
 
-                <input type="submit" class="btn" name="register" value="Editar"></input>
+      $PatronUsuario = "/^[a-zA-Z0-9\s-]+$/";
+      $PatronCantidad = "/^[0-9]+$/";
+      $PatronPrecio = "/^[0-9].+$/";
+      $PatronID = "/^[A-Z]+$/";
 
-                <?php 
-                $name = $_POST['name_input'];
-                $codigo = $_POST['codigo_input']; 
-                $price = $_POST['precio_input'];
-                $category = $_POST['category'];
-                $rank = $_POST['rank'];
-                $objetos = $_POST['objetos'];
-                $submit = $_POST['register'];
+      #variables
+      $box_register = $_POST['box_register'];
+      $box_id = $_POST['box_id'];
+      $box_name = $_POST['box_name'];
+      $box_price = $_POST['box_price'];
+      $box_stock = $_POST['box_stock'];
+      $box_sponsor = $_POST['box_sponsor'];
+      $box_category = $_POST['box_category'];
+      $box_rank = $_POST['box_rank'];
+      // $box_objects = $_POST['box_objects'];
+      $box_img = $_FILES['box_image'];
 
-                #validacion de nombre
-              if(isset($submit)) {
-                if (isset($name)){
-                  if(empty($name)){
-                    array_push($errores,"Error 000: El Nombre no puede estar vacio.");
-                  }
-                  if(strlen($name) < 3) {
-                    array_push($errores,"Error 001:El Nombre debe tener un tamaño mayor a 3 letras.");
-                  }if(preg_match($PatronUsuario,$name)){
-                  }else{
-                    array_push($errores,"Error 002: El Nombre no debe llevar caracteres especial.");
-                  }
-                  }else {
-                        array_push($errores,"Error 003: El Nombre no existe.");
-                      }
+      #datos de la imagen
+      $box_img_name = $_FILES['box_image']['name']; #nombre del archivo.
+      $box_img_type = $_FILES['box_image']['type']; #typo del archivo.
+      $box_img_size = $_FILES['box_image']['size']; #tamaño del archivo.
+      $box_img_temp = $_FILES['box_image']['tmp_name']; #contiene la direccion temporal del archbox
 
-                 #validacion de codigo
-                 if (isset($codigo)){
-                  if(empty($codigo)){
-                    array_push($errores,"Error 004: El Codigo no puede estar vacio.");
-                  }
-                  if(strlen($codigo) < 8) {
-                    array_push($errores,"Error 005:El Codigo debe tener un tamaño de 8 caracteres.");
-                  }if(preg_match($PatronCodigo,$codigo)){
-                  }else{
-                    array_push($errores,"Error 006: El Codigo solo puede tener Mayusculas y Numeros.");
-                  }
-                  }else {
-                        array_push($errores,"Error 007: El Codigo no existe.");
-                      }
-                #validacion de precio
-                if (isset($price)){
-                  if(empty($price)){
-                    array_push($errores,"Error 008: El Precio no puede estar vacio.");
-                  }
-                  if($price < 0) {
-                    array_push($errores,"Error 009:El Precio debe ser mayor que 0.");
-                  }if(preg_match($PatronPrice,$Price)){
+      if (isset($box_register)) {
 
-                  }else{
-                    array_push($errores,"Error 010: El Precio debe ser decimal.");
-                  }
-                  #if(preg_match($PatronPrecio,$Price)){
-                  #}else{
-                   # array_push($errores,"Error 003: El Precio debe ser decimal.");
-                  #}
-                  }else {
-                        array_push($errores,"Error 011: El Codigo no existe.");
-                      }
-                #validacion de Rank
-                if (isset($rank)){
+        #validacion del ID
+        if (isset($box_id)) {
+          if (empty($box_id)) {
+            array_push($errores, "Error 055: El ID no puede estar vacio.");
+          } else
+      if (strlen($box_id) < 4) {
+            array_push($errores, "Error 056:El ID debe tener un tamaño mayor a 4 letras.");
+          } else
+      if (!preg_match($PatronID, $box_id)) {
+            array_push($errores, "Error 057: El ID no debe llevar caracteres especial.");
+          }
+          #validacion db
+          if ($box->searchId($box_id) > 0) {
+            array_push($errores, "Error: 058: El ID ya esta registrado, ingrese otro.");
+          }
+        } else {
+          array_push($errores, "Error 058: El ID no existe.");
+        }
 
-                }else{
-                    array_push($errores,"Error 012: Elige un Rango.");
-                  }
+        #Validacion de name
+        if (isset($box_name)) {
+          if (empty($box_name)) {
+            array_push($errores, "Error 059: El Nombre no puede estar vacio.");
+          } else
+      if (strlen($box_name) < 3) {
+            array_push($errores, "Error 060:El Nombre debe tener un tamaño mayor a 3 letras.");
+          } else
+      if (!preg_match($PatronUsuario, $box_name)) {
+            array_push($errores, "Error 061: El Nombre no debe llevar caracteres especial.");
+          }
+          #validacion db
+          if ($box->searchName($box_name) > 0) {
+            array_push($errores, "Error: 058: El nombre de la caja ya esta registrado, ingrese otro.");
+          }
+        } else {
+          array_push($errores, "Error 062: El Nombre no existe.");
+        }
 
-                #validacion de Objetos
-                if (isset($objetos)){
+        #validacion de precio
+        if (isset($box_price)) {
+          if (empty($box_price)) {
+            array_push($errores, "Error 066: El precio no puede estar vacio.");
+          } else
+      if (strlen($box_price) < 0) {
+            array_push($errores, "Error 067:El precio debe ser mayor o igual a 0.");
+          } else
+      if (!preg_match($PatronPrecio, $box_price)) {
+            array_push($errores, "Error 068: El precio solo admite numeros, y punto.");
+          }
+        } else {
+          array_push($errores, "Error 069: El precio  no existe.");
+        }
 
-                }else{
-                    array_push($errores,"Error 013: Elige un patrocinador.");
-                  }
-                  
-                #validacion de Category
-                if (isset($category)){
+        #validacion de Sponsor
+        if (isset($box_sponsor)) {
+          if (empty($box_sponsor)) {
+            array_push($errores, "Error 072: Debes seleccionar un patrocinador para el objeto.");
+          }
+        } else {
+          array_push($errores, "Error 073: No se ha seleccionado un patrocinado.");
+        }
 
-                }else{
-                    array_push($errores,"Error 014: Elige una Categoria.");
-                  }
+        #validacion de Category
+        if (isset($box_category)) {
+          if (empty($box_category)) {
+            array_push($errores, "Error 074: Debes elegir una categoria para el objeto.");
+          }
+        } else {
+          array_push($errores, "Error 075: No se ha seleccionado una categoria para el objeto.");
+        }
 
-                #validacion de imagen
-                #if(isset($imagen)){
-                 # if(empty($imagen)){
-                  #  array_push($errores,"Error 002: Coloca una imagen.");
-                  #}
-                #}else{
-                 # array_push($errores,"Error 001: Imagen no existe.");
-                #}
+        #validacion de Rank
+        if (isset($box_rank)) {
+          if (empty($box_rank)) {
+            array_push($errores, "Error 070: Se debe elegir un rango para el objeto.");
+          }
+        } else {
+          array_push($errores, "Error 071: No se ha seleccionado un rango.");
+        }
 
-                #Errores
-                if(count($errores) > 0){
-                  echo "<div class='error'>
-                  <figure>
-                  <img src='../assets/icons/close.png' alt='icon close' id='close'>
-                 </figure>";
-                  for ($i=0; $i < count($errores); $i++) { 
-                        echo "<li>".$errores[$i]."</li>";
+        #Falta la validacion de objetos
 
-                      }
-                      echo $age;
-                    echo "</div>";
-                 }else {
+        #Validacion de imagen
+        if (isset($box_img_name)) {
+          if (empty($box_img_name)) {
+            array_push($errores, "Error 076: Debes insertar la imagen del objeto.");
+          }
+        }
 
-                   header("location: ./index.html");
-                 }
-              }
-                ?>
+        #Errores
+        if (count($errores) > 0) {
+          echo "<div class='error'>
+    <h3>Errores al Editar La Caja</h3>";
+          for ($i = 0; $i < count($errores); $i++) {
+            echo "<li>" . $errores[$i] . "</li>";
+          }
+          echo "</div>
+    <a class='volver-inven' href='../view/Inventory.php'> <- Volver a inventario</a>
+    ";
+        } else {
 
-            </form>
-        </section>
+          echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
-        <?php 
-      
-          
+          #creando la ruta para la imagen
+          $folder = "../public/box/";
+
+          $origin = $folder . $box_img_name; #../public/items/img_name.png
+
+          #moviendo la imagen a la carpeta
+          $move = move_uploaded_file($box_img_temp, $origin);
+
+          $price_int = intval($box_price);
+          $stock_int = intval($box_stock);
+
+          date_default_timezone_set('America/Caracas');
+          $fecha = date("d/m/Y");
+
+
+          $box->setID($box_id);
+          $box->setName($box_name);
+          $box->setStock($stock_int);
+          $box->setPrice($price_int);
+          $box->setSponsor($box_sponsor);
+          $box->setRank($box_rank);
+          $box->setCategory($box_category);
+          $box->setFechaRegistro($fecha);
+
+          $box->setImage($origin);
+
+          $result = $box->UpdateBox();
+          var_dump($result);
+          if ($result == true) {
+            header("location: ../view/inventory.php");
+          }
+        }
+      }
         ?>
 
-    </main>
+        </form>
+    </section>
 
-    <footer class="footer">
-      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
-        <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
-        <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
-      </div>
-    </footer>
+    <?php
+
+
+    ?>
+
+  </main>
+
+  <footer class="footer">
+    <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
+    <div class="footer__social-media">
+      <figure><img src="../assets/icons/twitter.png" alt="twitter"></figure>
+      <figure><img src="../assets/icons/instagram.png" alt="instagram"></figure>
+      <figure><img src="../assets/icons/facebook.png" alt="facebook"></figure>
+    </div>
+  </footer>
 
 </body>
 

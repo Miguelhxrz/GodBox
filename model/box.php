@@ -84,8 +84,7 @@ class box {
   }
 
   function ShowBoxes(){
-    
-    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `img` FROM `box`";
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img`  FROM `box`";
         
     $question = $this->data_base->add_instruc($query_send);
 
@@ -102,8 +101,59 @@ class box {
   
   }
 
-  function getBox_db ($id) {
+  function getById($id){
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img` FROM `box` WHERE `id` = '$id'";
 
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function DeleteBox($id){
+    $query_send  = "DELETE FROM `box` where `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    return $question;
+  }
+
+
+  function searchName($name) {
+    $query_send = "SELECT `name` FROM `box` WHERE `name` = '$name'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
+  
+
+  function searchId($id) {
+    $query_send = "SELECT `id` FROM `box` WHERE `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
+
+  function UpdateBox(){
+    $query_send = "UPDATE `box` SET `id`= '$this->id',`name`='$this->name',`price`='$this->price', `stock` = '$this->stock', `sponsor` = '$this->sponsor', `category` = '$this->category', `rank` = '$this->rank', `objects` = '$this->objets', `img` = '$this->image' WHERE `id` = '$this->id'";
+    $question = $this->data_base->add_instruc($query_send);
+    return $question;
+  }
+
+    function getBox_db($id){
     $query_send = "SELECT * FROM `box` WHERE `id` ='".$id."'";
     
     
@@ -137,6 +187,7 @@ class box {
         return 0;
       }
   }
+
   function soldBox($stock, $id) {
 
     $new_stock = $stock - 1;

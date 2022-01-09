@@ -83,6 +83,32 @@
     
     }
 
+    function getObjectById($id){
+      $query_send = "SELECT * FROM `objects` WHERE `id` = '$id'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+  
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+        }else {
+          return 0;
+        }
+    }
+
+    function DeleteObject($id){
+      $query_send  = "DELETE FROM `objects` where `id` = '$id'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+      
+      return $question;
+    }
+  
+
     function ShowObjects(){
 
       $query_send = "SELECT * FROM `objects`";
@@ -101,43 +127,37 @@
         }
     }
 
-    function getObject_img($id) {
-      $query_send = "SELECT `image` FROM `objects` WHERE `id` = '".$id."'";
+    function searchName($name) {
+      $query_send = "SELECT `name` FROM `objects` WHERE `name` = '$name'";
 
       $question = $this->data_base->add_instruc($query_send);
-  
-      $result = array();
+      
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
 
-      if(mysqli_num_rows($question) > 0){
-          while($rows = mysqli_fetch_array($question)){
-            array_push($result, $rows);
-          }
-          return $result;
-        }else {
-          return 0;
-        }
     }
 
-    function getObject_db ($id) {
+    function searchId($id) {
+      $query_send = "SELECT `id` FROM `objects` WHERE `id` = '$id'";
 
-      $query_send = "SELECT * FROM `objects` WHERE `id` ='".$id."'";
-      
-      
       $question = $this->data_base->add_instruc($query_send);
-  
-      $result = array();
-  
-      if(mysqli_num_rows($question) > 0){
-        while($rows = mysqli_fetch_array($question)){
-          array_push($result, $rows);
-        }
-         return $result;
-        }else {
-          return 0;
-        }
+      
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
+
     }
-    
-    
+
+    function updateObjects(){
+      $query_send = "UPDATE `objects` SET `id`= '$this->id',`name`='$this->name',`stock`='$this->stock', `price` = '$this->price', `sponsor` = '$this->sponsor', `rank` = '$this->rank', `category` = '$this->category', `image` = '$this->image' WHERE `id` = '$this->id'";
+      $question = $this->data_base->add_instruc($query_send);
+      return $question;
+    }
 
   }
 
