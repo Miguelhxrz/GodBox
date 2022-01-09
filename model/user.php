@@ -1,10 +1,11 @@
 <?php 
-    require('../model/connect_db.php');
+  require_once('../model/connect_db.php');
 
   class user {
 
     public $username;
     private $password;
+    private $coins;
     private $id;
     private $email;
     private $address;
@@ -12,15 +13,15 @@
     private $month;
     private $year;
     private $birth;
+    private $fecha;
   
     #database
   private $data_base;
   
   #constructor
-  function User() {
+  function __construct() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base= new connect_db();
   }
     
 
@@ -32,6 +33,10 @@
 
     function setPassword($pass) {
       $this->password = $pass;
+    }
+
+    function setcoins() {
+      $this->coins = 0;
     }
 
     function setId($ced) {
@@ -59,7 +64,11 @@
     }
 
     function setBirth() {
-      $this->birth = $this->day."-".$this->month."-".$this->year;
+      $this->birth = $this->day."/".$this->month."/".$this->year;
+    }
+
+    function SetFechaRegistro($fecha){
+      $this->fecha = $fecha;
     }
 
     #--Get--
@@ -92,12 +101,16 @@
       $this->birth;
     }
 
+    function getCoins() {
+      $this->coins;
+    }
+
 
     #Data base functions for users
 
     function addDataBase() {
       
-        $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."')";
+        $query_send = "INSERT INTO `users` (`username`, `password`, `id`, `email`, `address`,`birth`,`fecha de registro`) VALUES ('".$this->username."','".$this->password."','".$this->id."','".$this->email."','".$this->address."','".$this->birth."','".$this->fecha."')";
     
         $question = $this->data_base->add_instruc($query_send);
 
@@ -122,6 +135,14 @@
         return 0;
       }
 
+    }
+
+    function GetByUsername($username){
+      $query_send = "SELECT `username`, `password`, `id`, `email`, `address` FROM `users` WHERE  `username` = '$username'";
+
+      $question = $this->data_base->add_instruc($query_send);
+  
+      return $question;
     }
 
     function searchUsername($username) {
@@ -150,17 +171,17 @@
 
     }
 
-
-    function searchId($id) {
-      $query_send = "SELECT `id` FROM `users` WHERE `id` = '$id'";
+    function searchId($username) {
+      $query_send = "SELECT `id` FROM `users` WHERE `username` = '$username'";
 
       $question = $this->data_base->add_instruc($query_send);
       
-      if(mysqli_num_rows($question) > 0) {
-        return 1;
-      }else {
-        return 0;
-      }
+      if(mysqli_num_rows($question) > 0){
+        $rows = mysqli_fetch_array($question);
+        return $rows['id'];
+     }else {
+       return 0;
+     }
 
     }
 
@@ -177,14 +198,93 @@
 
     }
 
-    function GetByUsername($username){
-        
-      $query_send = "SELECT `username`, `password`, `id`, `email`, `address`, `birth` FROM `users` WHERE `username` = '$username'";
+    function getCoinsdb($username){
+      $query_send = "SELECT `coins` FROM `users` WHERE `username` = '".$username."'";
+
+      $question =  $this->data_base->add_instruc($query_send);
+
+      if(mysqli_num_rows($question) > 0){
+         $rows = mysqli_fetch_array($question);
+         return $rows['coins'];
+      }else {
+        return 0;
+      }
+
+    }
+
+    function buyCoins($coins_buy,$username) {
+
+      $mycoins = $this->getCoinsdb($username);
+
+      $mycoins_int = intval($mycoins);
+
+      $buy_coins = $mycoins_int + $coins_buy;
+
+      $query_send =  "UPDATE `users` SET `coins`= '".$buy_coins."' WHERE `username` = '".$username."'";
+
+      $question =  $this->data_base->add_instruc($query_send);
+
+      if($question) {
+        return $buy_coins;
+      }else {
+        return 0;
+      }
+    }
+
+    function verifyCard($username) {
+      $query_send = "SELECT username FROM `users` INNER JOIN payment ON users.id = payment.id";
 
       $question = $this->data_base->add_instruc($query_send);
 
-      return $question;
+      $result = array();
+      
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+     }
+
+     $found = 0;
+
+     for ($i=0; $i < count($result); $i++) {
+
+      if($result[$i]['username'] == $username){
+        
+        $found = 1;
+          
+        return  $found;
+     
+       }else {
+     
+        return $found;
+
+     }
+
+    }
+
   }
 
+  function UpdatePassword($password,$session){
+    $query_send = "UPDATE `users` SET `password` = '$password'  WHERE  `username` = '$session'";
 
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
   }
+
+  function UpdateEmail($email,$session){
+    $query_send = "UPDATE `users` SET `email` = '$email'  WHERE  `username` = '$session'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function UpdateAddress($address,$session){
+    $query_send = "UPDATE `users` SET `address` = '$address' WHERE  `username` = '$session'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+}

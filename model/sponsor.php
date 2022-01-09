@@ -7,6 +7,7 @@
     private $rif;
     private $email;
     private $imagen;
+    private $fecha;
   
     #database
   private $data_base;
@@ -14,8 +15,7 @@
   #constructor
   function Sponsor() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base=new connect_db();
   }
 
     #--Set--
@@ -34,6 +34,10 @@
 
     function setImagen($imagen){
       $this->imagen = $imagen;
+    }
+
+    function setFechaRegistro($fecha){
+      $this->fecha = $fecha;
     }
 
 
@@ -69,7 +73,7 @@
 
     function addDataBase() {
 
-      $query_send = "INSERT INTO `sponsor`(`name`, `rif`, `email`, `image`) VALUES ('".$this->rif."','".$this->name."','".$this->email."','".$this->imagen."')";
+      $query_send = "INSERT INTO `sponsor`(`name`, `rif`, `email`, `image`, `fecha de registro` ) VALUES ('".$this->name."','".$this->rif."','".$this->email."','".$this->imagen."','".$this->fecha."')";
     
       $question = $this->data_base->add_instruc($query_send);
 
@@ -83,7 +87,7 @@
 
     function ShowSponsor(){
         
-        $query_send = "SELECT `rif`, `name`, `email` , `image` FROM `sponsor`";
+        $query_send = "SELECT `name`, `rif`, `email`, `image`, `fecha de registro` FROM `sponsor`";
 
         $question = $this->data_base->add_instruc($query_send);
 
@@ -110,8 +114,8 @@
       return $question;
     }
 
-    function updateSponsor(){
-      $query_send = " UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email', `image` = '$this->imagen' WHERE `rif` = '$this->rif'";
+    function UpdateSponsor(){
+      $query_send = "UPDATE `sponsor` SET `rif`= '$this->rif',`name`='$this->name',`email`='$this->email', `image` = '$this->imagen' WHERE `rif` = '$this->rif'";
       $question = $this->data_base->add_instruc($query_send);
       return $question;
     }

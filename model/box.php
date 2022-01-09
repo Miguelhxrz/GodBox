@@ -13,15 +13,15 @@ class box {
   private $rank;
   private $objects = array();
   private $image;
+  private $fecha;
 
   #database
   private $data_base;
 
   #constructor
-  function box() {
+  function __construct() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base=new connect_db();
   }
 
   #--Set--
@@ -57,12 +57,21 @@ class box {
   function setImage($img) {
     $this->image = $img;
   }
+  
+  function setObjects($items) {
+    $this->objects = $items;
+  }
+  
+  function setFechaRegistro($fecha){
+    $this->fecha = $fecha;
+  }
+
 
   #data base functions
 
   function addDataBase() {
 
-    $query_send = "INSERT INTO `box`(`id`, `name`, `price`, `stock`, `sponsor`, `category`, `rank`, `objects`, `img`) VALUES ('".$this->id."','".$this->name."','".$this->price."','".$this->stock."','".$this->sponsor."','".$this->category."','".$this->rank."','".$this->objects."','".$this->image."')";
+    $query_send = "INSERT INTO `box`(`id`, `name`, `price`, `stock`, `sponsor`, `category`, `rank`, `objects`, `img`, `fecha de registro`) VALUES ('".$this->id."','".$this->name."','".$this->price."','".$this->stock."','".$this->sponsor."','".$this->category."','".$this->rank."','".$this->objects."','".$this->image."','".$this->fecha."')";
   
     $question = $this->data_base->add_instruc($query_send);
 
@@ -72,6 +81,47 @@ class box {
       return 0;
     }
   
+  }
+
+  function ShowBoxes(){
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img`  FROM `box`";
+        
+    $question = $this->data_base->add_instruc($query_send);
+
+    $result = array();
+
+    if(mysqli_num_rows($question) > 0){
+      while($rows = mysqli_fetch_array($question)){
+        array_push($result, $rows);
+      }
+      return $result;
+      }else {
+        return 0;
+      }
+  
+  }
+
+  function getById($id){
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img` FROM `box` WHERE `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    return $question;
+  }
+
+  function DeleteBox($id){
+    $query_send  = "DELETE FROM `box` where `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    return $question;
+  }
+
+
+  function UpdateBox(){
+    $query_send = "UPDATE `box` SET `id`= '$this->id',`name`='$this->name',`price`='$this->price', `stock` = '$this->stock', `sponsor` = '$this->sponsor', `category` = '$this->category', `rank` = '$this->rank', `objects` = '$this->objets', `img` = '$this->image' WHERE `id` = '$this->id'";
+    $question = $this->data_base->add_instruc($query_send);
+    return $question;
   }
 
 

@@ -1,13 +1,7 @@
 <?php
-
-require_once('../controllers/inventory-controller.php');
 require_once('../controllers/header-controller.php');
-
-error_reporting(0);
-
+require_once('../model/box.php');
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,16 +24,16 @@ error_reporting(0);
         <div class="container-inventory">
             <section class="item-title">
                 <div class="item-1-1">
+                    <h6>ID</h6>
+                </div>
+                <div class="item-2-1">
                     <h6>Nombre</h6>
                 </div>
                 <div class="item-2-1">
-                    <h6>Codigo</h6>
-                </div>
-                <div class="item-5-1">
                     <h6>Precio</h6>
                 </div>
-                <div class="item-5-1">
-                    <h6>Foto</h6>
+                <div class="item-2-1">
+                    <h6>Sponsor</h6>
                 </div>
                 <div class="item-2-1">
                     <h6>Categoria</h6>
@@ -47,38 +41,56 @@ error_reporting(0);
                 <div class="item-2-1">
                     <h6>Rango</h6>
                 </div>
+                <div class="item-5-1">
+                    <h6>Foto</h6>
+                </div>
                 <div class="item-4-1">
                     <h6>Opciones</h6>
                 </div>
             </section>
-            <div class="container-items">
+        <div class="container-items">
+            <?php 
+            $box = new box;
+            $question = $box->ShowBoxes();
+            $show = $box->ShowBoxes();
+            for($i=0; $i< count($show); $i++){
+            #`id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro` 
+            ?>
             <section class="item-title">
                 <div class="item-1">
-                    <h6>BoxName</h6>
+                    <h6><?php echo $show[$i]['id'];?></h6>
                 </div>
                 <div class="item-2">
-                    <h6>0A154A54</h6>
+                    <h6><?php echo $show[$i]['name'];?></h6>
+                </div>
+                <div class="item-2">
+                    <h6><?php echo $show[$i]['price'];?></h6>
+                </div>
+                <div class="item-2">
+                    <h6><?php echo  $show[$i]['sponsor'];?></h6>
+                </div>
+                <div class="item-2">
+                    <h6><?php echo $show[$i]['category'];?></h6>
+                </div>
+                <div class="item-2">
+                    <h6><?php echo $show[$i]['rank'];?></h6>
                 </div>
                 <div class="item-5">
-                    <h6>2.99</h6>
-                </div>
-                <div class="item-5">
-                    <img src="../assets/img/inte.png" alt="" class="imagen">
-                </div>
-                <div class="item-2">
-                    <h6>Tecnologia</h6>
-                </div>
-                <div class="item-2">
-                    <h6>Dios</h6>
+                    <img src="<?php echo $show[$i]['img'];?>" alt="" class="imagen">
                 </div>
                 <div class="item-4">
                     <form action="" method="POST">
-                    <input type="hidden" name="rif" value="">
+                    <input type="hidden" name="id" value="<?php echo $show[$i]['id'];?>">
                     <button type="submit" name ="submit" class="item-o">
                     <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
+                    <?php 
+                    $submit=$_POST['submit'];
+                    if(isset($submit)){
+                        require('../CRUD/delete-box.php');
+                     }?>
                     </form>
                     <form action="../CRUD/register_box-update.php" method="POST">
-                    <input type="hidden" name="rif" value="">
+                    <input type="hidden" name="id" value="<?php echo $show[$i]['id'];?>">
                     <button type="submit" class="item-o">
                     <img src="../assets/icons/Editar-crud.png" alt="" class="img">
                     </button>
@@ -86,6 +98,7 @@ error_reporting(0);
                     </button>
                 </div>
             </section>
+            <?php }?>
         </div>
     </main>
 

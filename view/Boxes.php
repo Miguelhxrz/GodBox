@@ -1,9 +1,9 @@
 <?php 
-    require_once('../controllers/boxes-controller.php'); 
     require_once('../controllers/header-controller.php');
+    require_once('../controllers/boxes-controller.php'); 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
 
 <body>
     <!-- Header -->
-    <?php include($header); ?>
+    <?php include($header);?>
 
     <main class="container">
 
@@ -54,58 +54,25 @@
         </section>
 
         <section class="box__container">
-
-            <article class="box__card">
-                <div class="box__image">
-                    <img src="../assets/img/boxes/box_apple-god_resized.png" alt="">
+            <?php for ($i=0; $i < count($showBoxes); $i++) { 
+             echo   
+            "<form action='' method='POST' class='box__card'>
+                <div class='box__image'>
+                    <img src='".$showBoxes[$i]['img']."' alt=''>
                 </div>
-                <div class="box__description">
-                    <h3>Categoria:</h3>
-                    <h3>Codigo:</h3>
-                    <h3>Patrocinador:</h3>
-                    <h3>Rango:</h3>
+                <div class='box__description-basic'>
+                    <h3>".$showBoxes[$i]['name']."</h3>
+                    <h3>Precio: ".$showBoxes[$i]['price']." <span class='gold'>LG</span></h3>
                 </div>
-                <div class="box__button-buy">Comprar</div>
-            </article>
-
-            <article class="box__card">
-                <div class="box__image">
-                    <img src="../assets/img/boxes/box_apple-semidios-resized.png" alt="">
+                <input type='hidden' name='box_id' value='".$showBoxes[$i]['id']."'>
+                <input type='hidden' name='box_price' value='".$showBoxes[$i]['price']."'>
+                <input type='submit' class='box__button-buy' value='Comprar' />
+            </form>";
+        } ?>
                 </div>
-                <div class="box__description">
-                    <h3>Categoria:</h3>
-                    <h3>Codigo:</h3>
-                    <h3>Patrocinador:</h3>
-                    <h3>Rango:</h3>
-                </div>
-                <div class="box__button-buy">Comprar</div>
-            </article>
-
-            <article class="box__card">
-                <div class="box__image">
-                    <img src="../assets/img/boxes/box_apple-heroe_resized.png" alt="">
-                </div>
-                <div class="box__description">
-                    <h3>Categoria:</h3>
-                    <h3>Codigo:</h3>
-                    <h3>Patrocinador:</h3>
-                    <h3>Rango:</h3>
-                </div>
-                <div class="box__button-buy">Comprar</div>
-            </article>
-
-            <article class="box__card">
-                <div class="box__image">
-                    <img src="../assets/img/boxes/box_apple-Olimpica_resized.png" alt="">
-                </div>
-                <div class="box__description">
-                    <h3>Categoria:</h3>
-                    <h3>Codigo:</h3>
-                    <h3>Patrocinador:</h3>
-                    <h3>Rango:</h3>
-                </div>
-                <div class="box__button-buy">Comprar</div>
-            </article>
+            </div>   
+        </section>
+            
 
     </main>
 

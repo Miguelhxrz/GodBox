@@ -203,6 +203,9 @@ if(isset($_POST['submit'])) {
     
     echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
+    date_default_timezone_set('America/Caracas');
+    $fecha = date("d/m/Y");
+
     $user->setUsername(strtolower($username));
     $user->setPassword($password);
     $user->setId($id);
@@ -212,12 +215,15 @@ if(isset($_POST['submit'])) {
     $user->setMonth($month);
     $user->setYear($year);
     $user->setBirth();
+    $user->SetFechaRegistro($fecha);
 
     echo $user->addDataBase();
 
     session_start();
     
     $_SESSION['user'] = $username;
+
+    // $_SESSION['coins'] = $user->getCoins();
     
     header("location: ../view/login.php");
    }

@@ -1,7 +1,7 @@
 <?php 
-require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
-
+require_once('../model/user.php');
+require_once('../model/credit_card.php');
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +18,10 @@ require_once('../controllers/header-controller.php');
 <body>
        <!-- Header -->
        <?php include($header); 
-        //$user = new user;
-       //$question = $user->GetByUsername($_SESSION['user']);
-       //while ($row = mysqli_fetch_array($question)):?>
+       $user = new user;
+       $question = $user->GetByUsername($_SESSION['user']); 
+       var_dump($_SESSION['user']);
+       while ($row = mysqli_fetch_array($question)){?>
      <main class="container">
         <section class="panel__container">
           <articles class="admin__container">
@@ -35,11 +36,8 @@ require_once('../controllers/header-controller.php');
                 <a href="../view/transaciones_user.php"><div class="btn__report">Mis Transaciones</div></a>
                 <a href="../view/productos_user.php"><div class="btn__report">Mis Productos</div></a>
                 <a href="../view/buy_coins.php"><div class="btn__report">Comprar Monedas</div></a>
-                <!--<div class="btn__report">Mis transacciones</div>
-                <div class="btn__report">Inventario de cajas</div>
-                <div class="btn__report">Inventario de productos</div>
-                <div class="btn__report">Patrocinadores</div>
-            </div> -->
+                <a href="../view/card_register.php"><div class="btn__report">Agregar Tarjeta</div></a>
+            </div> 
         </articles>
       </section>
       <section class="reports__container">
@@ -49,34 +47,36 @@ require_once('../controllers/header-controller.php');
           <h4 class="title">Datos🔒</h4>
           <div class="put__reports">
             <div class="essencial__crud">
-              <div class="crud username">
-                <h4>Username:</h4> <h4 class="respuesta"><?php echo $row["username"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar username">
-              </div>
               <div class="crud password">
-                <h4>Password:</h4> <h4 class="respuesta"><?echo $row["password"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar password">
+                <h4>Contraseña:</h4> <h4 class="respuesta"><?php echo $row['password'];?></h4>
+                <a href="../CRUD/update-password.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar contraseña"></a>
               </div>
               <div class="crud email">
-                <h4>Email:</h4> <h4 class="respuesta"><?php echo $row["email"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar email">
+                <h4>Correo:</h4> <h4 class="respuesta"><?php echo $row['email'];?></h4>
+                <a href="../CRUD/update-email.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar correo"></a>
               </div>
             </div>
             <div class="other__crud">
               <div class="crud LilGod">
-                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $coin?></h4> 
+                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $row['coins'];?></h4> 
                 <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
               </div>
               <div class="crud address">
-                <h4>address:</h4> <h4 class="respuesta"><?php echo $row["address"];?></h4>
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
+                <h4>Dirección:</h4> <h4 class="respuesta"><?php echo $row['address'];?></h4>
+                <a href="../CRUD/update-address.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
               </div>
               <div class="crud credit-card">
-                <h4>tarjeta:</h4> <h4 class="respuesta">xxxxx-xxxx-xxxx</h4> 
-                <img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address">
+              <h4>Tarjeta:</h4> 
+              <?php
+                $CC = new credit_card;
+                $question = $CC->GetCCbyid($row['id']);
+                while ($fila = mysqli_fetch_array($question)){?>
+                <h4 class="respuesta"><?php echo $fila['number'];?></h4> 
+                <?php }?>
+                <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
               </div>
               
-              <?php //endwhile ?>
+              <?php };?>
             </div>
           </div>
       </section>

@@ -79,17 +79,11 @@ if(isset($register)){
    }else {
       array_push($errores,"Error 052: El Nombre no existe.");
    }
-   if(isset($img)) {
-
-    if(empty($img)) {
-      array_push($errores,"Error 053: Se debe adjuntar una imagen que represente la compañia.");
+   if(isset($img_name)) {
+    if(empty($img_name)) {
+      array_push($errores, "Error 076: Debes insertar la imagen del objeto.");
     }
-    // if()
-
-   }else {
-     array_push($errores, "Error 054: la imagen no esta adjuntada");
-   }
-
+  }
  #validacion de bd 
  
  #Errores
@@ -113,11 +107,15 @@ if(isset($register)){
 
       #moviendo la imagen a la carpeta
       $move = move_uploaded_file($img_temp, $origin);
+
+      date_default_timezone_set('America/Caracas');
+      $fecha = date("d/m/Y");
  
       $sponsor->setName($sponsor_name);
       $sponsor->setRif($rif);
       $sponsor->setEmail($email);
       $sponsor->setImagen($origin);
+      $sponsor->setFechaRegistro($fecha);
       
       $sponsor->addDataBase();
       

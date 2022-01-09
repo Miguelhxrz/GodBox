@@ -1,7 +1,8 @@
-<!DOCTYPE html>
 <?php
 require_once('../controllers/header-controller.php');
+require_once('../model/sponsor.php');
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -67,6 +68,12 @@ require_once('../controllers/header-controller.php');
                 <option value="Nike">Nike</option>
                 <option value="Nintendo">Nintendo</option>
                 <option value="Asus">Asus</option>
+                <?php
+                $sponsor = new sponsor;
+                $question = $sponsor->ShowSponsor();
+                while ($fila= mysqli_fetch_array($question)){?>
+                <option value="<?php echo $fila['name']?>"><?php echo $fila['name']?></option>
+                <?php }?>
               </select>
             </label>
             

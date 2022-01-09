@@ -12,6 +12,17 @@
     font-family: "BubblegumSans", Arial, Helvetica, sans-serif;
 }
 
+input[type='submit'],
+input[type='reset'] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -429,6 +440,31 @@ a {
 
 /* Fin Header user */
 
+.error {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    font-size: 1.4rem;
+    width: 100px;
+    height: 100%;
+    background-color: #df1526;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.error figure {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.error figure img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     flex-flow: column wrap;
@@ -572,6 +608,35 @@ a {
     justify-content: space-around;
     width: 100%;
     font-size: 2rem;
+}
+
+input[type='text'] {
+    width: 180px;
+    font-size: 2rem;
+    font-family: var(--font);
+    color: white;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+input[type=submit] {
+    width: 50px;
+    background: radial-gradient(93.28% 1635.74% at 6.72% 50%, rgba(14, 16, 55, 0.75) 0%, #0C1059 45.83%, rgba(14, 16, 55, 0.75) 100%);
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 20px;
+}
+
+.volver {
+    width: 80px;
+    background: radial-gradient(93.28% 1635.74% at 6.72% 50%, rgba(14, 16, 55, 0.75) 0%, #0C1059 45.83%, rgba(14, 16, 55, 0.75) 100%);
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 20px;
 }
 
 .footer {

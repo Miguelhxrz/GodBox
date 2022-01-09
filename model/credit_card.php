@@ -16,8 +16,7 @@ class credit_card {
   #constructor
   function credit_card() {
 
-    $this->data_base=new connect_db;
-    $this->data_base->connect();
+    $this->data_base=new connect_db();
   }
 
   #--Set--
@@ -56,6 +55,14 @@ class credit_card {
       return 0;
     }
   
+  }
+
+  function GetCCbyid($id){
+    $query_send = "SELECT `id`, `type`, `number`, `expiration date`, `cvv` FROM `payment` WHERE  `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+  
+    return $question;
   }
 
 

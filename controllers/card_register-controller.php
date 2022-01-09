@@ -1,9 +1,7 @@
 <?php
   require_once('../model/credit_card.php');
 
-
   $credit_card = new credit_card();
-
 
   #Patterns
   $onlyNumbers = "/^[0-9]+$/";
@@ -115,7 +113,7 @@
 
           var_dump($result);
 
-        // header("location: ./index.php");
+          header("location: ../index.php");
         }
     }
 ?>
