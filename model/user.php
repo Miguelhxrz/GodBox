@@ -157,6 +157,13 @@
       }
 
     }
+    function ShowUsers(){
+      $query_send = "SELECT `username`, `password`, `id`, `email`, `address`,`birth`,`fecha de registro` FROM `users`";
+
+      $question = $this->data_base->add_instruc($query_send);
+  
+      return $question;
+    }
 
     function searchPassword($password) {
       $query_send = "SELECT `password` FROM `users` WHERE `password` = '$password'";

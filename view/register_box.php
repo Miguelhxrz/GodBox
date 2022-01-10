@@ -14,7 +14,10 @@
 
 <body>
   <!-- Header -->
-  <?php require_once('../controllers/header-controller.php');?>
+  <?php 
+  require_once('../controllers/header-controller.php');
+  require_once('../model/sponsor.php');
+  ?>
 
   <?php include($header); ?>
 
