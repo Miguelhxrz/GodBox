@@ -2,7 +2,6 @@
 require_once('../model/sponsor.php');
 
 $sponsor = new sponsor;
-$sponsor->sponsor();
 
 $patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
 $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
