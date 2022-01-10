@@ -1,6 +1,7 @@
 <?php 
 require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
+require_once('../model/user.php')
 
 ?>
 
@@ -18,9 +19,9 @@ require_once('../controllers/header-controller.php');
 <body>
        <!-- Header -->
        <?php include($header); 
-        //$user = new user;
-       //$question = $user->GetByUsername($_SESSION['user']);
-       //while ($row = mysqli_fetch_array($question)):?>
+        $user = new user;
+       $question = $user->GetByUsername($_SESSION['user']);
+       while ($row = mysqli_fetch_array($question)):?>
      <main class="container">
         <section class="panel__container">
           <articles class="admin__container">
@@ -28,7 +29,7 @@ require_once('../controllers/header-controller.php');
               <figure class="admin__ico-container">
                 <img src="../assets/icons/user-profile.png" alt="" title="">
               </figure>
-              <h4 class="title"><?php echo $_SESSION['user']?></h4>
+              <h4 class="title"><?php echo $row['username']; endwhile?></h4>
             </div>
             <div class="select__reports">
                 <a href="../view/user_page.php"><div class="btn__report">Datos </div></a>

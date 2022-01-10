@@ -1,5 +1,5 @@
 <?php 
-require ('../model/reports.php');
+require_once('../model/reports.php');
 require_once('../model/object.php');
 
 date_default_timezone_set('America/Caracas');
@@ -32,7 +32,7 @@ date_default_timezone_set('America/Caracas');
 
   $item = new object_;
   $question = $item->ShowObjects();
-  for($i=0; $i=count($question); $i++){
+  for($i=0; $i<count($question); $i++){
     //`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `fecha de registro`
     
     $pdf->Cell(30, 5, $question[$i]['id'], 1, 0, "C");

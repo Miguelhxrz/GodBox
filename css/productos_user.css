@@ -542,6 +542,7 @@ a {
     color: #fff;
     border-radius: 0px 15px 15px 0px;
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .reports__container .put__reports .essencial__crud {
