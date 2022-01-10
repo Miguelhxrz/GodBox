@@ -39,56 +39,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
   button_spin.addEventListener('click', ()  => {
 
-    
-      
+    cards_items.forEach (item =>  {
+      item.style.animation = 'scrolling 1s infinite linear';
+    })
+
+    setTimeout(() => {
       cards_items.forEach (item =>  {
-        item.style.animation = 'scrolling 1s infinite linear';
+        item.style.animation = '';
+      })
+    
+    }, 5000); 
+
+      
+    while (i < stop) {
+
+      // console.log(px);
+        
+      cards_items.forEach (card =>  {
+          
+        card.style.right = px;
+
       })
 
-      setTimeout(() => {
-        cards_items.forEach (item =>  {
+      i = i + 115;
+
+    }
+        
+    setTimeout(() => {
+
+      alert.style.display = 'flex';
+
+      text.innerText = `${item}`;
+
+      r_select.style.display = 'none';
+        
+      button_spin.disabled = true;
+
+      cards_items.forEach (item =>  {
           item.style.animation = '';
-        })
-      
-      }, 5000); 
+      })
 
-      console.log(item);
-      
-      while (i < stop) {
-
-        console.log(px);
+      accept.addEventListener('click', () => {
+        window.location = '../index.php';
+      });
         
-        cards_items.forEach (card =>  {
-          
-          card.style.right = px;
-
-        })
-
-        i = i + 115;
-
-      }
-        
-      setTimeout(() => {
-
-        alert.style.display = 'flex';
-
-        text.innerText = `${item}`;
-
-        r_select.style.display = 'none';
-        
-        button_spin.disabled = true;
-
-        cards_items.forEach (item =>  {
-          item.style.animation = '';
-        })
-
-        accept.addEventListener('click', () => {
-          window.location = '../index.php';
-        });
-        
-      }, 6000);
+    }, 6000);
 
       
     });
 
-})
+});

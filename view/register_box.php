@@ -1,3 +1,11 @@
+<?php 
+
+  // ini_set('display_errors', 1);
+  // ini_set('display_startup_errors', 1);
+  // error_reporting(E_ALL);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,17 +70,18 @@
           <label for="box_sponsor" class="label-category">
               Sponsor
               <select name="box_sponsor" id="box_sponsor">
+                <?php 
+
+                  require_once('../model/sponsor.php');
+
+                  $sponsor = new sponsor();
+
+                  $showSponsors = $sponsor->showSponsors(); ?>      
+
                 <option value="">Seleccionar</option>
-                <option value="Apple">Apple</option>
-                <option value="Nintendo">Nintendo</option>
-                <option value="Ropa">Nike</option>
-                <option value="variado">Variado</option>
-                <?php
-                $sponsor = new sponsor;
-                $question = $sponsor->ShowSponsor();
-                while ($fila= mysqli_fetch_array($question)){?>
-                <option value="<?php echo $fila['name']?>"><?php echo $fila['name']?></option>
-                <?php }?>
+                <?php  for($i = 0; $i < count($showSponsors); $i++) {
+                  echo "<option value='".$showSponsors[$i]['name']."'>".$showSponsors[$i]['name']."</option>";
+                }?> 
               </select>
             </label>
             

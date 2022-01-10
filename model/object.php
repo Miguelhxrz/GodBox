@@ -159,6 +159,39 @@
       return $question;
     }
 
+    function getStock_db ($id) {
+      $query_send = "SELECT `stock` FROM `objects` WHERE id = '".$id."'";
+        
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+      }else {
+        return 0;
+      }
+    }
+
+    function restStock ($stock,$id) {
+
+      $new_stock = $stock - 1;
+
+      $query_send = "UPDATE `objects` SET `stock`= '".$new_stock."' WHERE `id` = '".$id."'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+        if(isset($question)){
+          return 1;
+        }else {
+          return 0;
+        }
+
+    }
+
   }
 
 

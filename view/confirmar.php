@@ -42,8 +42,8 @@ require_once('../controllers/header-controller.php');
                <div class="items">Total: <?php echo $coin_price?> $</div>
                </div>
                     <button class='btn__confirm' name="confirm_btn" id="confirm_btn">Confirmar</button>
-           </div>  
-                <p class="hidden" id="confirm_user"><?php echo $search_user ?></p>
+                </div>  
+                <p class="hidden" id="confirm_user"><?php echo $found ?></p>
         </section>
 
         <section class="modal">

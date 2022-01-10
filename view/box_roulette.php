@@ -22,28 +22,58 @@ require_once('../controllers/header-controller.php');
 
     <main class="container">
         <section class="roulette">
-            <article class="illustration">
-
-            </article>
+            <article class="illustration"></article>
 
             <div id="container__alert-item">
                 <figure class="item__card-alert">
-                    <h2 id="Y-item-text"></h2>
+                             
                 </figure>
                 <button id="accept">!Genial¡</button>
             </div>
+
             <article class="roulette__container">
                 <div class="roulette__select" id="roulette__select">
                     <img src="../assets/icons/play.png">
                 </div>
                 <div class="roulette__container-cards">
+                    
                     <?php for ($i=0; $i < count($objects) ; $i++) { 
                         $k = 0;
-                    echo "
-                    <div class='wrapper'>
-                        <figure class='item__card'>
-                            <img src='".$objects[$i][$k]['image']."' class>
-                        </figure>
+                        echo "
+                        <div class='wrapper'>
+                            <figure class='item__card'>
+                                <img src='".$objects[$i][$k]['image']."' class>
+                            </figure>
+                        </div>";
+                    } ?>
+
+                    <?php for ($i=0; $i < count($objects) ; $i++) { 
+                        $k = 0;
+                        echo "
+                        <div class='wrapper'>
+                            <figure class='item__card'>
+                                <img src='".$objects[$i][$k]['image']."' class>
+                            </figure>
+                        </div> ";
+                    } ?>
+
+                    <?php for ($i=0; $i < count($objects) ; $i++) { 
+                        $k = 0;
+                        echo "
+                        <div class='wrapper'>
+                            <figure class='item__card'>
+                                <img src='".$objects[$i][$k]['image']."' class>
+                            </figure>    
+                        </div>";
+                    } ?>
+
+                    <?php for ($i=0; $i < count($objects) ; $i++) { 
+                        $k = 0;
+                        echo "
+                            <div class='wrapper'>
+                            <figure class='item__card'>
+                                <img src='".$objects[$i][$k]['image']."' class>
+                            </figure>
                         </div>";
                     } ?>
 
@@ -54,37 +84,9 @@ require_once('../controllers/header-controller.php');
                         <figure class='item__card'>
                             <img src='".$objects[$i][$k]['image']."' class>
                         </figure>
-                    </div> ";
-                    } ?> <?php for ($i=0; $i < count($objects) ; $i++) { 
-                        $k = 0;
-                    echo "
-                    <div class='wrapper'>
-                        <figure class='item__card'>
-                            <img src='".$objects[$i][$k]['image']."' class>
-                        </figure>    
                     </div>";
-                } ?>
-
-                    ?> <?php for ($i=0; $i < count($objects) ; $i++) { 
-                        $k = 0;
-                    echo "
-                    <div class='wrapper'>
-                        <figure class='item__card'>
-                            <img src='".$objects[$i][$k]['image']."' class>
-                        </figure>
-                    </div>";
-                } ?>
-
-                    <?php for ($i=0; $i < count($objects) ; $i++) { 
-                        $k = 0;
-                    echo "
-                    <div class='wrapper'>
-                        <figure class='item__card'>
-                            <img src='".$objects[$i][$k]['image']."' class>
-                        </figure>
-                    </div>";
-                } ?>
-                
+                    } ?>
+        
                 </div>
             </article>
             <button id="spin" class="roulette__btn-spin">GIRAR</button>

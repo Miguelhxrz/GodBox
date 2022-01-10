@@ -10,10 +10,10 @@
     private $fecha;
   
     #database
-  private $data_base;
+    private $data_base;
   
   #constructor
-  function Sponsor() {
+  function __construct() {
 
     $this->data_base=new connect_db();
   }
@@ -85,13 +85,22 @@
     
     }
 
-    function ShowSponsor(){
+    function ShowSponsors(){
         
-        $query_send = "SELECT `name`, `rif`, `email`, `image`, `fecha de registro` FROM `sponsor`";
+        $query_send = "SELECT * FROM `sponsor`";
 
         $question = $this->data_base->add_instruc($query_send);
 
-        return $question;
+        $result = array();
+
+        if(mysqli_num_rows($question) > 0){
+          while($rows = mysqli_fetch_array($question)){
+            array_push($result, $rows);
+          }
+          return $result;
+        }else {
+          return 0;
+        }
     }
 
     function getById($id){

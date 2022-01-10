@@ -242,27 +242,12 @@
         while($rows = mysqli_fetch_array($question)){
           array_push($result, $rows);
         }
-     }
-
-     $found = 0;
-
-     for ($i=0; $i < count($result); $i++) {
-
-      if($result[$i]['username'] == $username){
-        
-        $found = 1;
-          
-        return  $found;
-     
-       }else {
-     
-        return $found;
-
-     }
+        return $result;
+      }else {
+        return 0;
+      }
 
     }
-
-  }
 
   function buyBox ($username, $box_coins) {
    

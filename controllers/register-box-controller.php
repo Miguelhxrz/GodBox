@@ -3,6 +3,11 @@ require_once('../model/box.php');
 
 $box = new box();
 
+$sponsor = new sponsor();
+
+$showSponsors = $sponsor->showSponsors();
+
+
 $errores = array();
 
 $PatronUsuario = "/^[a-zA-Z0-9\s-]+$/";
@@ -118,10 +123,10 @@ if (isset($box_register)) {
       array_push($errores, "Error 076: Debes insertar la imagen del objeto.");
     }
   }
-}
+
 
 #Imprimiendo alertas
-if (count($errores) > 0) {
+  if (count($errores) > 0) {
   echo "<div class='error'>
     <figure>
     <img src='../assets/icons/close.png' alt='icon close' id='close'>
@@ -144,5 +149,6 @@ if (count($errores) > 0) {
   $_SESSION['img_name'] = $box_img_name;
   $_SESSION['img_temp'] = $box_img_temp;
 
-  echo "<script> window.location.href = '../view/list-objects_select.php'</script>";
+ echo "<script> window.location.href = '../view/list-objects_select.php'</script>";
+}
 }

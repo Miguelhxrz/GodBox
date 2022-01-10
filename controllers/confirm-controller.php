@@ -30,17 +30,26 @@
 
   $search_user = $user->verifyCard($username);
 
-  $buy_coins = intval($_POST['new_coins']);
+  $found = 0;
 
-  var_dump($buy_coins);
+  for ($i=0; $i <count($search_user) ; $i++) { 
+    if($search_user[$i]['username'] == $username) {
+      $found = 1;
+    }
+  }
+
+  var_dump($found);
+
+  $buy_coins = intval($_POST['new_coins']);
 
   $acept_btn = $_POST['accept_btn'];
 
   $continue_btn = $_POST['continue_btn'];
 
-  if($search_user < 0) {
+  if($found < 0) {
     echo "Debes tener una tarjeta registrada en tu perfil para poder comprar monedas";
   }else
+  
   if(isset($acept_btn)){
 
     $sold =$user->buyCoins($buy_coins, $username);
