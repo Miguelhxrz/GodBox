@@ -87,6 +87,7 @@ require_once('../model/box.php');
                     $submit=$_POST['submit'];
                     if(isset($submit)){
                         require('../CRUD/delete-box.php');
+                        echo '<meta http-equiv="refresh" content="0">';
                      }?>
                     </form>
                     <form action="../CRUD/register_box-update.php" method="POST">

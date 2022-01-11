@@ -42,25 +42,25 @@ require_once('../controllers/header-controller.php');
             <div class="container-items">
             <?php 
             $sponsor = new sponsor;
-            $question = $sponsor->ShowSponsor();
-            while ($row = mysqli_fetch_array($question)){
+            $question = $sponsor->ShowSponsors();
+            for ($i=0; $i< count($question); $i++){
             ?>
             <section class="item-title">
                 <div class="item-1">
-                    <h6><?php echo $row["rif"];?></h6>
+                    <h6><?php echo $question[$i]['rif'];?></h6>
                 </div>
                 <div class="item-2">
-                    <h6><?php echo $row["name"];?></h6>
+                    <h6><?php echo $question[$i]["name"];?></h6>
                 </div>
                 <div class="item-5">
-                    <img src="<?php echo $row["image"]?>" class= "imagen" alt="">
+                    <img src="<?php echo $question[$i]["image"]?>" class= "imagen" alt="">
                 </div>
                 <div class="item-3">
-                    <h6><?php echo $row["email"];?></h6>
+                    <h6><?php echo $question[$i]["email"];?></h6>
                 </div>
                 <div class="item-4">
                     <form action="" method="POST">
-                    <input type="hidden" name="rif" value="<?php echo $row["rif"]?>">
+                    <input type="hidden" name="rif" value="<?php echo $question[$i]["rif"]?>">
                     <button type="submit" name ="submit" class="item-o">
                     <img src="../assets/icons/Eliminar-crud.png" alt="" class="img">
                     </button>
@@ -69,12 +69,13 @@ require_once('../controllers/header-controller.php');
                     $submit = $_POST['submit'];
                     if(isset($submit)){
                         require('../CRUD/delete-sponsor.php');
+                        echo '<meta http-equiv="refresh" content="0">';
                     }
                     ?>
                     </form>
 
                     <form action="../CRUD/register_sponsor-Update.php" method="POST">
-                    <input type="hidden" name="rif" value="<?php echo $row["rif"]?>">
+                    <input type="hidden" name="rif" value="<?php echo $question[$i]["rif"]?>">
                     <button type="submit" class="item-o">
                     <img src="../assets/icons/Editar-crud.png" alt="" class="img">
                     </button>

@@ -64,6 +64,10 @@
 
         // var_dump($box_items);
         
+        #fecha de registro
+        date_default_timezone_set('America/Caracas');
+        $fecha = date("d/m/Y");
+        
         $box->setID($box_id);
         $box->setName($box_name);
         $box->setPrice($box_price);
@@ -72,6 +76,8 @@
         $box->setCategory($box_category);
         $box->setRank($box_rank);
         $box->setImage($origin);
+        #fecha de registro
+        $box->setFechaRegistro($fecha);
 
         $box_items_string = implode("-",$box_items);
 

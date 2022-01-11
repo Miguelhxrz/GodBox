@@ -86,6 +86,7 @@ $question = $item->ShowObjects();
                     $submit=$_POST['submit'];
                     if(isset($submit)){
                         require_once('../CRUD/delete-objects.php');
+                        echo '<meta http-equiv="refresh" content="0">';
                      }?>
                     </form>
                     <form action="../CRUD/register_objects-update.php" method="POST">

@@ -41,6 +41,7 @@ require_once('../model/user.php')
       <section class="reports__container">
           <h4 class="title">Mis Productos🔒</h4>
           <div class="put__reports">
+              
           </div>
       </section>
     </main>
