@@ -298,5 +298,65 @@
 
     return $question;
   }
+
+  function addInventory($id,$objId) {
+
+    $query_send = "INSERT INTO  `user_inventory`(`id`, `objects`) VALUES  ('".$id."','".$objId."')";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    if($question) {
+      return 1;
+    }else {
+      return 0;
+    }
+
+  }
+
+  function searchId_inventory(){
+    
+    $query_send = "SELECT * FROM `users` INNER JOIN `user_inventory` ON users.id = user_inventory.id";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      if(mysqli_num_rows($question) > 0){
+        return 1;
+      }else {
+        return 0;
+      }
+  }
+
+  function getObjects_inventory ($id) {
+
+    $query_send = "SELECT  `objects` FROM `user_inventory` WHERE id = '".$id."'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    $result = array();
+    
+    if(mysqli_num_rows($question) > 0){
+      while($rows = mysqli_fetch_array($question)){
+        array_push($result, $rows);
+      }
+      return $result;
+    }else {
+      return 0;
+    }
+  }
+
+
+  function update_objects($id,$new_obj) {
+    
+    $query_send = "UPDATE `user_inventory` SET `objects`='".$new_obj."' WHERE `id` = '".$id."'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    if($question) {
+      return 1;
+    }else {
+      return 0;
+    }
+  }
+
 }
 ?>

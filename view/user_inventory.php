@@ -1,7 +1,7 @@
 <?php 
-require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
-require_once('../model/user.php')
+require_once('../model/user.php');
+require_once('../controllers/user-inventory-controller.php')
 
 ?>
 
@@ -41,7 +41,12 @@ require_once('../model/user.php')
       <section class="reports__container">
           <h4 class="title">Mis Productos🔒</h4>
           <div class="put__reports">
-              
+             <?php for($i = 0; $i < count($img); $i++) {
+              $k = 0;
+               echo " <div class='objects__container'>
+               <img src='".$img[$i][$k]['image']."'>
+             </div>";
+             } ?>
           </div>
       </section>
     </main>
