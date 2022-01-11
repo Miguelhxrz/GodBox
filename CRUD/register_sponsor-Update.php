@@ -32,7 +32,7 @@ require_once('../model/sponsor.php');
       while ($row = mysqli_fetch_array($question)) {
       ?>
         <form action="" name="form-register" class="form-register" method="post" enctype="multipart/form-data">
-          <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12" value="<?php echo $row["rif"] ?>">
+          <input type="hidden" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12" value="<?php echo $row["rif"] ?>">
           <input type="text" name="name_input" placeholder="Nombre" maxlength="15" size="15" value="<?php echo $row["name"] ?>">
           <input type="email" name="email_input" placeholder="Email" maxlength="45" size="45" value="<?php echo $row["email"] ?>">
           <label for="imagen_input" class="imagen_input">

@@ -52,10 +52,7 @@ error_reporting(0);
 
             <section class="l-q">
 
-              <label for="box_id" class="label-code">
-                ID
-                <input type="text" placeholder="ID de la caja" size="12" maxlength="8" name="box_id" value="<?php echo $row['id'] ?>">
-              </label>
+                <input type="hidden" placeholder="ID de la caja" size="12" maxlength="8" name="box_id" value="<?php echo $row['id'] ?>">
 
               <label for="box_name" class="label-name">
                 Nombre
@@ -89,7 +86,7 @@ error_reporting(0);
 
                   $showSponsors = $sponsor->showSponsors(); ?>      
 
-                  <option value="<?php echo $row['sponsor'] ?>"><?php echo $row['sponsor'] ?></option>
+                  <option value="">Seleccionar</option>
                     <?php  for($i = 0; $i < count($showSponsors); $i++) {
                    echo "<option value='".$showSponsors[$i]['name']."'>".$showSponsors[$i]['name']."</option>";
                 }?>
@@ -136,7 +133,7 @@ error_reporting(0);
           <input type="submit" class="btn" name="box_register" value="Editar"></input>
 
         <?php }
-      $box = new box;
+      $box = new box();
 
       $errores = array();
 
