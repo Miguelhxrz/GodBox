@@ -18,8 +18,8 @@ date_default_timezone_set('America/Caracas');
   
 
   $pdf->SetFont("Arial","B",9);
-  $pdf->Cell(30, 5, "ID", 1, 0, "C");
-  $pdf->Cell(30, 5, "Nombre", 1, 0, "C");
+  $pdf->Cell(20, 5, "ID", 1, 0, "C");
+  $pdf->Cell(50, 5, "Nombre", 1, 0, "C");
   $pdf->Cell(30, 5, "Stock", 1, 0, "C");
   $pdf->Cell(30, 5, "Precio", 1, 0, "C");
   $pdf->Cell(30, 5, "Patrocinador", 1, 0, "C");
@@ -35,8 +35,8 @@ date_default_timezone_set('America/Caracas');
   for($i=0; $i<count($question); $i++){
     //`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `fecha de registro`
     
-    $pdf->Cell(30, 5, $question[$i]['id'], 1, 0, "C");
-    $pdf->Cell(30, 5, $question[$i]['name'], 1, 0, "C");
+    $pdf->Cell(20, 5, $question[$i]['id'], 1, 0, "C");
+    $pdf->Cell(50, 5, $question[$i]['name'], 1, 0, "C");
     $pdf->Cell(30, 5, $question[$i]['stock'], 1, 0, "C");
     $pdf->Cell(30, 5, $question[$i]['price'], 1, 0, "C");
     $pdf->Cell(30, 5, $question[$i]['sponsor'], 1, 0, "C");

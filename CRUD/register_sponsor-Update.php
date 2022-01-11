@@ -150,9 +150,8 @@ require_once('../model/sponsor.php');
           $sponsor->setImagen($origin);
 
           $result = $sponsor->UpdateSponsor();
-          var_dump($result);
           if ($result == true) {
-            header("location: ../view/sponsor.php");
+            echo '<meta http-equiv="refresh" content="0;url=../view/sponsor.php">';
           }
         }
       }

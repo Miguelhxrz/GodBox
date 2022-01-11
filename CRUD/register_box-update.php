@@ -89,7 +89,7 @@ error_reporting(0);
 
                   $showSponsors = $sponsor->showSponsors(); ?>      
 
-                  <option value="">Seleccionar</option>
+                  <option value="<?php echo $row['sponsor'] ?>"><?php echo $row['sponsor'] ?></option>
                     <?php  for($i = 0; $i < count($showSponsors); $i++) {
                    echo "<option value='".$showSponsors[$i]['name']."'>".$showSponsors[$i]['name']."</option>";
                 }?>
@@ -136,7 +136,7 @@ error_reporting(0);
           <input type="submit" class="btn" name="box_register" value="Editar"></input>
 
         <?php }
-      $box = new box();
+      $box = new box;
 
       $errores = array();
 
@@ -176,10 +176,6 @@ error_reporting(0);
       if (!preg_match($PatronID, $box_id)) {
             array_push($errores, "Error 057: El ID no debe llevar caracteres especial.");
           }
-          #validacion db
-          if ($box->searchId($box_id) > 0) {
-            array_push($errores, "Error: 058: El ID ya esta registrado, ingrese otro.");
-          }
         } else {
           array_push($errores, "Error 058: El ID no existe.");
         }
@@ -194,10 +190,6 @@ error_reporting(0);
           } else
       if (!preg_match($PatronUsuario, $box_name)) {
             array_push($errores, "Error 061: El Nombre no debe llevar caracteres especial.");
-          }
-          #validacion db
-          if ($box->searchName($box_name) > 0) {
-            array_push($errores, "Error: 058: El nombre de la caja ya esta registrado, ingrese otro.");
           }
         } else {
           array_push($errores, "Error 062: El Nombre no existe.");

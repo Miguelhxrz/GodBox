@@ -38,7 +38,7 @@ require_once('../model/credit_card.php');
             <a href="../view/transaciones_user.php">
               <div class="btn__report">Mis Transaciones</div>
             </a>
-            <a href="../view/productos_user.php">
+            <a href="../view/user_inventory.php">
               <div class="btn__report">Mis Productos</div>
             </a>
             <a href="../view/buy_coins.php">
@@ -90,10 +90,6 @@ require_once('../model/credit_card.php');
                 if (preg_match($patron_email, $email) == 0) {
                   array_push($errores, "Error 016: Verifique el campo email, puede tener un caracter no valido");
                 }
-                #validacion db
-                if ($user->searchEmail($email) > 0) {
-                  array_push($errores, "Error: 017: El email ya esta registrado");
-                }
                 if (count($errores) > 0) {
                   echo "<div class='error'>";
                   for ($i = 0; $i < count($errores); $i++) {
@@ -110,19 +106,7 @@ require_once('../model/credit_card.php');
               }
               ?>
             </div>
-<<<<<<< HEAD
-          </div>
-          <div class="other__crud">
-            <div class="crud LilGod">
-              <h4>Mis LilGod:</h4>
-              <h4 class="respuesta"><? echo $row["coins"]; ?></h4>
-              <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
             </div>
-            <div class="crud address">
-              <h4>Dirección:</h4>
-              <h4 class="respuesta"><?php echo $row["address"]; ?></h4>
-              <a href="../CRUD/update-address.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
-=======
             <div class="other__crud">
               <div class="crud LilGod">
                 <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $row["coins"];?></h4> 
@@ -150,16 +134,7 @@ require_once('../model/credit_card.php');
               </div>
               
               <?php endwhile ?>
->>>>>>> 4ce81934918ba32b95086d3e0774f6e7cb62b8de
             </div>
-            <div class="crud credit-card">
-              <h4>tarjeta:</h4>
-              <h4 class="respuesta">xxxxx-xxxx-xxxx</h4>
-              <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar tarjeta"></a>
-            </div>
-
-          <?php endwhile ?>
-          </div>
         </div>
       </section>
     </main>

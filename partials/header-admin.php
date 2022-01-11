@@ -1,4 +1,5 @@
 <?php 
+require_once('../model/connect_db.php');
 // $coins = 0;
 ?>
 <header class="header-a">

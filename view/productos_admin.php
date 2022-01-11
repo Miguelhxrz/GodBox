@@ -1,7 +1,5 @@
 <?php 
-require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
-
 ?>
 
 <!DOCTYPE html>

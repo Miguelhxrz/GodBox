@@ -284,9 +284,8 @@ if (isset($object_register)) {
 
      $result = $item->updateObjects();
 
-     var_dump($result);
      if($result==true){
-      header("location: ../view/inventory_objects.php");
+      echo '<meta http-equiv="refresh" content="0;url=../view/inventory_objects.php">';
      }
 
     }
