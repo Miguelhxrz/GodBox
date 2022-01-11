@@ -26,9 +26,12 @@ require_once('../controllers/header-controller.php');
 
             <div id="container__alert-item">
                 <figure class="item__card-alert">
-                             
+                   <img src="" alt="img_item" id="img_obj">        
                 </figure>
-                <button id="accept">!Genial¡</button>
+                    <form action="../view/user_inventory.php" class="hidden">
+                        <input type="hidden" name="object_id-win" id="object_id-win">
+                        <input type="submit" id="accept" value="!Genial¡">
+                    </form>
             </div>
 
             <article class="roulette__container">
@@ -44,6 +47,8 @@ require_once('../controllers/header-controller.php');
                             <figure class='item__card'>
                                 <img src='".$objects[$i][$k]['image']."' class>
                             </figure>
+                            <p class='hidden-id'>".$box_items[$i]."</p>
+                            <p class='hidden-img'>".$objects[$i][$k]['image']."</p>
                         </div>";
                     } ?>
 
@@ -67,26 +72,6 @@ require_once('../controllers/header-controller.php');
                         </div>";
                     } ?>
 
-                    <?php for ($i=0; $i < count($objects) ; $i++) { 
-                        $k = 0;
-                        echo "
-                            <div class='wrapper'>
-                            <figure class='item__card'>
-                                <img src='".$objects[$i][$k]['image']."' class>
-                            </figure>
-                        </div>";
-                    } ?>
-
-                    <?php for ($i=0; $i < count($objects) ; $i++) { 
-                        $k = 0;
-                    echo "
-                    <div class='wrapper'>
-                        <figure class='item__card'>
-                            <img src='".$objects[$i][$k]['image']."' class>
-                        </figure>
-                    </div>";
-                    } ?>
-        
                 </div>
             </article>
             <button id="spin" class="roulette__btn-spin">GIRAR</button>

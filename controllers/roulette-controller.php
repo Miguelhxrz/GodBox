@@ -20,17 +20,8 @@
     array_push($objects, $object->getObjectById($box_items[$i])); 
   } 
 
+  $img = $objects[0][0]['image'];
 
-
-  
-  
-  
-
-
-  
-
-
-
-  
+  // var_dump($img);
 
 ?>

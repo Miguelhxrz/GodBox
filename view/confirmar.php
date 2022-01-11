@@ -52,7 +52,7 @@ require_once('../controllers/header-controller.php');
                 <h2 class="modal__title">¿Deseas comprar mas monedas?</h2>
                 <p class="modal__paragraph">Si deseas comprar mas monedas, presiona aceptar, si no es el caso, presiona continuar</p>
                 <div class="modal__select">
-                <form method='POST' action='<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>' class="modal__form">        
+                <form method='POST' action='<?php htmlspecialchars($SERVER['PHP_SELF']); ?>' class="modal_form">        
                     <input type='hidden' name='new_coins' value="<?php echo $coin_quantity?>">
                     <input type="submit" class="modal__btn" name="accept_btn" id="accept_btn" value="Aceptar">
                     <input type="submit" class="modal__btn" name="continue_btn" id="continue_btn" value="Continuar">

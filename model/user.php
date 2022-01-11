@@ -238,7 +238,7 @@
       }
     }
 
-    function verifyCard($username) {
+    function verifyCard() {
       $query_send = "SELECT username FROM `users` INNER JOIN payment ON users.id = payment.id";
 
       $question = $this->data_base->add_instruc($query_send);
@@ -256,6 +256,7 @@
 
     }
 
+    
   function buyBox ($username, $box_coins) {
    
     $mycoins = $this->getCoinsdb($username);
@@ -274,6 +275,7 @@
       return 0;
     }
   }
+
 
   function UpdatePassword($password,$session){
     $query_send = "UPDATE `users` SET `password` = '$password'  WHERE  `username` = '$session'";

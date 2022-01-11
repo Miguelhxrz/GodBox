@@ -190,9 +190,25 @@
           return 0;
         }
 
+      }
+
+
+    function searchObject_img ($img) {
+      $query_send = "SELECT `id` FROM `objects` WHERE `image` = '".$img."'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+      }else {
+        return 0;
+      }
+ 
     }
 
   }
-
 
 ?>
