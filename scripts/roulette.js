@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const accept = document.getElementById('accept');
 
+  const input_id = document.getElementById('object_id-win');
+
   function getRandom(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -96,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
       })
 
       accept.addEventListener('click', () => {
-        
+        input_id.value = items_id_array[item].textContent
+
+        console.log(items_id_array[item]);
       });
         
     }, 6000);

@@ -28,7 +28,7 @@ require_once('../controllers/header-controller.php');
                 <figure class="item__card-alert">
                    <img src="" alt="img_item" id="img_obj">        
                 </figure>
-                    <form action="../view/user_inventory.php" class="hidden">
+                    <form action="../view/user_inventory.php" method="POST" class="hidden">
                         <input type="hidden" name="object_id-win" id="object_id-win">
                         <input type="submit" id="accept" value="!Genial¡">
                     </form>
