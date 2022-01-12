@@ -1,61 +1,45 @@
 <?php 
-require('../controllers/reports_page-controller.php');
-require_once('../controllers/header-controller.php');
+require_once('../model/reports.php');
+require_once('../model/transaciones.php');
 
-?>
+date_default_timezone_set('America/Caracas');
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/reportes_monedas.css">
-  <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-  <title>GodBox | Reportes de Monedas</title>
-</head>
+  $pdf = new PDF("L", "mm", "Letter");
+  $pdf->AddPage();
+  $pdf->AliasNbPages();
 
-<body>
-       <!-- Header -->
-       <?php include($header);?>
-     <main class="container">
-        <section class="panel__container">
-          <articles class="admin__container">
-            <div class="admin__profile">
-              <figure class="admin__ico-container">
-                <img src="../assets/icons/casco.png" alt="" title="">
-              </figure>
-              <h4 class="title">Admin</h4>
-            </div>
-            <div class="select__reports">
-            <a href="../view/reportes_cajas.php"><div class="btn__report">Reportes de Cajas</div></a>
-                <a href="../view/reportes_productos.php"><div class="btn__report">Reportes de Productos</div></a>
-                <a href="../view/reportes_usuarios.php"><div class="btn__report">Reportes de Usuarios</div></a>
-                <a href="../view/reportes_monedas.php"><div class="btn__report">Reportes de Compras de Monedas</div></a>
-                <a href="../view/reportes_envios.php"><div class="btn__report">Reportes de Envios</div></a>
-                <a href="../view/reportes_canjes.php"><div class="btn__report">Reportes de Canjes</div></a>
-                <a href="../view/admin_page.php"><div class="btn__report"><-Volver a datos</div></a>
-            </div> 
-        </articles>
-      </section>
-      <section class="reports__container">
-      <?php 
-      
-      ?>
-          <h4 class="title">Reportes de Monedas Vendidas🔒</h4>
-          <div class="put__reports">
-            
-          </div>
-      </section>
-    </main>
 
-    <footer class="footer">
-      <h3 class="footer__text">Todos los derechos reservados 2021 GodBox</h3>
-      <div class="footer__social-media">
-        <div class="footer_img-contaienr"><img src="../assets/icons/twitter.png" alt="twitter"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/instagram.png" alt="instagram"></div>
-        <div class="footer_img-contaienr"><img src="../assets/icons/facebook.png" alt="facebook"></div>
-      </div>
-    </footer>
-</body>
-</html>
+  // Título
+  $pdf->Cell(150, 5, "Reporte de Transaciones de Monedas", 0, 0, "C");
+  //Fecha
+  $pdf->Cell(0, 5, "Fecha: ". date("d/m/Y"), 0, 2, "C");
+  // Salto de línea
+  $pdf->Ln(15);
+  
+
+  $pdf->SetFont("Arial","B",9);
+  $pdf->Cell(55);
+  $pdf->Cell(30, 5, "ID Usuario", 1, 0, "C");
+  $pdf->Cell(30, 5, "ID Monedas", 1, 0, "C");
+  $pdf->Cell(30, 5, "Cantidad", 1, 0, "C");
+  $pdf->Cell(30, 5, "Precio", 1, 0, "C");
+  $pdf->Cell(30, 5, "Fecha de Compra", 1, 1, "C");
+
+  
+
+  $pdf->SetFont("Arial","",9);
+
+  $transaciones = new transaciones;
+  $question = $transaciones->ShowTransaciones();
+  for($i=0; $i<count($question); $i++){
+    //`idusuario`,`idmonedas`, `quantity`, `price`, `fecha de compra`
+    $pdf->Cell(55);
+    $pdf->Cell(30, 5, $question[$i]['idusuario'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['idmonedas'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['quantity'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['price'], 1, 0, "C");
+    $pdf->Cell(30, 5, $question[$i]['fecha de compra'], 1, 1, "C");
+  }
+
+  $pdf->Output();
+?> 

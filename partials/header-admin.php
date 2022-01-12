@@ -1,6 +1,12 @@
 <?php 
 require_once('../model/connect_db.php');
-// $coins = 0;
+require_once('../model/user.php');
+    
+$user = new user();
+
+$username = $_SESSION['user'];
+
+$coins = $user->getCoinsdb($username);
 ?>
 <header class="header-a">
         <div class="container-header-a">
@@ -42,6 +48,7 @@ require_once('../model/connect_db.php');
                         <li><a href="../view/admin_page.php" class="config">Mis Datos</a></li>
                         <li><a href="../view/transaciones_admin.php" class="config">Mis Transaciones</a></li>
                         <li><a href="../view/productos_admin.php" class="config">Mis Productos</a></li>
+                        <li><a href="../view/card_register.php" class="Compra">Agregar Tarjeta</a></li>
                         <li><a href="../view/buy_coins.php" class="profil">Comprar LidGod</a></li>
                         <li><a href="../view/inventarios.php" class="config">Inventarios</a></li>
                         <li><a href="../view/registros.php" class="config">Registros</a></li>

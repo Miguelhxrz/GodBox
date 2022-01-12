@@ -39,7 +39,7 @@
                 <ul class="btn-menu-a">
                     <a href="./view/buy_coins.php">
                         <img src="./assets/icons/coin.png" alt="" class="item-a">
-                        <h3 class="name">0</h3>
+                        <h3 class="name"><?php echo $coins?></h3>
                     </a>
                     <li class="item-nav-a"><img src="./assets/icons/casco.png" alt="" class="item-a">
                     <h3 class="name">Admin</h3>

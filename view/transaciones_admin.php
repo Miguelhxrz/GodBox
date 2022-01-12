@@ -1,6 +1,7 @@
 <?php 
 require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
+require_once('../model/transaciones.php');
 
 ?>
 
@@ -17,7 +18,13 @@ require_once('../controllers/header-controller.php');
 
 <body>
        <!-- Header -->
-       <?php include($header);?>
+       <?php include($header);
+       $user = new user;
+       $question = $user->GetByUsername($_SESSION['user']);
+       while ($row = mysqli_fetch_array($question)){
+         $id = $row['id'];
+       }
+       ?>
      <main class="container">
         <section class="panel__container">
           <articles class="admin__container">
@@ -44,7 +51,23 @@ require_once('../controllers/header-controller.php');
       ?>
           <h4 class="title">Mis Transacciones🔒</h4>
           <div class="put__reports">
-
+          <?php 
+            $transaciones = new transaciones;
+            $question = $transaciones->GetById($id);
+            for($i=0; $i<count($question); $i++){
+            ?>
+            <div class="objects__container">
+              <div class="img">
+                <img src="../public/coin/monedas.png" alt="">
+              </div>
+              <div class="info">
+                <h5>Cantidad: <?php echo $question[$i]['quantity'];?></h5>
+                <h5>Precio: <?php echo $question[$i]['price'];?></h5>
+                <h5>Fecha de compra:</h5>
+                <h5><?php echo $question[$i]['fecha de compra'];?></h5>
+              </div>
+            </div>
+            <?php }?>
           </div>
       </section>
     </main>

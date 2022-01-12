@@ -73,6 +73,18 @@ class credit_card {
     return $question;
   }
 
+  function verifyCard($id) {
+
+    $query_send = "SELECT `id` FROM `payment` WHERE `id` = '$id'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+      if(mysqli_num_rows($question) > 0) {
+        return 1;
+      }else {
+        return 0;
+      }
+    }
 }
 
 
