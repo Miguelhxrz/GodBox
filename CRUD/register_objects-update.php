@@ -47,10 +47,7 @@ require_once('../model/object.php');
 
           <section class="l-q">
           
-          <label for="id" class="label-id">
-              ID
-              <input type="text" name="object_id" placeholder="ID del objeto" class="name" max="4" maxlength="4" value="<?php echo $question[$i]['id'];?>">
-            </label>
+              <input type="hidden" name="object_id" placeholder="ID del objeto" class="name" max="4" maxlength="4" value="<?php echo $question[$i]['id'];?>">
             
             <label for="object_name" class="label-name">
               Nombre

@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
       array_push($errores, "Error 010: el tamaño del id tiene que ser mayor a 3 caracteres.");
     }
     if (preg_match($patron_id, $id) == 0) {
-      array_push($errores, "Error 011: Verifique su numero de identificación");
+      array_push($errores, "Error 011: Verifique su numero de identificación debe tene solo numeros");
     }
     #validacion db
     if ($user->searchId($id) > 0) {
