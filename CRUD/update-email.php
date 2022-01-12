@@ -110,19 +110,6 @@ require_once('../model/credit_card.php');
               }
               ?>
             </div>
-<<<<<<< HEAD
-          </div>
-          <div class="other__crud">
-            <div class="crud LilGod">
-              <h4>Mis LilGod:</h4>
-              <h4 class="respuesta"><? echo $row["coins"]; ?></h4>
-              <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
-            </div>
-            <div class="crud address">
-              <h4>Dirección:</h4>
-              <h4 class="respuesta"><?php echo $row["address"]; ?></h4>
-              <a href="../CRUD/update-address.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
-=======
             <div class="other__crud">
               <div class="crud LilGod">
                 <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $row["coins"];?></h4> 
@@ -150,7 +137,6 @@ require_once('../model/credit_card.php');
               </div>
               
               <?php endwhile ?>
->>>>>>> 4ce81934918ba32b95086d3e0774f6e7cb62b8de
             </div>
             <div class="crud credit-card">
               <h4>tarjeta:</h4>
