@@ -43,10 +43,18 @@ require_once('../controllers/user-inventory-controller.php')
           <div class="put__reports">
              <?php for($i = 0; $i < count($img); $i++) {
               $k = 0;
-               echo " <div class='objects__container'>
-               <img src='".$img[$i][$k]['image']."'>
-             </div>";
+               echo 
+              "<div class='objects__container'>
+                <img src='".$img[$i][$k]['image']."'>
+             
+                <form class='hidden' action='' method='POST' class'options_form'>
+                  <input type='hidden' name='object_id' value='".$id_objects_db[$i]."'>
+                  <input type='submit' name='enviar_btn' value='Enviar' id='send_btn'>
+                  <input type='submit' name='vender_btn' value='Vender' id='sell_btn'>
+                </form>
+           </div>";
              } ?>
+
           </div>
       </section>
     </main>

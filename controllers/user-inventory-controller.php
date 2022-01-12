@@ -8,6 +8,10 @@
 
   $object_id = $_POST['object_id-win'];
 
+  $btn_send = $_POST['enviar_btn'];
+
+  $btn_sell = $_POST['vender_btn'];
+
   $username = $_SESSION['user'];
 
   $user_id = $user->searchId($username);
@@ -58,6 +62,42 @@
     array_push($img, $item->getObjectById($id_objects_db[$i]));
   }
 
+  if(isset($btn_send)){
+    
+  }
+  if(isset($btn_sell)){
+    $sell_id = $_POST['object_id'];
+
+    $price = $item->getPrice_db($sell_id);
+
+    $price = intval($price);
+
+    $result_sell = $user->buyCoins($price, $username);
+
+    $objects_user_inventory = $user->getObjects_inventory($user_id);
+
+    $inventory_ids = array();
+
+    for ($i=0; $i < count($objects_user_inventory); $i++) { 
+      $k=0;
+      array_push($inventory_ids,$objects_user_inventory[$i]['objects']);
+    }
+
+    $inventory_ids_string = implode("-",$inventory_ids);
+
+    $inventory_ids = explode("-",$inventory_ids_string);
+
+    for ($i=0; $i < count($inventory_ids); $i++) { 
+      if($inventory_ids[$i] == $sell_id) {
+        unset($inventory_ids[$i]);
+      }
+    }
+
+    $new_inventory = implode('', $inventory_ids);
+
+    $user->update_objects($user_id,$new_inventory);
+    
+  }
   
 
   

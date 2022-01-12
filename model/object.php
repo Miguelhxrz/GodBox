@@ -100,6 +100,24 @@
         }
     }
 
+    function getPrice_db ($id) {
+      $query_send = "SELECT `price` FROM `objects` WHERE `id` = '$id'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+  
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result[0]['price'];
+        }else {
+          return 0;
+        }
+    }
+
+
     function DeleteObject($id){
       $query_send  = "DELETE FROM `objects` where `id` = '$id'";
   
