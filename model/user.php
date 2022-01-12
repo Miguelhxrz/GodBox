@@ -299,23 +299,23 @@
     return $question;
   }
 
-  function addInventory($id,$objId) {
+  function addInventory($id,$username,$objId) {
 
-    $query_send = "INSERT INTO  `user_inventory`(`id`, `objects`) VALUES  ('".$id."','".$objId."')";
+    $query_send = "INSERT INTO `user_inventory`(`id`, `username`, `objects`) VALUES ('".$id."','".$username."','".$objId."')";
 
     $question = $this->data_base->add_instruc($query_send);
 
     if($question) {
       return 1;
     }else {
-      return 0;
+      return "Fallo";
     }
 
   }
 
-  function searchId_inventory(){
+  function searchId_inventory($id){
     
-    $query_send = "SELECT * FROM `users` INNER JOIN `user_inventory` ON users.id = user_inventory.id";
+      $query_send = "SELECT `username` FROM `user_inventory` where id = '".$id."'";
 
       $question = $this->data_base->add_instruc($query_send);
       

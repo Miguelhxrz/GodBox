@@ -21,6 +21,7 @@
   if(isset($object_id) && !empty($object_id)) {
     #Si existe el usuario agrega otro objeto a la lista de objetos de la bd.
     if($result_search == 1){
+
        $user_objects_db = $user->getObjects_inventory($user_id);
 
       for ($i=0; $i < count($user_objects_db) ; $i++) { 
@@ -32,12 +33,13 @@
       $string_items = implode('-', $add_objects);
 
       $result_update = $user->update_objects($user_id,$string_items);
-    
+      
     }else{
-      $user->addInventory($user_id, $object_id);
+      $verify = $user->addInventory($user_id,$username,$object_id);
     }
+      
   }
-
+  
   $user_objects = $user->getObjects_inventory($user_id);
   
   $user_id_objects = array();
