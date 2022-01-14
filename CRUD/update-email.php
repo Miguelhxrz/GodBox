@@ -1,6 +1,7 @@
 <?php
 require_once('../controllers/header-controller.php');
 require_once('../model/user.php');
+error_reporting(0);
 ?>
 
 <!DOCTYPE html>

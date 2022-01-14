@@ -1,4 +1,5 @@
-<?php require_once('../controllers/header-controller.php');?>
+<?php require_once('../controllers/header-controller.php');
+error_reporting(0);?>
 <!DOCTYPE html>
 <html lang="en">
 

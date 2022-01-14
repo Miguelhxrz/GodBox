@@ -14,7 +14,8 @@
 
 <body>
 
-    <?php include('../partials/header-no_singin.php'); ?>  
+    <?php include('../partials/header-no_singin.php');
+    error_reporting(0); ?>  
 
     <main class="container">
         <section class="container-form">

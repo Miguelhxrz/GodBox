@@ -1,6 +1,7 @@
 <?php 
 require ('../model/reports.php');
 require_once('../model/box.php');
+error_reporting(0);
 
 date_default_timezone_set('America/Caracas');
 
