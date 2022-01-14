@@ -32,6 +32,7 @@ require_once('../controllers/header-controller.php');
                 <a href="../view/reportes_productos.php"><div class="btn__report">Reportes de Productos</div></a>
                 <a href="../view/reportes_usuarios.php"><div class="btn__report">Reportes de Usuarios</div></a>
                 <a href="../view/reportes_sponsor.php"><div class="btn__report">Reportes de Patrocinadores</div></a>
+                <a href="../view/reportes_monedas-registradas.php"><div class="btn__report">Reportes de Monedas</div></a>
                 <a href="../view/reportes_monedas.php"><div class="btn__report">Reportes de Transaciones</div></a>
                 <a href="../view/admin_page.php"><div class="btn__report"><-Volver a datos</div></a>
             </div> 

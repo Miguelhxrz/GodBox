@@ -25,14 +25,14 @@
             <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form-register" class="form-register">
                 <input type="text" name="username" placeholder="Usuario" maxlength="15" size="15" require>
                 <input type="password" name="password" class="password" placeholder="Contraseña" maxlength="18" size="18" require>
-                <input type="text" name="id" placeholder="Documento de identidad" maxlength="10" size="10" require>
+                <input type="text" name="id" placeholder="Documento de identidad" maxlength="10" size="10" require onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
                 <input type="email" name="email" class="email" placeholder="Correo" maxlength="45" size="45" require> 
                 <input type="text" name="address" placeholder="Dirección" maxlength="45" size="45" require> 
                 <label for="birth" class="birth">
                  <p>Fecha de nacimiento:</p>
-                  <input type="text" name="day" placeholder="Día" min="0" max="31">
-                  <input type="text" name="month" placeholder="Mes" min="1" max="12">
-                  <input type="text" name="year" placeholder="Año" min="1900" max="2003">
+                  <input type="text" name="day" placeholder="Día" min="0" max="31" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                  <input type="text" name="month" placeholder="Mes" min="1" max="12" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                  <input type="text" name="year" placeholder="Año" min="1900" max="2003" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
                 </label>
 
                 <input type="submit" class="btn" name="submit" value="registrarse" id="submit-btn">

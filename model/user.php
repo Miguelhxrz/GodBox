@@ -136,7 +136,7 @@
     }
 
     function GetByUsername($username){
-      $query_send = "SELECT `username`, `password`, `id`, `email`, `address` FROM `users` WHERE  `username` = '$username'";
+      $query_send = "SELECT `username`, `password`, `id`, `email`, `address`, `coins` FROM `users` WHERE  `username` = '$username'";
 
       $question = $this->data_base->add_instruc($query_send);
   

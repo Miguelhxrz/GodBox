@@ -113,7 +113,7 @@
             
             <label for="box_image" class="label-img">
               <p>Agregar imagen</p>
-              <input type="file" name="box_image" id="box_image" value="">
+              <input type="file" name="box_image" accept="image/png,image/jpeg" id="box_image" value="">
             </label>
           
           </section>

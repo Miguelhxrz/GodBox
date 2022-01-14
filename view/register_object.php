@@ -46,12 +46,12 @@ require_once('../model/sponsor.php');
             
             <label for="object_stock" class="label-cantidad">
               Cantidad
-              <input type="text" name="object_stock" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10">
+              <input type="text" name="object_stock" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
             </label>
             
             <label for="price" class="label-price">
               Precio
-              <input type="text" name="object_price" placeholder="Precio" class="price" max="10" maxlength="10">
+              <input type="text" name="object_price" placeholder="Precio" class="price" max="10" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
             </label>
           
           </section>
