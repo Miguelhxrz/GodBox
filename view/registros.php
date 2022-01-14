@@ -31,6 +31,7 @@ require_once('../controllers/header-controller.php');
                 <a href="../view/register_box.php"><div class="btn__report">Registro de Cajas</div></a>
                 <a href="../view/register_object.php"><div class="btn__report">Registro de Productos</div></a>
                 <a href="../view/register_sponsor.php"><div class="btn__report">Registro de Patrocinadores</div></a>
+                <a href="../view/register_coins.php"><div class="btn__report">Registro de LilGods</div></a>
                 <a href="../view/admin_page.php"><div class="btn__report"><- Volver a Datos</div></a>
             </div> 
         </articles>

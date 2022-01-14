@@ -18,7 +18,7 @@ date_default_timezone_set('America/Caracas');
   
 
   $pdf->SetFont("Arial","B",9);
-  $pdf->Cell(55);
+  $pdf->Cell(60);
   $pdf->Cell(30, 5, "ID Usuario", 1, 0, "C");
   $pdf->Cell(30, 5, "ID Monedas", 1, 0, "C");
   $pdf->Cell(30, 5, "Cantidad", 1, 0, "C");
@@ -33,7 +33,7 @@ date_default_timezone_set('America/Caracas');
   $question = $transaciones->ShowTransaciones();
   for($i=0; $i<count($question); $i++){
     //`idusuario`,`idmonedas`, `quantity`, `price`, `fecha de compra`
-    $pdf->Cell(55);
+    $pdf->Cell(60);
     $pdf->Cell(30, 5, $question[$i]['idusuario'], 1, 0, "C");
     $pdf->Cell(30, 5, $question[$i]['idmonedas'], 1, 0, "C");
     $pdf->Cell(30, 5, $question[$i]['quantity'], 1, 0, "C");

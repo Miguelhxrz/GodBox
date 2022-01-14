@@ -8,6 +8,7 @@ class coins {
   private $quantity;
   private $price;
   private $img = "../public/coin/monedas.png";
+  private $fecha;
 
   #database
   private $data_base;
@@ -35,11 +36,15 @@ class coins {
     return $this->img;
   }
 
+  function setFecha($fecha) {
+    $this->fecha = $fecha;
+  }
+
   #data base functions
 
   function addDataBase() {
 
-    $query_send = "INSERT INTO `coins`(`ID`, `quantity`, `price`, `image`) VALUES ('".$this->id."','".$this->quantity."','".$this->price."','".$this->img."')";
+    $query_send = "INSERT INTO `coins`(`ID`, `quantity`, `price`, `fecha de registro`, `image`) VALUES ('".$this->id."','".$this->quantity."','".$this->price."','".$this->fecha."','".$this->img."')";
   
     $question = $this->data_base->add_instruc($query_send);
 

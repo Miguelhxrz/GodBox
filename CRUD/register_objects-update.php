@@ -56,12 +56,12 @@ require_once('../model/object.php');
             
             <label for="object_stock" class="label-cantidad">
               Cantidad
-              <input type="text" name="object_stock" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10" value="<?php echo $question[$i]['stock']?>">
+              <input type="text" name="object_stock" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10" value="<?php echo $question[$i]['stock']?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
             </label>
             
             <label for="price" class="label-price">
               Precio
-              <input type="text" name="object_price" placeholder="Precio" class="price" max="10" maxlength="10" value="<?php echo $question[$i]['price']?>">
+              <input type="text" name="object_price" placeholder="Precio" class="price" max="10" maxlength="10" value="<?php echo $question[$i]['price']?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
             </label>
           
           </section>

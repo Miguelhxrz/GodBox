@@ -25,12 +25,12 @@ require_once('../controllers/header-controller.php');
                 <h5>Registrar patrocinador</h5>
             </div>
             <form action="" name= "form-register" class= "form-register" method="post" enctype="multipart/form-data">
-            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12">
+            <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
             <input type="text" name="name_input"  placeholder="Nombre" maxlength="15" size="15" require>
             <input type="email" name="email_input"  placeholder="Email" maxlength="45" size="45" require>
             <label for="imagen_input" class="imagen_input">
                <p>Imagen del patrocinador</p> 
-            <input type="file" name="imagen_input" id="">
+            <input type="file" name="imagen_input" id="" accept="image/png,image/jpeg">
             </label>
             <input type="submit"class="btn" name="register" value="Registrar">
             

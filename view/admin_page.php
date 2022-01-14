@@ -1,7 +1,6 @@
 <?php 
 require_once('../controllers/header-controller.php');
 require_once('../model/user.php');
-require_once('../model/credit_card.php');
 
 ?>
 
@@ -57,28 +56,12 @@ require_once('../model/credit_card.php');
             </div>
             <div class="other__crud">
               <div class="crud LilGod">
-                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $row["coins"];?></h4> 
+                <h4>Mis LilGod:</h4> <h4 class="respuesta"><?php echo $row["coins"];?></h4> 
                 <a href="../view/buy_coins.php"><img src="../assets/icons/outline_add_white_24dp.png" alt="Comprar Más" title="Comprar Más"></a>
               </div>
               <div class="crud address">
                 <h4>Dirección:</h4> <h4 class="respuesta"><?php echo $row["address"];?></h4>
                 <a href="../CRUD/update-address-admin.php"><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar direccion"></a>
-              </div>
-              <div class="crud credit-card">
-              <h4>Tarjeta:</h4> 
-              <?php
-                $CC = new credit_card;
-                $id = $row['id'];
-                $question = $CC->GetCCbyid($id);
-                while ($fila = mysqli_fetch_array($question)){?>
-                <h4 class="respuesta"><?php echo $fila['number'];?></h4> 
-                <?php }?>
-                <form action="../CRUD/update-card_register.php" method="post">
-                  <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                  <button type="submit" class ="boton-submit">
-                  <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar address"></a>
-                  </button>
-                </form>
               </div>
               
               <?php endwhile ?>
