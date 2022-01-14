@@ -1,7 +1,5 @@
 <?php
-
 require_once('../controllers/header-controller.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +52,8 @@ require_once('../controllers/header-controller.php');
                 <div class="modal__select">
                 <form method='POST' action='<?php htmlspecialchars($SERVER['PHP_SELF']); ?>' class="modal_form">        
                     <input type='hidden' name='new_coins' value="<?php echo $coin_quantity?>">
+                    <input type='hidden' name='id' value="<?php echo $coin_id?>">
+                    <input type='hidden' name='price' value="<?php echo $coin_price?>">
                     <input type="submit" class="modal__btn" name="accept_btn" id="accept_btn" value="Aceptar">
                     <input type="submit" class="modal__btn" name="continue_btn" id="continue_btn" value="Continuar">
                 </form>
