@@ -1,6 +1,5 @@
 <?php 
 require_once('../controllers/header-controller.php');
-require_once('../model/sponsor.php');
 require_once('../model/object.php');
 
 ?>
@@ -39,8 +38,7 @@ require_once('../model/object.php');
 
       $question = $item->getObjectById($id);
 
-      while ($row = mysqli_fetch_array($question)){
-          
+      for ($i = 0; $i < count($question); $i++){
       ?>
       
       <form action="" method="POST" class="form-register" enctype="multipart/form-data">
@@ -49,24 +47,21 @@ require_once('../model/object.php');
 
           <section class="l-q">
           
-          <label for="id" class="label-id">
-              ID
-              <input type="text" name="object_id" placeholder="ID del objeto" class="name" max="4" maxlength="4" value="<?php echo $row['id'];?>">
-            </label>
+              <input type="hidden" name="object_id" placeholder="ID del objeto" class="name" max="4" maxlength="4" value="<?php echo $question[$i]['id'];?>">
             
             <label for="object_name" class="label-name">
               Nombre
-              <input type="text" name="object_name" placeholder="Nombre de Objeto" class="name" max="30" maxlength="30" value="<?php echo $row['name']?>">
+              <input type="text" name="object_name" placeholder="Nombre de Objeto" class="name" max="30" maxlength="30" value="<?php echo $question[$i]['name']?>">
             </label>
             
             <label for="object_stock" class="label-cantidad">
               Cantidad
-              <input type="text" name="object_stock" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10" value="<?php echo $row['stock']?>">
+              <input type="text" name="object_stock" placeholder="Cantidad de objetos" class="cantidad" max="10" maxlength="10" value="<?php echo $question[$i]['stock']?>">
             </label>
             
             <label for="price" class="label-price">
               Precio
-              <input type="text" name="object_price" placeholder="Precio" class="price" max="10" maxlength="10" value="<?php echo $row['price']?>">
+              <input type="text" name="object_price" placeholder="Precio" class="price" max="10" maxlength="10" value="<?php echo $question[$i]['price']?>">
             </label>
           
           </section>
@@ -78,24 +73,25 @@ require_once('../model/object.php');
             <label for="object_sponsor" class="label-sponsor">
               Sponsor
               <select name="object_sponsor" id="object_sponsor">
-                <option value="<?php echo $row['sponsor']?>"><?php echo $row['sponsor']?></option>
-                <option value="Apple">Apple</option>
-                <option value="Nike">Nike</option>
-                <option value="Nintendo">Nintendo</option>
-                <option value="Asus">Asus</option>
-                <?php
-                $sponsor = new sponsor;
-                $question = $sponsor->ShowSponsor();
-                while ($fila= mysqli_fetch_array($question)){?>
-                <option value="<?php echo $fila['name']?>"><?php echo $fila['name']?></option>
-                <?php }?>
+              <?php 
+
+                 require_once('../model/sponsor.php');
+
+                   $sponsor = new sponsor;
+
+                   $showSponsors = $sponsor->showSponsors(); ?>      
+
+                   <option value="<?php echo $question[$i]['sponsor']?>"><?php echo $question[$i]['sponsor']?></option>
+                   <?php  for($i = 0; $i < count($showSponsors); $i++) {
+                         echo "<option value='".$showSponsors[$i]['name']."'>".$showSponsors[$i]['name']."</option>";
+              }?>
               </select>
             </label>
             
             <label for="rank" class="label-rank">
               Rango
               <select name="object_rank" id="object_rank">
-                <option value="<?php echo $row['rank']?>"><?php echo $row['rank']?></option>
+              <option value="<?php echo $question[$i]['rank'] ?>"><?php echo $question[$i]['rank'] ?></option>
                 <option value="Dios">Dios</option>
                 <option value="SemiDios">SemiDios</option>
                 <option value="Olimpica">Olimpica</option>
@@ -106,7 +102,7 @@ require_once('../model/object.php');
             <label for="object_category" class="label-category">
               Categoria
               <select name="object_category">
-                <option value="<?php echo $row['category']?>"><?php echo $row['category']?></option>
+                <option value="<?php echo $question[$i]['category'] ?>"><?php echo $question[$i]['category'] ?></option>
                 <option value="Tecnologia">Tecnologia</option>
                 <option value="Accesorios">Accesorios</option>
                 <option value="Ropa">Ropa</option>
@@ -115,7 +111,7 @@ require_once('../model/object.php');
             
             <label for="object_image" class="label-name">
              <p>Imagen del objeto</p> 
-              <input type="file" name="object_image"  accept="image/png,image/jpeg" value="<?php echo $row['image']?>">
+              <input type="file" name="object_image"  accept="image/png,image/jpeg" value="<?php echo $question[$i]['image']?>">
             </label>
           
           </section>
@@ -166,10 +162,6 @@ if (isset($object_register)) {
     }else
     if (!preg_match($PatronID, $object_id)) {
       array_push($errores, "Error 057: El ID no debe llevar caracteres especial.");
-    }else
-    #validacion con db
-    if ($item->searchId($object_id) > 0) {
-      array_push($errores, "Error 058: El ID ya existe, ingrese otro.");
     }
   } else {
     array_push($errores, "Error 058: El ID no existe.");
@@ -185,11 +177,7 @@ if (isset($object_register)) {
     }else
     if (!preg_match($PatronUsuario, $object_name)) {
       array_push($errores, "Error 061: El Nombre no debe llevar caracteres especial.");
-    } else
-    #validacion con db
-    if ($item->searchName(strtolower($object_name)) > 0) {
-      array_push($errores, "Error 004: El nombre del objeto ya existe, ingrese otro.");
-    }
+    }  
   } else {
     array_push($errores, "Error 062: El Nombre no existe.");
   }
@@ -293,9 +281,8 @@ if (isset($object_register)) {
 
      $result = $item->updateObjects();
 
-     var_dump($result);
      if($result==true){
-      header("location: ../view/inventory_objects.php");
+      echo '<meta http-equiv="refresh" content="0;url=../view/inventory_objects.php">';
      }
 
     }

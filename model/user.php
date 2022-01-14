@@ -1,6 +1,4 @@
 <?php 
-  require_once('../model/connect_db.php');
-
   class user {
 
     public $username;
@@ -157,6 +155,13 @@
       }
 
     }
+    function ShowUsers(){
+      $query_send = "SELECT `username`, `password`, `id`, `email`, `address`,`birth`,`fecha de registro` FROM `users`";
+
+      $question = $this->data_base->add_instruc($query_send);
+  
+      return $question;
+    }
 
     function searchPassword($password) {
       $query_send = "SELECT `password` FROM `users` WHERE `password` = '$password'";
@@ -231,7 +236,7 @@
       }
     }
 
-    function verifyCard($username) {
+    function verifyCard() {
       $query_send = "SELECT username FROM `users` INNER JOIN payment ON users.id = payment.id";
 
       $question = $this->data_base->add_instruc($query_send);
@@ -242,27 +247,33 @@
         while($rows = mysqli_fetch_array($question)){
           array_push($result, $rows);
         }
-     }
-
-     $found = 0;
-
-     for ($i=0; $i < count($result); $i++) {
-
-      if($result[$i]['username'] == $username){
-        
-        $found = 1;
-          
-        return  $found;
-     
-       }else {
-     
-        return $found;
-
-     }
+        return $result;
+      }else {
+        return 0;
+      }
 
     }
 
+    
+  function buyBox ($username, $box_coins) {
+   
+    $mycoins = $this->getCoinsdb($username);
+
+    $mycoins_int = intval($mycoins);
+
+    $buy_box = $mycoins_int - $box_coins;
+
+    $query_send =  "UPDATE `users` SET `coins`= '".$buy_box."' WHERE `username` = '".$username."'";
+
+    $question =  $this->data_base->add_instruc($query_send);
+
+    if($question) {
+      return $buy_box;
+    }else {
+      return 0;
+    }
   }
+
 
   function UpdatePassword($password,$session){
     $query_send = "UPDATE `users` SET `password` = '$password'  WHERE  `username` = '$session'";
@@ -287,4 +298,65 @@
 
     return $question;
   }
+
+  function addInventory($id,$username,$objId) {
+
+    $query_send = "INSERT INTO `user_inventory`(`id`, `username`, `objects`) VALUES ('".$id."','".$username."','".$objId."')";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    if($question) {
+      return 1;
+    }else {
+      return "Fallo";
+    }
+
+  }
+
+  function searchId_inventory($id){
+    
+      $query_send = "SELECT `username` FROM `user_inventory` where id = '".$id."'";
+
+      $question = $this->data_base->add_instruc($query_send);
+      
+      if(mysqli_num_rows($question) > 0){
+        return 1;
+      }else {
+        return 0;
+      }
+  }
+
+  function getObjects_inventory ($id) {
+
+    $query_send = "SELECT  `objects` FROM `user_inventory` WHERE id = '".$id."'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    $result = array();
+    
+    if(mysqli_num_rows($question) > 0){
+      while($rows = mysqli_fetch_array($question)){
+        array_push($result, $rows);
+      }
+      return $result;
+    }else {
+      return 0;
+    }
+  }
+
+
+  function update_objects($id,$new_obj) {
+    
+    $query_send = "UPDATE `user_inventory` SET `objects`='".$new_obj."' WHERE `id` = '".$id."'";
+
+    $question = $this->data_base->add_instruc($query_send);
+
+    if($question) {
+      return 1;
+    }else {
+      return 0;
+    }
+  }
+
 }
+?>

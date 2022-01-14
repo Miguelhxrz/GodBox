@@ -63,17 +63,18 @@ require_once('../model/sponsor.php');
             <label for="object_sponsor" class="label-sponsor">
               Sponsor
               <select name="object_sponsor" id="object_sponsor">
-                <option value="">Seleccionar</option>
-                <option value="Apple">Apple</option>
-                <option value="Nike">Nike</option>
-                <option value="Nintendo">Nintendo</option>
-                <option value="Asus">Asus</option>
-                <?php
-                $sponsor = new sponsor;
-                $question = $sponsor->ShowSponsor();
-                while ($fila= mysqli_fetch_array($question)){?>
-                <option value="<?php echo $fila['name']?>"><?php echo $fila['name']?></option>
-                <?php }?>
+              <?php 
+
+                require_once('../model/sponsor.php');
+
+                  $sponsor = new sponsor;
+
+                  $showSponsors = $sponsor->showSponsors(); ?>      
+
+                  <option value="">Seleccionar</option>
+                  <?php  for($i = 0; $i < count($showSponsors); $i++) {
+                      echo "<option value='".$showSponsors[$i]['name']."'>".$showSponsors[$i]['name']."</option>";
+                  }?> 
               </select>
             </label>
             

@@ -52,10 +52,7 @@ error_reporting(0);
 
             <section class="l-q">
 
-              <label for="box_id" class="label-code">
-                ID
-                <input type="text" placeholder="ID de la caja" size="12" maxlength="8" name="box_id" value="<?php echo $row['id'] ?>">
-              </label>
+                <input type="hidden" placeholder="ID de la caja" size="12" maxlength="8" name="box_id" value="<?php echo $row['id'] ?>">
 
               <label for="box_name" class="label-name">
                 Nombre
@@ -81,17 +78,18 @@ error_reporting(0);
               <label for="box_sponsor" class="label-category">
                 Sponsor
                 <select name="box_sponsor" id="box_sponsor">
-                  <option value="<?php echo $row['sponsor'] ?>"><?php echo $row['sponsor'] ?></option>
-                  <option value="Apple">Apple</option>
-                  <option value="Nintendo">Nintendo</option>
-                  <option value="Ropa">Nike</option>
-                  <option value="variado">Variado</option>
-                  <?php
+                <?php 
+ 
+                 require_once('../model/sponsor.php');
+
                   $sponsor = new sponsor;
-                  $question = $sponsor->ShowSponsor();
-                  while ($fila = mysqli_fetch_array($question)) { ?>
-                    <option value="<?php echo $fila['name'] ?>"><?php echo $fila['name'] ?></option>
-                  <?php } ?>
+
+                  $showSponsors = $sponsor->showSponsors(); ?>      
+
+                  <option value="">Seleccionar</option>
+                    <?php  for($i = 0; $i < count($showSponsors); $i++) {
+                   echo "<option value='".$showSponsors[$i]['name']."'>".$showSponsors[$i]['name']."</option>";
+                }?>
                 </select>
               </label>
 
@@ -175,10 +173,6 @@ error_reporting(0);
       if (!preg_match($PatronID, $box_id)) {
             array_push($errores, "Error 057: El ID no debe llevar caracteres especial.");
           }
-          #validacion db
-          if ($box->searchId($box_id) > 0) {
-            array_push($errores, "Error: 058: El ID ya esta registrado, ingrese otro.");
-          }
         } else {
           array_push($errores, "Error 058: El ID no existe.");
         }
@@ -193,10 +187,6 @@ error_reporting(0);
           } else
       if (!preg_match($PatronUsuario, $box_name)) {
             array_push($errores, "Error 061: El Nombre no debe llevar caracteres especial.");
-          }
-          #validacion db
-          if ($box->searchName($box_name) > 0) {
-            array_push($errores, "Error: 058: El nombre de la caja ya esta registrado, ingrese otro.");
           }
         } else {
           array_push($errores, "Error 062: El Nombre no existe.");

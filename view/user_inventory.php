@@ -1,6 +1,7 @@
 <?php 
-require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
+require_once('../model/user.php');
+require_once('../controllers/user-inventory-controller.php')
 
 ?>
 
@@ -18,9 +19,9 @@ require_once('../controllers/header-controller.php');
 <body>
        <!-- Header -->
        <?php include($header); 
-        //$user = new user;
-       //$question = $user->GetByUsername($_SESSION['user']);
-       //while ($row = mysqli_fetch_array($question)):?>
+        $user = new user;
+       $question = $user->GetByUsername($_SESSION['user']);
+       while ($row = mysqli_fetch_array($question)):?>
      <main class="container">
         <section class="panel__container">
           <articles class="admin__container">
@@ -28,24 +29,32 @@ require_once('../controllers/header-controller.php');
               <figure class="admin__ico-container">
                 <img src="../assets/icons/user-profile.png" alt="" title="">
               </figure>
-              <h4 class="title"><?php echo $_SESSION['user']?></h4>
+              <h4 class="title"><?php echo $row['username']; endwhile?></h4>
             </div>
             <div class="select__reports">
                 <a href="../view/user_page.php"><div class="btn__report">Datos </div></a>
                 <a href="../view/transaciones_user.php"><div class="btn__report">Mis Transaciones</div></a>
-                <a href="../view/productos_user.php"><div class="btn__report">Mis Productos</div></a>
+                <a href="../view/user_inventory.php"><div class="btn__report">Mis Productos</div></a>
                 <a href="../view/buy_coins.php"><div class="btn__report">Comprar Monedas</div></a>
-                <!-- <div class="btn__report">Mis productos </div>
-                <div class="btn__report">Mis transacciones</div>
-                <div class="btn__report">Inventario de cajas</div>
-                <div class="btn__report">Inventario de productos</div>
-                <div class="btn__report">Patrocinadores</div>
-            </div> -->
         </articles>
       </section>
       <section class="reports__container">
           <h4 class="title">Mis Productos🔒</h4>
           <div class="put__reports">
+             <?php for($i = 0; $i < count($img); $i++) {
+              $k = 0;
+               echo 
+              "<div class='objects__container'>
+                <img src='".$img[$i][$k]['image']."'>
+             
+                <form class='hidden' action='' method='POST' class'options_form'>
+                  <input type='hidden' name='object_id' value='".$id_objects_db[$i]."'>
+                  <input type='submit' name='enviar_btn' value='Enviar' id='send_btn'>
+                  <input type='submit' name='vender_btn' value='Vender' id='sell_btn'>
+                </form>
+           </div>";
+             } ?>
+
           </div>
       </section>
     </main>

@@ -1,4 +1,5 @@
 <?php 
+require_once('../model/connect_db.php');
 require ('../model/reports.php');
 require_once('../model/user.php');
 

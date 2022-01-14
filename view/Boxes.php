@@ -66,7 +66,7 @@
                 </div>
                 <input type='hidden' name='box_id' value='".$showBoxes[$i]['id']."'>
                 <input type='hidden' name='box_price' value='".$showBoxes[$i]['price']."'>
-                <input type='submit' class='box__button-buy' value='Comprar' />
+                <input type='submit' name='buy_box' class='box__button-buy' value='Comprar' />
             </form>";
         } ?>
                 </div>

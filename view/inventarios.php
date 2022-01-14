@@ -29,7 +29,7 @@ require_once('../controllers/header-controller.php');
             </div>
             <div class="select__reports">
                 <a href="../view/inventory.php"><div class="btn__report">Inventario de Cajas</div></a>
-                <a href="../view/inventory-objects.php"><div class="btn__report">Inventarios de Productos</div></a>
+                <a href="../view/inventory_objects.php"><div class="btn__report">Inventarios de Productos</div></a>
                 <a href="../view/sponsor.php"><div class="btn__report">Inventarios de Patrocinadores</div></a>
                 <a href="../view/admin_page.php"><div class="btn__report"><- Volver a Datos</div></a>
             </div> 

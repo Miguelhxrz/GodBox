@@ -32,7 +32,7 @@ require_once('../model/sponsor.php');
       while ($row = mysqli_fetch_array($question)) {
       ?>
         <form action="" name="form-register" class="form-register" method="post" enctype="multipart/form-data">
-          <input type="text" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12" value="<?php echo $row["rif"] ?>">
+          <input type="hidden" name="rif_input" placeholder="Rif" class="rif_input" maxlength="12" max="12" value="<?php echo $row["rif"] ?>">
           <input type="text" name="name_input" placeholder="Nombre" maxlength="15" size="15" value="<?php echo $row["name"] ?>">
           <input type="email" name="email_input" placeholder="Email" maxlength="45" size="45" value="<?php echo $row["email"] ?>">
           <label for="imagen_input" class="imagen_input">
@@ -44,7 +44,6 @@ require_once('../model/sponsor.php');
         <?php
       }
       $sponsor = new sponsor;
-      $sponsor->sponsor();
 
       $patron_id = "/^(V|E|v|e|J|P|G|j|p|g|R|r)-[0-9]+$/";
       $patron_email = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/";
@@ -79,10 +78,6 @@ require_once('../model/sponsor.php');
           if (!preg_match($patron_name, $sponsor_name)) {
             array_push($errores, "Error 040: El Nombre no puede contener caracteres especiales.");
           }
-          #validacion db
-          if ($sponsor->searchName($sponsor_name) > 0) {
-            array_push($errores, "Error 041: El Nombre ya existe, ingrese otro.");
-          }
         } else {
           array_push($errores, "Error 042: El Nombre no existe.");
         }
@@ -98,10 +93,6 @@ require_once('../model/sponsor.php');
           if (!preg_match($patron_id, $rif)) {
             array_push($errores, "Error 045: El Rif debe ser de esta manera: V,E,R,J,P ó G-12345678.");
           }
-          #validacion db
-          if ($sponsor->searchRif($rif) > 0) {
-            array_push($errores, "Error 046: El rif ya esta registrado, ingrese otro.");
-          }
         } else {
           array_push($errores, "Error 047: El Rif no existe.");
         }
@@ -116,10 +107,6 @@ require_once('../model/sponsor.php');
           }
           if (!preg_match($patron_email, $email)) {
             array_push($errores, "Error 0050: Dato invalido al escribir el correo.");
-          }
-          #validacion db
-          if ($sponsor->searchEmail($email) > 0) {
-            array_push($errores, "Error 051: El email ya esta registrado, ingrese otro.");
           }
         } else {
           array_push($errores, "Error 052: El Nombre no existe.");
@@ -163,9 +150,8 @@ require_once('../model/sponsor.php');
           $sponsor->setImagen($origin);
 
           $result = $sponsor->UpdateSponsor();
-          var_dump($result);
           if ($result == true) {
-            header("location: ../view/sponsor.php");
+            echo '<meta http-equiv="refresh" content="0;url=../view/sponsor.php">';
           }
         }
       }

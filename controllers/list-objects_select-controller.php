@@ -36,12 +36,12 @@
   if(isset($finish_btn)) {
 
       if(!isset($box_items)){
-      array_push($errors, "Error: el campo items no existe");
+      array_push($errors, "Error: Debes añadir objetos a la caja");
       }
 
-      if($box_items == "" || count($box_items) < 2) {
-        array_push($errors, "Error: Debes escojer 8 objetos para poder crear la caja");
-      }
+      // if($box_items == "" || count($box_items) < 8) {
+      //   array_push($errors, "Error: Debes escojer 8 objetos para poder crear la caja");
+      // }
 
       if(count($errors) > 0){
         echo "<div class='error'>
@@ -61,6 +61,12 @@
 
         #moviendo la imagen a la carpeta
         $move = move_uploaded_file($box_img_temp, $origin);
+
+        // var_dump($box_items);
+        
+        #fecha de registro
+        date_default_timezone_set('America/Caracas');
+        $fecha = date("d/m/Y");
         
         $box->setID($box_id);
         $box->setName($box_name);
@@ -69,16 +75,47 @@
         $box->setSponsor($box_sponsor);
         $box->setCategory($box_category);
         $box->setRank($box_rank);
-        $box->setObjects($box_items);
         $box->setImage($origin);
+        #fecha de registro
+        $box->setFechaRegistro($fecha);
+
+        $box_items_string = implode("-",$box_items);
+
+        // var_dump($box_items);
+        $item_stocks = array();
+
+        for ($i=0; $i <count($box_items) ; $i++) { 
+          $result = $item->getStock_db($box_items[$i]);
+          array_push($item_stocks, $result[0][0]);              
+        }
+
+        $item_stocks_int = array();
+
+        for ($i=0; $i < count($item_stocks) ; $i++) { 
+          array_push($item_stocks_int, intval($item_stocks[$i]));
+        }
+
+        $item_stocks_int;
+
+        for ($i=0; $i < count($item_stocks_int); $i++) { 
+          $result = $item->restStock($item_stocks_int[$i], $box_items[$i]);
+          echo $result;
+        }
 
 
 
-        $result = $box->addDataBase();
 
+
+          
         
-        
-        var_dump($result);
+
+        // $box->setObjects($box_items_string);
+
+        // $result = $box->addDataBase();
+
+        // var_dump($result);
+
+        // header('Location: ../view/boxes.php');
 
 
 

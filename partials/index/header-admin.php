@@ -1,3 +1,13 @@
+<?php 
+    require_once('./model/connect_db.php');
+    require_once('./model/user.php');
+    
+    $user = new user;
+
+    $username = $_SESSION['user'];
+
+    $coins = $user->getCoinsdb($username);
+?>
 <header class="header-a">
         <div class="container-header-a">
 

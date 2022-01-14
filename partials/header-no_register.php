@@ -1,3 +1,4 @@
+<?php require_once('../model/connect_db.php');?>
 <header class="header">
 
         <nav class="menu__container">

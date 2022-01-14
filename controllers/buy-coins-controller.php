@@ -10,5 +10,5 @@
 
   $show = $coin->showCoins(); #muestra los coin en la pagina de buy_coins.
 
-
+  
 ?>

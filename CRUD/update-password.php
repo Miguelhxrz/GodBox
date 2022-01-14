@@ -33,7 +33,7 @@ require_once('../model/credit_card.php')
             <div class="select__reports">
                 <a href="../view/user_page.php"><div class="btn__report">Datos</div></a>
                 <a href="../view/transaciones_user.php"><div class="btn__report">Mis Transaciones</div></a>
-                <a href="../view/productos_user.php"><div class="btn__report">Mis Productos</div></a>
+                <a href="../view/user_inventory.php"><div class="btn__report">Mis Productos</div></a>
                 <a href="../view/buy_coins.php"><div class="btn__report">Comprar Monedas</div></a>
                 <!--<div class="btn__report">Mis transacciones</div>
                 <div class="btn__report">Inventario de cajas</div>

@@ -16,7 +16,7 @@
     #database
     private $data_base;
 
-    function object_() {
+    function __construct() {
       $this->data_base= new connect_db();
     }
 
@@ -84,12 +84,39 @@
     }
 
     function getObjectById($id){
-      $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `image` FROM `objects` WHERE `id` = '$id'";
+      $query_send = "SELECT * FROM `objects` WHERE `id` = '$id'";
   
       $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
   
-      return $question;
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+        }else {
+          return 0;
+        }
     }
+
+    function getPrice_db ($id) {
+      $query_send = "SELECT `price` FROM `objects` WHERE `id` = '$id'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+  
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result[0]['price'];
+        }else {
+          return 0;
+        }
+    }
+
 
     function DeleteObject($id){
       $query_send  = "DELETE FROM `objects` where `id` = '$id'";
@@ -116,7 +143,6 @@
         }else {
           return 0;
         }
-    
     }
 
     function searchName($name) {
@@ -149,6 +175,56 @@
       $query_send = "UPDATE `objects` SET `id`= '$this->id',`name`='$this->name',`stock`='$this->stock', `price` = '$this->price', `sponsor` = '$this->sponsor', `rank` = '$this->rank', `category` = '$this->category', `image` = '$this->image' WHERE `id` = '$this->id'";
       $question = $this->data_base->add_instruc($query_send);
       return $question;
+    }
+
+    function getStock_db ($id) {
+      $query_send = "SELECT `stock` FROM `objects` WHERE id = '".$id."'";
+        
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+      }else {
+        return 0;
+      }
+    }
+
+    function restStock ($stock,$id) {
+
+      $new_stock = $stock - 1;
+
+      $query_send = "UPDATE `objects` SET `stock`= '".$new_stock."' WHERE `id` = '".$id."'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+        if(isset($question)){
+          return 1;
+        }else {
+          return 0;
+        }
+
+      }
+
+
+    function searchObject_img ($img) {
+      $query_send = "SELECT `id` FROM `objects` WHERE `image` = '".$img."'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+      }else {
+        return 0;
+      }
+ 
     }
 
   }

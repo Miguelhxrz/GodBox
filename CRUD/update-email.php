@@ -38,7 +38,7 @@ require_once('../model/credit_card.php');
             <a href="../view/transaciones_user.php">
               <div class="btn__report">Mis Transaciones</div>
             </a>
-            <a href="../view/productos_user.php">
+            <a href="../view/user_inventory.php">
               <div class="btn__report">Mis Productos</div>
             </a>
             <a href="../view/buy_coins.php">
@@ -90,10 +90,6 @@ require_once('../model/credit_card.php');
                 if (preg_match($patron_email, $email) == 0) {
                   array_push($errores, "Error 016: Verifique el campo email, puede tener un caracter no valido");
                 }
-                #validacion db
-                if ($user->searchEmail($email) > 0) {
-                  array_push($errores, "Error: 017: El email ya esta registrado");
-                }
                 if (count($errores) > 0) {
                   echo "<div class='error'>";
                   for ($i = 0; $i < count($errores); $i++) {
@@ -110,6 +106,10 @@ require_once('../model/credit_card.php');
               }
               ?>
             </div>
+<<<<<<< HEAD
+=======
+            </div>
+>>>>>>> b75064e58b754b979a92d154cce41fa327346e44
             <div class="other__crud">
               <div class="crud LilGod">
                 <h4>Mis LilGod:</h4> <h4 class="respuesta"><?echo $row["coins"];?></h4> 
@@ -137,15 +137,15 @@ require_once('../model/credit_card.php');
               </div>
               
               <?php endwhile ?>
+<<<<<<< HEAD
             </div>
             <div class="crud credit-card">
               <h4>tarjeta:</h4>
               <h4 class="respuesta">xxxxx-xxxx-xxxx</h4>
               <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar tarjeta"></a>
+=======
+>>>>>>> b75064e58b754b979a92d154cce41fa327346e44
             </div>
-
-          <?php endwhile ?>
-          </div>
         </div>
       </section>
     </main>
