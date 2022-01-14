@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-01-2022 a las 02:30:51
+-- Tiempo de generación: 14-01-2022 a las 10:03:36
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -48,6 +48,7 @@ CREATE TABLE `box` (
 INSERT INTO `box` (`id`, `name`, `price`, `stock`, `sponsor`, `category`, `rank`, `objects`, `img`, `fecha de registro`) VALUES
 ('AATS', 'Apple Excellent Box', 920, 399, 'Apple', 'Tecnologia', 'SemiDios', 'IATD-MNHJ', '../public/box/box_apple-semidios-resized.png', '09/01/2022'),
 ('MART', 'Besto box world', 1300, 6, 'Apple', 'Tecnologia', 'Dios', 'IATD-MNHJ-BFMO-CSHT-PCDT-PSDT-SRDA-TRST', '../public/box/box_apple-god_resized.png', '09/01/2022'),
+('NNRD', 'Nike mega box', 1500, 4, 'Nike', 'Accesorios', 'SemiDios', 'BFMO-CSHT-IATD-MNHJ-PCDT-PSDT-SRDA-TRST', '../public/box/box_nike-rare.png', '14/01/2022'),
 ('QPQP', 'Quevero Box', 100, 200, 'TerrarioPekar', 'Accesorios', 'Olimpica', 'BFMO-CSHT-IATD-MNHJ-PCDT-PSDT-SRDA-TRST', '../public/box/box_apple-Olimpica_resized.png', '09/01/2022');
 
 -- --------------------------------------------------------
@@ -95,14 +96,14 @@ CREATE TABLE `objects` (
 --
 
 INSERT INTO `objects` (`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `image`, `fecha de registro`) VALUES
-('BFMO', 'Barbie Fachera', 500, 20, 'Matel', 'Olimpico', 'Juguetes', '../public/items/emoji-kiss.png', '09/01/2022'),
-('CSHT', 'Control de PS4', 1500, 55, 'Sony', 'Heroe', 'Tecnologia', '../public/items/CSHT.png', '09/01/2022'),
-('IATD', 'Iphone 13 pro max', 250, 1500, 'Apple', 'Dios', 'Tecnologia', '../public/items/Iphone13.png', '09/01/2022'),
-('MNHJ', 'MarioToy', 455, 20, 'Nintendo', 'Heroe', 'Accesorios', '../public/items/Mario_toy.png', '09/01/2022'),
-('PCDT', 'PC Cooler Master Optiplex 3000', 50, 3600, 'Cooler Master', 'Dios', 'Tecnologia', '../public/items/PCDT.png', '09/01/2022'),
-('PSDT', 'Play Station 5', 13, 1500, 'Sony', 'Dios', 'Tecnologia', '../public/items/PSDT.png', '09/01/2022'),
-('SRDA', 'Silla Razer', 98, 380, 'Razer', 'Dios', 'Accesorios', '../public/items/Silla_Razer.png', '09/01/2022'),
-('TRST', 'Teclado Razer 1580R', 320, 145, 'Razer', 'SemiDios', 'Tecnologia', '../public/items/TRST.png', '09/01/2022');
+('BFMO', 'Barbie Fachera', 485, 20, 'Matel', 'Olimpico', 'Juguetes', '../public/items/emoji-kiss.png', '09/01/2022'),
+('CSHT', 'Control de PS4', 1485, 55, 'Sony', 'Heroe', 'Tecnologia', '../public/items/CSHT.png', '09/01/2022'),
+('IATD', 'Iphone 13 pro max', 235, 1500, 'Apple', 'Dios', 'Tecnologia', '../public/items/Iphone13.png', '09/01/2022'),
+('MNHJ', 'MarioToy', 440, 20, 'Nintendo', 'Heroe', 'Accesorios', '../public/items/Mario_toy.png', '09/01/2022'),
+('PCDT', 'PC Cooler Master Optiplex 3000', 35, 3600, 'Cooler Master', 'Dios', 'Tecnologia', '../public/items/PCDT.png', '09/01/2022'),
+('PSDT', 'Play Station 5', -2, 1500, 'Sony', 'Dios', 'Tecnologia', '../public/items/PSDT.png', '09/01/2022'),
+('SRDA', 'Silla Razer', 83, 380, 'Razer', 'Dios', 'Accesorios', '../public/items/Silla_Razer.png', '09/01/2022'),
+('TRST', 'Teclado Razer 1580R', 305, 145, 'Razer', 'SemiDios', 'Tecnologia', '../public/items/TRST.png', '09/01/2022');
 
 -- --------------------------------------------------------
 
@@ -154,6 +155,19 @@ INSERT INTO `sponsor` (`name`, `rif`, `email`, `image`, `fecha de registro`) VAL
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `transacciones`
+--
+
+CREATE TABLE `transacciones` (
+  `idusuario` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+  `idmonedas` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+  `quantity` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+  `fecha compra` varchar(11) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -173,9 +187,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `coins`, `id`, `email`, `address`, `birth`, `fecha de registro`) VALUES
+('admin', 'admin', 0, '0', '', '', '', ''),
 ('ramirito', '123456789', 0, '11587558', 'ramiro@gmail.com', 'calle 56 con carrera 23', '20/5/2001', '07/01/2022'),
-('eugenio', '15032020', 1555, '13774040', 'mariu747@gmail.com', 'calle 56 con carrera 23', '26-8-1985', '23/12/2021'),
-('miguelhxrz', 'miguel28021899**', 3300, '28021899', 'miguelherzdev@gmail.com', 'calle 56 con carrera 23', '15-2-2001', '14/11/2021'),
+('eugenio', '15032020', 1700, '13774040', 'mariu747@gmail.com', 'calle 56 con carrera 23', '26-8-1985', '23/12/2021'),
+('miguelhxrz', 'miguel28021899**', 1680, '28021899', 'miguelherzdev@gmail.com', 'calle 56 con carrera 23', '15-2-2001', '14/11/2021'),
 ('Juanito1215', '13131313', 100, '29909522', 'juanitox@gmail.com', 'carrera 15 entre calles 48 y 49', '20-12-1990', '12/11/2021');
 
 -- --------------------------------------------------------
@@ -195,8 +210,7 @@ CREATE TABLE `user_inventory` (
 --
 
 INSERT INTO `user_inventory` (`id`, `username`, `objects`) VALUES
-('13774040', 'Eugenio', 'PSDT'),
-('28021899', 'miguelhxrz', 'BFMO-PCDT-TRST-PSDT-MNHJ'),
+('28021899', 'miguelhxrz', 'IATD-MNHJ'),
 ('29909522', 'Juanito1215', 'MNHJ-IATD');
 
 --
