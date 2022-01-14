@@ -1,11 +1,13 @@
 <?php
   require_once('../model/user.php');
+  require_once('../model/credit_card.php');
   require_once('../model/coins.php');
   require_once('../model/transaciones.php');
 
   session_start();
 
   $coin = new coins();
+  $cc = new credit_card;
   $user = new user();
   $transaciones = new transaciones();
 
@@ -40,6 +42,12 @@
 
   $fecha = date('d/m/Y');
 
+  $found = 0;
+
+  if ($search_user > 0) {
+    $found = 1;
+  }
+
   $buy_coins = intval($_POST['new_coins']);
 
   $buy_price = intval($_POST['price']);
@@ -50,7 +58,8 @@
 
   $continue_btn = $_POST['continue_btn'];
 
-    //var_dump($userid,$buy_id,$buy_coins,$buy_price,$fecha);
+
+  
   if(isset($acept_btn)){
     
     $result = $user->buyCoins($buy_coins, $username);
