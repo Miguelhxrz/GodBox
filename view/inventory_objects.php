@@ -3,6 +3,7 @@ require_once('../controllers/header-controller.php');
 require_once('../model/object.php');
 $item = new object_;
 $question = $item->ShowObjects();
+error_reporting(0);
 ?>
 
 <!DOCTYPE html>

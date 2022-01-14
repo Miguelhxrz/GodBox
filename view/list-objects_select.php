@@ -13,7 +13,9 @@
 
 <body>
     <!-- Header -->
-    <?php require_once('../controllers/header-controller.php'); include($header); ?>
+    <?php require_once('../controllers/header-controller.php'); include($header);
+    error_reporting(0);
+     ?>
 
     <main class="container">
         

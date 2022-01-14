@@ -15,6 +15,7 @@
     
     <?php 
         include("../partials/header-no_register.php");
+        error_reporting(0);
     ?>
 
     <main class="container">

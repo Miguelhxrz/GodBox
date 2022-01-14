@@ -2,6 +2,7 @@
 
 require_once('./model/user.php');
 require_once('./model/connect_db.php');
+error_reporting(0);
 
 $user = new user;
 

@@ -1,13 +1,12 @@
 <?php
   require_once('../model/user.php');
-  require_once('../model/credit_card.php');
   require_once('../model/coins.php');
   require_once('../model/transaciones.php');
+  error_reporting(0);
 
   session_start();
 
   $coin = new coins();
-  $cc = new credit_card;
   $user = new user();
   $transaciones = new transaciones();
 
@@ -38,15 +37,7 @@
 
   $coin_price = intval($price);
 
-  $search_user = $cc->verifyCard($userid);
-
   $fecha = date('d/m/Y');
-
-  $found = 0;
-
-  if ($search_user > 0) {
-    $found = 1;
-  }
 
   $buy_coins = intval($_POST['new_coins']);
 

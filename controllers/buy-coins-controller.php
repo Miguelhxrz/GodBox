@@ -1,6 +1,7 @@
 <?php
   require_once('../model/user.php');
   require_once('../model/coins.php');
+  error_reporting(0);
 
   $coin = new coins();
 

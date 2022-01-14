@@ -1,6 +1,7 @@
 <?php 
     require_once('../controllers/header-controller.php');
-    require_once('../controllers/boxes-controller.php'); 
+    require_once('../controllers/boxes-controller.php');
+    error_reporting(0); 
 ?>
 <!DOCTYPE html>
 <html lang="es">

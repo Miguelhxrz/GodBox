@@ -1,6 +1,7 @@
 <?php 
 require('../controllers/reports_page-controller.php');
 require_once('../controllers/header-controller.php');
+error_reporting(0);
 
 ?>
 

@@ -1,6 +1,7 @@
 <?php 
 require_once('../model/reports.php');
 require_once('../model/transaciones.php');
+error_reporting(0);
 
 date_default_timezone_set('America/Caracas');
 

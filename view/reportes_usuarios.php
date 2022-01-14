@@ -2,6 +2,7 @@
 require_once('../model/connect_db.php');
 require ('../model/reports.php');
 require_once('../model/user.php');
+error_reporting(0);
 
 date_default_timezone_set('America/Caracas');
 

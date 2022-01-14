@@ -1,6 +1,7 @@
 <?php
 require_once('../controllers/header-controller.php');
 require_once('../model/user.php');
+error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -105,10 +106,7 @@ require_once('../model/user.php');
               }
               ?>
             </div>
-<<<<<<< HEAD
-=======
             </div>
->>>>>>> b75064e58b754b979a92d154cce41fa327346e44
             <div class="other__crud">
               <div class="crud LilGod">
                 <h4>Mis LilGod:</h4> <h4 class="respuesta"><?php echo $row["coins"];?></h4> 
@@ -121,14 +119,6 @@ require_once('../model/user.php');
               
               
               <?php endwhile ?>
-<<<<<<< HEAD
-            </div>
-            <div class="crud credit-card">
-              <h4>tarjeta:</h4>
-              <h4 class="respuesta">xxxxx-xxxx-xxxx</h4>
-              <a href=""><img src="../assets/icons/bx-edit-alt.svg" alt="editar" title="editar tarjeta"></a>
-=======
->>>>>>> b75064e58b754b979a92d154cce41fa327346e44
             </div>
         </div>
       </section>

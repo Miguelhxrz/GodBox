@@ -1,7 +1,8 @@
 <?php 
 require_once('../controllers/header-controller.php');
 require_once('../model/user.php');
-require_once('../controllers/user-inventory-controller.php')
+require_once('../controllers/user-inventory-controller.php');
+error_reporting(0);
 
 ?>
 
