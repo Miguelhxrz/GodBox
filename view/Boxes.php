@@ -21,39 +21,6 @@
 
     <main class="container">
 
-        <section class="search__container">
-            <label for="rank">
-                Rango
-                <select id="rank" name='rank'>
-                    <option value="Nothing"></option>
-                    <option value="Olimpica">Olimpica</option>
-                    <option value="Heroe">Heroe</option>
-                    <option value="SemiDios">SemiDios</option>
-                    <option value="Dios">Dios</option>
-                </select>
-            </label>
-            <label for="category">
-                Categoria:
-                <select id="category" name='category'>
-                    <option value="Nothing"></option>
-                    <option value="Tecnologia">Tecnologia</option>
-                    <option value="Ropa">Ropa</option>
-                    <option value="accesorios">accesorios</option>
-                    <option value="zapatos">zapatos</option>
-                </select>
-            </label>
-            <label for="sponsor">
-                Patrocinador
-                <select id="sponsor" name='sponsor'>
-                    <option value="Nothing"></option>
-                    <option value="Nike">Nike</option>
-                    <option value="Ropa">Adidas</option>
-                    <option value="accesorios">Fila</option>
-                    <option value="zapatos">Apple</option>
-                </select>
-            </label>
-        </section>
-
         <section class="box__container">
             <?php for ($i=0; $i < count($showBoxes); $i++) { 
              echo   

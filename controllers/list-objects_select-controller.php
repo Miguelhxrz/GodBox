@@ -14,8 +14,6 @@
   
   #datos de la caja
   $box_id = $_SESSION['box_id'];
-  
-  // var_dump($box_id);
 
   $incoming_box = $box->getBox_db($box_id);#busca la caja en la bd 
 
@@ -26,16 +24,18 @@
   $items = array();
 
   $items = $_POST['items'];
+  
+  if(isset($box_id)) {
 
-  if(isset($finish_btn)) {
+    if(isset($finish_btn)) {
 
       if(!isset($items)){
       array_push($errors, "Error: Debes añadir objetos a la caja");
       }
 
-      // if(items == "" || count(items) < 8) {
-      //   array_push($errors, "Error: Debes escojer 8 objetos para poder crear la caja");
-      // }
+      if($items == "" || count($items) < 8) {
+        array_push($errors, "Error: Debes escojer 8 objetos para poder crear la caja");
+      }
 
       if(count($errors) > 0){
         echo "<div class='error'>
@@ -49,8 +49,6 @@
       }else {
 
         $box_items_string = implode("-",$items);
-
-        // var_dump($items);
 
         $item_stocks = array();
 
@@ -71,17 +69,16 @@
           $item->restStock($item_stocks_int[$i], $items[$i]);
         }
         
-
         $result = $box->add_objects($box_id,$box_items_string);
 
         var_dump($result);
 
-        // header('Location: ../view/boxes.php');
+        header('Location: ../view/boxes.php');
 
       }
     }
 
-
+  }
   
 
 
