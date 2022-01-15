@@ -32,7 +32,7 @@ date_default_timezone_set('America/Caracas');
   $pdf->SetFont("Arial","",9);
 
   $item = new object_;
-  $question = $item->ShowObjects();
+  $question = $item->ShowObjectsR();
   for($i=0; $i<count($question); $i++){
     //`id`, `name`, `stock`, `price`, `sponsor`, `rank`, `category`, `fecha de registro`
     

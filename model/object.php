@@ -162,6 +162,24 @@
         }
     }
 
+    function ShowObjectsR(){
+
+      $query_send = "SELECT * FROM `objects`ORDER BY `fecha de registro` DESC";
+          
+      $question = $this->data_base->add_instruc($query_send);
+  
+      $result = array();
+
+      if(mysqli_num_rows($question) > 0){
+          while($rows = mysqli_fetch_array($question)){
+            array_push($result, $rows);
+          }
+          return $result;
+        }else {
+          return 0;
+        }
+    }
+
     function get0bjectById ($id) {
       $query_send = "SELECT * FROM `objects` WHERE `id` = '".$id."'";
           

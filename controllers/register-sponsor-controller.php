@@ -110,7 +110,7 @@ if (isset($register)) {
     $move = move_uploaded_file($img_temp, $origin);
 
     date_default_timezone_set('America/Caracas');
-    $fecha = date("d/m/Y");
+    $fecha = date("Y-m-d");
 
     $sponsor->setName($sponsor_name);
     $sponsor->setRif($rif);

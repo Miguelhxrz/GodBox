@@ -141,7 +141,7 @@ if (isset($box_register)) {
 
     #fecha de registro
     date_default_timezone_set('America/Caracas');
-    $fecha = date("d/m/Y");
+    $fecha = date("Y-m-d");
 
     $_SESSION['box_id'] = $box_id;
     

@@ -153,7 +153,7 @@ if (isset($object_register)) {
     $price_int = intval($object_price);
 
     date_default_timezone_set('America/Caracas');
-    $fecha = date("d/m/Y");
+    $fecha = date("Y-m-d");
 
     $item->setID($object_id);
     $item->setName($object_name);
