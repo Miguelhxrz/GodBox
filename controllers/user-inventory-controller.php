@@ -47,40 +47,37 @@
       
   }
 
-  $array_items = $user->getObjects_inventory($user_id);
+  $array_items = $user->getObjects_inventory($user_id); #busca los objetos ya registrados en la db
 
-  $id_items = explode('-',$array_items[0]['objects']);
+  $id_items = explode('-',$array_items[0]['objects']); #hace un array con los id de los items
 
-  $items_img = array();
+  $items_img = array(); #Aca se guardan las imagenes de cada uno de los items
 
   for ($i=0; $i < count($id_items) ; $i++) { 
-    array_push($items_img,$item->getImage_db($id_items[$i]));
+    array_push($items_img,$item->getImage_db($id_items[$i])); #se pushean las imagenes al array
   }
 
-  
 
-  // $showItems = explode('-', $string_items);
+  if(isset($btn_sell)) {
 
-  
+    $sell_id = $_POST['object_id'];
 
+    $array_sell = $user->getObjects_inventory($user_id);
 
+    $id_sell = explode('-',$array_sell[0]['objects']);
+    
+    $object_update = array();
 
-  
-  
-  
-  
+    for ($i=0; $i < count($id_sell); $i++) { 
+      if($id_sell[$i] == $sell_id) {
+        unset($id_items[$i]);
+      }
+      array_push($object_update,$id_sell[$i]);
+    }
 
-  
+    var_dump($object_update);
 
-  
-
-  
-
-
-
-  
-  
-
+  }
 
 
 ?>

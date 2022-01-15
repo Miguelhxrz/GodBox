@@ -361,18 +361,6 @@
     }
   }
 
-  /* function getObjects_inventoryPrint ($id) {
-
-    $query_send = "SELECT  `objects` FROM `user_inventory` WHERE id = '".$id."'";
-
-    $question = $this->data_base->add_instruc($query_send);
-    
-    if(mysqli_num_rows($question) > 0){
-      return $question;
-    }else {
-      return 0;
-    }
-  } */
 
   function update_objects($id,$new_obj) {
     
