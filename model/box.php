@@ -156,7 +156,6 @@ class box {
     function getBox_db($id){
     $query_send = "SELECT * FROM `box` WHERE `id` ='".$id."'";
     
-    
     $question = $this->data_base->add_instruc($query_send);
 
     $result = array();
@@ -202,6 +201,19 @@ class box {
       return 0;
     }
   }
+
+  function add_objects($id,$new_objects) {
+    $query_send = "UPDATE `box` SET `objects`= '".$new_objects."' WHERE `id` = '".$id."'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0) {
+      return 1;
+    }else {
+      return 0;
+    }
+  }
+  
 }
 
 

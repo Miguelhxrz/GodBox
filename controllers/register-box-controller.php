@@ -137,18 +137,38 @@ if (isset($box_register)) {
   echo "</div>";
 } else {
 
-  echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
+    echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
-  $_SESSION['box_id'] = $box_id;
-  $_SESSION['box_name'] = $box_name;
-  $_SESSION['box_price'] = $box_price;
-  $_SESSION['box_stock'] = $box_stock;
-  $_SESSION['box_sponsor'] =  $box_sponsor;
-  $_SESSION['box_category'] = $box_category;
-  $_SESSION['box_rank'] = $box_rank;
-  $_SESSION['img_name'] = $box_img_name;
-  $_SESSION['img_temp'] = $box_img_temp;
+    #fecha de registro
+    date_default_timezone_set('America/Caracas');
+    $fecha = date("d/m/Y");
 
- echo "<script> window.location.href = '../view/list-objects_select.php'</script>";
+    $_SESSION['box_id'] = $box_id;
+    
+    $box->setID($box_id);
+    $box->setName($box_name);
+    $box->setPrice($box_price);
+    $box->setStock($box_stock);
+    $box->setSponsor($box_sponsor);
+    $box->setCategory($box_category);
+    $box->setRank($box_rank);
+    #fecha de registro
+    $box->setFechaRegistro($fecha);
+  
+    #creando la ruta para la imagen
+    $folder = "../public/box/";
+
+    $origin = $folder.$box_img_name; #../public/items/img_name.png
+  
+    #moviendo la imagen a la carpeta
+    $move = move_uploaded_file($box_img_temp, $origin);
+  
+    $box->setImage($origin);
+
+    $box->addDataBase();
+
+
+    // header('location: ../view/list-objects_select.php');
+    echo "<script> window.location.href = '../view/list-objects_select.php'</script>";
 }
 }
