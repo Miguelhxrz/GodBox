@@ -13,6 +13,7 @@ error_reporting(0);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/productos_user.css">
+  <script src="../scripts/user_inventory.js"></script>
   <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
   <title>GodBox | Mis Productos</title>
 </head>
@@ -51,11 +52,10 @@ error_reporting(0);
                     echo 
                       "<div class='objects__container'>
                         <img src='".$items_img[$i]['image']."'>
-               
-                      <form class='hidden' action='' method='POST' class'options_form'>
+                      <form class='hidden' action=".$_SERVER['PHP_SELF']." method='POST' class'options_form'>
                         <input type='hidden' name='object_id' value='".$id_items[$i]."'>
-                        <input type='submit' name='enviar_btn' value='Enviar' id='send_btn'>
-                        <input type='submit' name='vender_btn' value='Vender' id='sell_btn'>
+                        <input type='submit' name='enviar_btn' value='Enviar' id='send_btn' class='modal__btn'>
+                        <input type='submit' name='vender_btn' value='Vender' id='sell_btn' class='modal__btn'>
                       </form>
                       </div>";
                       $i++;
@@ -66,6 +66,24 @@ error_reporting(0);
             ?>
           </div>
       </section>
+
+      <section class="modal">
+            <div class="modal__container">
+                <img src="../assets/img/Piggy bank_Outline.svg" alt="" class="modal__img">
+                <h2 class="modal__title">¿Deseas comprar mas monedas?</h2>
+                <p class="modal__paragraph">Si deseas comprar mas monedas, presiona aceptar, si no es el caso, presiona continuar</p>
+                <div class="modal__select">
+                <form method='POST' action='<?php htmlspecialchars($SERVER['PHP_SELF']); ?>' class="modal_form">        
+                    <input type='hidden' name='new_coins' value="<?php echo $coin_quantity?>">
+                    <input type='hidden' name='id' value="<?php echo $coin_id?>">
+                    <input type='hidden' name='price' value="<?php echo $coin_price?>">
+                    <button class="modal__btn" name="continue_btn" id="continue_btn">¡Perfecto!</button>
+                </form>
+                
+                </div>
+            </div>   
+        </section>
+
     </main>
 
     <footer class="footer">

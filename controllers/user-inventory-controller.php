@@ -60,23 +60,28 @@
 
   if(isset($btn_sell)) {
 
-    $sell_id = $_POST['object_id'];
+    $sell_id = $_POST['object_id']; #recibe el id del objeto
 
-    $array_sell = $user->getObjects_inventory($user_id);
+    $array_sell = $user->getObjects_inventory($user_id); #trae el inventario del usuario
 
-    $id_sell = explode('-',$array_sell[0]['objects']);
-    
-    $object_update = array();
+    $id_sell = explode('-',$array_sell[0]['objects']); #convierte e inventaio del usuario en un array
 
-    for ($i=0; $i < count($id_sell); $i++) { 
+    for ($i=0; $i < count($id_sell); $i++) { #busca el parecido en el array con el id del objeto que se vendio
       if($id_sell[$i] == $sell_id) {
-        unset($id_items[$i]);
+        unset($id_sell[$i]); #Elimina el objeto del inventario
       }
-      array_push($object_update,$id_sell[$i]);
     }
 
-    var_dump($object_update);
+    $new_inventory = implode('-',$id_sell); #convierte en string el nuevo inventario
 
+    $user->update_objects($user_id,$new_inventory); # Lo sube a la db
+
+    #Pago de monedas
+    $price = $item->getPrice_db($sell_id);
+    
+    $price = intval($price); #convierte las monedas en int para poder sumarlas
+
+    $result = $user->buyCoins($price,$username); #agarra las monedas y las suma con las del usuario y actualiza la bd
   }
 
 
