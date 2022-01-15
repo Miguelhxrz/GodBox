@@ -42,20 +42,28 @@ error_reporting(0);
       <section class="reports__container">
           <h4 class="title">Mis Productos🔒</h4>
           <div class="put__reports">
-             <?php for($i = 0; $i < count($img); $i++) {
-              $k = 0;
-               echo 
-              "<div class='objects__container'>
-                <img src='".$img[$i][$k]['image']."'>
-             
-                <form class='hidden' action='' method='POST' class'options_form'>
-                  <input type='hidden' name='object_id' value='".$id_objects_db[$i]."'>
-                  <input type='submit' name='enviar_btn' value='Enviar' id='send_btn'>
-                  <input type='submit' name='vender_btn' value='Vender' id='sell_btn'>
-                </form>
-           </div>";
-             } ?>
-
+             <?php
+             #impide que se imprima uno en blanco
+              for ($i=0; $i < count($items_img) ; $i++) { 
+                if(!$items_img[$i] == 0 && !$items_img[$i] == ''){
+                  $i = 0;
+                  while($i < count($items_img)){
+                    echo 
+                      "<div class='objects__container'>
+                        <img src='".$items_img[$i]['image']."'>
+               
+                      <form class='hidden' action='' method='POST' class'options_form'>
+                        <input type='hidden' name='object_id' value='".$id_items[$i]."'>
+                        <input type='submit' name='enviar_btn' value='Enviar' id='send_btn'>
+                        <input type='submit' name='vender_btn' value='Vender' id='sell_btn'>
+                      </form>
+                      </div>";
+                      $i++;
+               }
+                }
+              }  
+            
+            ?>
           </div>
       </section>
     </main>

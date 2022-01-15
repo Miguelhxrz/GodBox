@@ -254,6 +254,23 @@
 
     }
 
+    function user_inventory_empty($id) {
+      $query_send = "SELECT `objects` FROM `user_inventory` WHERE `id` = '".$id."'";
+
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+      
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+      }else {
+        return 0;
+      }
+    }
+
     
   function buyBox ($username, $box_coins) {
    
@@ -344,6 +361,18 @@
     }
   }
 
+  /* function getObjects_inventoryPrint ($id) {
+
+    $query_send = "SELECT  `objects` FROM `user_inventory` WHERE id = '".$id."'";
+
+    $question = $this->data_base->add_instruc($query_send);
+    
+    if(mysqli_num_rows($question) > 0){
+      return $question;
+    }else {
+      return 0;
+    }
+  } */
 
   function update_objects($id,$new_obj) {
     

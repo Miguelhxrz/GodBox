@@ -83,6 +83,23 @@
     
     }
 
+    function getImage_db($id) {
+      $query_send = "SELECT `image` FROM `objects` WHERE `id` = '$id'";
+  
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+  
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result[0];
+        }else {
+          return 0;
+        }
+    }
+
     function getObjectById($id){
       $query_send = "SELECT * FROM `objects` WHERE `id` = '$id'";
   
@@ -140,6 +157,18 @@
             array_push($result, $rows);
           }
           return $result;
+        }else {
+          return 0;
+        }
+    }
+
+    function get0bjectById ($id) {
+      $query_send = "SELECT * FROM `objects` WHERE `id` = '".$id."'";
+          
+      $question = $this->data_base->add_instruc($query_send);
+
+      if(mysqli_num_rows($question) > 0){
+          return $question;
         }else {
           return 0;
         }
