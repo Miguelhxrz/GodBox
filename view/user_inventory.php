@@ -44,22 +44,32 @@ error_reporting(0);
           <h4 class="title">Mis Productos🔒</h4>
           <div class="put__reports">
              <?php
-             #impide que se imprima uno en blanco
+             #impide que se imprima uno en blanco y limpia el inventario
               for ($i=0; $i < count($items_img) ; $i++) { 
-                if(!$items_img[$i] == 0 && !$items_img[$i] == ''){
+                if($items_img[$i] == 0 || $items_img[$i] == ' ' || $items_img[$i] == '-'){
+                  
+                  $array_send = $user->getObjects_inventory($user_id); #trae el inventario del usuario
+
+                  $string_objects = $array_send[0]['objects'];
+
+                  $inventory_reformed = substr($string_objects,1);
+
+                  $user->update_objects($user_id,$inventory_reformed);
+                  
+                }else {
                   $i = 0;
-                  while($i < count($items_img)){
-                    echo 
-                      "<div class='objects__container'>
-                        <img src='".$items_img[$i]['image']."'>
-                      <form class='hidden' action=".$_SERVER['PHP_SELF']." method='POST' class'options_form'>
-                        <input type='hidden' name='object_id' value='".$id_items[$i]."'>
-                        <input type='submit' name='enviar_btn' value='Enviar' id='send_btn' class='modal__btn'>
-                        <input type='submit' name='vender_btn' value='Vender' id='sell_btn' class='modal__btn'>
-                      </form>
-                      </div>";
+                    while($i < count($items_img)){
+                      echo 
+                        "<div class='objects__container'>
+                            <img src='".$items_img[$i]['image']."'>
+                          <form class='hidden options_form' action=".htmlspecialchars($_SERVER['PHP_SELF'])." method='POST' id='selects_items'>
+                            <input type='hidden' name='object_id' value='".$id_items[$i]."' class='id_object'>
+                            <input type='submit' name='vender_btn' value='Vender' id='sell_btn' class='modal__btn'>
+                            <input type='button' class='modal__btn send_btn' value='Enviar'>
+                            </form>
+                        </div>";
                       $i++;
-               }
+                  }
                 }
               }  
             
@@ -68,16 +78,15 @@ error_reporting(0);
       </section>
 
       <section class="modal">
+
             <div class="modal__container">
-                <img src="../assets/img/Piggy bank_Outline.svg" alt="" class="modal__img">
-                <h2 class="modal__title">¿Deseas comprar mas monedas?</h2>
-                <p class="modal__paragraph">Si deseas comprar mas monedas, presiona aceptar, si no es el caso, presiona continuar</p>
+                <img src="../assets/img/Sending emails_Monochromatic.svg" alt="" class="modal__img">
+                <h2 class="modal__title">Envio de objeto</h2>
+                <p class="modal__paragraph">Su objeto esta siendo enviado hasta su direccion 🥳</p>
                 <div class="modal__select">
-                <form method='POST' action='<?php htmlspecialchars($SERVER['PHP_SELF']); ?>' class="modal_form">        
-                    <input type='hidden' name='new_coins' value="<?php echo $coin_quantity?>">
-                    <input type='hidden' name='id' value="<?php echo $coin_id?>">
-                    <input type='hidden' name='price' value="<?php echo $coin_price?>">
-                    <button class="modal__btn" name="continue_btn" id="continue_btn">¡Perfecto!</button>
+                <form method='POST' action='<?php htmlspecialchars($SERVER['PHP_SELF']); ?>' class="modal_form" id="modal_form">
+                      <input type='hidden' name='id_object-modal' value="" id="recived_id">";
+                      <input class="modal__btn" name="send_btn" id="good_btn" value="¡Perfecto!">
                 </form>
                 
                 </div>

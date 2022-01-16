@@ -44,8 +44,6 @@ body {
     background-size: 100%;
 }
 
-button,
-input[type='submit'],
 input[type='reset'] {
     background: none;
     color: inherit;

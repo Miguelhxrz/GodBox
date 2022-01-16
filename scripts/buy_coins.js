@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if(found_user.textContent == "0"){
 
-
     activate_modal.disabled = true;
 
     found_user.classList.remove('hidden');
