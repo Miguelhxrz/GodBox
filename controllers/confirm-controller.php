@@ -37,7 +37,7 @@
 
   $coin_price = intval($price);
 
-  $fecha = date('d/m/Y');
+  $fecha = date("Y-m-d");
 
   $buy_coins = intval($_POST['new_coins']);
 

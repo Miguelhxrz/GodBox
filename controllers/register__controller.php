@@ -196,7 +196,7 @@ if (isset($_POST['submit'])) {
     echo "<div class='correcto'><h4>¡Todo correcto!</h4></div>";
 
     date_default_timezone_set('America/Caracas');
-    $fecha = date("d/m/Y");
+    $fecha = date("Y-m-d");
 
     $user->setUsername(strtolower($username));
     $user->setPassword($password);

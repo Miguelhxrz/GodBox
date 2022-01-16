@@ -29,7 +29,7 @@ date_default_timezone_set('America/Caracas');
   $pdf->SetFont("Arial","",9);
 
   $coins = new coins;
-  $question = $coins->showCoins();
+  $question = $coins->showCoinsR();
   for($i=0; $i<count($question); $i++){
     //`ID`, `quantity`, `price`, `fecha de registro`
     $pdf->Cell(75);

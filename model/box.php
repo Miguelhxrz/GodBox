@@ -101,6 +101,24 @@ class box {
   
   }
 
+  function ShowBoxesR(){
+    $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img`  FROM `box` ORDER BY `fecha de registro` DESC";
+        
+    $question = $this->data_base->add_instruc($query_send);
+
+    $result = array();
+
+    if(mysqli_num_rows($question) > 0){
+      while($rows = mysqli_fetch_array($question)){
+        array_push($result, $rows);
+      }
+      return $result;
+      }else {
+        return 0;
+      }
+  
+  }
+
   function getById($id){
     $query_send = "SELECT `id` , `name` , `price` , `stock` , `sponsor` , `category` , `rank` , `objects`, `fecha de registro`, `img` FROM `box` WHERE `id` = '$id'";
 

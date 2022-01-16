@@ -57,7 +57,7 @@ class transaciones {
 
   function ShowTransaciones(){
         
-    $query_send = "SELECT * FROM `transaciones`";
+    $query_send = "SELECT * FROM `transaciones`ORDER BY `fecha de compra` DESC";
 
     $question = $this->data_base->add_instruc($query_send);
 

@@ -29,7 +29,7 @@ date_default_timezone_set('America/Caracas');
   $pdf->SetFont("Arial","",9);
 
   $sponsor = new sponsor;
-  $question = $sponsor->ShowSponsors();
+  $question = $sponsor->ShowSponsorsR();
   for($i=0; $i<count($question); $i++){
     //`name`, `rif`, `email`, `image`, `fecha de registro`
     $pdf->Cell(45);

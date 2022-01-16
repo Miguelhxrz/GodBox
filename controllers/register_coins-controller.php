@@ -6,7 +6,7 @@ $PatronPrecio = "/^[0-9].+$/";
 $PatronID = "/^[A-Z]+$/";
 $errores= array();
 date_default_timezone_set('America/Caracas');
-$fecha = date("d/m/Y");
+$fecha = date("Y-m-d");
 
   $coins = new coins();
 

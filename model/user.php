@@ -62,7 +62,7 @@
     }
 
     function setBirth() {
-      $this->birth = $this->day."/".$this->month."/".$this->year;
+      $this->birth = $this->day."-".$this->month."-".$this->year;
     }
 
     function SetFechaRegistro($fecha){
@@ -156,7 +156,7 @@
 
     }
     function ShowUsers(){
-      $query_send = "SELECT `username`, `password`, `id`, `email`, `address`,`birth`,`fecha de registro` FROM `users`";
+      $query_send = "SELECT `username`, `password`, `id`, `email`, `address`,`birth`,`fecha de registro` FROM `users` ORDER BY `fecha de registro` DESC";
 
       $question = $this->data_base->add_instruc($query_send);
   
