@@ -22,6 +22,5 @@
 
   $img = $objects[0][0]['image'];
 
-  // var_dump($img);
 
 ?>

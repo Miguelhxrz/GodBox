@@ -30,6 +30,7 @@ error_reporting(0);
                    <img src="" alt="img_item" id="img_obj">        
                 </figure>
                     <form action="../view/user_inventory.php" method="POST" class="hidden">
+                        <input type="hidden" name="object_rank" id="object_rank_win">
                         <input type="hidden" name="object_id-win" id="object_id-win">
                         <input type="submit" id="accept" value="!Genial¡">
                     </form>
@@ -50,6 +51,7 @@ error_reporting(0);
                             </figure>
                             <p class='hidden-id'>".$box_items[$i]."</p>
                             <p class='hidden-img'>".$objects[$i][$k]['image']."</p>
+                            <p class='hidden-rank rank'>".$objects[$i][$k]['rank']."</p>
                         </div>";
                     } ?>
 
@@ -60,6 +62,7 @@ error_reporting(0);
                             <figure class='item__card'>
                                 <img src='".$objects[$i][$k]['image']."' class>
                             </figure>
+                            <p class='hidden-id rank'>".$objects[$i][$k]['rank']."</p>
                         </div> ";
                     } ?>
 
@@ -70,6 +73,7 @@ error_reporting(0);
                             <figure class='item__card'>
                                 <img src='".$objects[$i][$k]['image']."' class>
                             </figure>    
+                            <p class='hidden-id rank'>".$objects[$i][$k]['rank']."</p>
                         </div>";
                     } ?>
 

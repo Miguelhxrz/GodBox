@@ -22,8 +22,6 @@
 
   $add_objects = array();
 
-  // $id_select = $_POST['object_id'];
-
 
   #Esto solo se aplicara cuando llegue un nuevo objeto de la ruleta
   if(isset($object_id) && !empty($object_id)) {
@@ -56,6 +54,13 @@
   $array_items = $user->getObjects_inventory($user_id); #busca los objetos ya registrados en la db
 
   $id_items = explode('-',$array_items[0]['objects']); #hace un array con los id de los items
+
+
+  $item_rank = array();
+
+  for ($i=0; $i < count($id_items); $i++) { 
+    array_push($item_rank,$item->getRank($id_items[$i])); #se pushean las imagenes al array
+  }
 
   $items_img = array(); #Aca se guardan las imagenes de cada uno de los items
 

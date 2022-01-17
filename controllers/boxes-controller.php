@@ -16,8 +16,6 @@
 
   $username = $_SESSION['user'];
 
-  
-
   $user_coins = intval($user->getCoinsdb($username));
 
   $buy_btn = $_POST['buy_box'];

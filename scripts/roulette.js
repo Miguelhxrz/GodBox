@@ -18,17 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const input_id = document.getElementById('object_id-win');
 
-  function getRandom(min, max) {
-    return Math.random() * (max - min) + min;
-  }
+  const input_rank = document.getElementById('object_rank_win');
+
+    function getRandom(min, max) {
+      return Math.random() * (max - min) + min;
+    }
 
   let items_id_array = Array.from(items_id);
 
   let items_img_array = Array.from(items_img);
 
+  console.log(items_img_array);
+
   for (let i = 0; i < items_id_array.length; i++) {
     console.log(`${i}:${items_id_array[i].textContent}`);
-    console.log(`${i}:${items_img_array[i].textContent}`);
+    // console.log(`${i}:${items_img_array[i].textContent}`);
   }
 
   const moveIt = {
@@ -78,8 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       })
-
-    
         
     setTimeout(() => {
 
@@ -107,5 +109,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
       
     });
+
+    let item_cards__array = Array.from(cards_items);
+
+    console.log(item_cards__array);
+  
+      /* |---- Colores de imagenes ----|*/
+  
+      const colors = {
+        'Dios': '--rank__Dios',
+        'SemiDios': '--rank__Semi',
+        'Heroe':  '--rank__Heroe',
+        'Olimpico': '--rank__Olimpico' 
+      }
+    
+      const rank = document.getElementsByClassName('rank');
+    
+      let array_ranks = Array.from(rank);
+      
+      for (let i = 0; i < item_cards__array.length; i++) {
+        item_cards__array[i].classList.add(colors[array_ranks[i].textContent]);
+      } 
+
+
 
 });

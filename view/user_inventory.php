@@ -59,11 +59,13 @@ error_reporting(0);
                 }else {
                   $i = 0;
                     while($i < count($items_img)){
+                      $k = 0;
                       echo 
                         "<div class='objects__container'>
                             <img src='".$items_img[$i]['image']."'>
                           <form class='hidden options_form' action=".htmlspecialchars($_SERVER['PHP_SELF'])." method='POST' id='selects_items'>
                             <input type='hidden' name='id_object'  value='".$id_items[$i]."'>
+                            <input type='hidden' class='rank'  value='".$item_rank[$i][$k]['rank']."'>
                             <input type='submit' name='vender_btn' value='Vender' class='modal__btn'>
                             <input type='submit' name='enviar_btn' class='modal__btn' value='Enviar'>
                           </form>

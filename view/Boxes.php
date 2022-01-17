@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/boxes.css">
+    <script src="../scripts/colors-boxes.js"></script>
     <title>GodBox | Boxes</title>
 </head>
 
@@ -32,6 +33,7 @@
                     <h3>".$showBoxes[$i]['name']."</h3>
                     <h3>Precio: ".$showBoxes[$i]['price']." <span class='gold'>LG</span></h3>
                 </div>
+                <input type='hidden' class='rank' value='".$showBoxes[$i]['rank']."'>
                 <input type='hidden' name='box_id' value='".$showBoxes[$i]['id']."'>
                 <input type='hidden' name='box_price' value='".$showBoxes[$i]['price']."'>
                 <input type='submit' name='buy_box' class='box__button-buy' value='Comprar' />

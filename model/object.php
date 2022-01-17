@@ -218,6 +218,24 @@
 
     }
 
+    function getRank($id) {
+      
+      $query_send = "SELECT `rank` FROM `objects` WHERE `id` ='".$id."'";
+
+      $question = $this->data_base->add_instruc($query_send);
+
+      $result = array();
+
+      if(mysqli_num_rows($question) > 0){
+        while($rows = mysqli_fetch_array($question)){
+          array_push($result, $rows);
+        }
+        return $result;
+      }else {
+        return 0;
+      }
+    }
+
     function updateObjects(){
       $query_send = "UPDATE `objects` SET `id`= '$this->id',`name`='$this->name',`stock`='$this->stock', `price` = '$this->price', `sponsor` = '$this->sponsor', `rank` = '$this->rank', `category` = '$this->category', `image` = '$this->image' WHERE `id` = '$this->id'";
       $question = $this->data_base->add_instruc($query_send);
