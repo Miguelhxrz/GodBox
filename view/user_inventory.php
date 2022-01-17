@@ -63,9 +63,9 @@ error_reporting(0);
                         "<div class='objects__container'>
                             <img src='".$items_img[$i]['image']."'>
                           <form class='hidden options_form' action=".htmlspecialchars($_SERVER['PHP_SELF'])." method='POST' id='selects_items'>
-                            <input type='hidden' name='id_object'  id='id_object' value='".$id_items[$i]."' >
-                            <input type='submit' name='vender_btn' value='Vender' id='sell_btn' class='modal__btn'>
-                            <input type='submit' name='enviar_btn' id='enviar_btn' class='modal__btn' value='Enviar'>
+                            <input type='hidden' name='id_object'  value='".$id_items[$i]."'>
+                            <input type='submit' name='vender_btn' value='Vender' class='modal__btn'>
+                            <input type='submit' name='enviar_btn' class='modal__btn' value='Enviar'>
                           </form>
                         </div>";
                       $i++;
@@ -76,24 +76,6 @@ error_reporting(0);
             ?>
           </div>
       </section>
-
-      <section class='modal'>
-
-      <div class='modal__container'>
-            <img src='../assets/img/Sending emails_Monochromatic.svg' class='modal__img'>
-            <h2 class='modal__title'>Envio de objeto</h2>
-           <p class='modal__paragraph'>Su objeto esta siendo enviado hasta su direccion 🥳</p>
-            <div class='modal__select'>
-            <form method='POST' action='<?php htmlspecialchars($SERVER['PHP_SELF']) ?>' class='modal_form' id='modal_form'>
-                <input type='hidden' name='id_object-modal'  id='recived_id' value='".$id_items[$i]."' >
-                <input class='modal__btn' name='send_btn' id='good_btn' value='¡Perfecto!'>
-            </form>
-          
-            </div>
-        </div>   
-      </section>
-
-
 
     </main>
 

@@ -61,7 +61,7 @@
 
   if(isset($btn_sell)) {
 
-    $sell_id = $_POST['object_id']; #recibe el id del objeto
+    $sell_id = $_POST['id_object']; #recibe el id del objeto
 
     $array_sell = $user->getObjects_inventory($user_id); #trae el inventario del usuario
 
@@ -83,6 +83,11 @@
     $price = intval($price); #convierte las monedas en int para poder sumarlas
 
     $result = $user->buyCoins($price,$username); #agarra las monedas y las suma con las del usuario y actualiza la bd
+
+    if($result){
+      echo '<meta http-equiv="refresh" content="0;url=../view/admin_page.php">';
+      $sell_id = '';
+    }
   }
 
   
@@ -103,6 +108,11 @@
     $new_inventory = implode('-',$id_send); #convierte en string el nuevo inventario
 
     $update = $user->update_objects($user_id,$new_inventory); # Lo sube a la db
+
+    if($update){
+      echo '<meta http-equiv="refresh" content="0;url=../view/admin_page.php">';
+      $sell_id = '';
+    }
 
   }
 
