@@ -22,7 +22,7 @@
 
   $add_objects = array();
 
-  $id_select = $_POST['object_id'];
+  // $id_select = $_POST['object_id'];
 
 
   #Esto solo se aplicara cuando llegue un nuevo objeto de la ruleta
@@ -41,6 +41,11 @@
       $string_items = implode('-', $add_objects);
 
       $result_update = $user->update_objects($user_id,$string_items);
+
+      if($result_update) {
+        echo '<meta http-equiv="refresh" content="0;url=../view/user_inventory.php">';
+        $object_id = '';
+      }
       
     }else{
       $verify = $user->addInventory($user_id,$username,$object_id);
@@ -85,8 +90,7 @@
     $result = $user->buyCoins($price,$username); #agarra las monedas y las suma con las del usuario y actualiza la bd
 
     if($result){
-      echo '<meta http-equiv="refresh" content="0;url=../view/admin_page.php">';
-      $sell_id = '';
+      echo '<meta http-equiv="refresh" content="0;url=../view/user_inventory.php">';
     }
   }
 
@@ -110,8 +114,7 @@
     $update = $user->update_objects($user_id,$new_inventory); # Lo sube a la db
 
     if($update){
-      echo '<meta http-equiv="refresh" content="0;url=../view/admin_page.php">';
-      $sell_id = '';
+      echo '<meta http-equiv="refresh" content="0;url=../view/user_inventory.php">';
     }
 
   }
