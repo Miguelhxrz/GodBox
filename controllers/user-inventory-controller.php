@@ -24,17 +24,13 @@
 
   $id_select = $_POST['object_id'];
 
-  $send_btn = $_POST['send_btn'];
-
 
   #Esto solo se aplicara cuando llegue un nuevo objeto de la ruleta
   if(isset($object_id) && !empty($object_id)) {
     #Si existe el usuario agrega otro objeto a la lista de objetos de la bd.
     if($result_search == 1){
 
-       $user_objects_db = $user->getObjects_inventory($user_id);
-
-      //  var_dump($user_objects_db);
+       $user_objects_db = $user->getObjects_inventory($user_id);  
 
       for ($i=0; $i < count($user_objects_db) ; $i++) { 
         array_push($add_objects,$user_objects_db[$i][$i]);
@@ -89,31 +85,28 @@
     $result = $user->buyCoins($price,$username); #agarra las monedas y las suma con las del usuario y actualiza la bd
   }
 
-  if(isset($send_btn)) {
+  
+  if(isset($btn_send)) {
 
-    $send_id = $_POST['id_object-modal'];
+    $item_id = $_POST['id_object']; #recibe el id del objeto
 
-    var_dump($send_id);
-
-    $array_send = $user->getObjects_inventory($user_id); #trae el inventario del usuario
+    $array_sell = $user->getObjects_inventory($user_id); #trae el inventario del usuario
 
     $id_send = explode('-',$array_sell[0]['objects']); #convierte e inventaio del usuario en un array
 
     for ($i=0; $i < count($id_send); $i++) { #busca el parecido en el array con el id del objeto que se vendio
-      if($id_send[$i] == $send_id) {
+      if($id_send[$i] == $item_id) {
         unset($id_send[$i]); #Elimina el objeto del inventario
       }
     }
 
-    $new_inventory = implode(' ',$id_sell); #convierte en string el nuevo inventario
+    $new_inventory = implode('-',$id_send); #convierte en string el nuevo inventario
 
     $update = $user->update_objects($user_id,$new_inventory); # Lo sube a la db
 
-    var_dump($update);
-
-  
-
   }
+
+    
 
 
 
