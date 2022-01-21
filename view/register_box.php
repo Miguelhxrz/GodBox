@@ -57,12 +57,12 @@
             
             <label for="box_price" class="label-price">
               Precio
-              <input type="text" placeholder="Precio de la caja" size="45" maxlength="45" name="box_price">
+              <input type="text" placeholder="Precio de la caja" size="45" maxlength="45" name="box_price" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
             </label>
 
             <label for="box_stock" class="label-price">
               Cantidad
-              <input type="text" placeholder="Cantidad de la caja" size="45" maxlength="45" name="box_stock">
+              <input type="text" placeholder="Cantidad de la caja" size="45" maxlength="45" name="box_stock" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
             </label>
   
           </section>

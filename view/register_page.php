@@ -16,6 +16,7 @@
     <?php 
         include("../partials/header-no_register.php");
         error_reporting(0);
+        //onKeypress="if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122)) event.returnValue = false;"
     ?>
 
     <main class="container">
@@ -24,8 +25,8 @@
                 <h5>Registrarse</h5> 
             </div>
             <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form-register" class="form-register">
-                <input type="text" name="username" placeholder="Usuario" maxlength="15" size="15" require>
-                <input type="password" name="password" class="password" placeholder="Contraseña" maxlength="18" size="18" require>
+                <input type="text" name="username" placeholder="Usuario" maxlength="15" size="15"> 
+                <input type="password" name="password" class="password" placeholder="Contraseña" maxlength="18" size="18" requre>
                 <input type="text" name="id" placeholder="Documento de identidad" maxlength="10" size="10" require onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
                 <input type="email" name="email" class="email" placeholder="Correo" maxlength="45" size="45" require> 
                 <input type="text" name="address" placeholder="Dirección" maxlength="45" size="45" require> 
